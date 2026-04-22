@@ -11,6 +11,7 @@ import FAQ from "../components/site/FAQ";
 import Contact from "../components/site/Contact";
 import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
+import ExitIntentPopup from "../components/site/ExitIntentPopup";
 
 export default function Landing() {
   return (
@@ -29,6 +30,7 @@ export default function Landing() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <ExitIntentPopup />
     </div>
   );
 }

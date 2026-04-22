@@ -5,6 +5,7 @@ import Logo from "./Logo";
 const NAV = [
   { href: "#services", label: "Services" },
   { href: "#loyer-fixe", label: "Loyer Fixe" },
+  { href: "#histoire", label: "Mon histoire" },
   { href: "#tarifs", label: "Tarifs" },
   { href: "#faq", label: "FAQ" },
 ];
