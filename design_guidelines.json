@@ -1,0 +1,130 @@
+{
+  "theme": "Light",
+  "archetype": "Archetype 1 (Organic & Earthy) mixed with High-Contrast Premium Structure",
+  "brand": {
+    "name": "Daribnb",
+    "tagline": "Conciergerie Airbnb & Sous-location professionnelle au Maroc",
+    "contact_email": "daribnb.ma@gmail.com",
+    "contact_phone": "+212 6 46 21 84 07",
+    "language": "French"
+  },
+  "colors": {
+    "primary": "#FF5A5F",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#006233",
+    "secondary_foreground": "#FFFFFF",
+    "background": "#FAF9F6",
+    "surface": "#FFFFFF",
+    "text_main": "#1A1A1A",
+    "text_muted": "#4B5563",
+    "border": "#E5E5E5"
+  },
+  "typography": {
+    "heading_font": "Outfit",
+    "body_font": "Manrope",
+    "h1": "text-5xl sm:text-6xl font-bold tracking-tight text-[#1A1A1A]",
+    "h2": "text-3xl sm:text-4xl font-bold tracking-tight text-[#1A1A1A]",
+    "h3": "text-xl sm:text-2xl font-semibold text-[#1A1A1A]",
+    "body": "text-base text-[#4B5563] leading-relaxed",
+    "cta": "text-base font-semibold tracking-wide"
+  },
+  "spacing": {
+    "section": "py-24 md:py-32",
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "gap_grid": "gap-8 md:gap-12"
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#FF5A5F] hover:bg-[#E0484D] text-white rounded-full px-8 py-4 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2",
+      "secondary": "bg-[#006233] hover:bg-[#004B27] text-white rounded-full px-8 py-4 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2",
+      "whatsapp": "bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full px-8 py-4 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+    },
+    "cards": {
+      "base": "bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-[#E5E5E5] p-8",
+      "glass": "bg-white/90 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-2xl p-8"
+    },
+    "inputs": {
+      "base": "w-full bg-white border border-[#E5E5E5] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF5A5F] focus:border-transparent text-[#1A1A1A] transition-all"
+    }
+  },
+  "sections": [
+    {
+      "name": "Header",
+      "description": "Sticky navigation bar. Left: Daribnb Logo. Center: Services, Loyer Fixe, Tarifs, FAQ. Right: 'Estimer mes revenus' CTA.",
+      "test_ids": ["header-nav", "nav-logo", "nav-link-services", "nav-cta-estimate"]
+    },
+    {
+      "name": "Hero Section",
+      "description": "Asymmetric layout inspired by HostnFly. Left text block with value prop 'Conciergerie Airbnb & Loyer fixe garanti'. 6+ years expertise badge. Primary CTA to Simulator. Secondary CTA to WhatsApp. Right side: Large beautiful image of Moroccan Riad with overlapping Revenue Simulator Card.",
+      "test_ids": ["hero-section", "hero-title", "hero-cta-primary", "hero-cta-whatsapp"]
+    },
+    {
+      "name": "Interactive Revenue Simulator",
+      "description": "Glassmorphism card overlapping the hero. Select City (Casablanca, Marrakech, etc), Property Type, and Capacity. 'Estimer mes revenus' button.",
+      "test_ids": ["simulator-card", "simulator-city-select", "simulator-type-select", "simulator-capacity-input", "simulator-submit-btn"]
+    },
+    {
+      "name": "Services Features",
+      "description": "Bento grid layout showing 360° management: Annonce optimisée, Check-in/out, Ménage pro, Assistance 24/7. Highlight 'Sous-location professionnelle' as a standout feature.",
+      "test_ids": ["services-section", "service-card-concierge", "service-card-fixed-rent"]
+    },
+    {
+      "name": "How It Works",
+      "description": "5 simple steps: 1. RDV téléphonique, 2. Visite, 3. Estimation, 4. Signature, 5. Mise en ligne. Clean horizontal flow or vertical timeline.",
+      "test_ids": ["how-it-works-section", "step-1", "step-2"]
+    },
+    {
+      "name": "Why Daribnb",
+      "description": "Text + Image section highlighting 6 years of Airbnb expertise, local Moroccan market knowledge, and trust.",
+      "test_ids": ["why-us-section", "expertise-badge"]
+    },
+    {
+      "name": "Testimonials",
+      "description": "Cards with quotes from happy property owners. Star ratings (4.8/5).",
+      "test_ids": ["testimonials-section", "testimonial-card-1"]
+    },
+    {
+      "name": "Coverage Map",
+      "description": "Visual grid or map showcasing 'Tout le Maroc' presence. Images of Casablanca, Marrakech, Rabat.",
+      "test_ids": ["coverage-section", "city-card-casa"]
+    },
+    {
+      "name": "Pricing",
+      "description": "Clean pricing section. Commission transparent starting at 20% vs Fixed Rent option.",
+      "test_ids": ["pricing-section", "pricing-commission", "pricing-fixed"]
+    },
+    {
+      "name": "FAQ",
+      "description": "Shadcn Accordion with common questions about the concierge and fixed rent.",
+      "test_ids": ["faq-section", "faq-item-1"]
+    },
+    {
+      "name": "Footer",
+      "description": "Dark background (#006233). Daribnb logo. Contact details (email, phone). Links. Legal.",
+      "test_ids": ["footer-section", "footer-email", "footer-phone"]
+    }
+  ],
+  "image_urls": [
+    {
+      "url": "https://images.pexels.com/photos/15531325/pexels-photo-15531325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "High-angle view of a traditional Moroccan riad courtyard in Marrakech",
+      "category": "hero_visual"
+    },
+    {
+      "url": "https://images.pexels.com/photos/6970049/pexels-photo-6970049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Elegant living room featuring a sleek grey sofa and contemporary design elements",
+      "category": "service_sublease_apartment"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1750859479417-54383840d7e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBtb3JvY2NhbiUyMHJpYWQlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzY4OTIwMjV8MA&ixlib=rb-4.1.0&q=85",
+      "description": "A relaxing courtyard with a pool and wooden door.",
+      "category": "expertise_background"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1518462334125-9683302994df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwxfHxtb3JvY2NvJTIwY2l0eXNjYXBlfGVufDB8fHx8MTc3Njg5MjAyNXww&ixlib=rb-4.1.0&q=85",
+      "description": "Aerial photography of white and brown concrete buildings near ocean in Morocco",
+      "category": "coverage_map_visual"
+    }
+  ],
+  "instructions_to_main_agent": "Implement Daribnb as a premium marketing site in French using React and Tailwind. Use Shadcn components for Interactive Simulator, Dropdowns, and FAQ. Strongly emphasize the #FF5A5F (Airbnb Red) for primary interactive elements and CTAs, and #006233 (Moroccan Green) for secondary elements/footer. Ensure 6+ years expertise is highly visible. Build the Revenue Simulator similar to HostnFly's card approach over the hero section. Adhere to 'data-testid' requirements on all interactive elements."
+}
