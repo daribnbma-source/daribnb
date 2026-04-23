@@ -60,9 +60,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Daribnb. Tous droits réservés.
           </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
-            <a href="#" className="hover:text-white transition-colors">Confidentialité</a>
-            <a href="#" className="hover:text-white transition-colors">CGV</a>
+            <a href="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</a>
+            <a href="/confidentialite" className="hover:text-white transition-colors">Confidentialité</a>
+            <a href="/cgv" className="hover:text-white transition-colors">CGV</a>
           </div>
         </div>
       </div>

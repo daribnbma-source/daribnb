@@ -4,11 +4,13 @@ from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
+import asyncio
 from pathlib import Path
 from pydantic import BaseModel, Field, EmailStr
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
+import resend
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -16,6 +18,12 @@ load_dotenv(ROOT_DIR / '.env')
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
+
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
+NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL', 'daribnb.ma@gmail.com')
+if RESEND_API_KEY:
+    resend.api_key = RESEND_API_KEY
 
 app = FastAPI(title="Daribnb API")
 api_router = APIRouter(prefix="/api")
@@ -132,6 +140,53 @@ async def create_contact(payload: ContactCreate):
     doc = contact.model_dump()
     doc['created_at'] = doc['created_at'].isoformat()
     await db.contacts.insert_one(doc)
+
+    # Send notification email (non-blocking, degrades gracefully)
+    if RESEND_API_KEY:
+        try:
+            service_label = {
+                "conciergerie": "Conciergerie Airbnb",
+                "loyer_fixe": "Loyer fixe garanti",
+                "les_deux": "À conseiller",
+            }.get(contact.service or "", contact.service or "Non précisé")
+
+            html = f"""
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #FAF9F6; padding: 24px;">
+              <div style="background: #FF5A5F; color: white; padding: 24px; border-radius: 16px 16px 0 0;">
+                <h1 style="margin:0; font-size: 22px;">Nouvelle demande Daribnb</h1>
+                <p style="margin: 6px 0 0; opacity: 0.9; font-size: 14px;">Reçue le {contact.created_at.strftime('%d/%m/%Y à %H:%M')}</p>
+              </div>
+              <div style="background: white; padding: 24px; border-radius: 0 0 16px 16px; border: 1px solid #E5E5E5; border-top: none;">
+                <table style="width: 100%; border-collapse: collapse;">
+                  <tr><td style="padding: 8px 0; color: #4B5563; font-size: 13px;">Nom</td><td style="padding: 8px 0; font-weight: bold; color: #1A1A1A;">{contact.name}</td></tr>
+                  <tr><td style="padding: 8px 0; color: #4B5563; font-size: 13px;">Email</td><td style="padding: 8px 0; color: #1A1A1A;"><a href="mailto:{contact.email}" style="color:#FF5A5F; text-decoration:none;">{contact.email}</a></td></tr>
+                  <tr><td style="padding: 8px 0; color: #4B5563; font-size: 13px;">Téléphone</td><td style="padding: 8px 0; color: #1A1A1A;"><a href="tel:{contact.phone}" style="color:#FF5A5F; text-decoration:none;">{contact.phone}</a></td></tr>
+                  <tr><td style="padding: 8px 0; color: #4B5563; font-size: 13px;">Ville</td><td style="padding: 8px 0; color: #1A1A1A;">{contact.city or '—'}</td></tr>
+                  <tr><td style="padding: 8px 0; color: #4B5563; font-size: 13px;">Service</td><td style="padding: 8px 0; color: #1A1A1A;">{service_label}</td></tr>
+                </table>
+                <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E5E5E5;">
+                  <p style="margin: 0; color: #4B5563; font-size: 13px;">Message</p>
+                  <p style="margin: 8px 0 0; color: #1A1A1A; white-space: pre-wrap;">{contact.message or '(aucun message)'}</p>
+                </div>
+                <div style="margin-top: 24px; text-align: center;">
+                  <a href="https://wa.me/{contact.phone.replace('+','').replace(' ','')}" style="display:inline-block; background:#25D366; color:white; padding: 12px 24px; border-radius: 999px; text-decoration:none; font-weight:bold;">Répondre sur WhatsApp</a>
+                </div>
+              </div>
+              <p style="text-align:center; color:#9CA3AF; font-size:12px; margin-top: 16px;">Daribnb — Conciergerie Airbnb & Loyer Fixe au Maroc</p>
+            </div>
+            """
+
+            params = {
+                "from": f"Daribnb <{SENDER_EMAIL}>",
+                "to": [NOTIFY_EMAIL],
+                "reply_to": contact.email,
+                "subject": f"Nouvelle demande : {contact.name} — {service_label}",
+                "html": html,
+            }
+            await asyncio.to_thread(resend.Emails.send, params)
+        except Exception as e:
+            logger.error(f"Resend email failed (non-blocking): {e}")
+
     return contact
 
 
