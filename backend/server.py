@@ -146,6 +146,7 @@ async def create_contact(payload: ContactCreate):
         try:
             service_label = {
                 "conciergerie": "Conciergerie Airbnb",
+                "super_daribnb": "Super Daribnb (optimisation)",
                 "loyer_fixe": "Loyer fixe garanti",
                 "les_deux": "À conseiller",
             }.get(contact.service or "", contact.service or "Non précisé")

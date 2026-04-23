@@ -4,9 +4,9 @@ import Logo from "./Logo";
 
 const NAV = [
   { href: "#services", label: "Services" },
+  { href: "#super-daribnb", label: "Super Daribnb" },
   { href: "#loyer-fixe", label: "Loyer Fixe" },
   { href: "#histoire", label: "Mon histoire" },
-  { href: "#tarifs", label: "Tarifs" },
   { href: "#faq", label: "FAQ" },
 ];
 

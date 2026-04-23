@@ -8,8 +8,12 @@ import {
 
 const FAQS = [
   {
-    q: "Quelle est la différence entre la conciergerie et le loyer fixe ?",
-    a: "La conciergerie : on gère votre bien en location courte durée, vous touchez les revenus nets après commission. Le loyer fixe : on vous verse un loyer garanti chaque mois, quel que soit le taux de remplissage. Vous choisissez selon votre profil : maximiser vos revenus ou sécuriser un revenu fixe.",
+    q: "Quelle est la différence entre la conciergerie, Super Daribnb et le loyer fixe ?",
+    a: "La conciergerie : on gère votre bien au quotidien, vous touchez les revenus nets après commission. Super Daribnb : une prestation unique d'optimisation (photos pro, refonte d'annonce, stratégie tarifaire, coaching) — vous gardez la gestion mais boostez vos revenus. Le loyer fixe : on vous verse un loyer garanti chaque mois, quel que soit le taux de remplissage.",
+  },
+  {
+    q: "En quoi consiste concrètement Super Daribnb ?",
+    a: "C'est une prestation one-shot (ponctuelle) qui inclut : un audit complet de votre annonce et de votre concurrence, un shooting photo professionnel, la refonte du titre, de la description et du SEO Airbnb, une stratégie tarifaire avec saisonnalité, et un coaching 1-to-1 pour que vous gagniez en autonomie. Le tarif est sur mesure selon votre bien et vos objectifs de chiffre d'affaires.",
   },
   {
     q: "Y a-t-il une durée minimale d'engagement ?",

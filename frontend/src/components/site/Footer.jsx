@@ -25,10 +25,11 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4 text-white">Services</h4>
             <ul className="space-y-3 text-sm text-white/80">
-              <li><a href="#services" className="hover:text-[#FF5A5F] transition-colors">Conciergerie Airbnb</a></li>
-              <li><a href="#loyer-fixe" className="hover:text-[#FF5A5F] transition-colors">Loyer fixe garanti</a></li>
-              <li><a href="#tarifs" className="hover:text-[#FF5A5F] transition-colors">Tarifs</a></li>
-              <li><a href="#faq" className="hover:text-[#FF5A5F] transition-colors">FAQ</a></li>
+              <li><a href="/#services" className="hover:text-[#FF5A5F] transition-colors">Conciergerie Airbnb</a></li>
+              <li><a href="/#super-daribnb" className="hover:text-[#FF5A5F] transition-colors">Super Daribnb</a></li>
+              <li><a href="/#loyer-fixe" className="hover:text-[#FF5A5F] transition-colors">Loyer fixe garanti</a></li>
+              <li><a href="/#tarifs" className="hover:text-[#FF5A5F] transition-colors">Tarifs</a></li>
+              <li><a href="/#faq" className="hover:text-[#FF5A5F] transition-colors">FAQ</a></li>
             </ul>
           </div>
 

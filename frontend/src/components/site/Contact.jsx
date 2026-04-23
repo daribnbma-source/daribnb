@@ -216,6 +216,7 @@ export default function Contact() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="conciergerie">Conciergerie Airbnb</SelectItem>
+                      <SelectItem value="super_daribnb">Super Daribnb (optimisation)</SelectItem>
                       <SelectItem value="loyer_fixe">Loyer fixe garanti</SelectItem>
                       <SelectItem value="les_deux">Je ne sais pas, conseillez-moi</SelectItem>
                     </SelectContent>

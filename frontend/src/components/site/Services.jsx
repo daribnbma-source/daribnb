@@ -6,6 +6,8 @@ import {
   Headphones,
   ShieldCheck,
   BadgeDollarSign,
+  Rocket,
+  Wand2,
 } from "lucide-react";
 
 const SERVICES = [
@@ -44,19 +46,19 @@ export default function Services() {
             Nos services
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
-            Deux façons de rentabiliser votre bien
+            Trois formules. Une seule promesse : plus de revenus.
           </h2>
           <p className="mt-4 text-lg text-[#4B5563]">
             Vous choisissez la formule qui vous convient. On s'occupe du reste.
           </p>
         </div>
 
-        {/* Two main offers */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* Three main offers */}
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-16">
           {/* Conciergerie */}
           <div
             data-testid="service-card-concierge"
-            className="group relative bg-[#FAF9F6] rounded-3xl p-8 md:p-10 border border-[#E5E5E5] hover:shadow-xl transition-all overflow-hidden"
+            className="group relative bg-[#FAF9F6] rounded-3xl p-8 border border-[#E5E5E5] hover:shadow-xl transition-all overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-40 h-40 bg-[#FF5A5F]/5 rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="relative">
@@ -64,24 +66,90 @@ export default function Services() {
                 <BadgeDollarSign size={14} />
                 Conciergerie 360°
               </div>
-              <h3 className="text-3xl font-bold text-[#1A1A1A] mb-3">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-3">
                 Conciergerie Airbnb
               </h3>
-              <p className="text-[#4B5563] mb-6">
-                Gestion complète de votre location courte durée. Vous touchez
-                les revenus, on gère tout le reste.
+              <p className="text-[#4B5563] mb-6 text-[15px]">
+                Gestion complète de votre location. Vous encaissez, on gère tout.
               </p>
-              <ul className="space-y-2 mb-6 text-[15px] text-[#1A1A1A]">
+              <ul className="space-y-2 mb-6 text-sm text-[#1A1A1A]">
                 <li>✓ Annonce créée et optimisée</li>
-                <li>✓ Prix dynamiques pour maximiser vos revenus</li>
-                <li>✓ Ménage et maintenance inclus</li>
+                <li>✓ Prix dynamiques</li>
+                <li>✓ Ménage & maintenance</li>
                 <li>✓ Accueil voyageurs 24/7</li>
-                <li>✓ Reporting mensuel transparent</li>
+                <li>✓ Reporting mensuel</li>
               </ul>
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm text-[#4B5563]">À partir de</span>
-                <span className="text-3xl font-black text-[#FF5A5F]">20%</span>
-                <span className="text-sm text-[#4B5563]">de commission</span>
+              <div className="flex items-baseline gap-1">
+                <span className="text-sm text-[#4B5563]">Dès</span>
+                <span className="text-2xl font-black text-[#FF5A5F]">20%</span>
+                <span className="text-sm text-[#4B5563]">commission</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Super Daribnb — NEW highlighted middle offer */}
+          <div
+            id="super-daribnb"
+            data-testid="service-card-super"
+            className="group relative bg-gradient-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] text-white rounded-3xl p-8 hover:shadow-2xl transition-all overflow-hidden md:scale-105 md:-translate-y-2"
+          >
+            {/* Shine accent */}
+            <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#FF5A5F]/20 rounded-full blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-[#006233]/20 rounded-full blur-3xl" />
+
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF5A5F] to-[#FF8A5F] text-white rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4 shadow-lg">
+                <Rocket size={14} />
+                Nouveau · Boost one-shot
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-1">
+                <span className="bg-gradient-to-r from-[#FF5A5F] to-[#FF8A5F] bg-clip-text text-transparent">
+                  Super
+                </span>{" "}
+                Daribnb
+              </h3>
+              <p className="text-white/70 text-sm mb-5">
+                L'optimisation sur mesure qui transforme votre annonce.
+              </p>
+
+              <p className="text-white/90 mb-6 text-[15px]">
+                Une prestation <strong>one-shot</strong>. On analyse tout, on
+                optimise tout. Vous gardez la gestion, on booste vos revenus.
+              </p>
+              <ul className="space-y-2 mb-6 text-sm text-white/95">
+                <li className="flex items-center gap-2">
+                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  Photos professionnelles
+                </li>
+                <li className="flex items-center gap-2">
+                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  Refonte complète de l'annonce
+                </li>
+                <li className="flex items-center gap-2">
+                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  Stratégie tarifaire & saisonnalité
+                </li>
+                <li className="flex items-center gap-2">
+                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  Audit SEO Airbnb & concurrence
+                </li>
+                <li className="flex items-center gap-2">
+                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  Coaching 1-to-1 inclus
+                </li>
+              </ul>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 mb-5">
+                <div className="text-xs text-white/70 mb-1">Objectif concret</div>
+                <div className="font-bold text-white">
+                  Augmenter votre chiffre d'affaires —{" "}
+                  <span className="text-[#FF5A5F]">vous fixez l'ambition</span>.
+                </div>
+              </div>
+
+              <div className="flex items-baseline gap-1">
+                <span className="text-sm text-white/70">Tarif</span>
+                <span className="text-xl font-black text-white">sur mesure</span>
               </div>
             </div>
           </div>
@@ -90,7 +158,7 @@ export default function Services() {
           <div
             id="loyer-fixe"
             data-testid="service-card-fixed-rent"
-            className="group relative bg-[#006233] text-white rounded-3xl p-8 md:p-10 hover:shadow-2xl transition-all overflow-hidden"
+            className="group relative bg-[#006233] text-white rounded-3xl p-8 hover:shadow-2xl transition-all overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="relative">
@@ -98,25 +166,22 @@ export default function Services() {
                 <ShieldCheck size={14} />
                 Zéro risque
               </div>
-              <h3 className="text-3xl font-bold mb-3">
+              <h3 className="text-2xl md:text-3xl font-bold mb-3">
                 Loyer Fixe Garanti
               </h3>
-              <p className="text-white/85 mb-6">
-                On vous loue votre bien en sous-location professionnelle. Un
-                revenu fixe chaque mois, quoi qu'il arrive.
+              <p className="text-white/85 mb-6 text-[15px]">
+                Revenu fixe chaque mois, quoi qu'il arrive. Zéro gestion.
               </p>
-              <ul className="space-y-2 mb-6 text-[15px]">
-                <li>✓ Revenu garanti même en basse saison</li>
-                <li>✓ Versement mensuel ponctuel</li>
-                <li>✓ Entretien pris en charge à 100%</li>
-                <li>✓ Contrat de sous-location professionnelle</li>
-                <li>✓ Vos vacances entièrement libres</li>
+              <ul className="space-y-2 mb-6 text-sm">
+                <li>✓ Revenu garanti même basse saison</li>
+                <li>✓ Virement mensuel ponctuel</li>
+                <li>✓ Entretien 100% pris en charge</li>
+                <li>✓ Contrat pro de sous-location</li>
+                <li>✓ Vacances entièrement libres</li>
               </ul>
-              <div className="flex items-baseline gap-2">
+              <div className="flex items-baseline gap-1">
                 <span className="text-sm text-white/75">Jusqu'à</span>
-                <span className="text-3xl font-black text-white">
-                  70%
-                </span>
+                <span className="text-2xl font-black">70%</span>
                 <span className="text-sm text-white/75">du revenu estimé</span>
               </div>
             </div>
@@ -126,7 +191,7 @@ export default function Services() {
         {/* Inclus grid */}
         <div>
           <h3 className="text-2xl font-bold text-[#1A1A1A] mb-8">
-            Tout ce qui est inclus
+            Tout ce qui est inclus dans la conciergerie
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s, i) => (
