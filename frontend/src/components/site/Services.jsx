@@ -42,7 +42,7 @@ export default function Services() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-16">
-          <span className="text-sm font-bold text-[#FF5A5F] uppercase tracking-wider">
+          <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
             Nos services
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
@@ -60,9 +60,9 @@ export default function Services() {
             data-testid="service-card-concierge"
             className="group relative bg-[#FAF9F6] rounded-3xl p-8 border border-[#E5E5E5] hover:shadow-xl transition-all overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-40 h-40 bg-[#FF5A5F]/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-40 h-40 bg-[#C1272D]/5 rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="relative">
-              <div className="inline-flex items-center gap-2 bg-[#FF5A5F]/10 text-[#FF5A5F] rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
+              <div className="inline-flex items-center gap-2 bg-[#C1272D]/10 text-[#C1272D] rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
                 <BadgeDollarSign size={14} />
                 Conciergerie 360°
               </div>
@@ -81,7 +81,7 @@ export default function Services() {
               </ul>
               <div className="flex items-baseline gap-1">
                 <span className="text-sm text-[#4B5563]">Dès</span>
-                <span className="text-2xl font-black text-[#FF5A5F]">20%</span>
+                <span className="text-2xl font-black text-[#C1272D]">20%</span>
                 <span className="text-sm text-[#4B5563]">commission</span>
               </div>
             </div>
@@ -94,16 +94,16 @@ export default function Services() {
             className="group relative bg-gradient-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] text-white rounded-3xl p-8 hover:shadow-2xl transition-all overflow-hidden md:scale-105 md:-translate-y-2"
           >
             {/* Shine accent */}
-            <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#FF5A5F]/20 rounded-full blur-3xl" />
+            <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#C1272D]/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-[#006233]/20 rounded-full blur-3xl" />
 
             <div className="relative">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF5A5F] to-[#FF8A5F] text-white rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4 shadow-lg">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#C1272D] to-[#E85555] text-white rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4 shadow-lg">
                 <Rocket size={14} />
                 Nouveau · Boost one-shot
               </div>
               <h3 className="text-2xl md:text-3xl font-bold mb-1">
-                <span className="bg-gradient-to-r from-[#FF5A5F] to-[#FF8A5F] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C1272D] to-[#E85555] bg-clip-text text-transparent">
                   Super
                 </span>{" "}
                 Daribnb
@@ -118,23 +118,23 @@ export default function Services() {
               </p>
               <ul className="space-y-2 mb-6 text-sm text-white/95">
                 <li className="flex items-center gap-2">
-                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  <Wand2 size={14} className="text-[#C1272D] flex-shrink-0" />
                   Photos professionnelles
                 </li>
                 <li className="flex items-center gap-2">
-                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  <Wand2 size={14} className="text-[#C1272D] flex-shrink-0" />
                   Refonte complète de l'annonce
                 </li>
                 <li className="flex items-center gap-2">
-                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  <Wand2 size={14} className="text-[#C1272D] flex-shrink-0" />
                   Stratégie tarifaire & saisonnalité
                 </li>
                 <li className="flex items-center gap-2">
-                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  <Wand2 size={14} className="text-[#C1272D] flex-shrink-0" />
                   Audit SEO Airbnb & concurrence
                 </li>
                 <li className="flex items-center gap-2">
-                  <Wand2 size={14} className="text-[#FF5A5F] flex-shrink-0" />
+                  <Wand2 size={14} className="text-[#C1272D] flex-shrink-0" />
                   Coaching 1-to-1 inclus
                 </li>
               </ul>
@@ -143,7 +143,7 @@ export default function Services() {
                 <div className="text-xs text-white/70 mb-1">Objectif concret</div>
                 <div className="font-bold text-white">
                   Augmenter votre chiffre d'affaires —{" "}
-                  <span className="text-[#FF5A5F]">vous fixez l'ambition</span>.
+                  <span className="text-[#C1272D]">vous fixez l'ambition</span>.
                 </div>
               </div>
 
@@ -198,10 +198,10 @@ export default function Services() {
               <div
                 key={s.title}
                 data-testid={`feature-${i}`}
-                className="bg-white border border-[#E5E5E5] rounded-2xl p-6 hover:border-[#FF5A5F]/40 hover:shadow-md transition-all"
+                className="bg-white border border-[#E5E5E5] rounded-2xl p-6 hover:border-[#C1272D]/40 hover:shadow-md transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#FF5A5F]/10 flex items-center justify-center mb-4">
-                  <s.icon className="w-6 h-6 text-[#FF5A5F]" />
+                <div className="w-12 h-12 rounded-xl bg-[#C1272D]/10 flex items-center justify-center mb-4">
+                  <s.icon className="w-6 h-6 text-[#C1272D]" />
                 </div>
                 <h4 className="font-bold text-[#1A1A1A] mb-2">{s.title}</h4>
                 <p className="text-sm text-[#4B5563]">{s.desc}</p>

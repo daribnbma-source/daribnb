@@ -67,10 +67,10 @@ export default function Simulator() {
     <div id="simulator" className="relative" data-testid="simulator-card">
       <div className="bg-white/90 backdrop-blur-xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.12)] rounded-3xl p-8 md:p-10">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-full bg-[#FF5A5F]/10 flex items-center justify-center">
-            <Sparkles className="w-5 h-5 text-[#FF5A5F]" />
+          <div className="w-10 h-10 rounded-full bg-[#C1272D]/10 flex items-center justify-center">
+            <Sparkles className="w-5 h-5 text-[#C1272D]" />
           </div>
-          <span className="text-sm font-semibold text-[#FF5A5F] uppercase tracking-wider">
+          <span className="text-sm font-semibold text-[#C1272D] uppercase tracking-wider">
             Simulateur gratuit
           </span>
         </div>
@@ -143,7 +143,7 @@ export default function Simulator() {
             type="submit"
             disabled={loading}
             data-testid="simulator-submit-btn"
-            className="h-12 bg-[#FF5A5F] hover:bg-[#E0484D] disabled:opacity-60 text-white rounded-xl px-6 font-semibold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+            className="h-12 bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl px-6 font-semibold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
           >
             {loading ? (
               <Loader2 className="w-5 h-5 animate-spin" />
@@ -162,7 +162,7 @@ export default function Simulator() {
             data-testid="simulator-result"
             className="mt-10 grid md:grid-cols-3 gap-4 fade-up"
           >
-            <div className="bg-gradient-to-br from-[#FF5A5F] to-[#E0484D] text-white rounded-2xl p-6 shadow-lg">
+            <div className="bg-gradient-to-br from-[#C1272D] to-[#A01D22] text-white rounded-2xl p-6 shadow-lg">
               <p className="text-sm opacity-90 mb-1">Revenu mensuel estimé</p>
               <p className="text-3xl md:text-4xl font-black">
                 {fmt(result.monthly_min)} — {fmt(result.monthly_max)} MAD
@@ -194,7 +194,7 @@ export default function Simulator() {
               2025. Contactez-nous pour une estimation personnalisée gratuite.
               <a
                 href="#contact"
-                className="ml-2 text-[#FF5A5F] font-semibold hover:underline"
+                className="ml-2 text-[#C1272D] font-semibold hover:underline"
               >
                 Demander un RDV →
               </a>

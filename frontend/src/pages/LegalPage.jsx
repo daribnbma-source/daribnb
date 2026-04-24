@@ -14,7 +14,7 @@ export default function LegalPage({ title, children }) {
           </Link>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] hover:text-[#FF5A5F] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] hover:text-[#C1272D] transition-colors"
           >
             <ArrowLeft size={16} /> Retour à l'accueil
           </Link>
@@ -25,7 +25,7 @@ export default function LegalPage({ title, children }) {
         <h1 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4">
           {title}
         </h1>
-        <div className="h-1 w-16 bg-[#FF5A5F] rounded-full mb-10" />
+        <div className="h-1 w-16 bg-[#C1272D] rounded-full mb-10" />
         <div className="prose prose-lg max-w-none text-[#1A1A1A] space-y-6 leading-relaxed">
           {children}
         </div>

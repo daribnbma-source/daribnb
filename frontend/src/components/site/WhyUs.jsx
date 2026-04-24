@@ -37,7 +37,7 @@ export default function WhyUs() {
         {/* Intro personal header with portrait */}
         <div className="max-w-4xl mb-16 flex flex-col md:flex-row items-start md:items-center gap-8">
           <div className="relative flex-shrink-0">
-            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl ring-4 ring-[#FF5A5F]/20">
+            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl ring-4 ring-[#C1272D]/20">
               <img
                 src="/assets/marwan-portrait.png"
                 alt="Marwan, fondateur de Daribnb"
@@ -51,11 +51,11 @@ export default function WhyUs() {
             </div>
           </div>
           <div>
-            <span className="text-sm font-bold text-[#FF5A5F] uppercase tracking-wider">
+            <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
               Mon histoire
             </span>
             <h2 className="mt-2 text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-tight">
-              Enchanté, moi c'est <span className="text-[#FF5A5F]">Marwan</span>.
+              Enchanté, moi c'est <span className="text-[#C1272D]">Marwan</span>.
             </h2>
             <p className="mt-3 text-base md:text-lg text-[#4B5563]">
               Fondateur de Daribnb — expert Airbnb & propriétaire.
@@ -91,7 +91,7 @@ export default function WhyUs() {
             <div className="relative bg-[#FAF9F6] rounded-3xl p-6 shadow-sm border border-[#E5E5E5]">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <svg viewBox="0 0 32 32" className="w-5 h-5" fill="#FF5A5F">
+                  <svg viewBox="0 0 32 32" className="w-5 h-5" fill="#C1272D">
                     <path d="M16 1C7.7 1 1 7.7 1 16s6.7 15 15 15 15-6.7 15-15S24.3 1 16 1zm7.3 22.1c-.7 1-1.8 1.5-3 1.5-1.1 0-2.2-.4-3-1.2-.6-.6-1.1-1.3-1.4-2-.3.7-.8 1.4-1.4 2-.8.8-1.9 1.2-3 1.2s-2.2-.5-3-1.5c-1.2-1.6-1.3-3.7-.3-5.5 1-1.9 2.8-3.6 5.6-5.3.8-.5 1.4-.8 2-1.1.3-.1.5-.2.7-.3.5-.2 1.1-.2 1.6 0 .2.1.4.2.7.3.6.3 1.2.6 2 1.1 2.8 1.7 4.6 3.4 5.6 5.3 1 1.8.9 3.9-.3 5.5z"/>
                   </svg>
                   <span className="text-xs font-semibold text-[#4B5563] uppercase tracking-wider">
@@ -134,7 +134,7 @@ export default function WhyUs() {
               {STORY_POINTS.map((p) => (
                 <div
                   key={p.title}
-                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#FAF9F6] border border-[#E5E5E5] hover:border-[#FF5A5F]/30 transition-all"
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#FAF9F6] border border-[#E5E5E5] hover:border-[#C1272D]/30 transition-all"
                 >
                   <div className="w-11 h-11 rounded-xl bg-[#006233]/10 flex items-center justify-center flex-shrink-0">
                     <p.icon className="w-5 h-5 text-[#006233]" />
@@ -153,8 +153,8 @@ export default function WhyUs() {
                   key={s.l}
                   className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#E5E5E5]"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-[#FF5A5F]/10 flex items-center justify-center flex-shrink-0">
-                    <s.icon className="w-4 h-4 text-[#FF5A5F]" />
+                  <div className="w-9 h-9 rounded-lg bg-[#C1272D]/10 flex items-center justify-center flex-shrink-0">
+                    <s.icon className="w-4 h-4 text-[#C1272D]" />
                   </div>
                   <div>
                     <div className="text-xl font-black text-[#1A1A1A] leading-none">

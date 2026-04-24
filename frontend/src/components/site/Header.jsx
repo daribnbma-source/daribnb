@@ -29,7 +29,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 h-24 flex items-center justify-between">
         <a href="#" data-testid="nav-logo" className="flex items-center">
           <Logo />
         </a>
@@ -40,7 +40,7 @@ export default function Header() {
               key={item.href}
               data-testid={`nav-link-${item.label.toLowerCase().replace(/\s/g, "-")}`}
               href={item.href}
-              className="text-[15px] font-medium text-[#1A1A1A] hover:text-[#FF5A5F] transition-colors"
+              className="text-[15px] font-medium text-[#1A1A1A] hover:text-[#C1272D] transition-colors"
             >
               {item.label}
             </a>
@@ -51,7 +51,7 @@ export default function Header() {
           <a
             href="#simulator"
             data-testid="nav-cta-estimate"
-            className="bg-[#FF5A5F] hover:bg-[#E0484D] text-white rounded-full px-6 py-3 font-semibold text-sm transition-all shadow-sm hover:shadow-md"
+            className="bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-6 py-3 font-semibold text-sm transition-all shadow-sm hover:shadow-md"
           >
             Estimer mes revenus
           </a>
@@ -82,7 +82,7 @@ export default function Header() {
           <a
             href="#simulator"
             onClick={() => setOpen(false)}
-            className="block bg-[#FF5A5F] text-white text-center rounded-full px-6 py-3 font-semibold"
+            className="block bg-[#C1272D] text-white text-center rounded-full px-6 py-3 font-semibold"
           >
             Estimer mes revenus
           </a>

@@ -61,7 +61,7 @@ export default function Privacy() {
           personnelles au Maroc, vous disposez d'un droit d'accès, de
           rectification, d'opposition et de suppression de vos données. Pour
           exercer ces droits, écrivez à{" "}
-          <a href="mailto:daribnb.ma@gmail.com" className="text-[#FF5A5F] font-semibold">
+          <a href="mailto:daribnb.ma@gmail.com" className="text-[#C1272D] font-semibold">
             daribnb.ma@gmail.com
           </a>.
         </p>

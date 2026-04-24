@@ -66,7 +66,7 @@ export default function Pricing() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-16">
-          <span className="text-sm font-bold text-[#FF5A5F] uppercase tracking-wider">
+          <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
             Tarifs transparents
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
@@ -97,7 +97,7 @@ export default function Pricing() {
               >
                 {isDark && (
                   <>
-                    <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#FF5A5F]/15 rounded-full blur-3xl pointer-events-none" />
+                    <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#C1272D]/15 rounded-full blur-3xl pointer-events-none" />
                     <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-[#006233]/15 rounded-full blur-3xl pointer-events-none" />
                   </>
                 )}
@@ -105,9 +105,9 @@ export default function Pricing() {
                   <div
                     className={`relative inline-flex px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-5 ${
                       isGreen
-                        ? "bg-[#FF5A5F] text-white"
+                        ? "bg-[#C1272D] text-white"
                         : isDark
-                        ? "bg-gradient-to-r from-[#FF5A5F] to-[#FF8A5F] text-white shadow-lg"
+                        ? "bg-gradient-to-r from-[#C1272D] to-[#E85555] text-white shadow-lg"
                         : "bg-[#1A1A1A] text-white"
                     }`}
                   >
@@ -116,19 +116,19 @@ export default function Pricing() {
                 )}
                 <div
                   className={`relative w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${
-                    isGreen || isDark ? "bg-white/15" : "bg-[#FF5A5F]/10"
+                    isGreen || isDark ? "bg-white/15" : "bg-[#C1272D]/10"
                   }`}
                 >
                   <p.icon
                     className={`w-6 h-6 ${
-                      isGreen || isDark ? "text-white" : "text-[#FF5A5F]"
+                      isGreen || isDark ? "text-white" : "text-[#C1272D]"
                     }`}
                   />
                 </div>
                 <h3 className="relative text-2xl font-bold mb-2">
                   {isDark ? (
                     <>
-                      <span className="bg-gradient-to-r from-[#FF5A5F] to-[#FF8A5F] bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-[#C1272D] to-[#E85555] bg-clip-text text-transparent">
                         Super
                       </span>{" "}
                       Daribnb
@@ -162,7 +162,7 @@ export default function Pricing() {
                           isGreen
                             ? "bg-white/20"
                             : isDark
-                            ? "bg-[#FF5A5F]/20"
+                            ? "bg-[#C1272D]/20"
                             : "bg-[#006233]/10"
                         }`}
                       >
@@ -172,7 +172,7 @@ export default function Pricing() {
                             isGreen
                               ? "text-white"
                               : isDark
-                              ? "text-[#FF5A5F]"
+                              ? "text-[#C1272D]"
                               : "text-[#006233]"
                           }
                           strokeWidth={3}
@@ -195,8 +195,8 @@ export default function Pricing() {
                     isGreen
                       ? "bg-white text-[#006233] hover:bg-[#f5f5f5]"
                       : isDark
-                      ? "bg-gradient-to-r from-[#FF5A5F] to-[#FF8A5F] text-white hover:opacity-90 shadow-lg"
-                      : "bg-[#FF5A5F] text-white hover:bg-[#E0484D]"
+                      ? "bg-gradient-to-r from-[#C1272D] to-[#E85555] text-white hover:opacity-90 shadow-lg"
+                      : "bg-[#C1272D] text-white hover:bg-[#A01D22]"
                   }`}
                 >
                   {p.cta}

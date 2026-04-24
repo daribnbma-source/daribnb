@@ -27,7 +27,7 @@ export default function Coverage() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-12">
-          <span className="text-sm font-bold text-[#FF5A5F] uppercase tracking-wider">
+          <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
             Couverture nationale
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
@@ -56,7 +56,7 @@ export default function Coverage() {
                   data-testid={`city-card-${c.toLowerCase().replace(/\s|è|é/g, "-")}`}
                   className="bg-white/15 backdrop-blur-md border border-white/20 text-white rounded-xl px-4 py-3 flex items-center gap-2 hover:bg-white/25 transition-all"
                 >
-                  <MapPin size={14} className="text-[#FF5A5F]" />
+                  <MapPin size={14} className="text-[#C1272D]" />
                   <span className="font-semibold text-sm">{c}</span>
                 </div>
               ))}

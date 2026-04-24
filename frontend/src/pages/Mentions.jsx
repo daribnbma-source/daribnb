@@ -30,7 +30,7 @@ export default function Mentions() {
         <p>
           Le Site est hébergé via une infrastructure cloud internationale.
           Pour toute demande relative à l'hébergement, veuillez nous écrire à{" "}
-          <a href="mailto:daribnb.ma@gmail.com" className="text-[#FF5A5F] font-semibold">
+          <a href="mailto:daribnb.ma@gmail.com" className="text-[#C1272D] font-semibold">
             daribnb.ma@gmail.com
           </a>.
         </p>
@@ -64,8 +64,8 @@ export default function Mentions() {
           Pour toute question relative au Site ou à nos services, contactez-nous :
         </p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Email : <a href="mailto:daribnb.ma@gmail.com" className="text-[#FF5A5F] font-semibold">daribnb.ma@gmail.com</a></li>
-          <li>Téléphone / WhatsApp : <a href="tel:+212646218407" className="text-[#FF5A5F] font-semibold">+212 6 46 21 84 07</a></li>
+          <li>Email : <a href="mailto:daribnb.ma@gmail.com" className="text-[#C1272D] font-semibold">daribnb.ma@gmail.com</a></li>
+          <li>Téléphone / WhatsApp : <a href="tel:+212646218407" className="text-[#C1272D] font-semibold">+212 6 46 21 84 07</a></li>
         </ul>
       </section>
     </LegalPage>

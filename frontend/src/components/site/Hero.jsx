@@ -8,8 +8,9 @@ const HERO_IMG =
 export default function Hero() {
   return (
     <section
+      id="hero"
       data-testid="hero-section"
-      className="relative pt-28 pb-24 md:pt-36 md:pb-40 zellige-pattern overflow-hidden"
+      className="relative pt-32 pb-24 md:pt-40 md:pb-40 zellige-pattern overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -26,7 +27,7 @@ export default function Hero() {
             >
               Votre bien Airbnb,{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-[#FF5A5F]">géré comme un pro.</span>
+                <span className="relative z-10 text-[#C1272D]">géré comme un pro.</span>
               </span>
             </h1>
 
@@ -54,7 +55,7 @@ export default function Hero() {
               <a
                 href="#simulator"
                 data-testid="hero-cta-primary"
-                className="inline-flex items-center justify-center gap-2 bg-[#FF5A5F] hover:bg-[#E0484D] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl group"
+                className="inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl group"
               >
                 Estimer mes revenus
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -76,7 +77,7 @@ export default function Hero() {
             <div className="mt-10 flex items-center gap-6">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-[#FF5A5F] text-[#FF5A5F]" />
+                  <Star key={i} size={16} className="fill-[#C1272D] text-[#C1272D]" />
                 ))}
               </div>
               <p className="text-sm text-[#4B5563]">
@@ -98,7 +99,7 @@ export default function Hero() {
               </div>
               {/* Floating badge */}
               <div className="hidden md:flex absolute -top-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-black/5 items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#FF5A5F]/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-[#C1272D]/10 flex items-center justify-center">
                   <span className="text-2xl">🇲🇦</span>
                 </div>
                 <div>

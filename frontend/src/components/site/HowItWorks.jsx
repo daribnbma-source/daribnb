@@ -33,9 +33,9 @@ export default function HowItWorks() {
             <div
               key={step.n}
               data-testid={`step-${step.n}`}
-              className="relative bg-white rounded-2xl p-6 border border-[#E5E5E5] hover:border-[#FF5A5F]/30 hover:shadow-md transition-all"
+              className="relative bg-white rounded-2xl p-6 border border-[#E5E5E5] hover:border-[#C1272D]/30 hover:shadow-md transition-all"
             >
-              <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-[#FF5A5F] text-white flex items-center justify-center font-black text-lg shadow-md">
+              <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-[#C1272D] text-white flex items-center justify-center font-black text-lg shadow-md">
                 {step.n}
               </div>
               <div className="pt-4">

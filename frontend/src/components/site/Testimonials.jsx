@@ -41,7 +41,7 @@ export default function Testimonials() {
               <Star
                 key={i}
                 size={20}
-                className="fill-[#FF5A5F] text-[#FF5A5F]"
+                className="fill-[#C1272D] text-[#C1272D]"
               />
             ))}
             <span className="ml-2 font-bold text-[#1A1A1A]">4.9/5</span>
@@ -56,13 +56,13 @@ export default function Testimonials() {
               data-testid={`testimonial-card-${i + 1}`}
               className="bg-white rounded-2xl p-8 border border-[#E5E5E5] hover:shadow-lg transition-all"
             >
-              <Quote className="w-8 h-8 text-[#FF5A5F]/20 mb-4" />
+              <Quote className="w-8 h-8 text-[#C1272D]/20 mb-4" />
               <div className="flex gap-1 mb-4">
                 {[...Array(t.r)].map((_, i) => (
                   <Star
                     key={i}
                     size={14}
-                    className="fill-[#FF5A5F] text-[#FF5A5F]"
+                    className="fill-[#C1272D] text-[#C1272D]"
                   />
                 ))}
               </div>
@@ -70,7 +70,7 @@ export default function Testimonials() {
                 "{t.q}"
               </p>
               <div className="flex items-center gap-3 pt-4 border-t border-[#E5E5E5]">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FF5A5F] to-[#006233] flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C1272D] to-[#006233] flex items-center justify-center text-white font-bold">
                   {t.n.charAt(0)}
                 </div>
                 <div>

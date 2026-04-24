@@ -84,7 +84,7 @@ export default function ExitIntentPopup() {
         className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden"
       >
         {/* Header banner */}
-        <div className="relative bg-gradient-to-br from-[#FF5A5F] to-[#E0484D] text-white p-8 pb-20">
+        <div className="relative bg-gradient-to-br from-[#C1272D] to-[#A01D22] text-white p-8 pb-20">
           <button
             onClick={() => setOpen(false)}
             data-testid="exit-popup-close"
@@ -119,7 +119,7 @@ export default function ExitIntentPopup() {
                 </p>
                 <button
                   onClick={() => setOpen(false)}
-                  className="mt-5 bg-[#FF5A5F] hover:bg-[#E0484D] text-white rounded-full px-6 py-2.5 font-semibold text-sm"
+                  className="mt-5 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-6 py-2.5 font-semibold text-sm"
                 >
                   Fermer
                 </button>
@@ -127,8 +127,8 @@ export default function ExitIntentPopup() {
             ) : (
               <>
                 <div className="flex items-start gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-full bg-[#FF5A5F]/10 flex items-center justify-center flex-shrink-0">
-                    <Sparkles className="w-5 h-5 text-[#FF5A5F]" />
+                  <div className="w-10 h-10 rounded-full bg-[#C1272D]/10 flex items-center justify-center flex-shrink-0">
+                    <Sparkles className="w-5 h-5 text-[#C1272D]" />
                   </div>
                   <div>
                     <p className="text-sm text-[#1A1A1A] font-semibold">
@@ -175,7 +175,7 @@ export default function ExitIntentPopup() {
                     type="submit"
                     disabled={loading}
                     data-testid="exit-popup-submit"
-                    className="w-full h-12 bg-[#FF5A5F] hover:bg-[#E0484D] disabled:opacity-60 text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2"
+                    className="w-full h-12 bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <Loader2 className="w-5 h-5 animate-spin" />

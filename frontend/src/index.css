@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
         --card-foreground: 0 0% 10%;
         --popover: 0 0% 100%;
         --popover-foreground: 0 0% 10%;
-        --primary: 359 100% 68%;
+        --primary: 356 66% 46%;
         --primary-foreground: 0 0% 100%;
         --secondary: 146 100% 19%;
         --secondary-foreground: 0 0% 100%;
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
         --destructive-foreground: 0 0% 98%;
         --border: 0 0% 90%;
         --input: 0 0% 90%;
-        --ring: 359 100% 68%;
+        --ring: 356 66% 46%;
         --radius: 0.75rem;
     }
 }
@@ -90,11 +90,11 @@ html {
     background: #d4d4d4;
     border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover { background: #FF5A5F; }
+::-webkit-scrollbar-thumb:hover { background: #C1272D; }
 
 /* Text selection */
 ::selection {
-    background: #FF5A5F;
+    background: #C1272D;
     color: white;
 }
 
