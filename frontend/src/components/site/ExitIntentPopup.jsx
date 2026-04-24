@@ -84,7 +84,7 @@ export default function ExitIntentPopup() {
         className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden"
       >
         {/* Header banner */}
-        <div className="relative bg-gradient-to-br from-[#C1272D] to-[#A01D22] text-white p-8 pb-20">
+        <div className="relative bg-gradient-to-br from-[#C1272D] to-[#A01D22] text-white px-8 pt-8 pb-8">
           <button
             onClick={() => setOpen(false)}
             data-testid="exit-popup-close"
@@ -93,7 +93,7 @@ export default function ExitIntentPopup() {
           >
             <X size={18} />
           </button>
-          <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-3">
             <Gift size={13} />
             Offre limitée
           </div>
@@ -106,9 +106,8 @@ export default function ExitIntentPopup() {
           </p>
         </div>
 
-        <div className="px-8 pb-8 -mt-12">
-          <div className="bg-white rounded-2xl shadow-lg border border-[#E5E5E5] p-6">
-            {sent ? (
+        <div className="px-6 md:px-8 py-6">
+          {sent ? (
               <div className="text-center py-4" data-testid="exit-popup-success">
                 <CheckCircle2 className="w-14 h-14 text-[#006233] mx-auto mb-3" />
                 <h4 className="font-bold text-[#1A1A1A] text-lg">
@@ -189,7 +188,6 @@ export default function ExitIntentPopup() {
                 </p>
               </>
             )}
-          </div>
         </div>
       </div>
     </div>
