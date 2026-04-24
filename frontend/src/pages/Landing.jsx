@@ -12,6 +12,7 @@ import Contact from "../components/site/Contact";
 import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
 import ExitIntentPopup from "../components/site/ExitIntentPopup";
+import BlogTeaser from "../components/site/BlogTeaser";
 
 export default function Landing() {
   return (
@@ -25,6 +26,7 @@ export default function Landing() {
         <Testimonials />
         <Coverage />
         <Pricing />
+        <BlogTeaser />
         <FAQ />
         <Contact />
       </main>

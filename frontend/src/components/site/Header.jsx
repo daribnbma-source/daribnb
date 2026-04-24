@@ -3,11 +3,12 @@ import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
 const NAV = [
-  { href: "#services", label: "Services" },
-  { href: "#super-daribnb", label: "Super Daribnb" },
-  { href: "#loyer-fixe", label: "Loyer Fixe" },
-  { href: "#histoire", label: "Mon histoire" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#services", label: "Services" },
+  { href: "/#super-daribnb", label: "Super Daribnb" },
+  { href: "/#loyer-fixe", label: "Loyer Fixe" },
+  { href: "/#histoire", label: "Mon histoire" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export default function Header() {

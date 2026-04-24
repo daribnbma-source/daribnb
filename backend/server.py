@@ -11,6 +11,8 @@ from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 import resend
+from fastapi.responses import Response
+from blog_seed import POSTS as BLOG_SEED
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -198,6 +200,90 @@ async def list_contacts():
         if isinstance(it.get('created_at'), str):
             it['created_at'] = datetime.fromisoformat(it['created_at'])
     return items
+
+
+# ============ Blog ============
+class BlogPost(BaseModel):
+    slug: str
+    title: str
+    excerpt: str
+    meta_description: str
+    keywords: str
+    city: str
+    cover: str
+    published_at: datetime
+    read_time: int
+    content: str
+
+
+class BlogPostSummary(BaseModel):
+    slug: str
+    title: str
+    excerpt: str
+    city: str
+    cover: str
+    published_at: datetime
+    read_time: int
+
+
+@api_router.get("/blog", response_model=List[BlogPostSummary])
+async def list_posts():
+    items = await db.blog_posts.find(
+        {}, {"_id": 0, "content": 0, "meta_description": 0, "keywords": 0}
+    ).sort("published_at", -1).to_list(100)
+    for it in items:
+        if isinstance(it.get('published_at'), str):
+            it['published_at'] = datetime.fromisoformat(it['published_at'].replace('Z', '+00:00'))
+    return items
+
+
+@api_router.get("/blog/{slug}", response_model=BlogPost)
+async def get_post(slug: str):
+    post = await db.blog_posts.find_one({"slug": slug}, {"_id": 0})
+    if not post:
+        raise HTTPException(status_code=404, detail="Article introuvable")
+    if isinstance(post.get('published_at'), str):
+        post['published_at'] = datetime.fromisoformat(post['published_at'].replace('Z', '+00:00'))
+    return post
+
+
+@app.get("/sitemap.xml")
+async def sitemap():
+    base = os.environ.get("SITE_URL", "https://daribnb.ma")
+    posts = await db.blog_posts.find({}, {"_id": 0, "slug": 1, "published_at": 1}).to_list(500)
+    urls = [
+        (base + "/", "1.0"),
+        (base + "/blog", "0.9"),
+        (base + "/mentions-legales", "0.3"),
+        (base + "/confidentialite", "0.3"),
+        (base + "/cgv", "0.3"),
+    ]
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for url, priority in urls:
+        xml.append(f'<url><loc>{url}</loc><priority>{priority}</priority></url>')
+    for p in posts:
+        xml.append(f'<url><loc>{base}/blog/{p["slug"]}</loc><lastmod>{p["published_at"][:10] if isinstance(p["published_at"], str) else p["published_at"].strftime("%Y-%m-%d")}</lastmod><priority>0.8</priority></url>')
+    xml.append('</urlset>')
+    return Response(content="\n".join(xml), media_type="application/xml")
+
+
+@app.get("/robots.txt")
+async def robots():
+    base = os.environ.get("SITE_URL", "https://daribnb.ma")
+    content = f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n"
+    return Response(content=content, media_type="text/plain")
+
+
+@app.on_event("startup")
+async def seed_blog():
+    for post in BLOG_SEED:
+        await db.blog_posts.update_one(
+            {"slug": post["slug"]},
+            {"$set": post},
+            upsert=True,
+        )
+    logger.info(f"Blog seeded: {len(BLOG_SEED)} posts")
 
 
 app.include_router(api_router)
