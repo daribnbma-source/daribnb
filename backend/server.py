@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, Request, Depends, Cookie
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -9,9 +9,10 @@ from pathlib import Path
 from pydantic import BaseModel, Field, EmailStr
 from typing import List, Optional
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import resend
-from fastapi.responses import Response
+import httpx
+from fastapi.responses import Response, JSONResponse
 from blog_seed import POSTS as BLOG_SEED
 
 ROOT_DIR = Path(__file__).parent
@@ -24,6 +25,11 @@ db = client[os.environ['DB_NAME']]
 RESEND_API_KEY = os.environ.get('RESEND_API_KEY')
 SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
 NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL', 'daribnb.ma@gmail.com')
+ADMIN_EMAILS = {
+    e.strip().lower()
+    for e in os.environ.get('ADMIN_EMAILS', 'daribnb.ma@gmail.com').split(',')
+    if e.strip()
+}
 if RESEND_API_KEY:
     resend.api_key = RESEND_API_KEY
 
@@ -247,6 +253,250 @@ async def get_post(slug: str):
     return post
 
 
+# ============ Auth (Emergent Google OAuth) ============
+class AuthUser(BaseModel):
+    user_id: str
+    email: str
+    name: str
+    picture: Optional[str] = None
+    is_admin: bool = False
+
+
+async def get_current_user(
+    request: Request,
+    session_token: Optional[str] = Cookie(None),
+) -> AuthUser:
+    # Try cookie first, then Authorization header
+    token = session_token
+    if not token:
+        auth = request.headers.get('Authorization') or ''
+        if auth.startswith('Bearer '):
+            token = auth[7:]
+    if not token:
+        raise HTTPException(status_code=401, detail="Non authentifié")
+
+    session = await db.user_sessions.find_one({"session_token": token}, {"_id": 0})
+    if not session:
+        raise HTTPException(status_code=401, detail="Session invalide")
+
+    expires_at = session.get("expires_at")
+    if isinstance(expires_at, str):
+        expires_at = datetime.fromisoformat(expires_at)
+    if expires_at and expires_at.tzinfo is None:
+        expires_at = expires_at.replace(tzinfo=timezone.utc)
+    if expires_at and expires_at < datetime.now(timezone.utc):
+        raise HTTPException(status_code=401, detail="Session expirée")
+
+    user = await db.users.find_one({"user_id": session["user_id"]}, {"_id": 0})
+    if not user:
+        raise HTTPException(status_code=401, detail="Utilisateur introuvable")
+
+    is_admin = user["email"].lower() in ADMIN_EMAILS
+    return AuthUser(
+        user_id=user["user_id"],
+        email=user["email"],
+        name=user.get("name", ""),
+        picture=user.get("picture"),
+        is_admin=is_admin,
+    )
+
+
+async def require_admin(user: AuthUser = Depends(get_current_user)) -> AuthUser:
+    if not user.is_admin:
+        raise HTTPException(status_code=403, detail="Accès admin requis")
+    return user
+
+
+@api_router.post("/auth/session")
+async def exchange_session(request: Request):
+    """Exchange a session_id (from OAuth fragment) for a session_token cookie."""
+    body = await request.json()
+    session_id = body.get("session_id")
+    if not session_id:
+        raise HTTPException(status_code=400, detail="session_id requis")
+
+    # Call Emergent Auth
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as hc:
+            r = await hc.get(
+                "https://demobackend.emergentagent.com/auth/v1/env/oauth/session-data",
+                headers={"X-Session-ID": session_id},
+            )
+        if r.status_code != 200:
+            raise HTTPException(status_code=401, detail="OAuth session invalide")
+        data = r.json()
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Auth exchange failed: {e}")
+        raise HTTPException(status_code=500, detail="Erreur d'authentification")
+
+    email = data.get("email", "").lower()
+    name = data.get("name", "")
+    picture = data.get("picture")
+    session_token = data["session_token"]
+
+    # Check admin allowlist
+    if email not in ADMIN_EMAILS:
+        raise HTTPException(status_code=403, detail="Accès réservé à l'administrateur Daribnb.")
+
+    # Upsert user
+    existing = await db.users.find_one({"email": email}, {"_id": 0})
+    if existing:
+        user_id = existing["user_id"]
+        await db.users.update_one(
+            {"user_id": user_id},
+            {"$set": {"name": name, "picture": picture, "last_login": datetime.now(timezone.utc).isoformat()}},
+        )
+    else:
+        user_id = f"user_{uuid.uuid4().hex[:12]}"
+        await db.users.insert_one({
+            "user_id": user_id,
+            "email": email,
+            "name": name,
+            "picture": picture,
+            "created_at": datetime.now(timezone.utc).isoformat(),
+        })
+
+    # Store session
+    expires_at = datetime.now(timezone.utc) + timedelta(days=7)
+    await db.user_sessions.insert_one({
+        "user_id": user_id,
+        "session_token": session_token,
+        "expires_at": expires_at.isoformat(),
+        "created_at": datetime.now(timezone.utc).isoformat(),
+    })
+
+    resp = JSONResponse({
+        "user_id": user_id,
+        "email": email,
+        "name": name,
+        "picture": picture,
+        "is_admin": True,
+    })
+    resp.set_cookie(
+        key="session_token",
+        value=session_token,
+        httponly=True,
+        secure=True,
+        samesite="none",
+        max_age=7 * 24 * 3600,
+        path="/",
+    )
+    return resp
+
+
+@api_router.get("/auth/me", response_model=AuthUser)
+async def get_me(user: AuthUser = Depends(get_current_user)):
+    return user
+
+
+@api_router.post("/auth/logout")
+async def logout(request: Request, session_token: Optional[str] = Cookie(None)):
+    token = session_token
+    if not token:
+        auth = request.headers.get('Authorization') or ''
+        if auth.startswith('Bearer '):
+            token = auth[7:]
+    if token:
+        await db.user_sessions.delete_one({"session_token": token})
+    resp = JSONResponse({"status": "ok"})
+    resp.delete_cookie("session_token", path="/", samesite="none", secure=True)
+    return resp
+
+
+# ============ Admin endpoints ============
+class BlogPostInput(BaseModel):
+    slug: str
+    title: str
+    excerpt: str
+    meta_description: str
+    keywords: str
+    city: str
+    cover: str
+    read_time: int = 5
+    content: str
+    published_at: Optional[datetime] = None
+
+
+@api_router.get("/admin/contacts", response_model=List[Contact])
+async def admin_list_contacts(user: AuthUser = Depends(require_admin)):
+    items = await db.contacts.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
+    for it in items:
+        if isinstance(it.get('created_at'), str):
+            it['created_at'] = datetime.fromisoformat(it['created_at'])
+    return items
+
+
+@api_router.delete("/admin/contacts/{contact_id}")
+async def admin_delete_contact(contact_id: str, user: AuthUser = Depends(require_admin)):
+    r = await db.contacts.delete_one({"id": contact_id})
+    if r.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Contact introuvable")
+    return {"status": "deleted"}
+
+
+@api_router.get("/admin/blog", response_model=List[BlogPost])
+async def admin_list_posts(user: AuthUser = Depends(require_admin)):
+    items = await db.blog_posts.find({}, {"_id": 0}).sort("published_at", -1).to_list(500)
+    for it in items:
+        if isinstance(it.get('published_at'), str):
+            it['published_at'] = datetime.fromisoformat(it['published_at'].replace('Z', '+00:00'))
+    return items
+
+
+@api_router.post("/admin/blog", response_model=BlogPost)
+async def admin_create_post(
+    payload: BlogPostInput,
+    user: AuthUser = Depends(require_admin),
+):
+    existing = await db.blog_posts.find_one({"slug": payload.slug}, {"_id": 0})
+    if existing:
+        raise HTTPException(status_code=409, detail="Slug déjà utilisé")
+    doc = payload.model_dump()
+    if doc.get("published_at") is None:
+        doc["published_at"] = datetime.now(timezone.utc)
+    if isinstance(doc["published_at"], datetime):
+        doc["published_at"] = doc["published_at"].isoformat()
+    await db.blog_posts.insert_one(doc)
+    if isinstance(doc["published_at"], str):
+        doc["published_at"] = datetime.fromisoformat(doc["published_at"].replace('Z', '+00:00'))
+    return doc
+
+
+@api_router.put("/admin/blog/{slug}", response_model=BlogPost)
+async def admin_update_post(
+    slug: str,
+    payload: BlogPostInput,
+    user: AuthUser = Depends(require_admin),
+):
+    doc = payload.model_dump()
+    # Preserve existing published_at if not provided in payload
+    if doc.get("published_at") is None:
+        existing = await db.blog_posts.find_one({"slug": slug}, {"_id": 0, "published_at": 1})
+        if existing and existing.get("published_at") is not None:
+            doc["published_at"] = existing["published_at"]
+        else:
+            doc["published_at"] = datetime.now(timezone.utc)
+    if isinstance(doc.get("published_at"), datetime):
+        doc["published_at"] = doc["published_at"].isoformat()
+    r = await db.blog_posts.update_one({"slug": slug}, {"$set": doc})
+    if r.matched_count == 0:
+        raise HTTPException(status_code=404, detail="Article introuvable")
+    updated = await db.blog_posts.find_one({"slug": payload.slug}, {"_id": 0})
+    if isinstance(updated.get("published_at"), str):
+        updated["published_at"] = datetime.fromisoformat(updated["published_at"].replace('Z', '+00:00'))
+    return updated
+
+
+@api_router.delete("/admin/blog/{slug}")
+async def admin_delete_post(slug: str, user: AuthUser = Depends(require_admin)):
+    r = await db.blog_posts.delete_one({"slug": slug})
+    if r.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Article introuvable")
+    return {"status": "deleted"}
+
+
 @app.get("/sitemap.xml")
 async def sitemap():
     base = os.environ.get("SITE_URL", "https://daribnb.ma")
@@ -288,10 +538,23 @@ async def seed_blog():
 
 app.include_router(api_router)
 
+# CORS — allow Netlify + Emergent preview + localhost
+_cors_env = os.environ.get('CORS_ORIGINS', '')
+_cors_origins = [o.strip() for o in _cors_env.split(',') if o.strip() and o.strip() != '*']
+if not _cors_origins:
+    _cors_origins = [
+        "https://daribnb.netlify.app",
+        "https://daribnb.ma",
+        "https://www.daribnb.ma",
+        "https://host-management-pro-1.preview.emergentagent.com",
+        "http://localhost:3000",
+    ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=_cors_origins,
+    allow_origin_regex=r"https://.*\.netlify\.app",
     allow_methods=["*"],
     allow_headers=["*"],
 )

@@ -1,0 +1,43 @@
+{
+  "summary": "Daribnb admin (Emergent Google Auth) iter-2 testing: 24/24 backend pytest pass, frontend flows verified end-to-end via injected session cookie. One critical backend bug found + fixed (PUT /api/admin/blog/{slug} 500 when editor omits published_at). Non-admin 403 guard, admin CRUD (blog+contacts), logout, allowlist, CORS all verified. Public regression (root, simulate, contact, blog, sitemap, robots) all green.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "GET /sitemap.xml, GET /robots.txt", "issue": "Work on localhost:8001 but external Kubernetes ingress routes non /api/* paths to the frontend SPA, so these endpoints are unreachable via REACT_APP_BACKEND_URL. They are correctly referenced in the production SITE_URL (https://daribnb.netlify.app) where backend is co-hosted, so no user-facing impact on Netlify — but a preview-env caveat to be aware of."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "AdminBlog list & AdminContacts list", "issues": ["Rows lack data-testid='blog-row-<slug>' / 'contact-row-<id>' attributes — makes row-level Playwright assertions impossible. Dashboard (stat-posts, stat-contacts) and editor action buttons already have testids, so this is only a minor testability gap."]}
+    ]
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_admin_auth.py",
+    "/app/backend/tests/test_daribnb.py",
+    "/app/test_reports/pytest/pytest_iter2.xml"
+  ],
+  "action_items": [
+    "Consider adding data-testid='blog-row-<slug>' on each row in /admin/blog list and data-testid='contact-row-<id>' on each row in /admin/contacts list to improve Playwright testability.",
+    "(Optional) Expose /sitemap.xml and /robots.txt through the /api prefix or add static files in frontend public/ if preview-env SEO verification is ever required."
+  ],
+  "critical_code_review_comments": [
+    "FIXED: admin_update_post in server.py did not default/preserve published_at, causing 500 (ResponseValidationError) whenever the frontend editor PUT omitted the field. Patched to preserve the existing value and fall back to datetime.now(timezone.utc) only if the post had none.",
+    "CORS_ORIGINS='*' in backend/.env combined with allow_credentials=True would normally break credentialed requests; server.py correctly ignores '*' and falls back to the explicit allowlist (Netlify, preview, daribnb.ma, localhost:3000) + Netlify subdomain regex, so cookies work. Good.",
+    "Emergent OAuth exchange endpoint stores session_token server-side, sets httponly+secure+samesite=none cookie — correct. /api/auth/me accepts both cookie and Bearer which made agent testing possible.",
+    "server.py is approaching ~565 lines and mixes auth, blog, contacts, simulate, SEO into a single file — fine for now but consider splitting into routers if it grows.",
+    "No server-side length limits on blog content/title/excerpt; admin-only endpoint so low risk."
+  ],
+  "updated_files": [
+    "/app/backend/server.py (bug fix: admin_update_post preserves published_at)",
+    "/app/backend/tests/test_admin_auth.py (new comprehensive admin+auth pytest module)"
+  ],
+  "success_rate": {"backend": "100% (24/24)", "frontend": "100% (all flows verified)"},
+  "test_credentials": "Admin: daribnb.ma@gmail.com — session injected into Mongo as documented in /app/auth_testing.md; used Authorization: Bearer <token> for API and cookie session_token for browser. Non-admin: nonadmin@example.com (ephemeral).",
+  "seed_data_creation": "During tests created & cleaned up TEST_admin_post_iter2 blog post, test-playwright-article blog post, and a TEST_del contact. Two test user+session rows (admin-test, non-admin-test) left in DB — harmless, can be cleared with db.user_sessions.deleteMany({user_id:{$in:['admin-test','non-admin-test']}}).",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Run: pytest /app/backend/tests/test_admin_auth.py -v (covers public regression + auth + admin guards + blog CRUD + contact delete + logout). Frontend admin testing: inject cookie session_token on domain host-management-pro-1.preview.emergentagent.com (sameSite='None', secure=True) after creating an admin session row in mongosh (see /app/auth_testing.md). Dashboard testids: stat-posts, stat-contacts. Editor uses native input[name=...] — not all fields have data-testid; rely on name attrs or add testids if needed.",
+  "rca of the issue": "PUT /api/admin/blog/{slug} 500: frontend editor does not populate form.published_at on load and therefore sends null. BlogPostInput.published_at is Optional[datetime] so payload validates, but admin_update_post wrote published_at=None into Mongo, and the response_model=BlogPost (which requires a non-null datetime) then raised ResponseValidationError in FastAPI → 500. Fix: in admin_update_post, if payload.published_at is None, fetch existing.published_at and reuse it; if missing, default to datetime.now(timezone.utc). Verified: pytest TestAdminBlogCRUD::test_d_update now passes and end-to-end editor save in Playwright also succeeds (new post appears on /blog)."
+}
