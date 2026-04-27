@@ -46,7 +46,9 @@ function estimate({ city, property_type, bedrooms }) {
     monthly_min: Math.round(monthly_avg * 0.85),
     monthly_max: Math.round(monthly_avg * 1.15),
     monthly_avg,
-    fixed_rent: Math.round(monthly_avg * 0.7),
+    // Sous-location pro : ~50% du revenu Airbnb moyen versé au proprio.
+    // Couvre largement un loyer longue durée + offre stabilité/zéro gestion.
+    fixed_rent: Math.round(monthly_avg * 0.5),
     occupancy: occ,
     nightly_rate: nightly,
   };
@@ -223,18 +225,23 @@ export default function Simulator() {
                 {fmt(result.fixed_rent)} MAD
               </p>
               <p className="text-xs opacity-80 mt-2">
-                Versé tous les mois. Zéro risque.
+                Tous les mois, même date. Locataire pro stable. Zéro gestion.
               </p>
             </div>
-            <div className="md:col-span-3 bg-[#FAF9F6] rounded-2xl p-5 text-sm text-[#4B5563] border border-[#E5E5E5]">
-              💡 Estimation indicative basée sur les données du marché marocain
-              2025. Contactez-nous pour une estimation personnalisée gratuite.
-              <a
-                href="#contact"
-                className="ml-2 text-[#C1272D] font-semibold hover:underline"
-              >
-                Demander un RDV →
-              </a>
+            <div className="md:col-span-3 bg-[#FAF9F6] rounded-2xl p-5 text-sm text-[#4B5563] border border-[#E5E5E5] space-y-2">
+              <p>
+                💡 <span className="font-semibold text-[#1A1A1A]">Conciergerie</span> : tu encaisses les revenus Airbnb (variables), nous gérons à 20% de commission.{" "}
+                <span className="font-semibold text-[#1A1A1A]">Loyer fixe</span> : nous prenons le bien en sous-location pro et te versons un montant fixe chaque mois — c'est nous qui assumons la vacance et la gestion.
+              </p>
+              <p className="text-xs">
+                Estimation indicative basée sur les données du marché marocain 2026.{" "}
+                <a
+                  href="#contact"
+                  className="text-[#C1272D] font-semibold hover:underline"
+                >
+                  Demander un RDV pour une offre personnalisée →
+                </a>
+              </p>
             </div>
           </div>
         )}

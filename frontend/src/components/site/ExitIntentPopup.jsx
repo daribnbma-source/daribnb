@@ -81,10 +81,10 @@ export default function ExitIntentPopup() {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden"
+        className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full max-h-[92vh] overflow-y-auto"
       >
-        {/* Header banner */}
-        <div className="relative bg-gradient-to-br from-[#C1272D] to-[#A01D22] text-white px-8 pt-8 pb-8">
+        {/* Header banner — sticky so the close X stays accessible while scrolling */}
+        <div className="sticky top-0 z-10 bg-gradient-to-br from-[#C1272D] to-[#A01D22] text-white px-8 pt-8 pb-8">
           <button
             onClick={() => setOpen(false)}
             data-testid="exit-popup-close"
