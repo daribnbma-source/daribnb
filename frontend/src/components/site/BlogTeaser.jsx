@@ -7,10 +7,16 @@ export default function BlogTeaser() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    api.get("/blog").then(({ data }) => setPosts(data)).catch(() => {});
+    api
+      .get("/blog")
+      .then(({ data }) => {
+        const list = Array.isArray(data) ? data : Array.isArray(data?.items) ? data.items : [];
+        setPosts(list);
+      })
+      .catch(() => {});
   }, []);
 
-  if (!posts.length) return null;
+  if (!Array.isArray(posts) || posts.length === 0) return null;
 
   const fmtDate = (iso) =>
     new Date(iso).toLocaleDateString("fr-FR", {
