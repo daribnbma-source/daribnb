@@ -29,7 +29,7 @@ export default function Footer() {
               <li><a href="/#super-daribnb" className="hover:text-[#C1272D] transition-colors">Super Daribnb</a></li>
               <li><a href="/#loyer-fixe" className="hover:text-[#C1272D] transition-colors">Loyer fixe garanti</a></li>
               <li><a href="/#tarifs" className="hover:text-[#C1272D] transition-colors">Tarifs</a></li>
-              <li><a href="/blog" className="hover:text-[#C1272D] transition-colors">Blog</a></li>
+              <li><a href="/#blog" className="hover:text-[#C1272D] transition-colors">Blog</a></li>
               <li><a href="/#faq" className="hover:text-[#C1272D] transition-colors">FAQ</a></li>
             </ul>
           </div>

@@ -7,7 +7,7 @@ const NAV = [
   { href: "/#super-daribnb", label: "Super Daribnb" },
   { href: "/#loyer-fixe", label: "Loyer Fixe" },
   { href: "/#histoire", label: "Mon histoire" },
-  { href: "/blog", label: "Blog" },
+  { href: "/#blog", label: "Blog" },
   { href: "/#faq", label: "FAQ" },
 ];
 
