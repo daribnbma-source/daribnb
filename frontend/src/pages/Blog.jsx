@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Header from "../components/site/Header";
 import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
-import { api } from "../lib/api";
-import { Calendar, Clock, MapPin, ArrowRight, Loader2 } from "lucide-react";
+import { BLOG_POSTS } from "../data/blogPosts";
+import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react";
 
 const SITE = "https://daribnb.ma";
 
 export default function Blog() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    api.get("/blog")
-      .then(({ data }) => setPosts(data))
-      .finally(() => setLoading(false));
-  }, []);
+  const posts = BLOG_POSTS;
 
   const fmtDate = (iso) =>
     new Date(iso).toLocaleDateString("fr-FR", {
@@ -58,11 +51,7 @@ export default function Blog() {
             </p>
           </div>
 
-          {loading ? (
-            <div className="flex justify-center py-20">
-              <Loader2 className="w-8 h-8 animate-spin text-[#C1272D]" />
-            </div>
-          ) : posts.length === 0 ? (
+          {posts.length === 0 ? (
             <p className="text-center text-[#4B5563] py-20">
               Les premiers articles arrivent bientôt.
             </p>

@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { api } from "../../lib/api";
-import { Calendar, Clock, ArrowRight, MapPin } from "lucide-react";
+import { BLOG_POSTS } from "../../data/blogPosts";
+import { Calendar, ArrowRight, MapPin } from "lucide-react";
 
 export default function BlogTeaser() {
-  const [posts, setPosts] = useState([]);
+  const posts = BLOG_POSTS;
 
-  useEffect(() => {
-    api
-      .get("/blog")
-      .then(({ data }) => {
-        const list = Array.isArray(data) ? data : Array.isArray(data?.items) ? data.items : [];
-        setPosts(list);
-      })
-      .catch(() => {});
-  }, []);
-
-  if (!Array.isArray(posts) || posts.length === 0) return null;
+  if (!posts.length) return null;
 
   const fmtDate = (iso) =>
     new Date(iso).toLocaleDateString("fr-FR", {

@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 import Header from "../components/site/Header";
 import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
-import { api } from "../lib/api";
+import { BLOG_POSTS, getPostBySlug } from "../data/blogPosts";
 import {
   Calendar,
   Clock,
@@ -26,19 +26,14 @@ export default function BlogPost() {
 
   useEffect(() => {
     setLoading(true);
-    setPost(null);
-    api
-      .get(`/blog/${slug}`)
-      .then(({ data }) => {
-        setPost(data);
-        return api.get("/blog");
-      })
-      .then(({ data }) => {
-        setRelated(data.filter((p) => p.slug !== slug).slice(0, 3));
-      })
-      .catch(() => navigate("/blog", { replace: true }))
-      .finally(() => setLoading(false));
-
+    const found = getPostBySlug(slug);
+    if (!found) {
+      navigate("/", { replace: true });
+      return;
+    }
+    setPost(found);
+    setRelated(BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3));
+    setLoading(false);
     window.scrollTo(0, 0);
   }, [slug, navigate]);
 
