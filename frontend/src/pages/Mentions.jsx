@@ -7,7 +7,7 @@ export default function Mentions() {
       <section>
         <h2 className="text-2xl font-bold text-[#1A1A1A]">Éditeur du site</h2>
         <p>
-          Le présent site <strong>daribnb.ma</strong> (ci-après « le Site ») est
+          Le présent site <strong>daribnb.netlify.app</strong> (ci-après « le Site ») est
           édité par <strong>Daribnb</strong>, activité de conciergerie Airbnb et
           de sous-location professionnelle, exercée à titre personnel au Maroc.
         </p>

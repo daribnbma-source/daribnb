@@ -15,7 +15,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const SITE = "https://daribnb.ma";
+const SITE = "https://daribnb.netlify.app";
 
 export default function BlogPost() {
   const { slug } = useParams();
