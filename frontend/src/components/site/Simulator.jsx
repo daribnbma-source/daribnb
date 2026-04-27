@@ -7,9 +7,50 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Input } from "../ui/input";
-import { api } from "../../lib/api";
 import { TrendingUp, Sparkles, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+
+// Pricing matrix — MAD / night, mirror of backend logic
+const CITY_MULTIPLIER = {
+  marrakech: 1.2,
+  casablanca: 1.0,
+  rabat: 0.95,
+  tanger: 1.05,
+  agadir: 1.1,
+  fes: 0.9,
+  essaouira: 1.15,
+  chefchaouen: 1.0,
+  autre: 0.9,
+};
+const TYPE_BASE = { studio: 450, appartement: 700, riad: 1400, villa: 1800 };
+const CITY_OCCUPANCY = {
+  marrakech: 78,
+  casablanca: 70,
+  rabat: 68,
+  tanger: 72,
+  agadir: 75,
+  fes: 65,
+  essaouira: 73,
+  chefchaouen: 70,
+  autre: 65,
+};
+
+function estimate({ city, property_type, bedrooms }) {
+  const mult = CITY_MULTIPLIER[city] ?? CITY_MULTIPLIER.autre;
+  const base = TYPE_BASE[property_type] ?? TYPE_BASE.appartement;
+  const occ = CITY_OCCUPANCY[city] ?? CITY_OCCUPANCY.autre;
+  const extra = Math.max(0, Number(bedrooms) - 1) * 180;
+  const nightly = Math.round((base + extra) * mult);
+  const monthly_avg = Math.round(nightly * 30 * (occ / 100));
+  return {
+    monthly_min: Math.round(monthly_avg * 0.85),
+    monthly_max: Math.round(monthly_avg * 1.15),
+    monthly_avg,
+    fixed_rent: Math.round(monthly_avg * 0.7),
+    occupancy: occ,
+    nightly_rate: nightly,
+  };
+}
 
 const CITIES = [
   { v: "marrakech", l: "Marrakech" },
@@ -37,28 +78,24 @@ export default function Simulator() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
     if (!city || !type) {
       toast.error("Merci de choisir la ville et le type de bien.");
       return;
     }
     setLoading(true);
-    try {
-      const { data } = await api.post("/simulate", {
-        city,
-        property_type: type,
-        bedrooms: Number(bedrooms),
-      });
+    // Slight delay for UX feel + smoother animation
+    setTimeout(() => {
+      const data = estimate({ city, property_type: type, bedrooms });
       setResult(data);
-      setTimeout(() => {
-        document.getElementById("simulator-result")?.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 100);
-    } catch (err) {
-      toast.error("Erreur lors de l'estimation. Réessayez.");
-    } finally {
       setLoading(false);
-    }
+      setTimeout(() => {
+        document
+          .getElementById("simulator-result")
+          ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+    }, 350);
   };
 
   const fmt = (n) => new Intl.NumberFormat("fr-MA").format(n);
