@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { X, Gift, Sparkles, Loader2, CheckCircle2 } from "lucide-react";
 import { Input } from "../ui/input";
-import { api } from "../../lib/api";
+import { submitNetlifyForm } from "../../lib/netlifyForm";
 import { toast } from "sonner";
 
 const STORAGE_KEY = "daribnb_exit_popup_shown";
@@ -55,11 +55,10 @@ export default function ExitIntentPopup() {
     }
     setLoading(true);
     try {
-      await api.post("/contact", {
+      await submitNetlifyForm("exit-intent", {
         name: form.name,
-        email: form.email || "noreply@daribnb.ma",
+        email: form.email || "",
         phone: form.phone,
-        service: "les_deux",
         message: "Demande via pop-up : Audit Airbnb offert + estimation gratuite",
       });
       setSent(true);

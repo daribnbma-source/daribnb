@@ -8,7 +8,7 @@ import {
 } from "../ui/select";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import { api } from "../../lib/api";
+import { submitNetlifyForm } from "../../lib/netlifyForm";
 import { Mail, Phone, Loader2, Send, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -35,7 +35,7 @@ export default function Contact() {
     }
     setLoading(true);
     try {
-      await api.post("/contact", form);
+      await submitNetlifyForm("contact", form);
       setSent(true);
       toast.success("Message reçu ! On vous rappelle sous 24h.");
       setForm({ name: "", email: "", phone: "", city: "", service: "", message: "" });
