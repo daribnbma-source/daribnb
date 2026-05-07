@@ -70,12 +70,9 @@ export default function ConciergerieAirbnbTanger() {
     description:
       "Service de conciergerie Airbnb clé en main à Tanger : annonces optimisées, gestion voyageurs, ménage hôtelier, check-in 24h/24.",
     url: URL,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.93",
-      reviewCount: "1196",
-      bestRating: "5",
-    },
+    // Note : aggregateRating volontairement retiré du Service schema.
+    // Google n'autorise les Review snippets que sur LocalBusiness/Product/etc, pas sur Service.
+    // L'aggregateRating reste exposé sur le LocalBusiness root (index.html) qui s'applique à toutes les pages.
   };
 
   return (
