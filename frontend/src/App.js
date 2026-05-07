@@ -7,6 +7,10 @@ import Privacy from "./pages/Privacy";
 import CGV from "./pages/CGV";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import ConciergerieAirbnbTanger from "./pages/ConciergerieAirbnbTanger";
+import GestionLocativeTanger from "./pages/GestionLocativeTanger";
+import GestionLocativeMRETanger from "./pages/GestionLocativeMRETanger";
+import OptimiserRevenusAirbnb from "./pages/OptimiserRevenusAirbnb";
 import AdminLogin from "./pages/AdminLogin";
 import AuthCallback from "./pages/AuthCallback";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -31,6 +35,10 @@ function AppRouter() {
       <Route path="/cgv" element={<CGV />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
+      <Route path="/conciergerie-airbnb-tanger" element={<ConciergerieAirbnbTanger />} />
+      <Route path="/gestion-locative-tanger" element={<GestionLocativeTanger />} />
+      <Route path="/gestion-locative-mre-tanger" element={<GestionLocativeMRETanger />} />
+      <Route path="/optimiser-revenus-airbnb" element={<OptimiserRevenusAirbnb />} />
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
       <Route path="/admin/blog" element={<ProtectedRoute><AdminBlog /></ProtectedRoute>} />

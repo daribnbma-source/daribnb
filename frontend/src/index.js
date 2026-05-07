@@ -3,9 +3,17 @@ import ReactDOM from "react-dom/client";
 import "@/index.css";
 import App from "@/App";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+const container = document.getElementById("root");
+const tree = (
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
+
+// Si le HTML a été pré-rendu au build (Puppeteer prerender), on hydrate.
+// Sinon (dev / fallback SPA non pré-rendu), on render normalement.
+if (container.hasChildNodes()) {
+  ReactDOM.hydrateRoot(container, tree);
+} else {
+  ReactDOM.createRoot(container).render(tree);
+}
