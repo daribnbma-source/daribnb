@@ -1,19 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 
+// Tanger en premier (focus SEO) + lien vers la page dédiée pour consolider le ranking
 const CITIES = [
-  "Marrakech",
-  "Casablanca",
-  "Rabat",
-  "Tanger",
-  "Agadir",
-  "Fès",
-  "Essaouira",
-  "Chefchaouen",
-  "El Jadida",
-  "Tétouan",
-  "Ifrane",
-  "Ouarzazate",
+  { name: "Tanger", to: "/conciergerie-airbnb-tanger", primary: true },
+  { name: "Marrakech" },
+  { name: "Casablanca" },
+  { name: "Rabat" },
+  { name: "Agadir" },
+  { name: "Fès" },
+  { name: "Essaouira" },
+  { name: "Chefchaouen" },
+  { name: "El Jadida" },
+  { name: "Tétouan" },
+  { name: "Ifrane" },
+  { name: "Ouarzazate" },
 ];
 
 const MAP_IMG =
@@ -50,16 +52,43 @@ export default function Coverage() {
           </div>
           <div className="absolute inset-0 flex items-end p-8 md:p-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full">
-              {CITIES.map((c) => (
-                <div
-                  key={c}
-                  data-testid={`city-card-${c.toLowerCase().replace(/\s|è|é/g, "-")}`}
-                  className="bg-white/15 backdrop-blur-md border border-white/20 text-white rounded-xl px-4 py-3 flex items-center gap-2 hover:bg-white/25 transition-all"
-                >
-                  <MapPin size={14} className="text-[#C1272D]" />
-                  <span className="font-semibold text-sm">{c}</span>
-                </div>
-              ))}
+              {CITIES.map((c) => {
+                const slug = c.name.toLowerCase().replace(/\s|è|é/g, "-");
+                const baseCls = `backdrop-blur-md border text-white rounded-xl px-4 py-3 flex items-center gap-2 transition-all ${
+                  c.primary
+                    ? "bg-[#C1272D]/40 border-white/40 hover:bg-[#C1272D]/55"
+                    : "bg-white/15 border-white/20 hover:bg-white/25"
+                }`;
+                const inner = (
+                  <>
+                    <MapPin size={14} className="text-[#C1272D]" />
+                    <span className="font-semibold text-sm">{c.name}</span>
+                    {c.primary && (
+                      <span className="ml-auto text-[10px] uppercase tracking-wider text-white/80 font-bold">
+                        Voir →
+                      </span>
+                    )}
+                  </>
+                );
+                return c.to ? (
+                  <Link
+                    key={c.name}
+                    to={c.to}
+                    data-testid={`city-card-${slug}`}
+                    className={baseCls}
+                  >
+                    {inner}
+                  </Link>
+                ) : (
+                  <div
+                    key={c.name}
+                    data-testid={`city-card-${slug}`}
+                    className={baseCls}
+                  >
+                    {inner}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

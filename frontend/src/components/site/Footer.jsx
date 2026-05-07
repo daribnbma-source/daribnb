@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import { Mail, Phone, MapPin } from "lucide-react";
 
@@ -9,12 +10,11 @@ export default function Footer() {
       className="bg-[#006233] text-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-5 gap-10">
           <div className="md:col-span-2">
             <Logo variant="light" />
             <p className="mt-4 text-white/80 max-w-sm leading-relaxed">
-              Conciergerie Airbnb & loyer fixe garanti au Maroc. Expert depuis
-              plus de 6 ans, on s'occupe de votre bien comme si c'était le nôtre.
+              Conciergerie Airbnb & loyer fixe garanti à Tanger et partout au Maroc. Expert depuis plus de 6 ans, on s'occupe de votre bien comme si c'était le nôtre.
             </p>
             <div className="mt-6 flex items-center gap-2">
               <span className="text-2xl">🇲🇦</span>
@@ -23,14 +23,23 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Services</h4>
+            <h4 className="font-bold mb-4 text-white">Tanger</h4>
             <ul className="space-y-3 text-sm text-white/80">
-              <li><a href="/#services" className="hover:text-[#C1272D] transition-colors">Conciergerie Airbnb</a></li>
-              <li><a href="/#super-daribnb" className="hover:text-[#C1272D] transition-colors">Super Daribnb</a></li>
-              <li><a href="/#loyer-fixe" className="hover:text-[#C1272D] transition-colors">Loyer fixe garanti</a></li>
-              <li><a href="/#tarifs" className="hover:text-[#C1272D] transition-colors">Tarifs</a></li>
-              <li><a href="/#blog" className="hover:text-[#C1272D] transition-colors">Blog</a></li>
+              <li><Link to="/conciergerie-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Conciergerie Airbnb</Link></li>
+              <li><Link to="/gestion-locative-tanger" className="hover:text-[#C1272D] transition-colors">Gestion locative</Link></li>
+              <li><Link to="/loyer-fixe-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Loyer fixe garanti</Link></li>
+              <li><Link to="/gestion-locative-mre-tanger" className="hover:text-[#C1272D] transition-colors">Spécial MRE</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-4 text-white">Services Maroc</h4>
+            <ul className="space-y-3 text-sm text-white/80">
+              <li><Link to="/optimiser-revenus-airbnb" className="hover:text-[#C1272D] transition-colors">Optimisation revenus</Link></li>
+              <li><Link to="/multi-plateformes-airbnb-booking-vrbo" className="hover:text-[#C1272D] transition-colors">Airbnb + Booking + Vrbo</Link></li>
+              <li><Link to="/blog" className="hover:text-[#C1272D] transition-colors">Blog</Link></li>
               <li><a href="/#faq" className="hover:text-[#C1272D] transition-colors">FAQ</a></li>
+              <li><a href="/#tarifs" className="hover:text-[#C1272D] transition-colors">Tarifs</a></li>
             </ul>
           </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import {
   Accordion,
   AccordionContent,
@@ -42,12 +43,26 @@ const FAQS = [
 ];
 
 export default function FAQ() {
+  // FAQPage JSON-LD pour rich results Google (les Q/A peuvent s'afficher directement dans la SERP)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <section
       id="faq"
       data-testid="faq-section"
       className="py-24 md:py-32 bg-white"
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <div className="mb-14 text-center">
           <span className="text-sm font-bold text-[#006233] uppercase tracking-wider">

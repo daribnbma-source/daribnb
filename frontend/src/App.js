@@ -11,6 +11,8 @@ import ConciergerieAirbnbTanger from "./pages/ConciergerieAirbnbTanger";
 import GestionLocativeTanger from "./pages/GestionLocativeTanger";
 import GestionLocativeMRETanger from "./pages/GestionLocativeMRETanger";
 import OptimiserRevenusAirbnb from "./pages/OptimiserRevenusAirbnb";
+import LoyerFixeAirbnbTanger from "./pages/LoyerFixeAirbnbTanger";
+import MultiPlateformesAirbnbBooking from "./pages/MultiPlateformesAirbnbBooking";
 import AdminLogin from "./pages/AdminLogin";
 import AuthCallback from "./pages/AuthCallback";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -39,6 +41,8 @@ function AppRouter() {
       <Route path="/gestion-locative-tanger" element={<GestionLocativeTanger />} />
       <Route path="/gestion-locative-mre-tanger" element={<GestionLocativeMRETanger />} />
       <Route path="/optimiser-revenus-airbnb" element={<OptimiserRevenusAirbnb />} />
+      <Route path="/loyer-fixe-airbnb-tanger" element={<LoyerFixeAirbnbTanger />} />
+      <Route path="/multi-plateformes-airbnb-booking-vrbo" element={<MultiPlateformesAirbnbBooking />} />
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
       <Route path="/admin/blog" element={<ProtectedRoute><AdminBlog /></ProtectedRoute>} />

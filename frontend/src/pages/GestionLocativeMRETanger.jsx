@@ -6,6 +6,29 @@ import ServicePageLayout from "./ServicePageLayout";
 const SITE = "https://www.daribnb.com";
 const URL = `${SITE}/gestion-locative-mre-tanger`;
 
+const MRE_FAQS = [
+  {
+    q: "Je n'habite pas au Maroc, comment ça marche concrètement ?",
+    a: "On signe le mandat à distance (DocuSign ou en main propre lors de votre prochain passage). Vous nous donnez un jeu de clés (lors de votre prochaine venue), et on prend le relais. Communication par WhatsApp/email/téléphone.",
+  },
+  {
+    q: "Comment je récupère mes revenus ?",
+    a: "Versement mensuel par virement bancaire. Selon votre préférence : compte marocain en dirhams (gratuit) ou compte français/européen en euros (frais bancaires marocains à votre charge, on vous explique tout).",
+  },
+  {
+    q: "Et si j'ai besoin de récupérer mon bien pour les vacances ?",
+    a: "Vous nous prévenez à l'avance, on bloque les dates dans le calendrier Airbnb. Aucun frais, aucune pénalité. Le bien reste à vous.",
+  },
+  {
+    q: "Et la fiscalité au Maroc pour un MRE ?",
+    a: "On vous accompagne sur les démarches : déclaration préfecture, taxe de séjour, conformité Loi Airbnb 2025. Pour la fiscalité MRE (déclaration revenus locatifs), on travaille avec un cabinet comptable de confiance qu'on peut recommander.",
+  },
+  {
+    q: "Quel est votre tarif pour un MRE ?",
+    a: "Commission à partir de 20% sur les revenus encaissés. Tout inclus : annonce, voyageurs, ménage, linge, check-in 24/7, reporting. Pas de frais cachés. Loyer fixe garanti possible sur demande après audit du bien.",
+  },
+];
+
 const PAINS = [
   "Vous habitez en France, en Espagne, en Belgique ou aux Pays-Bas",
   "Vous avez acheté un bien à Tanger pour rentabiliser ou pour la famille",
@@ -61,6 +84,17 @@ export default function GestionLocativeMRETanger() {
     url: URL,
   };
 
+  // FAQPage schema pour rich results Google
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: MRE_FAQS.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <ServicePageLayout
       title="Gestion locative Tanger pour MRE | Daribnb — Votre bien géré à distance"
@@ -69,7 +103,7 @@ export default function GestionLocativeMRETanger() {
       h1="Gestion locative à Tanger pour propriétaires MRE"
       kicker="Spécial MRE · Tanger"
       intro="Vous êtes Marocain résidant à l'étranger et vous possédez un bien à Tanger ? On gère tout à distance, en français, avec une transparence absolue. Daribnb a été fondé par un MRE — on connaît votre situation parce qu'on l'a vécue."
-      schema={schema}
+      schema={[schema, faqSchema]}
     >
       {/* Si vous vous reconnaissez */}
       <section className="py-20 md:py-28 bg-white">
@@ -164,28 +198,7 @@ export default function GestionLocativeMRETanger() {
             Questions fréquentes des propriétaires MRE
           </h2>
           <div className="space-y-4">
-            {[
-              {
-                q: "Je n'habite pas au Maroc, comment ça marche concrètement ?",
-                a: "On signe le mandat à distance (DocuSign ou en main propre lors de votre prochain passage). Vous nous donnez un jeu de clés (lors de votre prochaine venue), et on prend le relais. Communication par WhatsApp/email/téléphone.",
-              },
-              {
-                q: "Comment je récupère mes revenus ?",
-                a: "Versement mensuel par virement bancaire. Selon votre préférence : compte marocain en dirhams (gratuit) ou compte français/européen en euros (frais bancaires marocains à votre charge, on vous explique tout).",
-              },
-              {
-                q: "Et si j'ai besoin de récupérer mon bien pour les vacances ?",
-                a: "Vous nous prévenez à l'avance, on bloque les dates dans le calendrier Airbnb. Aucun frais, aucune pénalité. Le bien reste à vous.",
-              },
-              {
-                q: "Et la fiscalité au Maroc ?",
-                a: "On vous accompagne sur les démarches : déclaration préfecture, taxe de séjour, conformité Loi Airbnb 2025. Pour la fiscalité MRE (déclaration revenus locatifs), on travaille avec un cabinet comptable de confiance qu'on peut recommander.",
-              },
-              {
-                q: "Quel est votre tarif ?",
-                a: "Commission à partir de 20% sur les revenus encaissés. Tout inclus : annonce, voyageurs, ménage, linge, check-in 24/7, reporting. Pas de frais cachés. Loyer fixe garanti possible sur demande après audit du bien.",
-              },
-            ].map((f) => (
+            {MRE_FAQS.map((f) => (
               <details
                 key={f.q}
                 className="group bg-white rounded-xl p-6 border border-black/5"

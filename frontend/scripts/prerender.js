@@ -29,6 +29,8 @@ const ROUTES_BASE = [
   "/gestion-locative-tanger",
   "/gestion-locative-mre-tanger",
   "/optimiser-revenus-airbnb",
+  "/loyer-fixe-airbnb-tanger",
+  "/multi-plateformes-airbnb-booking-vrbo",
   "/blog",
   "/mentions-legales",
   "/confidentialite",

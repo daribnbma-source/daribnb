@@ -49,9 +49,34 @@ export default function ServicePageLayout({
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        {schema && (
-          <script type="application/ld+json">{JSON.stringify(schema)}</script>
-        )}
+        {/* BreadcrumbList JSON-LD — généré automatiquement à partir du canonical */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item: SITE,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: kicker || h1,
+                item: canonical,
+              },
+            ],
+          })}
+        </script>
+        {/* Schema(s) custom — supporte un seul object OU un tableau */}
+        {schema &&
+          (Array.isArray(schema) ? schema : [schema]).map((s, i) => (
+            <script key={i} type="application/ld+json">
+              {JSON.stringify(s)}
+            </script>
+          ))}
       </Helmet>
 
       <Header />
