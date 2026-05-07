@@ -336,6 +336,298 @@ Daribnb vous propose en général **~70 % du revenu moyen estimé**, net, garant
 
 On estime votre bien gratuitement, on vous propose les deux formules chiffrées, et vous choisissez sereinement. 6+ années d'expertise, +150 propriétaires, aucune pression commerciale.`,
   },
+  {
+    slug: "mre-airbnb-maroc-gestion-distance-2026",
+    title: "MRE et Airbnb au Maroc : guide complet pour gérer son bien à distance en 2026",
+    excerpt:
+      "Vous êtes Marocain résidant à l'étranger et vous possédez un bien au Maroc ? Voici comment le rentabiliser via Airbnb sans jamais vous déplacer, en restant 100% conforme.",
+    meta_description:
+      "Vous êtes MRE et avez un bien au Maroc ? Le guide complet pour gérer votre Airbnb à distance en 2026 : démarches, fiscalité, gestion des clés, versement EUR/MAD.",
+    keywords:
+      "mre airbnb maroc, marocain résidant étranger airbnb, gérer airbnb à distance, airbnb mre tanger, conciergerie mre maroc",
+    city: "Maroc",
+    cover:
+      "https://images.unsplash.com/photo-1488229297570-58520851e868?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-05-07T09:00:00Z",
+    read_time: 9,
+    content: `## Pourquoi les MRE galèrent avec leur Airbnb au Maroc
+
+Si vous êtes Marocain résidant à l'étranger (MRE) et que vous avez investi dans un bien au Maroc — Tanger, Marrakech, Casablanca, peu importe — vous connaissez probablement le scénario : photos floues prises au téléphone, voyageurs mécontents qui appellent à 2h du matin, ménage approximatif fait par un cousin sur-sollicité, communication galère avec la femme de ménage qui ne parle pas votre langue.
+
+J'ai vécu exactement ça avant de fonder Daribnb. Et statistiquement, **70 % des MRE qui essaient de gérer leur Airbnb à distance abandonnent dans les 18 mois**, soit pour louer en longue durée (rentabilité divisée par 2), soit pour laisser le bien vide.
+
+Ce guide vous explique comment éviter ce piège, en 2026, avec les outils et les acteurs qui existent réellement aujourd'hui au Maroc.
+
+## Les 5 vrais défis quand on gère un Airbnb depuis l'étranger
+
+### 1. Le check-in / check-out
+Impossible à faire à distance. Soit vous avez quelqu'un de confiance sur place qui se déplace à toute heure (rare et instable), soit vous installez une boîte à clé sécurisée (mais vous perdez le côté humain qui boost les reviews), soit vous passez par une conciergerie pro.
+
+### 2. Le ménage
+Trouver une équipe fiable qui respecte les standards hôteliers (draps changés à chaque rotation, salle de bain impeccable, consommables remplacés) c'est la moitié du combat. Une rotation ratée = mauvaise review = chute du ranking Airbnb.
+
+### 3. La communication voyageur
+Airbnb impose un temps de réponse < 1h pour conserver le statut Superhost. Si vous êtes au boulot en France ou aux Pays-Bas avec le décalage horaire, c'est mission impossible en solo.
+
+### 4. La maintenance & les imprévus
+Fuite d'eau, climatiseur en panne, voyageur qui casse quelque chose, voisin qui se plaint du bruit. Sans contact local réactif, ça vire vite à la catastrophe.
+
+### 5. Les démarches administratives
+Déclaration en préfecture (obligatoire en 2025), taxe de séjour à reverser, conformité Loi Airbnb Maroc 2025. Sans quelqu'un sur place qui maîtrise, vous risquez l'amende.
+
+## La solution moderne : conciergerie 100% à distance
+
+Une conciergerie professionnelle locale est la solution la plus robuste pour les MRE. En pratique, voici comment ça se passe avec Daribnb :
+
+### Setup initial (à distance)
+- Signature du mandat de gestion via DocuSign — tout en français
+- Audit du bien via photos et visite de notre équipe à Tanger
+- Optimisation : shoot photo pro, refonte de l'annonce, mise en ligne multi-plateformes (Airbnb + Booking + Vrbo)
+- Récupération des clés lors de votre prochain passage au Maroc, OU envoi par DHL si urgent
+
+### Au quotidien
+- Vous recevez un dashboard mensuel : revenus bruts, charges, net qui vous est versé
+- Communication WhatsApp avec votre interlocuteur dédié, en français
+- Aucun appel à 2h du matin de voyageurs, on encaisse tout
+- Vous bloquez les dates pour vos vacances/visites famille à votre guise
+
+### Versement de vos revenus
+- **Compte marocain en MAD** (gratuit, virement local)
+- **Compte français/européen en EUR** (frais bancaires marocains à votre charge — environ 10-30 € par virement selon le montant ; on vous explique tout pour optimiser)
+
+## La fiscalité MRE en 2026 : ce qu'il faut savoir
+
+Trois cas de figure selon votre statut :
+
+### Vous êtes résident fiscal marocain
+Vos revenus locatifs sont déclarés au Maroc. Le bien fait partie de votre patrimoine marocain.
+
+### Vous êtes résident fiscal du pays où vous vivez (cas le plus fréquent)
+Vos revenus locatifs au Maroc doivent être déclarés **dans les deux pays**, mais grâce aux conventions fiscales bilatérales (France-Maroc, Belgique-Maroc, Pays-Bas-Maroc), vous évitez la double imposition.
+
+### Convention France-Maroc (la plus courante)
+- L'imposition se fait au Maroc en priorité (où le bien est situé)
+- Vous déclarez ensuite en France les revenus, mais avec un crédit d'impôt égal à l'impôt marocain payé
+- Résultat net : pas de double taxation, mais beaucoup de paperasse
+
+⚠️ **Important** : on n'est pas un cabinet comptable. On vous accompagne sur les démarches au Maroc et on vous met en relation avec un expert-comptable de confiance qui maîtrise la fiscalité MRE — entre 1 500 et 3 000 MAD par an pour le suivi.
+
+## Loyer fixe ou conciergerie : que choisir quand on est MRE ?
+
+Pour la majorité des MRE qu'on accompagne, le **loyer fixe garanti** est plus adapté :
+
+- Revenu mensuel identique chaque mois → vous savez ce que vous touchez
+- Aucun stress sur la basse saison ou les périodes creuses
+- Vous pouvez intégrer le revenu dans votre budget mensuel (crédit, autofinancement)
+
+La **conciergerie classique** (commission 20%) reste pertinente si :
+- Vous voulez maximiser le revenu potentiel
+- Vous comptez utiliser souvent votre bien (mariages, été, ramadan)
+- Vous êtes ok avec la variabilité saisonnière
+
+[Voir notre guide complet conciergerie vs loyer fixe](/blog/loyer-fixe-vs-conciergerie-airbnb-maroc)
+
+## Daribnb, fondé par un MRE, pour les MRE
+
+Marwan, fondateur de Daribnb, est lui-même MRE. C'est en galérant à gérer son propre Airbnb à Tanger depuis l'étranger qu'il a fondé Daribnb il y a 6 ans. Aujourd'hui on accompagne plusieurs dizaines de propriétaires MRE en France, Belgique, Pays-Bas, Espagne, Allemagne et Italie.
+
+Communication 100% en français, transparence totale sur les chiffres, équipe locale à Tanger qu'on a formée nous-mêmes. **4,93/5 sur 1 196 commentaires Airbnb** — les voyageurs notent la qualité, vous touchez le revenu.
+
+## Vous voulez savoir ce que rapporterait votre bien ?
+
+[Estimation gratuite en 24h](/gestion-locative-mre-tanger) — on regarde votre bien, on étudie le marché local, on vous propose un loyer fixe ou un %, vous choisissez. Aucune pression commerciale, aucun engagement.`,
+  },
+  {
+    slug: "loi-airbnb-maroc-2025-proprietaires",
+    title: "Loi Airbnb Maroc 2025 : ce que les propriétaires doivent savoir",
+    excerpt:
+      "Nouvelle réglementation des locations courte durée au Maroc en 2025 : déclarations préfectorales, taxe de séjour, conformité fiscale. Tout ce qu'un propriétaire doit savoir pour rester en règle.",
+    meta_description:
+      "Loi Airbnb Maroc 2025 : déclaration préfecture, taxe de séjour, conformité fiscale, sanctions. Le guide synthétique pour les propriétaires en location courte durée.",
+    keywords:
+      "loi airbnb maroc 2025, réglementation airbnb maroc, déclaration préfecture airbnb, taxe séjour maroc airbnb, conformité airbnb tanger",
+    city: "Maroc",
+    cover:
+      "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-05-07T10:00:00Z",
+    read_time: 7,
+    content: `## Le contexte : pourquoi le Maroc a renforcé la réglementation
+
+Avec l'explosion d'Airbnb dans les grandes villes marocaines (Marrakech, Tanger, Casablanca, Agadir) et l'arrivée de la Coupe du Monde 2030, le gouvernement marocain a structuré en 2025 le cadre légal des locations courte durée. L'objectif est triple :
+
+1. **Sécuriser les voyageurs** (lutte contre les annonces non conformes, problèmes sanitaires)
+2. **Protéger les recettes fiscales** (taxe de séjour collectée par les préfectures)
+3. **Réguler l'impact sur le marché immobilier local** (notamment dans les médinas)
+
+Concrètement, depuis 2025, les obligations se sont durcies. Voici ce que vous devez savoir si vous êtes propriétaire.
+
+## Les 4 obligations légales à respecter en 2026
+
+### 1. Déclaration préfectorale obligatoire
+
+Toute location courte durée meublée à des fins touristiques doit faire l'objet d'une **déclaration auprès de la préfecture** où se situe le bien. Cela concerne :
+
+- Les locations Airbnb / Booking / Vrbo
+- Les locations directes via réseau personnel
+- Les sous-locations courte durée (avec autorisation du propriétaire principal)
+
+La déclaration mentionne : adresse précise du bien, nombre de pièces, capacité d'accueil, équipements (sécurité incendie, sortie de secours), copies des pièces d'identité du propriétaire/gérant.
+
+⚠️ **Délai** : 30 jours avant la mise en ligne de l'annonce. **Sanction en cas d'oubli** : amende de 5 000 à 20 000 MAD selon les wilayas.
+
+### 2. Taxe de séjour à reverser
+
+Chaque nuitée louée donne lieu à une taxe de séjour due aux collectivités locales. Le montant varie selon la ville :
+
+- **Tanger** : 10 à 20 MAD par adulte par nuit
+- **Marrakech** : 15 à 30 MAD
+- **Casablanca** : 8 à 15 MAD
+- **Rabat** : 8 à 15 MAD
+
+Cette taxe est **collectée par le propriétaire (ou la conciergerie)** sur le voyageur, puis reversée à la préfecture chaque trimestre.
+
+### 3. Conformité fiscale (déclaration des revenus)
+
+Les revenus issus de la location courte durée sont imposables au Maroc dans la catégorie des **revenus fonciers**. Deux régimes possibles selon le montant :
+
+- **Régime micro-foncier** : revenus < 30 000 MAD / an, abattement forfaitaire 40%
+- **Régime réel simplifié** : au-delà, déduction des charges réelles (commission conciergerie, ménage, fournitures, taxe de séjour, etc.)
+
+Pour les MRE, voir notre [guide MRE complet](/blog/mre-airbnb-maroc-gestion-distance-2026) avec les conventions bilatérales.
+
+### 4. Conformité Airbnb (depuis la mise à jour de leurs CGV en 2025)
+
+Indépendamment de la loi marocaine, **Airbnb impose désormais aux hôtes** :
+
+- Affichage du numéro d'enregistrement préfectoral dans l'annonce
+- Vérification d'identité renforcée
+- Réponse aux voyageurs sous 24h (sinon dégradation du ranking)
+- Protocole de sécurité (détecteur de fumée obligatoire, extincteur recommandé)
+
+## Ce qui change concrètement avec ces nouvelles règles
+
+### Pour vous, propriétaire :
+- Plus de paperasse au démarrage (déclaration préfecture, ouverture compte taxe de séjour)
+- Reporting trimestriel obligatoire des taxes collectées
+- Tenue d'un registre des voyageurs (nom, dates, nationalité)
+
+### Si vous travaillez avec une conciergerie pro (comme Daribnb) :
+- On gère 100% de ces démarches pour vous
+- Déclaration préfecture incluse dans le mandat de gestion
+- Collecte automatique de la taxe de séjour, reversement trimestriel
+- Tenue du registre voyageurs, archivage légal 5 ans
+
+## Les sanctions en cas de non-conformité
+
+Les contrôles se sont intensifiés en 2025-2026, notamment dans les médinas et les quartiers touristiques. Sanctions courantes :
+
+- **Annonce non déclarée** : amende 5 000 à 20 000 MAD + retrait obligatoire de l'annonce
+- **Taxe de séjour non collectée/reversée** : redressement + 25% de pénalité
+- **Récidive ou fraude caractérisée** : amende + interdiction temporaire de location courte durée
+
+À Marrakech notamment, plusieurs centaines d'annonces non déclarées ont été suspendues en 2025-2026.
+
+## Faut-il avoir peur ? Non, mais soyez en règle.
+
+La réglementation 2025 n'a rien d'absurde — elle aligne le Maroc sur les standards français/espagnols. Si vous êtes un propriétaire qui veut faire les choses correctement, ça ne vous bloquera pas. Mais c'est de la charge mentale en plus.
+
+C'est pour ça que de plus en plus de propriétaires (locaux et MRE) **délèguent la conformité à une conciergerie pro**. Chez Daribnb, c'est inclus dans le mandat de gestion sans surcoût : déclaration préfecture, taxe de séjour, registre voyageurs, conformité Airbnb. Vous restez le propriétaire, on est votre back-office.
+
+## Vous voulez qu'on s'occupe de tout ?
+
+[Demander une estimation gratuite](/conciergerie-airbnb-tanger) — on audite votre bien, on vérifie votre conformité actuelle, on vous propose un plan pour mettre tout en règle en 2 semaines maxi.`,
+  },
+  {
+    slug: "channel-manager-airbnb-booking-vrbo-maroc",
+    title: "Channel Manager Airbnb au Maroc : connecter Airbnb, Booking, Vrbo en 2026",
+    excerpt:
+      "Lister votre bien uniquement sur Airbnb, c'est se priver de 30 à 50% de revenus potentiels. Voici comment fonctionne un channel manager, et comment choisir le bon au Maroc en 2026.",
+    meta_description:
+      "Channel Manager Airbnb Maroc 2026 : synchroniser Airbnb, Booking et Vrbo automatiquement. Comparatif des outils, gestion des doublons, pricing dynamique cross-platform.",
+    keywords:
+      "channel manager airbnb, synchroniser airbnb booking, channel manager maroc, multi-plateformes airbnb, gestion airbnb booking vrbo",
+    city: "Maroc",
+    cover:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-05-07T11:00:00Z",
+    read_time: 8,
+    content: `## Pourquoi Airbnb seul ne suffit plus en 2026
+
+Si votre bien est uniquement sur Airbnb, vous captez environ **50 à 60% de la demande totale** sur la location courte durée. Le reste se répartit entre :
+
+- **Booking.com** : 25-35% (clientèle européenne — FR, ES, BE, NL — qui réserve uniquement sur Booking par habitude)
+- **Vrbo / Expedia** : 5-10% (familles américaines et européennes pour des séjours longs 7+ nuits)
+- **Réservations directes** : 5-10% (vos anciens voyageurs qui reviennent)
+
+Concrètement, en n'étant que sur Airbnb, vous laissez 30 à 50% du chiffre d'affaires possible sur la table. Le multi-plateformes c'est non-négociable si vous voulez maximiser un investissement locatif.
+
+## Le problème : gérer plusieurs plateformes manuellement c'est l'enfer
+
+Si vous listez le même bien sur Airbnb + Booking + Vrbo sans outil, vous avez 3 calendriers à synchroniser à la main, 3 prix à ajuster, 3 conversations clients à gérer. Un seul oubli = double-réservation = annulation = pénalité Airbnb (-3 points sur le ranking) + voyageur furieux + review 1 étoile.
+
+C'est précisément pour résoudre ça qu'existent les **channel managers** (gestionnaires de canaux).
+
+## Qu'est-ce qu'un channel manager exactement ?
+
+Un channel manager est un outil qui se connecte à toutes les plateformes (Airbnb, Booking, Vrbo, Expedia, etc.) et qui synchronise en temps réel :
+
+- **Le calendrier** : une réservation sur Airbnb bloque automatiquement les dates sur Booking et Vrbo
+- **Les tarifs** : vous changez le prix une fois, ça se propage partout
+- **Les disponibilités** : minimum stay, restrictions, fenêtres de réservation
+- **Les détails de l'annonce** : photos, description (selon les outils, certains font ça aussi)
+
+La sync se fait en moins de 30 secondes en moyenne sur les outils pros. Plus de double-booking, plus de stress.
+
+## Les 5 channel managers utilisables au Maroc en 2026
+
+### 1. Hostaway
+Le plus complet, idéal pour les portefeuilles 5+ biens. Tarif : ~50 €/bien/mois. Interface en français OK. Compatible Airbnb, Booking, Vrbo, Expedia, Marriott, Tripadvisor. **Recommandé si vous gérez plusieurs biens.**
+
+### 2. Lodgify
+Plus accessible (~30 €/mois pour 1 bien). Bon pour démarrer. Inclut un site web direct booking pour bypass les commissions plateformes. **Recommandé si vous voulez aussi un site web pro.**
+
+### 3. Smoobu
+Bon rapport qualité/prix (~25 €/mois pour 1 bien). Synchro fiable, intégration Booking et Airbnb solide. Moins de fonctionnalités avancées mais largement suffisant pour 1-3 biens.
+
+### 4. Beds24
+Pour les utilisateurs techniques. Très puissant (pricing rules avancées, automation poussée), mais courbe d'apprentissage abrupte. **Réservé aux pros.**
+
+### 5. Hospitable (ex-Smartbnb)
+Spécialisé dans l'automation message-voyageur. Bon complément à un channel manager pur, mais ne remplace pas Hostaway/Lodgify pour la sync calendrier multi-plateformes.
+
+## Comparatif rapide pour propriétaires marocains
+
+| Outil | Tarif/bien/mois | Multi-canaux | Site direct | Idéal pour |
+|---|---|---|---|---|
+| Hostaway | ~50€ | ✅ Tous | Optionnel | 5+ biens |
+| Lodgify | ~30€ | ✅ Tous | ✅ Inclus | 1-5 biens |
+| Smoobu | ~25€ | ✅ Tous | ✅ Inclus | 1-3 biens |
+| Beds24 | ~20€ | ✅ Tous | Possible | Pros techniques |
+
+## Faut-il s'en occuper soi-même ou déléguer ?
+
+Le calcul est simple :
+
+### Vous avez 1-2 biens et du temps ?
+Souscrire à Smoobu ou Lodgify peut faire sens. Comptez 2-3 weekends pour le setup initial (création des annonces sur chaque plateforme, photos, descriptions, calage des règles), puis ~30 min/semaine d'entretien.
+
+### Vous avez 3+ biens, ou vous habitez à l'étranger ?
+Déléguer à une conciergerie pro est presque toujours plus rentable. Daribnb intègre par exemple la gestion multi-plateformes (Airbnb + Booking + Vrbo) **sans surcoût** dans son service de [conciergerie classique](/conciergerie-airbnb-tanger). On gère le channel manager pour vous, on optimise les annonces sur chaque canal indépendamment.
+
+## L'impact réel sur les revenus
+
+Sur les biens qu'on gère à Tanger, voici les écarts moyens constatés :
+
+- **Airbnb seul** : 100 (référence)
+- **Airbnb + Booking** : +25-35% de revenus mensuels
+- **Airbnb + Booking + Vrbo + direct** : +35-50%
+
+L'investissement dans un channel manager (entre 25 et 50€/mois) est donc largement rentabilisé dès la 2e nuit supplémentaire louée.
+
+## Vous voulez qu'on s'occupe du multi-plateformes pour vous ?
+
+[Voir notre service multi-plateformes Airbnb + Booking + Vrbo](/multi-plateformes-airbnb-booking-vrbo) — on gère le channel manager, l'optimisation par canal, la synchro temps réel, le pricing dynamique cross-platform. Inclus dans la conciergerie sans frais additionnels.`,
+  },
 ];
 
 export function getPostBySlug(slug) {
