@@ -7,7 +7,7 @@ import WhatsAppFloat from "../components/site/WhatsAppFloat";
 import { BLOG_POSTS } from "../data/blogPosts";
 import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react";
 
-const SITE = "https://daribnb.netlify.app";
+const SITE = "https://www.daribnb.com";
 
 export default function Blog() {
   const posts = BLOG_POSTS;

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://daribnb.netlify.app/sitemap.xml
+Sitemap: https://www.daribnb.com/sitemap.xml

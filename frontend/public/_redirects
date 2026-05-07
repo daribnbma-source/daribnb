@@ -1,1 +1,5 @@
+# 301 redirect ancien domaine Netlify vers domaine canonique (SEO)
+https://daribnb.netlify.app/*  https://www.daribnb.com/:splat  301!
+
+# SPA fallback
 /*    /index.html   200
