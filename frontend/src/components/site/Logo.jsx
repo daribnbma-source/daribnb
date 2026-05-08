@@ -1,14 +1,13 @@
 import React from "react";
 
 export default function Logo({ variant = "dark" }) {
-  const text =
-    variant === "dark" ? "text-[#C1272D]" : "text-white";
+  const text = variant === "dark" ? "text-[#C1272D]" : "text-white";
   return (
     <div className="flex items-center gap-2">
       <img
-        src="/assets/logo.png"
-        alt="Daribnb"
-        className="h-14 md:h-16 w-auto object-contain"
+        src="/favicon.svg"
+        alt="Daribnb logo"
+        className="h-12 md:h-14 w-auto"
       />
       <span
         className={`font-black text-2xl md:text-3xl tracking-tight ${text}`}
