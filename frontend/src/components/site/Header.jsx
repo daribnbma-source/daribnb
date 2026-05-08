@@ -3,37 +3,22 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 
-// Pages services dédiées (multi-page navigation)
+// Les 3 vrais services Daribnb (Tanger-first)
 const SERVICES_MENU = [
   {
     href: "/conciergerie-airbnb-tanger",
-    label: "Conciergerie Airbnb Tanger",
-    desc: "Gestion clé en main, voyageurs, ménage, check-in 24/7",
+    label: "Conciergerie Airbnb",
+    desc: "Gestion clé en main à Tanger : annonce, voyageurs, ménage, check-in 24/7",
   },
   {
     href: "/loyer-fixe-airbnb-tanger",
     label: "Loyer fixe garanti",
-    desc: "Revenu mensuel fixe, zéro risque pour vous",
-  },
-  {
-    href: "/gestion-locative-tanger",
-    label: "Gestion locative Tanger",
-    desc: "Location courte durée Airbnb, transparence totale",
-  },
-  {
-    href: "/gestion-locative-mre-tanger",
-    label: "Spécial MRE 🇲🇦",
-    desc: "Vous habitez à l'étranger ? On gère tout à distance",
-  },
-  {
-    href: "/multi-plateformes-airbnb-booking-vrbo",
-    label: "Airbnb + Booking + Vrbo",
-    desc: "Multi-plateformes synchronisé, +30% de revenus",
+    desc: "Revenu mensuel fixe pour votre bien à Tanger. Zéro risque, zéro stress",
   },
   {
     href: "/optimiser-revenus-airbnb",
-    label: "Optimiser mon Airbnb",
-    desc: "Audit & optimisation, 100% à distance, partout au Maroc",
+    label: "Audit & Optimisation",
+    desc: "Vous gérez vous-même ? On audite et on optimise vos revenus Airbnb",
   },
 ];
 
@@ -105,7 +90,7 @@ export default function Header() {
             </button>
 
             {servicesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[640px] bg-white rounded-2xl shadow-2xl border border-black/5 p-3 grid grid-cols-2 gap-1">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[420px] bg-white rounded-2xl shadow-2xl border border-black/5 p-3 grid grid-cols-1 gap-1">
                 {SERVICES_MENU.map((s) => (
                   <Link
                     key={s.href}

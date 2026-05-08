@@ -30,13 +30,13 @@ export default function Coverage() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-12">
           <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
-            Couverture nationale
+            Expert local · Tanger
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
-            Présents dans tout le Maroc.
+            Daribnb, c'est Tanger en priorité.
           </h2>
           <p className="mt-4 text-lg text-[#4B5563]">
-            Où que soit votre bien, on vient à vous.
+            On opère localement à Tanger depuis plus de 6 ans. Pour les autres villes du Maroc, on propose un service d'optimisation Airbnb 100% à distance.
           </p>
         </div>
 
