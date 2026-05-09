@@ -628,6 +628,283 @@ L'investissement dans un channel manager (entre 25 et 50€/mois) est donc large
 
 [Voir notre service multi-plateformes Airbnb + Booking + Vrbo](/multi-plateformes-airbnb-booking-vrbo) — on gère le channel manager, l'optimisation par canal, la synchro temps réel, le pricing dynamique cross-platform. Inclus dans la conciergerie sans frais additionnels.`,
   },
+  {
+    slug: "mre-airbnb-tanger-erreurs-fiscales-2026",
+    title: "MRE et Airbnb à Tanger : 7 erreurs fiscales à éviter en 2026",
+    excerpt:
+      "Vous êtes MRE et vous louez votre bien tangerois en Airbnb ? Voici les 7 erreurs fiscales qui peuvent vous coûter cher (redressement Maroc + redressement France) et comment les éviter en 2026.",
+    meta_description:
+      "MRE Airbnb Tanger : 7 erreurs fiscales fréquentes (double imposition, déclaration France oubliée, statut auto-entrepreneur mal choisi, Office des Changes). Guide 2026.",
+    keywords:
+      "mre airbnb tanger fiscalité, fiscalité airbnb maroc france, déclaration revenus airbnb mre, convention france maroc airbnb, double imposition airbnb",
+    city: "Tanger",
+    cover:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-05-09T09:00:00Z",
+    read_time: 11,
+    content: `## Pourquoi cet article (et pourquoi maintenant)
+
+En 2024-2025, le Maroc a serré la vis sur la fiscalité de la location meublée touristique. **Décret n°2-23-844, autorisation préfectorale obligatoire, taxe de séjour obligatoire, TVA 10% sur la LCD au-delà de 500 000 MAD/an, déclaration des voyageurs étrangers à la police touristique** — les MRE qui pensaient pouvoir continuer à louer "tranquille" comme en 2020 se retrouvent en infraction sans le savoir.
+
+En parallèle, **la France croise désormais les fichiers Airbnb avec la DGFiP** depuis le décret de 2023. Si vous êtes résident fiscal France et que votre Airbnb tangerois a généré 8 000 EUR en 2024, le fisc français le sait. Si vous ne l'avez pas déclaré sur le formulaire 2047 : majoration 80% + intérêts.
+
+Voici les 7 erreurs qu'on voit le plus souvent chez les propriétaires MRE qui nous contactent à Daribnb — et comment les éviter.
+
+## Erreur #1 : Ne pas déclarer ses revenus Airbnb à la France
+
+Si vous êtes résident fiscal France, vous devez déclarer en France TOUS vos revenus mondiaux, y compris ceux de source marocaine via le **formulaire 2047**. L'impôt marocain payé est imputé en crédit d'impôt sur l'impôt français (convention fiscale 1970, art. 25).
+
+**Sanction si oubli** : majoration 40 à 80% + intérêts 0,2%/mois.
+
+## Erreur #2 : Choisir le mauvais statut fiscal au Maroc
+
+3 statuts possibles :
+- **Auto-entrepreneur** (CA < 500 000 MAD/an) : 1% du CA, ultra simple
+- **Société (SARL/SA)** : IS 17,5%-31% du bénéfice, déduction des charges
+- **Particulier sans structure** : ❌ à éviter, plus toléré depuis le décret 2024
+
+## Erreur #3 : Ne pas demander l'autorisation préfectorale
+
+Depuis 2024, **toute location meublée touristique au Maroc nécessite une autorisation préfectorale**. À Tanger : dossier wilaya, 2-6 semaines de délai. Sans : amende jusqu'à 50 000 MAD + fermeture administrative.
+
+## Erreur #4 : Oublier la taxe de séjour
+
+À Tanger : **5 à 30 MAD/nuit/personne** selon standing. Reversement trimestriel à la commune. Contrôle croisé Airbnb depuis 2024.
+
+## Erreur #5 : Mal gérer le rapatriement des fonds
+
+**Compte CCV ou CCMRE indispensable** pour rapatrier vos revenus locatifs Maroc librement vers votre compte européen. Sans ça : plafond 100 000 MAD/an.
+
+## Erreur #6 : Confondre conciergerie et sous-location
+
+2 modèles propres : conciergerie classique (mandataire, commission 15-25%) ou loyer fixe garanti (Daribnb verse un montant fixe, prend le risque commercial).
+
+## Erreur #7 : Ne pas anticiper le contrôle (français ET marocain)
+
+Tenez un registre simple chaque mois (CA, charges, taxe de séjour, conciergerie). Un Excel suffit. Vous gagnez en cas de contrôle.
+
+## Cas concret
+
+**Karim, MRE Bruxelles, T3 Malabata Tanger.** Avant Daribnb : pas d'autorisation, pas de taxe de séjour, pas déclaré en Belgique → courrier préfecture mars 2024 + contrôle belge. Avec Daribnb : auto-entrepreneur Maroc, autorisation obtenue, taxe de séjour reversée, compte CCMRE ouvert, déclaration belge corrigée, loyer fixe 6 200 MAD/mois. **Coût total régularisation : ~12 000 MAD.**
+
+## Vous voulez qu'on s'occupe de tout ?
+
+Daribnb est dirigée par Marwan, MRE de seconde génération. On accompagne plusieurs dizaines de MRE dans leur régularisation 2024-2025.
+
+[Voir notre service spécial MRE](/gestion-locative-mre-tanger) — workflow 100% à distance, accompagnement fiscal binational inclus.`,
+  },
+  {
+    slug: "locataire-vs-conciergerie-airbnb-tanger-france",
+    title: "Locataire ou conciergerie Airbnb à Tanger : que choisir si on vit en France",
+    excerpt:
+      "Vous avez un bien à Tanger et vous vivez en France. Faut-il prendre un locataire classique en bail meublé ou passer par une conciergerie Airbnb ? Comparatif chiffré 2026.",
+    meta_description:
+      "Locataire vs conciergerie Airbnb Tanger : comparatif 2026 pour MRE. Revenus, contraintes, fiscalité, risques. Que choisir selon votre profil.",
+    keywords:
+      "locataire airbnb tanger, conciergerie tanger france, gérer airbnb depuis france, louer son bien tanger, location longue durée vs courte durée tanger",
+    city: "Tanger",
+    cover:
+      "https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-05-08T09:00:00Z",
+    read_time: 9,
+    content: `## La question que tous les MRE se posent
+
+Vous avez un bien à Tanger. Vous vivez en France (ou Belgique, Pays-Bas). 2 options principales :
+
+1. **Bail meublé classique** à un locataire local — loyer fixe modeste, peu de stress
+2. **Conciergerie Airbnb** — revenus potentiellement plus élevés, marché courte durée
+
+Comparons sur un cas type : T3 70m² Malabata, valeur 1,2 M MAD.
+
+## Option A — Bail meublé longue durée
+
+- Revenu mensuel : **5 500-7 000 MAD** (médiane 6 200)
+- Annuel net : ~62 400 MAD
+- **Risques** : impayés (procédure expulsion 12-24 mois au Maroc), dégradations à distance, locataire 1-3 ans = pas d'usage personnel possible
+
+## Option B — Conciergerie Airbnb (commission ~20%)
+
+- Revenu brut Airbnb : **140 000-180 000 MAD/an**
+- Net propriétaire : **85 000-110 000 MAD**
+- **+40-70% vs bail meublé classique**
+- Avantages : flexibilité (utilisation perso possible), bien entretenu, AirCover Airbnb couvre les dégâts
+- Inconvénients : revenu variable saisonnier
+
+## Option C — Loyer fixe garanti Daribnb
+
+- Revenu mensuel garanti : **7 500 MAD**
+- Annuel net : **90 000 MAD**
+- **+45% vs bail meublé**, zéro variabilité
+- Daribnb prend le risque commercial. Vous touchez la stabilité.
+
+## Comparatif visuel
+
+| Critère | Bail meublé | Conciergerie | Loyer fixe |
+|---|---|---|---|
+| Net annuel | ~62K MAD | ~85-110K MAD | ~90K MAD |
+| Stabilité | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Usage perso | ❌ | ⭐⭐⭐⭐ | ⭐⭐ |
+| Risque opérationnel | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Entretien | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+
+## Le risque qu'on n'évoque jamais
+
+**30-40% des baux meublés tangerois finissent en impayés ou litige sur 5 ans.** Procédure d'expulsion : 12-24 mois sans loyer perçu. Perte cumulée 50-100K MAD.
+
+À l'inverse en conciergerie Airbnb : turnover voyageurs 2-7 nuits, AirCover Airbnb 1 M USD, zéro expulsion possible.
+
+## Comment décider en 5 minutes
+
+3 questions :
+1. **Objectif principal** ? Rendement → Conciergerie · Sérénité → Loyer fixe · Patrimoine + minimum stress → Bail meublé
+2. **Usage personnel du bien** ? Régulier → Conciergerie · Rare → Loyer fixe ou bail meublé
+3. **Temps mensuel** disponible ? 0 min → Loyer fixe · 30 min → Conciergerie · 5h → Bail meublé
+
+## Estimation gratuite pour votre bien
+
+Daribnb propose une estimation **24h, gratuite** : audit du bien, simulation chiffrée des 3 scénarios sur 12 mois, recommandation honnête selon votre situation.
+
+[Demander mon estimation](/gestion-locative-mre-tanger) — réponse personnalisée WhatsApp ou email sous 24h.`,
+  },
+  {
+    slug: "declarer-revenus-airbnb-maroc-mre-france",
+    title: "Comment déclarer ses revenus Airbnb Maroc quand on est MRE en France (guide 2026)",
+    excerpt:
+      "Vous êtes résident fiscal France et propriétaire d'un Airbnb au Maroc ? Voici la procédure exacte pour déclarer en France sans payer la double imposition. Formulaires, calculs, exemples chiffrés.",
+    meta_description:
+      "Déclarer revenus Airbnb Maroc en tant que MRE France : formulaire 2047, convention fiscale France-Maroc, crédit d'impôt étranger. Guide pas-à-pas 2026.",
+    keywords:
+      "déclarer revenus airbnb maroc, formulaire 2047 airbnb, convention fiscale france maroc airbnb, mre fiscalité france airbnb, double imposition airbnb maroc",
+    city: null,
+    cover:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-05-07T09:00:00Z",
+    read_time: 10,
+    content: `## Pourquoi cet article est important
+
+Vous êtes MRE résident fiscal France. Vous louez votre bien marocain en Airbnb. Et vous vous demandez :
+
+- "Dois-je déclarer en France ?"
+- "Est-ce que je vais être imposé deux fois ?"
+- "Quel formulaire ?"
+
+**Réponses courtes** : oui vous déclarez, non vous ne payez pas deux fois (convention fiscale), formulaire **2047**, impact net souvent faible.
+
+## Êtes-vous résident fiscal France ?
+
+Vous l'êtes si AU MOINS UN de ces 4 critères est rempli :
+
+1. Foyer (famille, domicile habituel) en France
+2. Plus de 183 jours/an en France
+3. Activité professionnelle principale en France
+4. Centre intérêts économiques en France
+
+Si oui : France impose vos revenus mondiaux, y compris Airbnb Maroc.
+
+## Le cadre : convention fiscale France-Maroc
+
+Convention de 1970 (modifiée 1989) :
+- **Art. 9** : revenus immobiliers imposables dans le pays du bien (Maroc)
+- **Art. 25** : France impute un crédit d'impôt égal à l'impôt marocain payé
+
+→ **Pas de double imposition. L'impôt Maroc est déduit de l'impôt France.**
+
+## Les 3 étapes de la déclaration France
+
+### Étape 1 — Calculer votre revenu Airbnb Maroc net
+
+Exemple chiffré :
+- CA brut Airbnb : 140 000 MAD ≈ **13 000 EUR**
+- Conciergerie 20% : -2 600 EUR
+- Taxe de séjour reversée : -800 EUR
+- Maintenance + syndic + taxe édilité : -1 200 EUR
+- **Revenu net : 8 400 EUR**
+
+### Étape 2 — Calculer l'impôt marocain payé
+
+Statut auto-entrepreneur (CA < 500K MAD) : **1% du CA = 130 EUR**.
+
+Conservez le récépissé DGI Maroc (preuve pour le crédit d'impôt français).
+
+### Étape 3 — Remplir formulaire 2047 + 2042
+
+**2047** (revenus de source étrangère) :
+- Pays : Maroc
+- Nature : BIC location meublée
+- Revenu brut : 8 400 EUR
+- **Impôt acquitté à l'étranger : 130 EUR** ← case clé pour activer le crédit d'impôt
+
+**2042** : reportez le revenu net.
+
+## Calcul de l'impôt français : exemple complet
+
+Hypothèse : couple marié, TMI 30%.
+
+### Régime micro-BIC (location meublée < 77 700 EUR) — RECOMMANDÉ pour la plupart des MRE
+
+- Abattement forfaitaire **50%**
+- Revenu imposable : 8 400 × 50% = **4 200 EUR**
+- Impôt théorique : 4 200 × 30% = 1 260 EUR
+- **Crédit d'impôt étranger : -130 EUR**
+- **Impôt français net dû : 1 130 EUR**
+- Prélèvements sociaux 17,2% : 722 EUR
+
+**Total prélèvements France : 1 852 EUR (sur 8 400 EUR net)**
+
+→ **Le micro-BIC est presque toujours plus avantageux** que le régime réel pour un MRE France avec Airbnb Maroc.
+
+## Erreurs à ne pas commettre
+
+### 1. Oublier de déclarer
+Airbnb transmet vos revenus à la DGFiP française depuis 2023. Si votre compte Airbnb a des coordonnées françaises, le fisc a vos chiffres.
+**Sanction** : majoration 40 à 80% + intérêts 0,2%/mois.
+
+### 2. Oublier le crédit d'impôt étranger
+Conséquence : vous payez deux fois. Erreur fréquente quand un comptable français mal informé fait votre déclaration.
+**Solution** : utilisez explicitement la case "impôt acquitté à l'étranger" du 2047.
+
+### 3. Confondre revenus fonciers et BIC
+Un Airbnb est meublé → c'est du **BIC**, pas du foncier.
+
+### 4. Ne pas garder les justificatifs
+Stockez sur Drive : récépissés DGI, relevés Airbnb, contrat conciergerie, virements. Contrôle possible jusqu'à 6 ans.
+
+## Cas particuliers
+
+- **Plusieurs biens Airbnb Maroc** : tous regroupés sur le 2047
+- **Patrimoine immobilier > 1,3 M EUR** : bien Maroc dans l'assiette IFI
+- **Plan de devenir résident fiscal Maroc** : déclarez France jusqu'au jour J du déménagement
+
+## Quand consulter un expert
+
+Pour la plupart des MRE avec un seul Airbnb Maroc : déclaration en micro-BIC faisable seul (45 min sur impots.gouv.fr).
+
+Consultez un comptable spécialisé MRE si : 3+ biens, société Maroc, IFI, projet de retour Maroc.
+
+Coût : 600-1 500 EUR/an.
+
+## Que faire concrètement maintenant
+
+1. Cette semaine : récupérez relevé Airbnb 2025 (CA, commission, ménage)
+2. Récupérez justificatifs charges (conciergerie, syndic, maintenance)
+3. Récupérez récépissé d'impôt Maroc auprès de votre conciergerie
+4. Remplissez 2047 + 2042 sur impots.gouv.fr
+5. Payez l'impôt français net (souvent très faible après crédit d'impôt étranger)
+
+## Vous voulez tout simplifier ?
+
+Daribnb gère votre Airbnb Tanger 100% à distance, **avec accompagnement fiscal binational** :
+- Récépissé d'impôt Maroc fourni chaque trimestre
+- Relevé annuel formaté pour votre déclaration France (CA, charges, taxe de séjour)
+- Conseil sur le statut Maroc le plus adapté
+- Mise en relation avec expert-comptable spécialisé MRE si besoin
+
+[Voir notre service spécial MRE](/gestion-locative-mre-tanger).
+
+---
+
+**Disclaimer** : article rédigé pour information générale. Ne constitue pas un conseil fiscal personnalisé.`,
+  },
 ];
 
 export function getPostBySlug(slug) {

@@ -10,7 +10,7 @@ export default function Footer() {
       className="bg-[#006233] text-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <div className="grid md:grid-cols-5 gap-10">
+        <div className="grid md:grid-cols-6 gap-10">
           <div className="md:col-span-2">
             <Logo variant="light" />
             <p className="mt-4 text-white/80 max-w-sm leading-relaxed">
@@ -40,6 +40,15 @@ export default function Footer() {
               <li><Link to="/blog" className="hover:text-[#C1272D] transition-colors">Blog</Link></li>
               <li><a href="/#faq" className="hover:text-[#C1272D] transition-colors">FAQ</a></li>
               <li><a href="/#tarifs" className="hover:text-[#C1272D] transition-colors">Tarifs</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-4 text-white">Ressources</h4>
+            <ul className="space-y-3 text-sm text-white/80">
+              <li><Link to="/temoignages" className="hover:text-[#C1272D] transition-colors">Témoignages</Link></li>
+              <li><Link to="/lexique-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Lexique Airbnb</Link></li>
+              <li><Link to="/marwan-afassi" className="hover:text-[#C1272D] transition-colors">Marwan, fondateur</Link></li>
             </ul>
           </div>
 

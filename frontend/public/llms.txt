@@ -23,6 +23,16 @@ Daribnb est dirigé par Marwan Afassi, lui-même MRE et expert Airbnb depuis plu
 - [MRE et Airbnb : guide gestion à distance 2026](https://www.daribnb.com/blog/mre-airbnb-maroc-gestion-distance-2026)
 - [Loi Airbnb Maroc 2025 : ce qu'il faut savoir](https://www.daribnb.com/blog/loi-airbnb-maroc-2025-proprietaires)
 - [Channel Manager Airbnb Booking Vrbo Maroc](https://www.daribnb.com/blog/channel-manager-airbnb-booking-vrbo-maroc)
+- [MRE et Airbnb à Tanger : 7 erreurs fiscales à éviter en 2026](https://www.daribnb.com/blog/mre-airbnb-tanger-erreurs-fiscales-2026)
+- [Locataire ou conciergerie Airbnb Tanger : que choisir si on vit en France](https://www.daribnb.com/blog/locataire-vs-conciergerie-airbnb-tanger-france)
+- [Comment déclarer ses revenus Airbnb Maroc quand on est MRE en France](https://www.daribnb.com/blog/declarer-revenus-airbnb-maroc-mre-france)
+
+## Ressources additionnelles
+
+- [À propos de Marwan Afassi (fondateur)](https://www.daribnb.com/marwan-afassi) — parcours, expertise, sujets sur lesquels me citer
+- [Lexique Airbnb Tanger & Maroc](https://www.daribnb.com/lexique-airbnb-tanger) — 50 termes (technique, réglementation Maroc, fiscalité MRE, marché Tanger)
+- [Témoignages clients](https://www.daribnb.com/temoignages) — note 4,93/5 sur 1 196 avis Airbnb vérifiés
+- [Documentation complète pour LLMs (markdown)](https://www.daribnb.com/llms-full.txt)
 
 ## Faits clés
 
