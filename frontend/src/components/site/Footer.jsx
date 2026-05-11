@@ -38,7 +38,7 @@ export default function Footer() {
               <li><Link to="/optimiser-revenus-airbnb" className="hover:text-[#C1272D] transition-colors">Optimisation revenus</Link></li>
               <li><Link to="/multi-plateformes-airbnb-booking-vrbo" className="hover:text-[#C1272D] transition-colors">Airbnb + Booking + Vrbo</Link></li>
               <li><Link to="/blog" className="hover:text-[#C1272D] transition-colors">Blog</Link></li>
-              <li><a href="/#faq" className="hover:text-[#C1272D] transition-colors">FAQ</a></li>
+              <li><Link to="/faq" className="hover:text-[#C1272D] transition-colors">FAQ</Link></li>
               <li><a href="/#tarifs" className="hover:text-[#C1272D] transition-colors">Tarifs</a></li>
             </ul>
           </div>

@@ -1,53 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { ArrowRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-
-const FAQS = [
-  {
-    q: "Quelle est la différence entre la conciergerie, Super Daribnb et le loyer fixe ?",
-    a: "La conciergerie : on gère votre bien au quotidien, vous touchez les revenus nets après commission. Super Daribnb : une prestation unique d'optimisation (photos pro, refonte d'annonce, stratégie tarifaire, coaching) — vous gardez la gestion mais boostez vos revenus. Le loyer fixe : on vous verse un loyer garanti chaque mois, quel que soit le taux de remplissage.",
-  },
-  {
-    q: "En quoi consiste concrètement Super Daribnb ?",
-    a: "C'est une prestation one-shot (ponctuelle) qui inclut : un audit complet de votre annonce et de votre concurrence, un shooting photo professionnel, la refonte du titre, de la description et du SEO Airbnb, une stratégie tarifaire avec saisonnalité, et un coaching 1-to-1 pour que vous gagniez en autonomie. Le tarif est sur mesure selon votre bien et vos objectifs de chiffre d'affaires.",
-  },
-  {
-    q: "Y a-t-il une durée minimale d'engagement ?",
-    a: "Pour la conciergerie, nous proposons un contrat flexible avec un préavis raisonnable. Pour le loyer fixe, les contrats sont généralement de 12 à 36 mois pour garantir la stabilité du revenu.",
-  },
-  {
-    q: "Où intervenez-vous ?",
-    a: "Partout au Maroc : Marrakech, Casablanca, Rabat, Tanger, Agadir, Fès, Essaouira, Chefchaouen et toutes les autres villes. On se déplace chez vous pour l'estimation.",
-  },
-  {
-    q: "Quels sont les frais cachés ?",
-    a: "Aucun. Notre commission est transparente (20% minimum pour la conciergerie), sans frais d'entrée, sans frais d'arrêt. Pour le loyer fixe, le montant est fixé au contrat — c'est tout.",
-  },
-  {
-    q: "Qui gère les problèmes avec les voyageurs ?",
-    a: "Notre équipe, 24h/24 et 7j/7. Vous ne recevez aucun appel, aucune plainte. On gère les check-in, les litiges, les incidents et la maintenance.",
-  },
-  {
-    q: "Comment êtes-vous payé ?",
-    a: "Pour la conciergerie : vous recevez vos revenus mensuels avec un rapport détaillé, commission déduite. Pour le loyer fixe : virement bancaire ponctuel chaque mois, au jour convenu.",
-  },
-  {
-    q: "Puis-je utiliser mon bien pendant le contrat ?",
-    a: "Oui, vous pouvez bloquer des dates pour un usage personnel. On vous demande juste de nous prévenir à l'avance pour ne pas pénaliser les réservations.",
-  },
-];
+import { HOME_FAQS, FAQS } from "../../data/faqs";
 
 export default function FAQ() {
   // FAQPage JSON-LD pour rich results Google (les Q/A peuvent s'afficher directement dans la SERP)
+  // Sur la home on n'expose QUE les FAQs générales — la page /faq a son propre schema complet
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQS.map((f) => ({
+    mainEntity: HOME_FAQS.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -74,7 +43,7 @@ export default function FAQ() {
         </div>
 
         <Accordion type="single" collapsible className="space-y-3">
-          {FAQS.map((f, i) => (
+          {HOME_FAQS.map((f, i) => (
             <AccordionItem
               key={i}
               value={`item-${i}`}
@@ -90,6 +59,20 @@ export default function FAQ() {
             </AccordionItem>
           ))}
         </Accordion>
+
+        {/* Lien vers la FAQ complète (35+ questions catégorisées) */}
+        <div className="mt-10 text-center">
+          <Link
+            to="/faq"
+            className="inline-flex items-center gap-2 text-[#C1272D] hover:text-[#A01D22] font-semibold transition-colors group"
+          >
+            Voir les {FAQS.length}+ questions sur conciergerie, ménage, gestion, MRE
+            <ArrowRight
+              size={18}
+              className="group-hover:translate-x-1 transition-transform"
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );

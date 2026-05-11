@@ -16,6 +16,7 @@ import MultiPlateformesAirbnbBooking from "./pages/MultiPlateformesAirbnbBooking
 import MarwanAfassi from "./pages/MarwanAfassi";
 import LexiqueAirbnbTanger from "./pages/LexiqueAirbnbTanger";
 import Temoignages from "./pages/Temoignages";
+import FAQPage from "./pages/FAQPage";
 import AdminLogin from "./pages/AdminLogin";
 import AuthCallback from "./pages/AuthCallback";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -23,6 +24,7 @@ import AdminBlog from "./pages/AdminBlog";
 import AdminBlogEditor from "./pages/AdminBlogEditor";
 import AdminContacts from "./pages/AdminContacts";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ScrollToTop from "./components/ScrollToTop";
 import { AuthProvider } from "./lib/auth";
 import { Toaster } from "sonner";
 
@@ -33,29 +35,33 @@ function AppRouter() {
     return <AuthCallback />;
   }
   return (
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/mentions-legales" element={<Mentions />} />
-      <Route path="/confidentialite" element={<Privacy />} />
-      <Route path="/cgv" element={<CGV />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/blog/:slug" element={<BlogPost />} />
-      <Route path="/conciergerie-airbnb-tanger" element={<ConciergerieAirbnbTanger />} />
-      <Route path="/gestion-locative-tanger" element={<GestionLocativeTanger />} />
-      <Route path="/gestion-locative-mre-tanger" element={<GestionLocativeMRETanger />} />
-      <Route path="/optimiser-revenus-airbnb" element={<OptimiserRevenusAirbnb />} />
-      <Route path="/loyer-fixe-airbnb-tanger" element={<LoyerFixeAirbnbTanger />} />
-      <Route path="/multi-plateformes-airbnb-booking-vrbo" element={<MultiPlateformesAirbnbBooking />} />
-      <Route path="/marwan-afassi" element={<MarwanAfassi />} />
-      <Route path="/lexique-airbnb-tanger" element={<LexiqueAirbnbTanger />} />
-      <Route path="/temoignages" element={<Temoignages />} />
-      <Route path="/admin/login" element={<AdminLogin />} />
-      <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
-      <Route path="/admin/blog" element={<ProtectedRoute><AdminBlog /></ProtectedRoute>} />
-      <Route path="/admin/blog/new" element={<ProtectedRoute><AdminBlogEditor /></ProtectedRoute>} />
-      <Route path="/admin/blog/:slug/edit" element={<ProtectedRoute><AdminBlogEditor /></ProtectedRoute>} />
-      <Route path="/admin/contacts" element={<ProtectedRoute><AdminContacts /></ProtectedRoute>} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/mentions-legales" element={<Mentions />} />
+        <Route path="/confidentialite" element={<Privacy />} />
+        <Route path="/cgv" element={<CGV />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/conciergerie-airbnb-tanger" element={<ConciergerieAirbnbTanger />} />
+        <Route path="/gestion-locative-tanger" element={<GestionLocativeTanger />} />
+        <Route path="/gestion-locative-mre-tanger" element={<GestionLocativeMRETanger />} />
+        <Route path="/optimiser-revenus-airbnb" element={<OptimiserRevenusAirbnb />} />
+        <Route path="/loyer-fixe-airbnb-tanger" element={<LoyerFixeAirbnbTanger />} />
+        <Route path="/multi-plateformes-airbnb-booking-vrbo" element={<MultiPlateformesAirbnbBooking />} />
+        <Route path="/marwan-afassi" element={<MarwanAfassi />} />
+        <Route path="/lexique-airbnb-tanger" element={<LexiqueAirbnbTanger />} />
+        <Route path="/temoignages" element={<Temoignages />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+        <Route path="/admin/blog" element={<ProtectedRoute><AdminBlog /></ProtectedRoute>} />
+        <Route path="/admin/blog/new" element={<ProtectedRoute><AdminBlogEditor /></ProtectedRoute>} />
+        <Route path="/admin/blog/:slug/edit" element={<ProtectedRoute><AdminBlogEditor /></ProtectedRoute>} />
+        <Route path="/admin/contacts" element={<ProtectedRoute><AdminContacts /></ProtectedRoute>} />
+      </Routes>
+    </>
   );
 }
 

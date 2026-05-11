@@ -24,7 +24,7 @@ const SERVICES_MENU = [
 
 const NAV_TOP = [
   { href: "/blog", label: "Blog" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Header() {

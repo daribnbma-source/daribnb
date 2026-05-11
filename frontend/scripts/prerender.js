@@ -34,6 +34,7 @@ const ROUTES_BASE = [
   "/marwan-afassi",
   "/lexique-airbnb-tanger",
   "/temoignages",
+  "/faq",
   "/blog",
   "/mentions-legales",
   "/confidentialite",
