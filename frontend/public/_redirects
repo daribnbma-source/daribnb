@@ -1,5 +1,42 @@
 # 301 redirect ancien domaine Netlify vers domaine canonique (SEO)
 https://daribnb.netlify.app/*  https://www.daribnb.com/:splat  301!
 
-# SPA fallback
+# === Anciennes URLs WordPress (avant refonte React/Cloudflare) ===
+# Récupération SEO juice + cleanup warnings GSC "Explorée, non indexée"
+
+# Slugs FR de l'ancien WordPress vers nouveaux équivalents
+/revenu-fixe-garanti        /loyer-fixe-airbnb-tanger   301
+/revenu-fixe-garanti/       /loyer-fixe-airbnb-tanger   301
+/a-propos                   /marwan-afassi              301
+/a-propos/                  /marwan-afassi              301
+/contact                    /                           301
+/contact/                   /                           301
+/accueil                    /                           301
+/accueil/                   /                           301
+/demande-de-rappel          /                           301
+/demande-de-rappel/         /                           301
+
+# Pages WordPress par défaut
+/sample-page                /                           301
+/sample-page/               /                           301
+
+# Pages auteur/catégorie WordPress par défaut
+/author/*                   /marwan-afassi              301
+/category/uncategorized     /blog                       301
+/category/uncategorized/    /blog                       301
+/category/uncategorized/feed   /blog                    301
+/category/uncategorized/feed/  /blog                    301
+/category/*                 /blog                       301
+
+# Flux RSS WordPress génériques
+/feed                       /blog                       301
+/feed/                      /blog                       301
+/comments/feed              /blog                       301
+/comments/feed/             /blog                       301
+/wp-content/*               /                           301
+/wp-admin                   /                           301
+/wp-admin/                  /                           301
+/wp-login.php               /                           301
+
+# SPA fallback (DOIT rester en dernier — capture tout le reste)
 /*    /index.html   200
