@@ -23,23 +23,24 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Tanger</h4>
+            <h4 className="font-bold mb-4 text-white">Nos villes</h4>
             <ul className="space-y-3 text-sm text-white/80">
-              <li><Link to="/conciergerie-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Conciergerie Airbnb</Link></li>
-              <li><Link to="/gestion-locative-tanger" className="hover:text-[#C1272D] transition-colors">Gestion locative</Link></li>
-              <li><Link to="/loyer-fixe-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Loyer fixe garanti</Link></li>
-              <li><Link to="/gestion-locative-mre-tanger" className="hover:text-[#C1272D] transition-colors">Spécial MRE</Link></li>
+              <li><Link to="/conciergerie-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Tanger</Link></li>
+              <li><Link to="/conciergerie-airbnb-casablanca" className="hover:text-[#C1272D] transition-colors">Casablanca</Link></li>
+              <li><Link to="/conciergerie-airbnb-marrakech" className="hover:text-[#C1272D] transition-colors">Marrakech</Link></li>
+              <li><Link to="/conciergerie-airbnb-rabat" className="hover:text-[#C1272D] transition-colors">Rabat</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4 text-white">Services Maroc</h4>
             <ul className="space-y-3 text-sm text-white/80">
+              <li><Link to="/loyer-fixe-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Loyer fixe garanti</Link></li>
+              <li><Link to="/gestion-locative-mre-tanger" className="hover:text-[#C1272D] transition-colors">Spécial MRE</Link></li>
               <li><Link to="/optimiser-revenus-airbnb" className="hover:text-[#C1272D] transition-colors">Optimisation revenus</Link></li>
               <li><Link to="/multi-plateformes-airbnb-booking-vrbo" className="hover:text-[#C1272D] transition-colors">Airbnb + Booking + Vrbo</Link></li>
               <li><Link to="/blog" className="hover:text-[#C1272D] transition-colors">Blog</Link></li>
               <li><Link to="/faq" className="hover:text-[#C1272D] transition-colors">FAQ</Link></li>
-              <li><a href="/#tarifs" className="hover:text-[#C1272D] transition-colors">Tarifs</a></li>
             </ul>
           </div>
 

@@ -3,17 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 
-// Les 3 vrais services Daribnb (Tanger-first)
+// Les 3 vrais services Daribnb (multi-villes : Tanger, Casablanca, Rabat, Marrakech)
 const SERVICES_MENU = [
   {
     href: "/conciergerie-airbnb-tanger",
     label: "Conciergerie Airbnb",
-    desc: "Gestion clé en main à Tanger : annonce, voyageurs, ménage, check-in 24/7",
+    desc: "Gestion clé en main à Tanger, Casablanca, Rabat, Marrakech : annonce, voyageurs, ménage, check-in 24/7",
   },
   {
     href: "/loyer-fixe-airbnb-tanger",
     label: "Loyer fixe garanti",
-    desc: "Revenu mensuel fixe pour votre bien à Tanger. Zéro risque, zéro stress",
+    desc: "Revenu mensuel fixe pour votre bien, partout au Maroc. Zéro risque, zéro stress",
   },
   {
     href: "/optimiser-revenus-airbnb",
