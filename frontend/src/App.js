@@ -1,32 +1,39 @@
 import "@/App.css";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Landing from "./pages/Landing";
-import Mentions from "./pages/Mentions";
-import Privacy from "./pages/Privacy";
-import CGV from "./pages/CGV";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import ConciergerieAirbnbTanger from "./pages/ConciergerieAirbnbTanger";
-import GestionLocativeTanger from "./pages/GestionLocativeTanger";
-import GestionLocativeMRETanger from "./pages/GestionLocativeMRETanger";
-import OptimiserRevenusAirbnb from "./pages/OptimiserRevenusAirbnb";
-import LoyerFixeAirbnbTanger from "./pages/LoyerFixeAirbnbTanger";
-import MultiPlateformesAirbnbBooking from "./pages/MultiPlateformesAirbnbBooking";
-import MarwanAfassi from "./pages/MarwanAfassi";
-import LexiqueAirbnbTanger from "./pages/LexiqueAirbnbTanger";
-import Temoignages from "./pages/Temoignages";
-import FAQPage from "./pages/FAQPage";
-import AdminLogin from "./pages/AdminLogin";
 import AuthCallback from "./pages/AuthCallback";
-import AdminDashboard from "./pages/AdminDashboard";
-import AdminBlog from "./pages/AdminBlog";
-import AdminBlogEditor from "./pages/AdminBlogEditor";
-import AdminContacts from "./pages/AdminContacts";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ScrollToTop from "./components/ScrollToTop";
 import { AuthProvider } from "./lib/auth";
 import { Toaster } from "sonner";
+
+// Code-splitting par route : seule la home (Landing) est dans le bundle initial.
+// Chaque autre page est chargée à la demande — réduit le JS inutilisé sur chaque vue.
+const Mentions = lazy(() => import("./pages/Mentions"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const CGV = lazy(() => import("./pages/CGV"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const ConciergerieAirbnbTanger = lazy(() => import("./pages/ConciergerieAirbnbTanger"));
+const GestionLocativeTanger = lazy(() => import("./pages/GestionLocativeTanger"));
+const GestionLocativeMRETanger = lazy(() => import("./pages/GestionLocativeMRETanger"));
+const OptimiserRevenusAirbnb = lazy(() => import("./pages/OptimiserRevenusAirbnb"));
+const LoyerFixeAirbnbTanger = lazy(() => import("./pages/LoyerFixeAirbnbTanger"));
+const MultiPlateformesAirbnbBooking = lazy(() => import("./pages/MultiPlateformesAirbnbBooking"));
+const ConciergerieAirbnbMarrakech = lazy(() => import("./pages/ConciergerieAirbnbMarrakech"));
+const ConciergerieAirbnbCasablanca = lazy(() => import("./pages/ConciergerieAirbnbCasablanca"));
+const ConciergerieAirbnbRabat = lazy(() => import("./pages/ConciergerieAirbnbRabat"));
+const MarwanAfassi = lazy(() => import("./pages/MarwanAfassi"));
+const LexiqueAirbnbTanger = lazy(() => import("./pages/LexiqueAirbnbTanger"));
+const Temoignages = lazy(() => import("./pages/Temoignages"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
+const AdminLogin = lazy(() => import("./pages/AdminLogin"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const AdminBlog = lazy(() => import("./pages/AdminBlog"));
+const AdminBlogEditor = lazy(() => import("./pages/AdminBlogEditor"));
+const AdminContacts = lazy(() => import("./pages/AdminContacts"));
 
 function AppRouter() {
   const location = useLocation();
@@ -37,6 +44,7 @@ function AppRouter() {
   return (
     <>
       <ScrollToTop />
+      <Suspense fallback={<div className="min-h-screen bg-[#FAF9F6]" />}>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/mentions-legales" element={<Mentions />} />
@@ -50,6 +58,9 @@ function AppRouter() {
         <Route path="/optimiser-revenus-airbnb" element={<OptimiserRevenusAirbnb />} />
         <Route path="/loyer-fixe-airbnb-tanger" element={<LoyerFixeAirbnbTanger />} />
         <Route path="/multi-plateformes-airbnb-booking-vrbo" element={<MultiPlateformesAirbnbBooking />} />
+        <Route path="/conciergerie-airbnb-marrakech" element={<ConciergerieAirbnbMarrakech />} />
+        <Route path="/conciergerie-airbnb-casablanca" element={<ConciergerieAirbnbCasablanca />} />
+        <Route path="/conciergerie-airbnb-rabat" element={<ConciergerieAirbnbRabat />} />
         <Route path="/marwan-afassi" element={<MarwanAfassi />} />
         <Route path="/lexique-airbnb-tanger" element={<LexiqueAirbnbTanger />} />
         <Route path="/temoignages" element={<Temoignages />} />
@@ -61,6 +72,7 @@ function AppRouter() {
         <Route path="/admin/blog/:slug/edit" element={<ProtectedRoute><AdminBlogEditor /></ProtectedRoute>} />
         <Route path="/admin/contacts" element={<ProtectedRoute><AdminContacts /></ProtectedRoute>} />
       </Routes>
+      </Suspense>
     </>
   );
 }

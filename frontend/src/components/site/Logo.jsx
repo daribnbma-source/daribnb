@@ -5,9 +5,11 @@ export default function Logo({ variant = "dark" }) {
   return (
     <div className="flex items-center gap-2">
       <img
-        src="/favicon.svg"
+        src="/assets/logo.webp"
         alt="Daribnb logo"
-        className="h-12 md:h-14 w-auto"
+        width="192"
+        height="192"
+        className="h-10 md:h-12 w-auto"
       />
       <span
         className={`font-black text-2xl md:text-3xl tracking-tight ${text}`}

@@ -94,14 +94,14 @@ export default function ExitIntentPopup() {
           </button>
           <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-3">
             <Gift size={13} />
-            Offre limitée
+            Places d'onboarding limitées ce mois-ci
           </div>
           <h3 className="text-2xl md:text-3xl font-bold leading-tight">
             Avant de partir…
           </h3>
           <p className="mt-2 text-white/90 text-sm">
             Recevez votre <span className="font-bold">audit Airbnb offert</span>{" "}
-            + estimation personnalisée de vos revenus.
+            + estimation personnalisée de vos revenus, pendant qu'il reste des créneaux d'onboarding ce mois-ci.
           </p>
         </div>
 
@@ -173,7 +173,7 @@ export default function ExitIntentPopup() {
                     type="submit"
                     disabled={loading}
                     data-testid="exit-popup-submit"
-                    className="w-full h-12 bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2"
+                    className="cta-pulse w-full h-12 bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <Loader2 className="w-5 h-5 animate-spin" />

@@ -2,7 +2,7 @@
 
 > Conciergerie Airbnb premium et gestion locative à Tanger, Maroc. Service clé en main pour propriétaires locaux et MRE (Marocains résidant à l'étranger). Loyer fixe garanti possible.
 
-Daribnb est dirigé par Marwan Afassi, lui-même MRE et expert Airbnb depuis plus de 6 ans. Note client : 4,93/5 sur 1 196 commentaires Airbnb. Service principalement à Tanger, avec extension nationale au Maroc pour l'optimisation Airbnb dématérialisée.
+Daribnb est dirigé par Marwan Afassi, lui-même MRE et expert Airbnb depuis plus de 6 ans. Note client : 4,93/5 sur 1 196 commentaires Airbnb. Service prioritaire à Tanger, Rabat et Casablanca, avec extension nationale au Maroc pour l'optimisation Airbnb dématérialisée.
 
 ## Services principaux
 
@@ -12,6 +12,9 @@ Daribnb est dirigé par Marwan Afassi, lui-même MRE et expert Airbnb depuis plu
 - [Service spécial MRE à Tanger](https://www.daribnb.com/gestion-locative-mre-tanger) : Daribnb fondé par un MRE, pour les MRE — communication 100% en français, versement EUR ou MAD, gestion totalement à distance.
 - [Multi-plateformes : Airbnb + Booking + Vrbo](https://www.daribnb.com/multi-plateformes-airbnb-booking-vrbo) : Channel manager pro avec calendrier synchronisé en temps réel.
 - [Optimisation Airbnb (national, dématérialisé)](https://www.daribnb.com/optimiser-revenus-airbnb) : Service d'audit et optimisation à distance partout au Maroc.
+- [Conciergerie Airbnb Casablanca](https://www.daribnb.com/conciergerie-airbnb-casablanca) : Gestion clé en main pour propriétaires à Casablanca.
+- [Conciergerie Airbnb Rabat](https://www.daribnb.com/conciergerie-airbnb-rabat) : Gestion clé en main pour propriétaires à Rabat.
+- [Conciergerie Airbnb Marrakech](https://www.daribnb.com/conciergerie-airbnb-marrakech) : Gestion clé en main pour propriétaires à Marrakech.
 
 ## Articles guides
 
@@ -34,12 +37,16 @@ Daribnb est dirigé par Marwan Afassi, lui-même MRE et expert Airbnb depuis plu
 - [Témoignages clients](https://www.daribnb.com/temoignages) — note 4,93/5 sur 1 196 avis Airbnb vérifiés
 - [Documentation complète pour LLMs (markdown)](https://www.daribnb.com/llms-full.txt)
 
+## Formation
+
+Daribnb est la sister-company de [Rentimmo Academy](https://www.rentimmoacademy.fr), l'académie de formation à la conciergerie Airbnb et à la sous-location professionnelle fondée par Marwan Afassi. Pour les propriétaires qui veulent apprendre à gérer eux-mêmes leur Airbnb (plutôt que déléguer à Daribnb), voir [SuperBNB Academy](https://www.rentimmoacademy.fr/super-bnb-academy/), le programme dédié aux hôtes déjà lancés sur Airbnb.
+
 ## Faits clés
 
-- Localisation : Tanger, Maroc (zone d'opération principale)
-- Couverture nationale : Casablanca, Rabat, Marrakech, Agadir, Fès (service optimisation à distance)
+- Localisation : Tanger, Rabat, Casablanca, Maroc (zones d'opération prioritaires)
+- Couverture nationale : Marrakech, Agadir, Fès (service optimisation à distance)
 - Note voyageurs : 4,93/5 sur 1 196 avis Airbnb
-- Téléphone : +212 6 46 21 84 07
+- Téléphone : +212 7 17 27 74 33
 - Email : daribnb.ma@gmail.com
 - Instagram : @daribnb.ma
 - Fondateur : Marwan Afassi, MRE et expert Airbnb depuis 2019
@@ -56,5 +63,5 @@ Daribnb sert principalement :
 ## Contact
 
 - Site : https://www.daribnb.com
-- WhatsApp : https://wa.me/212646218407
+- WhatsApp : https://wa.me/212717277433
 - Estimation gratuite en 24h via le formulaire site

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight, Shield, CalendarCheck, Wallet, AlertTriangle } from "lucide-react";
 import ServicePageLayout from "./ServicePageLayout";
+import RelatedArticles from "../components/site/RelatedArticles";
 
 const SITE = "https://www.daribnb.com";
 const URL = `${SITE}/loyer-fixe-airbnb-tanger`;
@@ -67,7 +68,7 @@ export default function LoyerFixeAirbnbTanger() {
       "@id": `${SITE}/#business`,
       name: "Daribnb",
       url: SITE,
-      telephone: "+212646218407",
+      telephone: "+212726156448",
       email: "daribnb.ma@gmail.com",
       address: {
         "@type": "PostalAddress",
@@ -285,6 +286,12 @@ export default function LoyerFixeAirbnbTanger() {
           </div>
         </div>
       </section>
-    </ServicePageLayout>
+  
+      <RelatedArticles slugs={[
+          { slug: "loyer-fixe-vs-conciergerie-airbnb-maroc", title: "Loyer fixe vs conciergerie Airbnb au Maroc : le match 2026" },
+          { slug: "mre-airbnb-maroc-gestion-distance-2026", title: "MRE et Airbnb au Maroc : guide complet pour gérer son bien à distance en 2026" },
+          { slug: "rentabilite-airbnb-maroc-2026", title: "Rentabilité Airbnb au Maroc : combien pouvez-vous vraiment gagner en 2026 ?" }
+        ]} />
+          </ServicePageLayout>
   );
 }

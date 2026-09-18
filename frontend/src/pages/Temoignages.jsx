@@ -248,7 +248,7 @@ export default function Temoignages() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/conciergerie-airbnb-tanger"
-              className="inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all"
+              className="cta-pulse inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all"
             >
               Confier mon bien à Daribnb
               <ArrowRight size={18} />

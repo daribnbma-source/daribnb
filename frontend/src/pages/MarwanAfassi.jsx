@@ -271,7 +271,7 @@ export default function MarwanAfassi() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/conciergerie-airbnb-tanger"
-              className="inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl"
+              className="cta-pulse inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl"
             >
               Découvrir Daribnb
               <ArrowRight size={18} />

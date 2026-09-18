@@ -92,7 +92,7 @@ export default function FAQPage() {
             le ménage, la gestion locative, le loyer fixe garanti et la
             fiscalité MRE. Si votre question n'est pas listée,{" "}
             <a
-              href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20j'ai%20une%20question%20%3A"
+              href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20j'ai%20une%20question%20%3A"
               target="_blank"
               rel="noreferrer"
               className="text-[#C1272D] font-semibold hover:underline"
@@ -177,7 +177,7 @@ export default function FAQPage() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20j'ai%20une%20question%20%3A"
+                href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20j'ai%20une%20question%20%3A"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl"

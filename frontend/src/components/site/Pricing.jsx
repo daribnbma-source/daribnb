@@ -1,5 +1,5 @@
 import React from "react";
-import { Check, Zap, Shield, Rocket } from "lucide-react";
+import { Check, Zap, Shield, Rocket, Gift } from "lucide-react";
 
 const PLANS = [
   {
@@ -33,6 +33,10 @@ const PLANS = [
       "Stratégie tarifaire",
       "Coaching 1-to-1 inclus",
       "Objectif CA fixé ensemble",
+    ],
+    bonuses: [
+      "Diagnostic concurrence offert (Airbnb + Booking.com)",
+      "1 session stratégie 1-to-1 avec Marwan, fondateur de Daribnb",
     ],
     color: "dark",
     cta: "Booster mon annonce",
@@ -188,6 +192,20 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
+                {p.bonuses && (
+                  <div className="relative mb-8 rounded-2xl border border-white/15 bg-white/5 p-5">
+                    <p className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/90">
+                      <Gift size={14} className="text-[#C1272D]" /> Bonus offerts
+                    </p>
+                    <ul className="space-y-2">
+                      {p.bonuses.map((b) => (
+                        <li key={b} className="text-sm text-white/85">
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <a
                   href="#contact"
                   data-testid={`pricing-cta-${p.id}`}

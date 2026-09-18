@@ -15,7 +15,7 @@ export default function Mentions() {
           <li><strong>Nom commercial :</strong> Daribnb</li>
           <li><strong>Activité :</strong> Conciergerie de location courte durée & sous-location professionnelle</li>
           <li><strong>Email :</strong> daribnb.ma@gmail.com</li>
-          <li><strong>Téléphone :</strong> +212 6 46 21 84 07</li>
+          <li><strong>Téléphone :</strong> +212 7 26 15 64 48</li>
           <li><strong>Zone d'activité :</strong> Royaume du Maroc</li>
         </ul>
         <p className="text-sm text-[#4B5563] italic">
@@ -65,7 +65,7 @@ export default function Mentions() {
         </p>
         <ul className="list-disc pl-6 space-y-1">
           <li>Email : <a href="mailto:daribnb.ma@gmail.com" className="text-[#C1272D] font-semibold">daribnb.ma@gmail.com</a></li>
-          <li>Téléphone / WhatsApp : <a href="tel:+212646218407" className="text-[#C1272D] font-semibold">+212 6 46 21 84 07</a></li>
+          <li>Téléphone / WhatsApp : <a href="tel:+212726156448" className="text-[#C1272D] font-semibold">+212 7 26 15 64 48</a></li>
         </ul>
       </section>
     </LegalPage>

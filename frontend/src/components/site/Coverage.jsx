@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 
-// Tanger en premier (focus SEO) + lien vers la page dédiée pour consolider le ranking
+// Tanger, Rabat, Casablanca en priorité (focus SEO) + lien vers la page dédiée pour consolider le ranking
 const CITIES = [
   { name: "Tanger", to: "/conciergerie-airbnb-tanger", primary: true },
-  { name: "Marrakech" },
-  { name: "Casablanca" },
-  { name: "Rabat" },
+  { name: "Rabat", to: "/conciergerie-airbnb-rabat", primary: true },
+  { name: "Casablanca", to: "/conciergerie-airbnb-casablanca", primary: true },
+  { name: "Marrakech", to: "/conciergerie-airbnb-marrakech" },
   { name: "Agadir" },
   { name: "Fès" },
   { name: "Essaouira" },
@@ -30,13 +30,13 @@ export default function Coverage() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-12">
           <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
-            Expert local · Tanger
+            Expert local · Tanger, Rabat, Casablanca
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
-            Daribnb, c'est Tanger en priorité.
+            Daribnb, c'est Tanger, Rabat et Casablanca en priorité.
           </h2>
           <p className="mt-4 text-lg text-[#4B5563]">
-            On opère localement à Tanger depuis plus de 6 ans. Pour les autres villes du Maroc, on propose un service d'optimisation Airbnb 100% à distance.
+            Siège à Tanger, équipes sur place à Rabat et Casablanca, expertise terrain depuis plus de 6 ans. On accompagne également les propriétaires dans les principales villes du Maroc — contactez-nous pour discuter de votre projet.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function Coverage() {
                   <>
                     <MapPin size={14} className="text-[#C1272D]" />
                     <span className="font-semibold text-sm">{c.name}</span>
-                    {c.primary && (
+                    {c.to && (
                       <span className="ml-auto text-[10px] uppercase tracking-wider text-white/80 font-bold">
                         Voir →
                       </span>

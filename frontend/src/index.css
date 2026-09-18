@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -83,6 +81,54 @@ html {
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 
+/* CTA pulse — grossit/dé-grossit + glow rouge puissant pour attirer l'oeil sur les boutons d'action */
+/* Anime uniquement transform (scale) + opacity (via pseudo-élément) : propriétés compositées GPU, pas de repaint du box-shadow à chaque frame */
+@keyframes ctaPulseScale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+}
+
+@keyframes ctaPulseGlow {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.cta-pulse {
+    position: relative;
+    box-shadow: 0 4px 16px rgba(193, 39, 45, 0.45);
+    animation: ctaPulseScale 2s ease-in-out infinite;
+}
+
+.cta-pulse::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 12px 36px rgba(193, 39, 45, 0.75), 0 0 26px 6px rgba(255, 51, 51, 0.5);
+    opacity: 0;
+    animation: ctaPulseGlow 2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.cta-pulse:hover {
+    animation-play-state: paused;
+    transform: scale(1.1);
+    box-shadow: 0 14px 40px rgba(193, 39, 45, 0.8), 0 0 26px 6px rgba(255, 51, 51, 0.5);
+}
+
+.cta-pulse:hover::before {
+    animation-play-state: paused;
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cta-pulse,
+    .cta-pulse::before {
+        animation: none;
+    }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #FAF9F6; }
@@ -96,10 +142,4 @@ html {
 ::selection {
     background: #C1272D;
     color: white;
-}
-
-@layer base {
-    [data-debug-wrapper="true"] {
-        display: contents !important;
-    }
 }

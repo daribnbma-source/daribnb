@@ -65,13 +65,13 @@ export default function GestionLocativeMRETanger() {
     "@context": "https://schema.org",
     "@type": "Service",
     name: "Gestion locative Tanger pour MRE — Marocains résidant à l'étranger",
-    serviceType: "Gestion locative à distance pour propriétaires non-résidents",
+    serviceType: "Gestion locative Tanger pour investisseurs MRE",
     provider: {
       "@type": "LocalBusiness",
       "@id": `${SITE}/#business`,
       name: "Daribnb",
       url: SITE,
-      telephone: "+212646218407",
+      telephone: "+212726156448",
       email: "daribnb.ma@gmail.com",
     },
     areaServed: { "@type": "City", name: "Tanger" },
@@ -102,7 +102,7 @@ export default function GestionLocativeMRETanger() {
       canonical={URL}
       h1="Gestion locative à Tanger pour propriétaires MRE"
       kicker="Spécial MRE · Tanger"
-      intro="Vous êtes Marocain résidant à l'étranger et vous possédez un bien à Tanger ? On gère tout à distance, en français, avec une transparence absolue. Daribnb a été fondé par un MRE — on connaît votre situation parce qu'on l'a vécue."
+      intro="Vous êtes MRE et possédez un bien à Tanger ? Daribnb prend tout en charge — équipes sur place, communication en français, versement mensuel garanti. On connaît vos défis d'investisseur parce qu'on les vit de l'intérieur."
       schema={[schema, faqSchema]}
     >
       {/* Si vous vous reconnaissez */}
@@ -179,13 +179,13 @@ export default function GestionLocativeMRETanger() {
           </h2>
           <div className="mt-6 space-y-4 text-lg text-[#4B5563] leading-relaxed">
             <p>
-              Daribnb a été fondé par Marwan, lui-même MRE — Marocain ayant vécu à l'étranger, et propriétaire d'un bien à Tanger avant de devenir conciergerie.
+              Daribnb a été fondé par Marwan — investisseur, propriétaire et expert en location courte durée depuis plus de 6 ans, entre la France et le Maroc. Il connaît le marché locatif marocain de l'intérieur, et les défis concrets des MRE qui veulent rentabiliser leur patrimoine au Maroc.
             </p>
             <p>
-              Au début, j'ai essayé de gérer mon Airbnb depuis la France. Photos floues, voyageurs mécontents, ménage approximatif, communication galère avec les femmes de ménage. Comme beaucoup de MRE, j'ai vite compris qu'on ne peut pas faire ça à distance, sans une équipe locale solide qui parle votre langue.
+              Les problèmes que vous rencontrez — trouver une équipe de confiance, sécuriser les revenus, gérer les imprévus, naviguer les démarches administratives locales — ce sont des problèmes qu'on a analysés et résolus pour des dizaines de propriétaires MRE. On sait ce qui coince, et on sait comment le régler.
             </p>
             <p>
-              Daribnb, c'est l'agence que j'aurais voulu avoir à l'époque. Une équipe locale à Tanger, une communication en français, un reporting clair, un versement régulier. Et surtout : la confiance, parce qu'on partage la même expérience.
+              Daribnb, c'est une équipe locale à Tanger, une communication en français, un reporting transparent et un versement mensuel fiable. Tout ce qu'un propriétaire MRE est en droit d'attendre d'un partenaire de confiance.
             </p>
           </div>
         </div>

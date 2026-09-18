@@ -42,6 +42,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.daribnb.com/conciergerie-airbnb-marrakech</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.daribnb.com/conciergerie-airbnb-casablanca</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.daribnb.com/conciergerie-airbnb-rabat</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.daribnb.com/blog/conciergerie-airbnb-marrakech-guide-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.daribnb.com/blog/conciergerie-airbnb-casablanca-guide-2026</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -104,6 +128,18 @@
   <url>
     <loc>https://www.daribnb.com/blog/declarer-revenus-airbnb-maroc-mre-france</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.daribnb.com/blog/villes-les-plus-rentables-airbnb-maroc-2026</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.daribnb.com/blog/location-courte-duree-maroc-guide-complet-2026</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

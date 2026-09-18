@@ -9,6 +9,7 @@ import {
 import { Input } from "../ui/input";
 import { TrendingUp, Sparkles, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useSimulator } from "../../lib/SimulatorContext";
 
 // Pricing matrix — MAD / night, mirror of backend logic
 const CITY_MULTIPLIER = {
@@ -79,6 +80,7 @@ export default function Simulator() {
   const [bedrooms, setBedrooms] = useState(1);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const { setSimResult } = useSimulator();
 
   const submit = (e) => {
     e.preventDefault();
@@ -91,6 +93,11 @@ export default function Simulator() {
     setTimeout(() => {
       const data = estimate({ city, property_type: type, bedrooms });
       setResult(data);
+      setSimResult({
+        ...data,
+        cityLabel: CITIES.find((c) => c.v === city)?.l || city,
+        typeLabel: TYPES.find((t) => t.v === type)?.l || type,
+      });
       setLoading(false);
       setTimeout(() => {
         document
@@ -128,6 +135,7 @@ export default function Simulator() {
             <Select value={city} onValueChange={setCity}>
               <SelectTrigger
                 data-testid="simulator-city-select"
+                aria-label="Choisir la ville"
                 className="h-12 rounded-xl border-[#E5E5E5] bg-white"
               >
                 <SelectValue placeholder="Choisir..." />
@@ -149,6 +157,7 @@ export default function Simulator() {
             <Select value={type} onValueChange={setType}>
               <SelectTrigger
                 data-testid="simulator-type-select"
+                aria-label="Choisir le type de bien"
                 className="h-12 rounded-xl border-[#E5E5E5] bg-white"
               >
                 <SelectValue placeholder="Choisir..." />
@@ -182,7 +191,7 @@ export default function Simulator() {
             type="submit"
             disabled={loading}
             data-testid="simulator-submit-btn"
-            className="h-12 bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl px-6 font-semibold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+            className="cta-pulse h-12 bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl px-6 font-semibold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
           >
             {loading ? (
               <Loader2 className="w-5 h-5 animate-spin" />

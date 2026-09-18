@@ -3,6 +3,88 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "conciergerie-airbnb-marrakech-guide-2026",
+    title: "Conciergerie Airbnb Marrakech : guide complet 2026 pour propriétaires",
+    excerpt:
+      "Combien rapporte un riad ou appartement à Marrakech sur Airbnb en 2026 ? Quartiers, revenus, Coupe du Monde 2030 : le guide complet d'un expert local.",
+    meta_description:
+      "Conciergerie Airbnb Marrakech : meilleurs quartiers (Médina, Guéliz, Hivernage), revenus estimés, réglementation et conseils d'expert. Guide 2026 complet.",
+    keywords:
+      "conciergerie airbnb marrakech, gestion locative airbnb marrakech, rentabilité airbnb marrakech, airbnb medina marrakech, airbnb riad marrakech",
+    city: "Marrakech",
+    cover:
+      "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-04-10T09:00:00Z",
+    read_time: 8,
+    content: `## Marrakech : le premier marché Airbnb du Maroc
+
+Marrakech est la ville marocaine la plus recherchée sur Airbnb. Des millions de voyageurs venus d'Europe, d'Amérique du Nord et du Moyen-Orient s'y croisent toute l'année. Mais gérer un bien à Marrakech sans expertise, c'est laisser de l'argent sur la table — ou pire, multiplier les mauvaises notes qui plombent votre annonce.
+
+En 2026, avec la Coupe du Monde 2030 qui se profile et les investissements en cours dans les infrastructures, c'est le moment idéal pour professionnaliser la gestion de votre bien.
+
+## Les 5 quartiers les plus rentables à Marrakech
+
+### 1. La Médina (riads)
+Le cœur historique attire les voyageurs en quête d'authenticité. Un riad bien rénové peut générer **15 000 à 30 000 MAD/mois** en haute saison. La gestion y est plus complexe (accès, logistique) — ce qui justifie de déléguer à un professionnel.
+
+### 2. Guéliz
+Le quartier moderne de Marrakech. Appartements contemporains, clientèle internationale habituée au confort. Excellent rapport occupation/prix : **6 000 à 14 000 MAD/mois** pour un T2 ou T3.
+
+### 3. Hivernage
+À deux pas des grands hôtels et de la Palmeraie. Clientèle aisée, séjours mixtes loisirs/affaires. Prix à la nuit plus élevés qu'en Médina pour les appartements standard.
+
+### 4. Palmeraie
+Villas et résidences avec piscine. Demande premium, notamment pour les séjours familiaux et les events privés. Prix à la nuit très élevés mais saisonnalité plus marquée.
+
+### 5. Agdal / Quartier des Jardins
+Résidentiel, calme, proche aéroport Menara. Idéal pour la clientèle business de passage. Taux d'occupation stable toute l'année.
+
+## Revenus estimés selon le type de bien
+
+| Type de bien | Quartier | Revenu mensuel estimé |
+|---|---|---|
+| Appartement T2 | Guéliz | 6 000 – 10 000 MAD |
+| Appartement T3 | Hivernage | 9 000 – 16 000 MAD |
+| Riad 3 chambres | Médina | 12 000 – 25 000 MAD |
+| Villa avec piscine | Palmeraie | 18 000 – 40 000 MAD |
+
+Ces fourchettes sont indicatives — elles varient selon la qualité des photos, le tarif nuitée, le taux d'occupation réel et la saison.
+
+## Coupe du Monde 2030 : une opportunité historique
+
+Le Maroc co-organise la Coupe du Monde FIFA 2030 avec l'Espagne et le Portugal. Marrakech figure parmi les villes hôtes. Les projections tablent sur **plus de 3 millions de visiteurs supplémentaires** sur la période du tournoi.
+
+Pour les propriétaires qui agissent maintenant :
+- Optimiser leur annonce avant que la compétition soit intense
+- Construire un historique de reviews positives (Airbnb favorise les annonces établies)
+- Fixer une stratégie tarifaire CdM 2030 dès 2027
+
+## Ce que gère Daribnb à Marrakech
+
+Daribnb prend en charge l'intégralité de la gestion :
+
+- **Annonce optimisée** : shooting photo pro, copy SEO, tarification dynamique
+- **Multi-plateformes** : Airbnb, Booking, Vrbo — calendrier synchronisé
+- **Accueil voyageurs** : check-in 24h/24, communication FR/EN/AR/ES
+- **Ménage hôtelier** : rotation après chaque séjour, draps et serviettes fournis
+- **Conformité** : déclarations préfecture, taxe de séjour, loi Airbnb 2025
+- **Reporting mensuel** : revenus, taux d'occupation, charges — tout est transparent
+
+## Faut-il déclarer son Airbnb à Marrakech ?
+
+Oui. Depuis la loi 80-14 relative aux établissements touristiques et la réglementation Airbnb Maroc 2025, toute location courte durée nécessite une déclaration en préfecture et la collecte de la taxe de séjour. Daribnb prend en charge ces démarches pour tous les biens qu'il gère.
+
+## Estimation gratuite pour votre bien à Marrakech
+
+Vous souhaitez savoir combien votre appartement, riad ou villa peut rapporter ? Daribnb réalise une estimation gratuite sous 24h : audit du bien, simulation chiffrée des revenus sur 12 mois, recommandation honnête.
+
+[Demander mon estimation gratuite](/conciergerie-airbnb-marrakech) — réponse personnalisée par WhatsApp ou email.
+
+---
+
+**Vous voulez lancer votre propre conciergerie Airbnb au Maroc ?** Daribnb est le résultat d'une formation et d'une méthode terrain. Si vous voulez construire ce type de structure depuis la France — mandats, équipe locale, pricing dynamique — [Rentimmo Academy](https://www.rentimmoacademy.fr/se-former-airbnb-maroc) propose une formation avec module Maroc complet.`,
+  },
+  {
     slug: "conciergerie-airbnb-casablanca-guide-2026",
     title: "Conciergerie Airbnb Casablanca : le guide complet 2026 pour propriétaires",
     excerpt:
@@ -904,6 +986,243 @@ Daribnb gère votre Airbnb Tanger 100% à distance, **avec accompagnement fiscal
 ---
 
 **Disclaimer** : article rédigé pour information générale. Ne constitue pas un conseil fiscal personnalisé.`,
+  },
+  {
+    slug: "villes-les-plus-rentables-airbnb-maroc-2026",
+    title: "Les villes les plus rentables pour Airbnb au Maroc en 2026 (données réelles)",
+    excerpt:
+      "Marrakech, Tanger, Rabat, Casablanca, Agadir : quelles villes rapportent vraiment le plus en location courte durée au Maroc ? Classement basé sur les données airroi.com 2026.",
+    meta_description:
+      "Classement des villes les plus rentables pour Airbnb au Maroc en 2026 : revenus médians, taux d'occupation et ADR par ville. Données réelles airroi.com.",
+    keywords:
+      "villes les plus rentables airbnb maroc, meilleure ville conciergerie airbnb maroc, location courte durée maroc rentable, airbnb maroc par ville 2026",
+    city: "Maroc",
+    cover:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-06-01T09:00:00Z",
+    read_time: 10,
+    content: `## Réponse directe : quelle ville est la plus rentable pour Airbnb au Maroc ?
+
+**Marrakech** domine le marché avec un revenu médian de **1 220 €/mois** (soit ~13 200 MAD) — presque le double de Tanger ou Rabat. Mais la meilleure ville dépend aussi de votre bien et de votre stratégie. Voici le classement complet basé sur les données réelles airroi.com (juin 2026).
+
+---
+
+## Classement des villes marocaines par revenu Airbnb médian
+
+*Source : airroi.com, données au 1er juin 2026. Revenu médian = 50e percentile des annonces actives. Taux de change : 1 € = 10,8 MAD.*
+
+| Ville | Revenu médian/mois | Nuit (ADR) | Taux occupation | Annonces actives |
+|---|---|---|---|---|
+| Marrakech | **1 220 €** (13 200 MAD) | 150 € | 38,4 % | 9 554 |
+| Essaouira | **910 €** (9 840 MAD) | 104 € | 37,4 % | 1 700 |
+| Rabat | **630 €** (6 810 MAD) | 93 € | 36,0 % | 1 690 |
+| Tanger | **615 €** (6 650 MAD) | 97 € | 34,2 % | 3 492 |
+| Agadir | **595 €** (6 440 MAD) | 80 € | 36,8 % | 2 269 |
+| Fès | **510 €** (5 520 MAD) | 69 € | 29,3 % | 750 |
+| Casablanca | **460 €** (4 970 MAD) | 75 € | 33,4 % | 2 512 |
+
+> **Donnée clé :** toutes ces villes affichent une réglementation "faible" — pas de limitation de nuitées, pas de déclaration obligatoire pour les particuliers (au contraire de Paris ou Barcelone).
+
+---
+
+## Analyse ville par ville
+
+### Marrakech — Le marché leader incontesté
+
+Avec 9 554 annonces actives et un ADR de **1 620 MAD/nuit**, Marrakech est dans une catégorie à part. La ville capte les voyageurs internationaux (Europe, Moyen-Orient, Amériques) toute l'année, avec un pic en **avril** (taux d'occupation à 50,3 %) et une basse saison qui reste rentable.
+
+Le top 25 % des hôtes génère plus de **2 230 €/mois** (24 050 MAD). Pour les riads de la Médina et les villas de la Palmeraie, les revenus dépassent régulièrement 3 700 €/mois (40 000 MAD).
+
+**À retenir :** Marrakech est le marché le plus compétitif (53,7 % de Superhosts). Une gestion professionnelle est la condition pour rester dans le top.
+
+### Essaouira — La surprise du classement
+
+Essaouira offre le 2ème meilleur ADR du Maroc (1 120 MAD/nuit) pour seulement 1 700 annonces actives — un marché peu concurrentiel. La demande européenne pour ce profil "authentique et bohème" est soutenue toute l'année.
+
+### Rabat — Stable et sous-exploité
+
+Rabat génère **6 810 MAD/mois** de médiane, devant Tanger, grâce à une clientèle d'affaires et institutionnelle qui réserve plus longtemps et à prix plus élevé. Avec seulement 1 690 annonces, la concurrence est faible. Le marché est en montée : +8 % de listings en 12 mois.
+
+### Tanger — Le marché en croissance
+
+**6 650 MAD/mois** de médiane pour 3 492 annonces. Tanger est le marché qui progresse le plus vite au Maroc depuis 2024, porté par :
+- L'essor économique (port Tanger Med, Zone Franche)
+- Une clientèle espagnole et française croissante (1h de ferry de l'Espagne)
+- Des prix immobiliers encore accessibles vs valeur locative
+
+Le top 10 % des hôtes tangérois dépasse **3 060 €/mois** (33 000 MAD) pour les biens bien placés (Malabata, Marshan, Médina).
+
+### Agadir — La saisonnalité à maîtriser
+
+Agadir cartonne en **hiver** (octobre–mars) grâce au soleil garanti quand le reste de l'Europe est gris. En été, la concurrence des locaux et les prix immobiliers élevés compliquent la rentabilité. Une gestion de prix dynamique est indispensable.
+
+### Casablanca — La ville piège
+
+Casablanca surprend en dernière position malgré son statut de capitale économique. La clientèle d'affaires utilise les hôtels, pas Airbnb. Et les touristes préfèrent d'autres villes. Résultat : **4 970 MAD/mois de médiane**, taux d'occupation de 33,4 %. Le marché fonctionne, mais requiert un positionnement ciblé (courts séjours pro, nuitées escale).
+
+---
+
+## Les 3 facteurs qui boostent la rentabilité quelle que soit la ville
+
+### 1. La tarification dynamique
+Un bien fixé à prix constant laisse 25–40 % de revenus sur la table. Les marchés marocains ont des pics très prononcés (Ramadan, été, événements locaux) qu'un algorithme de pricing capte automatiquement.
+
+### 2. Le taux d'avis 5 étoiles
+Au-delà de 4,85/5 de note moyenne, l'algorithme Airbnb vous positionne en premier des résultats — effet multiplicateur direct sur le revenu.
+
+### 3. La présence sur plusieurs plateformes
+Airbnb + Booking.com + VRBO = +15 à 30 % de taux d'occupation supplémentaire. Un channel manager synchronisé évite les doubles réservations.
+
+---
+
+## FAQ — Villes les plus rentables pour Airbnb au Maroc
+
+**Quelle est la ville la plus rentable pour Airbnb au Maroc ?**
+Marrakech, avec un revenu médian de 1 220 €/mois et 9 554 annonces actives. Le top 25 % des hôtes y génère plus de 2 230 €/mois (source : airroi.com, juin 2026).
+
+**Est-ce que Tanger est rentable pour un Airbnb ?**
+Oui. Tanger génère un revenu médian de 615 €/mois avec un taux d'occupation de 34,2 %. Les biens vue mer à Malabata ou dans la Médina rénovée atteignent 1 390–2 315 €/mois avec une gestion professionnelle.
+
+**Casablanca ou Marrakech pour un investissement Airbnb ?**
+Marrakech est 2,6x plus rentable en médiane (1 220 € vs 460 € à Casablanca). Casablanca a un potentiel limité pour l'Airbnb touristique ; il faut cibler le marché d'affaires et le court séjour professionnel.
+
+**Faut-il déclarer son Airbnb au Maroc ?**
+Le Maroc n'impose pas encore de déclaration obligatoire de la location saisonnière pour les particuliers — toutes les villes du classement affichent une réglementation "faible" (airroi.com, juin 2026). Il est cependant recommandé de déclarer les revenus à la Direction Générale des Impôts (DGI).
+
+**Quel taux d'occupation espérer au Maroc ?**
+De 29 % (Fès) à 38,4 % (Marrakech) en médiane. Un bien bien géré peut atteindre 60–70 % d'occupation, soit 1,5x à 2x la médiane du marché.
+
+**Quel est le meilleur mois pour louer en Airbnb au Maroc ?**
+Avril pour Marrakech (50,3 % d'occupation). Août pour Casablanca et Tanger (forte demande locale et MRE). Hiver (novembre–mars) pour Agadir.
+
+---
+
+## Quelle ville choisir selon votre profil ?
+
+| Profil | Ville recommandée |
+|---|---|
+| Maximiser le revenu brut | Marrakech (riad/villa) |
+| Marché peu concurrentiel | Essaouira ou Rabat |
+| Croissance + prix accessibles | Tanger |
+| Soleil garanti en hiver | Agadir |
+| Clientèle affaires | Casablanca (positionnement ciblé) |
+
+---
+
+## Déléguer à un professionnel : la différence concrète
+
+Un bien géré par une conciergerie professionnelle génère en moyenne **30 à 50 % de revenus supplémentaires** par rapport à une gestion en solo, grâce à la tarification dynamique quotidienne, aux photos professionnelles, au ménage hôtelier et à la présence multi-plateformes.
+
+Daribnb opère à [Tanger](/conciergerie-airbnb-tanger), [Casablanca](/conciergerie-airbnb-casablanca) et [Rabat](/conciergerie-airbnb-rabat). Estimation gratuite en 24h.
+
+---
+
+*Source des données : [airroi.com](https://www.airroi.com/report/world/morocco), juin 2026. Revenus exprimés en médiane (50e percentile des annonces actives). Taux de change : 1 € = 10,8 MAD.*`,
+  },
+  {
+    slug: "location-courte-duree-maroc-guide-complet-2026",
+    title: "Location courte durée au Maroc : le guide complet 2026",
+    excerpt:
+      "Légalité, déclaration préfecture, taxe de séjour, LCD vs LLD, comment démarrer, quelle ville choisir : le guide de référence pour tout propriétaire qui envisage la location courte durée au Maroc.",
+    meta_description:
+      "Location courte durée au Maroc : guide complet 2026 — réglementation, fiscalité, LCD vs LLD, comment démarrer, meilleures villes (Tanger, Rabat, Casablanca).",
+    keywords:
+      "location courte durée maroc, LCD maroc, airbnb maroc guide, comment louer en courte durée maroc, réglementation LCD maroc",
+    city: "Maroc",
+    cover:
+      "https://images.unsplash.com/photo-1548019865-9f5cff0ec5d1?auto=format&fit=crop&w=1600&q=80",
+    published_at: "2026-09-16T09:00:00Z",
+    read_time: 11,
+    content: `## Réponse directe : qu'est-ce que la location courte durée (LCD) au Maroc ?
+
+La location courte durée (LCD), aussi appelée location saisonnière ou "Airbnb", consiste à louer un bien meublé pour des séjours de quelques nuits à quelques semaines, à des voyageurs plutôt qu'à un locataire à l'année. Au Maroc, c'est une activité légale mais encadrée : déclaration en préfecture, collecte de la taxe de séjour et déclaration fiscale des revenus sont obligatoires depuis la loi 80-14 relative aux établissements touristiques et son renforcement en 2025.
+
+Ce guide réunit tout ce qu'un propriétaire — résident au Maroc ou MRE — doit savoir avant de se lancer.
+
+---
+
+## LCD vs location longue durée (LLD) : quelle différence pour votre rentabilité ?
+
+| Critère | Location longue durée (LLD) | Location courte durée (LCD) |
+|---|---|---|
+| Revenu | Loyer fixe, plafonné | Variable, optimisable à la hausse selon la demande |
+| Flexibilité | Bien engagé sur la durée du bail | Vous pouvez récupérer le bien à tout moment |
+| Charge de gestion | Faible (1 locataire, peu de rotation) | Élevée si gérée soi-même (ménage, check-in, messages) |
+| Risque impayés | Existe (loyers impayés, procédures longues) | Paiement sécurisé à la réservation (plateformes) |
+| Usure du bien | Usage quotidien continu | Rotation fréquente mais ménage professionnel entre chaque séjour |
+
+La LCD génère généralement plus de revenus qu'une LLD classique, mais elle demande soit du temps (gestion soi-même), soit une conciergerie professionnelle pour rester rentable sans y consacrer ses soirées et weekends.
+
+Vous hésitez entre les deux ? Un compromis existe : le **loyer fixe garanti**, où une conciergerie comme Daribnb vous verse un loyer mensuel fixe (comme en LLD) tout en gérant le bien en LCD — vous cumulez la stabilité du loyer fixe et la délégation totale de la gestion. Voir notre page [loyer fixe Airbnb Tanger](/loyer-fixe-airbnb-tanger).
+
+---
+
+## Est-ce légal de faire de la location courte durée au Maroc ?
+
+Oui. La LCD est parfaitement légale au Maroc. Elle est encadrée par la loi 80-14 relative aux établissements touristiques et par la réglementation Airbnb Maroc renforcée en 2025. Trois obligations principales s'appliquent à tout propriétaire :
+
+### 1. Déclaration en préfecture
+Toute location courte durée à des fins touristiques doit être déclarée à la préfecture du lieu où se situe le bien, avant la mise en ligne de l'annonce.
+
+### 2. Collecte de la taxe de séjour
+Chaque nuitée louée donne lieu à une taxe de séjour, due aux collectivités locales et collectée auprès du voyageur. Le montant varie selon la ville (à Tanger, Rabat ou Casablanca notamment).
+
+### 3. Déclaration fiscale des revenus
+Les revenus de LCD sont imposables au Maroc dans la catégorie des revenus fonciers, avec un régime micro-foncier pour les revenus sous 30 000 MAD/an (abattement forfaitaire de 40%) et un régime réel simplifié au-delà.
+
+Pour le détail complet des obligations et sanctions, voir notre article dédié : [Loi Airbnb Maroc 2025 : ce que les propriétaires doivent savoir](/blog/loi-airbnb-maroc-2025-proprietaires).
+
+---
+
+## Comment démarrer en LCD au Maroc, étape par étape
+
+1. **Vérifier l'éligibilité du bien** : usage d'habitation autorisant la location meublée, copropriété sans clause l'interdisant.
+2. **Équiper le logement** : mobilier, électroménager, wifi, sécurité incendie (détecteur de fumée, extincteur recommandé).
+3. **Déclarer le bien en préfecture** avant la mise en ligne.
+4. **Créer l'annonce** : photos professionnelles, titre et description optimisés, tarification cohérente avec le marché local.
+5. **Publier sur les plateformes** : Airbnb en priorité, puis Booking.com et Vrbo pour maximiser le taux d'occupation (voir notre guide [multi-plateformes](/multi-plateformes-airbnb-booking-vrbo)).
+6. **Gérer le quotidien** : messages voyageurs, check-in/check-out, ménage entre chaque séjour, collecte de la taxe de séjour.
+
+Si vous êtes **MRE** (Marocain Résident à l'Étranger) et que vous ne pouvez pas gérer ces étapes à distance, notre [guide gestion locative MRE](/gestion-locative-mre-tanger) détaille comment déléguer entièrement le processus.
+
+---
+
+## Quelle ville choisir pour investir en LCD au Maroc ?
+
+Le choix de la ville dépend de votre objectif : rendement brut maximal, marché moins concurrentiel, ou proximité géographique pour un suivi personnel. Nous détaillons les revenus par ville dans notre classement complet : [Les villes les plus rentables pour Airbnb au Maroc en 2026](/blog/villes-les-plus-rentables-airbnb-maroc-2026).
+
+Daribnb concentre son expertise sur **Tanger, Rabat et Casablanca** — trois marchés que nous connaissons en profondeur, avec une équipe locale dans chacune de ces villes :
+- [Conciergerie Airbnb Tanger](/conciergerie-airbnb-tanger)
+- [Conciergerie Airbnb Rabat](/conciergerie-airbnb-rabat)
+- [Conciergerie Airbnb Casablanca](/conciergerie-airbnb-casablanca)
+
+---
+
+## Gérer seul ou déléguer à une conciergerie ?
+
+Gérer une LCD soi-même demande du temps au quotidien : répondre aux voyageurs à toute heure, coordonner le ménage, ajuster les tarifs, suivre la conformité réglementaire. Une conciergerie professionnelle prend en charge l'ensemble de ces tâches, avec en général une optimisation de la tarification et de la visibilité de l'annonce qu'il est difficile d'égaler seul, sans expérience du marché.
+
+Daribnb gère des biens en LCD depuis plus de 6 ans, à Tanger, Rabat et Casablanca — ménage hôtelier, check-in 24/7, conformité (déclaration préfecture, taxe de séjour), et reporting mensuel transparent. Estimation gratuite de vos revenus potentiels sous 24h.
+
+---
+
+## FAQ — Location courte durée au Maroc
+
+**Faut-il une autorisation pour faire de la location courte durée au Maroc ?**
+Oui, une déclaration en préfecture est obligatoire avant la mise en ligne de l'annonce, quelle que soit la plateforme utilisée (Airbnb, Booking, Vrbo).
+
+**LCD ou LLD : laquelle est la plus rentable ?**
+La LCD génère généralement des revenus plus élevés qu'une location longue durée classique, mais demande une gestion active — d'où l'intérêt d'une conciergerie ou d'un loyer fixe garanti pour cumuler rendement et tranquillité.
+
+**Un MRE peut-il se lancer en LCD au Maroc sans être sur place ?**
+Oui, en délégant l'intégralité de la gestion à une conciergerie locale qui s'occupe des voyageurs, du ménage et de la conformité réglementaire à votre place.
+
+**Quelle taxe s'applique sur les revenus de location courte durée au Maroc ?**
+Les revenus sont imposables dans la catégorie des revenus fonciers, avec un régime micro-foncier (abattement 40%) sous 30 000 MAD/an de revenus, et un régime réel simplifié au-delà.
+
+---
+
+Vous avez un bien à Tanger, Rabat ou Casablanca et souhaitez une estimation gratuite de vos revenus potentiels en LCD ? [Contactez Daribnb](/#contact).`,
   },
 ];
 

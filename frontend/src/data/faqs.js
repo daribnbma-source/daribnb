@@ -14,6 +14,7 @@ export const FAQ_CATEGORIES = [
   { id: "gestion", label: "Gestion locative & loyer fixe", icon: "💼" },
   { id: "annonce", label: "Optimisation annonce Airbnb", icon: "📈" },
   { id: "mre", label: "MRE & propriétaires à l'étranger", icon: "✈️" },
+  { id: "reglementation", label: "Réglementation & fiscalité LCD", icon: "⚖️" },
 ];
 
 export const FAQS = [
@@ -47,6 +48,11 @@ export const FAQS = [
     cat: "general",
     q: "Puis-je utiliser mon bien pendant le contrat ?",
     a: "Oui. Vous pouvez bloquer des dates pour un usage personnel ou familial. On vous demande juste de nous prévenir 7 jours à l'avance pour ne pas pénaliser les réservations en cours.",
+  },
+  {
+    cat: "general",
+    q: "La location courte durée (Airbnb) est-elle légale au Maroc ?",
+    a: "Oui, la location courte durée est légale au Maroc, mais elle est encadrée depuis la loi 80-14 relative aux établissements touristiques et la réglementation Airbnb Maroc 2025 : toute location courte durée doit faire l'objet d'une déclaration en préfecture et de la collecte de la taxe de séjour auprès des voyageurs. Daribnb prend en charge ces démarches pour tous les biens qu'il gère.",
   },
 
   // ═══════════════════════════ CONCIERGERIE ═══════════════════════════
@@ -232,6 +238,28 @@ export const FAQS = [
     cat: "mre",
     q: "Vous communiquez en français ou en arabe avec moi ?",
     a: "Au choix. Notre équipe communique couramment en français, arabe (darija marocaine et arabe classique), anglais et espagnol. On s'adapte à votre préférence. Reporting et contrats disponibles en français et en arabe.",
+  },
+
+  // ═══════════════════════════ RÉGLEMENTATION & FISCALITÉ LCD ═══════════════════════════
+  {
+    cat: "reglementation",
+    q: "Faut-il une autorisation pour louer son bien en courte durée au Maroc ?",
+    a: "Il n'existe pas de \"licence\" spécifique à obtenir avant de démarrer, mais depuis la loi 80-14 et la réglementation Airbnb Maroc 2025, chaque location courte durée doit être déclarée en préfecture, et la taxe de séjour doit être collectée auprès des voyageurs et reversée. C'est une obligation administrative continue, pas une autorisation ponctuelle. Daribnb gère ces démarches pour les biens qu'il accompagne.",
+  },
+  {
+    cat: "reglementation",
+    q: "Location courte durée ou longue durée : laquelle rapporte le plus au Maroc ?",
+    a: "Dans les grandes villes touristiques (Tanger, Rabat, Casablanca, Marrakech), la location courte durée génère généralement des revenus plus élevés qu'un loyer classique — mais avec plus de gestion (ménage, accueil, calendrier) et une occupation qui varie selon la saison. La location longue durée offre un revenu fixe mais plafonné, sans marge de progression. C'est pour ça qu'on propose aussi un loyer fixe garanti : le revenu stable de la longue durée, avec le potentiel de la courte durée en plus pour nous.",
+  },
+  {
+    cat: "reglementation",
+    q: "Comment débuter en location courte durée au Maroc quand on est déjà résident (pas MRE) ?",
+    a: "Les étapes sont les mêmes pour un résident marocain : déclarer l'activité en préfecture, créer une annonce optimisée (Airbnb, Booking), fixer une stratégie tarifaire et organiser le ménage/accueil. La différence avec un MRE, c'est surtout la proximité : vous pouvez suivre le bien vous-même ou déléguer entièrement à une conciergerie comme Daribnb si vous manquez de temps.",
+  },
+  {
+    cat: "reglementation",
+    q: "Quelle est la ville la plus rentable pour investir en location courte durée au Maroc ?",
+    a: "Marrakech reste le premier marché en volume, mais Tanger, Rabat et Casablanca offrent un bon équilibre entre prix d'achat/location plus accessibles et demande touristique ou professionnelle croissante. Le detail ville par ville (quartiers, revenus estimés, saisonnalité) est disponible sur notre blog.",
   },
 ];
 

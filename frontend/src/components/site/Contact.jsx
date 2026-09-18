@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Select,
   SelectContent,
@@ -11,6 +11,9 @@ import { Textarea } from "../ui/textarea";
 import { submitNetlifyForm } from "../../lib/netlifyForm";
 import { Mail, Loader2, Send, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
+import { useSimulator } from "../../lib/SimulatorContext";
+
+const fmt = (n) => new Intl.NumberFormat("fr-MA").format(n);
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -23,6 +26,24 @@ export default function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const { simResult } = useSimulator();
+  const prefilledRef = useRef(false);
+
+  // Pré-remplit ville + message avec l'estimation du Simulateur (Hero),
+  // une seule fois, et seulement si le visiteur n'a pas déjà commencé à saisir.
+  useEffect(() => {
+    if (!simResult || prefilledRef.current) return;
+    prefilledRef.current = true;
+    setForm((p) => ({
+      ...p,
+      city: p.city || simResult.cityLabel,
+      message:
+        p.message ||
+        `Mon estimation via votre simulateur : ${fmt(simResult.monthly_min)} – ${fmt(
+          simResult.monthly_max
+        )} MAD/mois pour un ${simResult.typeLabel?.toLowerCase()} à ${simResult.cityLabel}. Je souhaite en discuter.`,
+    }));
+  }, [simResult]);
 
   const update = (k) => (e) =>
     setForm((p) => ({ ...p, [k]: e.target?.value ?? e }));
@@ -66,7 +87,7 @@ export default function Contact() {
 
           <div className="mt-10 space-y-4">
             <a
-              href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
+              href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
               target="_blank"
               rel="noreferrer"
               data-testid="contact-whatsapp-cta"
@@ -213,6 +234,7 @@ export default function Contact() {
                   >
                     <SelectTrigger
                       data-testid="contact-service-select"
+                      aria-label="Choisir le service"
                       className="h-12 rounded-xl border-[#E5E5E5]"
                     >
                       <SelectValue placeholder="Choisir..." />
@@ -245,7 +267,7 @@ export default function Contact() {
                 type="submit"
                 disabled={loading}
                 data-testid="contact-submit-btn"
-                className="w-full h-14 bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl font-semibold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-base"
+                className="cta-pulse w-full h-14 bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl font-semibold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-base"
               >
                 {loading ? (
                   <Loader2 className="w-5 h-5 animate-spin" />

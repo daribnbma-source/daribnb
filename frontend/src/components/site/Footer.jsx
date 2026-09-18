@@ -10,7 +10,7 @@ export default function Footer() {
       className="bg-[#006233] text-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <div className="grid md:grid-cols-6 gap-10">
+        <div className="grid md:grid-cols-7 gap-10">
           <div className="md:col-span-2">
             <Logo variant="light" />
             <p className="mt-4 text-white/80 max-w-sm leading-relaxed">
@@ -53,6 +53,22 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 className="font-bold mb-4 text-white">Formation</h4>
+            <ul className="space-y-3 text-sm text-white/80">
+              <li>
+                <a href="https://www.rentimmoacademy.fr" target="_blank" rel="noreferrer" className="hover:text-[#C1272D] transition-colors">
+                  Rentimmo Academy
+                </a>
+              </li>
+              <li>
+                <a href="https://www.rentimmoacademy.fr/super-bnb-academy/" target="_blank" rel="noreferrer" className="hover:text-[#C1272D] transition-colors">
+                  SuperBNB Academy
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-bold mb-4 text-white">Contact</h4>
             <ul className="space-y-3 text-sm text-white/80">
               <li data-testid="footer-email" className="flex items-center gap-2">
@@ -63,8 +79,8 @@ export default function Footer() {
               </li>
               <li data-testid="footer-phone" className="flex items-center gap-2">
                 <Phone size={14} />
-                <a href="tel:+212646218407" className="hover:text-[#C1272D] transition-colors">
-                  +212 6 46 21 84 07
+                <a href="tel:+212726156448" className="hover:text-[#C1272D] transition-colors">
+                  +212 7 26 15 64 48
                 </a>
               </li>
               <li data-testid="footer-instagram" className="flex items-center gap-2">

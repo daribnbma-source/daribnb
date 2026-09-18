@@ -115,13 +115,13 @@ export default function ServicePageLayout({
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl group"
+                className="cta-pulse inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl group"
               >
                 Estimation gratuite en 24h
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20je%20souhaite%20en%20savoir%20plus"
+                href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20je%20souhaite%20en%20savoir%20plus"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#f5f5f5] text-[#1A1A1A] border border-black/10 rounded-full px-8 py-4 font-semibold transition-all shadow-sm"
@@ -160,7 +160,7 @@ export default function ServicePageLayout({
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
+                href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl"
@@ -169,7 +169,7 @@ export default function ServicePageLayout({
                 <ArrowRight size={18} />
               </a>
               <a
-                href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20j'ai%20une%20question"
+                href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20j'ai%20une%20question"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full px-8 py-4 font-semibold transition-all"

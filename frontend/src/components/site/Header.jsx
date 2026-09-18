@@ -124,11 +124,11 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
+            href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
             target="_blank"
             rel="noreferrer"
             data-testid="nav-cta-estimate"
-            className="bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-6 py-3 font-semibold text-sm transition-all shadow-sm hover:shadow-md"
+            className="cta-pulse bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-6 py-3 font-semibold text-sm transition-all shadow-sm hover:shadow-md"
           >
             Estimation gratuite
           </a>
@@ -182,7 +182,7 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
+            href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
             target="_blank"
             rel="noreferrer"
             onClick={() => setOpen(false)}

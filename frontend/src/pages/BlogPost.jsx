@@ -193,7 +193,7 @@ export default function BlogPost() {
                 <ArrowRight size={16} />
               </Link>
               <a
-                href="https://wa.me/212646218407"
+                href="https://wa.me/212726156448"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 text-white rounded-full px-6 py-3 font-semibold hover:bg-white/25 transition-colors"

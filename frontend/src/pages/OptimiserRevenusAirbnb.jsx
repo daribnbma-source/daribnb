@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight, BarChart3, Camera, FileSearch, Sparkles } from "lucide-react";
 import ServicePageLayout from "./ServicePageLayout";
+import RelatedArticles from "../components/site/RelatedArticles";
 
 const SITE = "https://www.daribnb.com";
 const URL = `${SITE}/optimiser-revenus-airbnb`;
@@ -55,7 +56,7 @@ export default function OptimiserRevenusAirbnb() {
       "@id": `${SITE}/#business`,
       name: "Daribnb",
       url: SITE,
-      telephone: "+212646218407",
+      telephone: "+212726156448",
       email: "daribnb.ma@gmail.com",
     },
     areaServed: { "@type": "Country", name: "Maroc" },
@@ -247,6 +248,12 @@ export default function OptimiserRevenusAirbnb() {
           </div>
         </div>
       </section>
-    </ServicePageLayout>
+  
+      <RelatedArticles slugs={[
+          { slug: "channel-manager-airbnb-booking-vrbo-maroc", title: "Channel Manager Airbnb au Maroc : connecter Airbnb, Booking, Vrbo en 2026" },
+          { slug: "rentabilite-airbnb-maroc-2026", title: "Rentabilité Airbnb au Maroc : combien pouvez-vous vraiment gagner en 2026 ?" },
+          { slug: "loi-airbnb-maroc-2025-proprietaires", title: "Loi Airbnb Maroc 2025 : ce que les propriétaires doivent savoir" }
+        ]} />
+          </ServicePageLayout>
   );
 }

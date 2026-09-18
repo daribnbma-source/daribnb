@@ -6,12 +6,12 @@
         <meta name="theme-color" content="#C1272D" />
 
         <!-- Favicon -->
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/logo.png" />
+        <link rel="apple-touch-icon" href="/assets/logo.png" />
         <link rel="shortcut icon" href="/favicon.png" />
 
-        <meta name="description" content="Daribnb — Conciergerie Airbnb à Tanger et gestion locative clé en main. Loyer fixe garanti, expert local 6 ans, 4,93/5 sur Airbnb. Estimation gratuite en 24h. Service national au Maroc." />
+        <meta name="description" content="Conciergerie Airbnb à Tanger et au Maroc — Daribnb. Loyer fixe garanti, expert local 6 ans, 4,93/5 sur Airbnb. Estimation gratuite en 24h." />
         <meta name="author" content="Daribnb" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta name="google-site-verification" content="47dSedG-j8M9RBYlovnD1IMkF5VHlvaub6svFzrom1o" />
@@ -44,7 +44,10 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <!-- Fonts chargées en non-bloquant : preload + swap media, évite de bloquer le rendu initial -->
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
         <title>Daribnb — Conciergerie Airbnb à Tanger | Gestion locative clé en main</title>
 
         <!-- LocalBusiness structured data — for Google local SEO -->
@@ -56,7 +59,7 @@
           "name": "Daribnb",
           "description": "Conciergerie Airbnb et gestion locative à Tanger, Maroc. Service clé en main pour propriétaires locaux et MRE. Loyer fixe garanti possible.",
           "url": "https://www.daribnb.com/",
-          "telephone": "+212646218407",
+          "telephone": "+212717277433",
           "email": "daribnb.ma@gmail.com",
           "image": "https://www.daribnb.com/og-image.jpg",
           "logo": "https://www.daribnb.com/favicon.png",
@@ -83,7 +86,7 @@
           ],
           "sameAs": [
             "https://instagram.com/daribnb.ma",
-            "https://wa.me/212646218407"
+            "https://wa.me/212717277433"
           ],
           "aggregateRating": {
             "@type": "AggregateRating",
@@ -124,8 +127,6 @@
           "publisher": { "@id": "https://www.daribnb.com/#business" }
         }
         </script>
-        <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
-        <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -159,12 +160,10 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-        
-            
-            </p>
-        </a>
         <script>
-            !(function (t, e) {
+        // PostHog différé après le premier rendu pour ne pas bloquer le LCP / le thread principal
+        window.addEventListener("load", function () {
+        !(function (t, e) {
                 var o, n, p, r;
                 e.__SV ||
                     ((window.posthog = e),
@@ -233,6 +232,7 @@
                     capturePerformance: false,
                 },
             });
+        });
         </script>
     </body>
 </html>

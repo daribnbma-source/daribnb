@@ -63,7 +63,7 @@ export default function GestionLocativeTanger() {
       "@id": `${SITE}/#business`,
       name: "Daribnb",
       url: SITE,
-      telephone: "+212646218407",
+      telephone: "+212726156448",
       email: "daribnb.ma@gmail.com",
     },
     areaServed: { "@type": "City", name: "Tanger" },

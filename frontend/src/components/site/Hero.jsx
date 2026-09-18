@@ -2,8 +2,7 @@ import React from "react";
 import { Check, Star, ArrowRight } from "lucide-react";
 import Simulator from "./Simulator";
 
-const HERO_IMG =
-  "https://images.pexels.com/photos/15531325/pexels-photo-15531325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1200";
+const HERO_IMG = "/assets/tanger-living-hero.webp";
 
 export default function Hero() {
   return (
@@ -18,21 +17,21 @@ export default function Hero() {
           <div className="lg:col-span-6 fade-up">
             <div className="inline-flex items-center gap-2 bg-[#006233]/10 text-[#006233] rounded-full px-4 py-2 text-sm font-semibold mb-6">
               <span className="w-2 h-2 rounded-full bg-[#006233] animate-pulse" />
-              Expert Airbnb depuis plus de 6 ans
+              Expert Airbnb depuis plus de 6 ans · Tanger, Rabat, Casablanca
             </div>
 
             <h1
               data-testid="hero-title"
               className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1A1A1A] leading-[1.05]"
             >
-              Votre Airbnb à Tanger,{" "}
+              Votre Airbnb à Tanger, Rabat ou Casablanca,{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-[#C1272D]">géré comme un pro.</span>
               </span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-[#4B5563] leading-relaxed max-w-xl">
-              Conciergerie Airbnb clé en main ou loyer fixe garanti à Tanger.
+              Conciergerie Airbnb clé en main ou loyer fixe garanti à Tanger, Rabat et Casablanca.
               On gère votre bien comme si c'était le nôtre — vous encaissez.
             </p>
 
@@ -55,13 +54,13 @@ export default function Hero() {
               <a
                 href="#simulator"
                 data-testid="hero-cta-primary"
-                className="inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl group"
+                className="cta-pulse inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl group"
               >
                 Estimer mes revenus
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="https://wa.me/212646218407?text=Bonjour%20Daribnb%2C%20je%20souhaite%20en%20savoir%20plus"
+                href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20je%20souhaite%20en%20savoir%20plus"
                 target="_blank"
                 rel="noreferrer"
                 data-testid="hero-cta-whatsapp"
@@ -92,9 +91,12 @@ export default function Hero() {
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src={HERO_IMG}
-                  alt="Riad marocain géré par Daribnb"
+                  alt="Salon d'un appartement à Tanger géré par Daribnb"
+                  width="1536"
+                  height="1024"
                   className="w-full h-full object-cover"
                   loading="eager"
+                  fetchpriority="high"
                 />
               </div>
               {/* Floating badge */}
@@ -104,7 +106,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="text-xs text-[#4B5563]">Expert local</p>
-                  <p className="font-bold text-[#1A1A1A]">Tanger 🇲🇦</p>
+                  <p className="font-bold text-[#1A1A1A]">Tanger · Rabat · Casa 🇲🇦</p>
                 </div>
               </div>
               <div className="hidden md:flex absolute -bottom-6 -right-6 bg-[#006233] text-white rounded-2xl p-4 shadow-xl items-center gap-3">

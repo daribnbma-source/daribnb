@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Camera, Calendar, Sparkles, Headphones, ShieldCheck, BadgeDollarSign, ArrowRight, Check } from "lucide-react";
 import ServicePageLayout from "./ServicePageLayout";
+import RelatedArticles from "../components/site/RelatedArticles";
 
 const SITE = "https://www.daribnb.com";
 const URL = `${SITE}/conciergerie-airbnb-tanger`;
@@ -46,7 +47,44 @@ const RESULTS = [
   { metric: "<2h", label: "temps de réponse moyen aux voyageurs" },
 ];
 
+const FAQS = [
+  {
+    q: "Combien coûte la conciergerie Airbnb à Tanger ?",
+    a: "Daribnb prélève une commission sur les revenus générés — pas de frais fixes. Vous ne payez que si votre bien est loué. Estimation gratuite en 24h.",
+  },
+  {
+    q: "Quel revenu mensuel peut-on espérer avec un Airbnb à Tanger ?",
+    a: "Sur notre portefeuille tangérois, la médiane est de 8 750 MAD/mois (~875€). Les biens vue mer à Malabata atteignent 15 000–22 000 MAD/mois en haute saison (juillet–août).",
+  },
+  {
+    q: "Daribnb gère-t-il les biens des MRE à Tanger ?",
+    a: "Oui, c'est notre spécialité. Vous vivez en France ou ailleurs : check-in, ménage, voyageurs, maintenance, reporting mensuel — on gère tout à distance.",
+  },
+  {
+    q: "Faut-il déclarer son Airbnb à Tanger ?",
+    a: "Oui. Les locations saisonnières doivent être déclarées à la préfecture et la taxe de séjour collectée. Daribnb gère toutes ces formalités pour vous.",
+  },
+  {
+    q: "Quels quartiers de Tanger sont les plus rentables sur Airbnb ?",
+    a: "Malabata et Tanja Marina Bay offrent les meilleurs ADR (1 100–1 400 MAD/nuit) grâce à la vue mer. Boubana et le centre-ville ont un meilleur taux d'occupation annuel.",
+  },
+  {
+    q: "Quelle est la différence entre loyer fixe et conciergerie Airbnb à Tanger ?",
+    a: "Avec le loyer fixe, vous recevez un montant garanti chaque mois. Avec la conciergerie, vos revenus sont généralement 30 à 50 % supérieurs mais variables. Daribnb propose les deux formules.",
+  },
+];
+
 export default function ConciergerieAirbnbTanger() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -57,7 +95,7 @@ export default function ConciergerieAirbnbTanger() {
       "@id": `${SITE}/#business`,
       name: "Daribnb",
       url: SITE,
-      telephone: "+212646218407",
+      telephone: "+212726156448",
       email: "daribnb.ma@gmail.com",
       address: {
         "@type": "PostalAddress",
@@ -83,7 +121,7 @@ export default function ConciergerieAirbnbTanger() {
       h1="Conciergerie Airbnb à Tanger"
       kicker="Service local · Tanger"
       intro="Vous possédez un appartement, riad ou maison à Tanger ? Daribnb gère votre bien Airbnb de A à Z : annonce, voyageurs, ménage, maintenance. Vous récoltez les revenus, sans la charge mentale."
-      schema={schema}
+      schema={[schema, faqSchema]}
     >
       {/* Pourquoi Daribnb */}
       <section className="py-20 md:py-28 bg-white">
@@ -188,28 +226,48 @@ export default function ConciergerieAirbnbTanger() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-10">
+            Questions fréquentes — Conciergerie Airbnb Tanger
+          </h2>
+          <div className="space-y-6">
+            {FAQS.map((f) => (
+              <details key={f.q} className="group border border-black/10 rounded-2xl overflow-hidden">
+                <summary className="flex justify-between items-center cursor-pointer px-6 py-5 font-semibold text-[#1A1A1A] list-none">
+                  {f.q}
+                  <span className="ml-4 flex-shrink-0 text-[#C1272D] group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p className="px-6 pb-5 text-[#4B5563] leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Liens internes */}
       <section className="py-20 md:py-28 bg-[#FAF9F6]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8">
-            Vous cherchez autre chose ?
+            Conciergerie Airbnb dans d'autres villes
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                to: "/gestion-locative-tanger",
-                title: "Gestion locative à Tanger",
-                desc: "Vue complète de notre service de gestion locative courte durée à Tanger.",
+                to: "/conciergerie-airbnb-casablanca",
+                title: "Conciergerie Airbnb Casablanca",
+                desc: "Gestion locative clé en main à Casablanca : Maarif, Racine, Anfa, La Corniche.",
               },
               {
-                to: "/gestion-locative-mre-tanger",
-                title: "Pour les MRE à Tanger",
-                desc: "Vous vivez en France, votre bien est à Tanger ? On gère tout à distance.",
+                to: "/conciergerie-airbnb-rabat",
+                title: "Conciergerie Airbnb Rabat",
+                desc: "Service premium à Rabat pour proprios locaux et MRE : Agdal, Hay Riad, Hassan.",
               },
               {
-                to: "/optimiser-revenus-airbnb",
-                title: "Optimiser un Airbnb existant",
-                desc: "Audit, pricing dynamique, optimisation. Service 100% dématérialisé partout au Maroc.",
+                to: "/conciergerie-airbnb-marrakech",
+                title: "Conciergerie Airbnb Marrakech",
+                desc: "Gestion riads et appartements à Marrakech : Médina, Guéliz, Hivernage, Palmeraie.",
               },
             ].map((c) => (
               <Link
@@ -229,6 +287,12 @@ export default function ConciergerieAirbnbTanger() {
           </div>
         </div>
       </section>
-    </ServicePageLayout>
+  
+      <RelatedArticles slugs={[
+          { slug: "conciergerie-airbnb-tanger-opportunite-2026", title: "Conciergerie Airbnb Tanger : pourquoi 2026 est l’année pour se lancer" },
+          { slug: "rentabilite-airbnb-maroc-2026", title: "Rentabilité Airbnb au Maroc : combien pouvez-vous vraiment gagner en 2026 ?" },
+          { slug: "loyer-fixe-vs-conciergerie-airbnb-maroc", title: "Loyer fixe vs conciergerie Airbnb au Maroc : le match 2026" }
+        ]} />
+          </ServicePageLayout>
   );
 }

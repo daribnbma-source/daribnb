@@ -4,7 +4,7 @@ import { Award, Users, MapPin, TrendingUp, Plane, GraduationCap, Home, Quote } f
 const STATS = [
   { icon: Award, v: "6+", l: "années d'expertise Airbnb" },
   { icon: Users, v: "+1 196", l: "évaluations Airbnb" },
-  { icon: MapPin, v: "Tout", l: "le Maroc couvert" },
+  { icon: MapPin, v: "3", l: "villes prioritaires : Tanger, Rabat, Casa" },
   { icon: TrendingUp, v: "+40%", l: "de revenus en moyenne" },
 ];
 
@@ -39,8 +39,10 @@ export default function WhyUs() {
           <div className="relative flex-shrink-0">
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl ring-4 ring-[#C1272D]/20">
               <img
-                src="/assets/marwan-portrait.png"
+                src="/assets/marwan-portrait.jpg"
                 alt="Marwan, fondateur de Daribnb"
+                width="825"
+                height="1000"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -76,8 +78,10 @@ export default function WhyUs() {
               <div className="mt-6 flex items-center gap-3 pt-6 border-t border-white/15">
                 <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/30">
                   <img
-                    src="/assets/marwan-portrait.png"
+                    src="/assets/marwan-portrait.jpg"
                     alt="Marwan"
+                    width="825"
+                    height="1000"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -107,6 +111,8 @@ export default function WhyUs() {
                 <img
                   src="/assets/airbnb-profile.png"
                   alt="Profil Airbnb de Marwan — 1196 évaluations, 4,93 étoiles, 6 ans hôte"
+                  width="509"
+                  height="556"
                   className="w-full h-auto block"
                   loading="lazy"
                 />
@@ -128,6 +134,19 @@ export default function WhyUs() {
               depuis plus de 6 ans — <strong>+1 196 évaluations</strong> et une
               note moyenne de <strong>4,93/5</strong>. Et surtout :
               propriétaire moi-même. Je gère vos biens comme les miens.
+            </p>
+            <p className="mt-4 text-lg text-[#4B5563] leading-relaxed">
+              Je transmets aussi cette expertise via{" "}
+              <a
+                href="https://www.rentimmoacademy.fr/super-bnb-academy/"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-[#006233] hover:text-[#C1272D] transition-colors underline decoration-[#006233]/30"
+              >
+                Rentimmo Academy
+              </a>
+              , l'académie de formation à la conciergerie et à la sous-location
+              Airbnb que j'ai fondée en France et au Maroc.
             </p>
 
             <div className="mt-8 space-y-4">
