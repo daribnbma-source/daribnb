@@ -187,6 +187,14 @@ async function renderRoute(browser, route) {
       const lang = n.getAttribute("hreflang");
       if (byLang.get(lang) !== n) n.remove();
     });
+
+    // 4. Fonts Google : le trick media="print" → onload="this.media='all'" a déjà
+    //    fired pendant le rendu Puppeteer (media est passé à "all" dans le DOM live).
+    //    On reset à "print" avant sérialisation pour que le HTML statique livré aux
+    //    vrais visiteurs charge la police en non-bloquant (le onload re-fire côté client).
+    document
+      .querySelectorAll('link[rel="stylesheet"][href*="fonts.googleapis.com"]')
+      .forEach((link) => link.setAttribute("media", "print"));
   });
 
   const html = await page.evaluate(() => "<!doctype html>\n" + document.documentElement.outerHTML);

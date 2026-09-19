@@ -159,7 +159,7 @@ export default function WhyUs() {
                     <p.icon className="w-5 h-5 text-[#006233]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1A1A1A]">{p.title}</h4>
+                    <h3 className="font-bold text-[#1A1A1A]">{p.title}</h3>
                     <p className="text-sm text-[#4B5563] mt-1">{p.text}</p>
                   </div>
                 </div>

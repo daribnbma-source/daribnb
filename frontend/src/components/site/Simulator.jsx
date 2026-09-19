@@ -173,10 +173,11 @@ export default function Simulator() {
           </div>
 
           <div>
-            <label className="text-sm font-semibold text-[#1A1A1A] mb-2 block">
+            <label htmlFor="simulator-bedrooms" className="text-sm font-semibold text-[#1A1A1A] mb-2 block">
               Chambres
             </label>
             <Input
+              id="simulator-bedrooms"
               type="number"
               min={0}
               max={20}

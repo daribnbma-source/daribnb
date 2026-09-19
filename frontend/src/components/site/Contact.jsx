@@ -91,7 +91,7 @@ export default function Contact() {
               target="_blank"
               rel="noreferrer"
               data-testid="contact-whatsapp-cta"
-              className="flex items-center gap-4 p-5 bg-[#25D366] text-white rounded-2xl hover:bg-[#20bd5a] transition-all shadow-md hover:shadow-lg"
+              className="flex items-center gap-4 p-5 bg-[#075E54] text-white rounded-2xl hover:bg-[#054c43] transition-all shadow-md hover:shadow-lg"
             >
               <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

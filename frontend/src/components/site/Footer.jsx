@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Nos villes</h4>
+            <p className="font-bold mb-4 text-white">Nos villes</p>
             <ul className="space-y-3 text-sm text-white/80">
               <li><Link to="/conciergerie-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Tanger</Link></li>
               <li><Link to="/conciergerie-airbnb-casablanca" className="hover:text-[#C1272D] transition-colors">Casablanca</Link></li>
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Services Maroc</h4>
+            <p className="font-bold mb-4 text-white">Services Maroc</p>
             <ul className="space-y-3 text-sm text-white/80">
               <li><Link to="/loyer-fixe-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Loyer fixe garanti</Link></li>
               <li><Link to="/gestion-locative-mre-tanger" className="hover:text-[#C1272D] transition-colors">Spécial MRE</Link></li>
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Ressources</h4>
+            <p className="font-bold mb-4 text-white">Ressources</p>
             <ul className="space-y-3 text-sm text-white/80">
               <li><Link to="/temoignages" className="hover:text-[#C1272D] transition-colors">Témoignages</Link></li>
               <li><Link to="/lexique-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Lexique Airbnb</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Formation</h4>
+            <p className="font-bold mb-4 text-white">Formation</p>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
                 <a href="https://www.rentimmoacademy.fr" target="_blank" rel="noreferrer" className="hover:text-[#C1272D] transition-colors">
@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Contact</h4>
+            <p className="font-bold mb-4 text-white">Contact</p>
             <ul className="space-y-3 text-sm text-white/80">
               <li data-testid="footer-email" className="flex items-center gap-2">
                 <Mail size={14} />
@@ -103,7 +103,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
+        <div className="mt-12 pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/75">
           <div>
             © {new Date().getFullYear()} Daribnb. Tous droits réservés.
           </div>

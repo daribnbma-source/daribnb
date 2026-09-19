@@ -9,7 +9,7 @@ export default function Urgency() {
           <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C1272D]/15 text-[#C1272D] ring-1 ring-[#C1272D]/40">
             <Flame size={22} strokeWidth={2.2} />
           </span>
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#C1272D]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#FF6B6B]">
             Places limitées chaque mois
           </p>
           <h3 className="max-w-2xl text-xl font-bold leading-snug text-white md:text-2xl">
