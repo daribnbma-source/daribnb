@@ -27,6 +27,8 @@ const ROUTES_BASE = [
   "/",
   "/conciergerie-airbnb-tanger",
   "/gestion-locative-tanger",
+  "/gestion-locative-casablanca",
+  "/gestion-locative-rabat",
   "/menage-airbnb-tanger",
   "/gestion-locative-mre-tanger",
   "/optimiser-revenus-airbnb",

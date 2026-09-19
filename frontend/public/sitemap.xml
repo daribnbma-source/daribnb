@@ -30,6 +30,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.daribnb.com/gestion-locative-casablanca</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.daribnb.com/gestion-locative-rabat</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.daribnb.com/optimiser-revenus-airbnb</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>

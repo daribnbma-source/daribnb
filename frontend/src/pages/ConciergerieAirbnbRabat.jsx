@@ -256,6 +256,11 @@ export default function ConciergerieAirbnbRabat() {
                 title: "Conciergerie Airbnb Casablanca",
                 desc: "La capitale économique. Clientèle business, taux d'occupation stable toute l'année.",
               },
+              {
+                to: "/gestion-locative-rabat",
+                title: "Gestion locative Rabat",
+                desc: "Le détail de notre gestion locative complète à Rabat, quartier par quartier.",
+              },
             ].map((c) => (
               <Link
                 key={c.to}
