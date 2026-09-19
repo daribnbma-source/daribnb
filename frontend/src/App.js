@@ -18,6 +18,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const ConciergerieAirbnbTanger = lazy(() => import("./pages/ConciergerieAirbnbTanger"));
 const GestionLocativeTanger = lazy(() => import("./pages/GestionLocativeTanger"));
+const MenageAirbnbTanger = lazy(() => import("./pages/MenageAirbnbTanger"));
 const GestionLocativeMRETanger = lazy(() => import("./pages/GestionLocativeMRETanger"));
 const OptimiserRevenusAirbnb = lazy(() => import("./pages/OptimiserRevenusAirbnb"));
 const LoyerFixeAirbnbTanger = lazy(() => import("./pages/LoyerFixeAirbnbTanger"));
@@ -54,6 +55,7 @@ function AppRouter() {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/conciergerie-airbnb-tanger" element={<ConciergerieAirbnbTanger />} />
         <Route path="/gestion-locative-tanger" element={<GestionLocativeTanger />} />
+        <Route path="/menage-airbnb-tanger" element={<MenageAirbnbTanger />} />
         <Route path="/gestion-locative-mre-tanger" element={<GestionLocativeMRETanger />} />
         <Route path="/optimiser-revenus-airbnb" element={<OptimiserRevenusAirbnb />} />
         <Route path="/loyer-fixe-airbnb-tanger" element={<LoyerFixeAirbnbTanger />} />

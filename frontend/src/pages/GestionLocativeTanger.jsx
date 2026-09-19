@@ -198,9 +198,9 @@ export default function GestionLocativeTanger() {
                 desc: "Le détail des services inclus dans la conciergerie : annonces, voyageurs, ménage, check-in.",
               },
               {
-                to: "/gestion-locative-mre-tanger",
-                title: "Spécial MRE",
-                desc: "Vous habitez à l'étranger ? Notre service est pensé pour les Marocains résidant à l'étranger.",
+                to: "/menage-airbnb-tanger",
+                title: "Ménage Airbnb Tanger",
+                desc: "Le détail de notre standard de ménage entre chaque voyageur : linge, contrôle qualité, équipe fixe.",
               },
               {
                 to: "/optimiser-revenus-airbnb",

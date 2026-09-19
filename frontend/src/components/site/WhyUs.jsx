@@ -39,10 +39,10 @@ export default function WhyUs() {
           <div className="relative flex-shrink-0">
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl ring-4 ring-[#C1272D]/20">
               <img
-                src="/assets/marwan-portrait.jpg"
+                src="/assets/marwan-portrait.webp"
                 alt="Marwan, fondateur de Daribnb"
-                width="825"
-                height="1000"
+                width="480"
+                height="581"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -78,10 +78,10 @@ export default function WhyUs() {
               <div className="mt-6 flex items-center gap-3 pt-6 border-t border-white/15">
                 <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/30">
                   <img
-                    src="/assets/marwan-portrait.jpg"
+                    src="/assets/marwan-portrait.webp"
                     alt="Marwan"
-                    width="825"
-                    height="1000"
+                    width="480"
+                    height="581"
                     className="w-full h-full object-cover"
                   />
                 </div>
