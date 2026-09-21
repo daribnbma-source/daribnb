@@ -123,9 +123,32 @@ export default function Simulator() {
         <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-2">
           Combien votre bien peut-il rapporter ?
         </h2>
-        <p className="text-[#4B5563] mb-8">
+        <p className="text-[#4B5563] mb-6">
           Estimation instantanée. Sans engagement.
         </p>
+
+        <div className="mb-8 flex flex-col sm:flex-row gap-3">
+          <div className="flex-1 flex items-center gap-3 bg-white border border-[#E5E5E5] rounded-xl px-4 py-3 shadow-sm">
+            <span className="w-8 h-8 rounded-full bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
+              <svg viewBox="0 0 32 32" className="w-4 h-4" fill="#C1272D">
+                <path d="M16 1C7.7 1 1 7.7 1 16s6.7 15 15 15 15-6.7 15-15S24.3 1 16 1zm7.3 22.1c-.7 1-1.8 1.5-3 1.5-1.1 0-2.2-.4-3-1.2-.6-.6-1.1-1.3-1.4-2-.3.7-.8 1.4-1.4 2-.8.8-1.9 1.2-3 1.2s-2.2-.5-3-1.5c-1.2-1.6-1.3-3.7-.3-5.5 1-1.9 2.8-3.6 5.6-5.3.8-.5 1.4-.8 2-1.1.3-.1.5-.2.7-.3.5-.2 1.1-.2 1.6 0 .2.1.4.2.7.3.6.3 1.2.6 2 1.1 2.8 1.7 4.6 3.4 5.6 5.3 1 1.8.9 3.9-.3 5.5z" />
+              </svg>
+            </span>
+            <div className="min-w-0">
+              <p className="text-xs font-semibold text-[#1A1A1A] truncate">Airbnb · Un versement de 296,82 € a été envoyé</p>
+              <p className="text-[11px] text-[#4B5563]">Notification réelle reçue par un propriétaire Daribnb</p>
+            </div>
+          </div>
+          <div className="flex-1 flex items-center gap-3 bg-white border border-[#E5E5E5] rounded-xl px-4 py-3 shadow-sm">
+            <span className="w-8 h-8 rounded-full bg-[#006233]/10 flex items-center justify-center flex-shrink-0">
+              <TrendingUp size={16} className="text-[#006233]" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-xs font-semibold text-[#1A1A1A] truncate">1 391,72 € de revenu net · Septembre 2026</p>
+              <p className="text-[11px] text-[#4B5563]">Exemple réel, un logement géré par Daribnb à Tanger</p>
+            </div>
+          </div>
+        </div>
 
         <form onSubmit={submit} className="grid md:grid-cols-4 gap-4 items-end">
           <div>
