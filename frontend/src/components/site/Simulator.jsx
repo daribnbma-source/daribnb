@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Select,
   SelectContent,
@@ -74,6 +74,9 @@ const TYPES = [
   { v: "villa", l: "Villa" },
 ];
 
+// Vrais versements Airbnb reçus par des propriétaires Daribnb (captures fournies par Marwan).
+const REAL_PAYOUTS = [296.82, 114.45, 660.79, 785.4, 1029.18, 801.64, 651.26, 1052.81];
+
 export default function Simulator() {
   const [city, setCity] = useState("");
   const [type, setType] = useState("");
@@ -81,6 +84,14 @@ export default function Simulator() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const { setSimResult } = useSimulator();
+  const [payoutIndex, setPayoutIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPayoutIndex((i) => (i + 1) % REAL_PAYOUTS.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
 
   const submit = (e) => {
     e.preventDefault();
@@ -135,7 +146,16 @@ export default function Simulator() {
               </svg>
             </span>
             <div className="min-w-0">
-              <p className="text-xs font-semibold text-[#1A1A1A] truncate">Airbnb · Un versement de 296,82 € a été envoyé</p>
+              <p
+                key={payoutIndex}
+                className="text-xs font-semibold text-[#1A1A1A] truncate fade-up"
+              >
+                Airbnb · Un versement de{" "}
+                {REAL_PAYOUTS[payoutIndex].toLocaleString("fr-FR", {
+                  minimumFractionDigits: 2,
+                })}{" "}
+                € a été envoyé
+              </p>
               <p className="text-[11px] text-[#4B5563]">Notification réelle reçue par un propriétaire Daribnb</p>
             </div>
           </div>
