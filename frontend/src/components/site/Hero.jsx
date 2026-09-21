@@ -17,7 +17,7 @@ export default function Hero() {
           <div className="lg:col-span-6 fade-up">
             <div className="inline-flex items-center gap-2 bg-[#006233]/10 text-[#006233] rounded-full px-4 py-2 text-sm font-semibold mb-6">
               <span className="w-2 h-2 rounded-full bg-[#006233] animate-pulse" />
-              Expert Airbnb depuis plus de 6 ans · Tanger, Rabat, Casablanca
+              Coach & expert Airbnb 7+ ans · Tanger, Rabat, Casablanca
             </div>
 
             <h1

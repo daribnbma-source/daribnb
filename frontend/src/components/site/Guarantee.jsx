@@ -59,7 +59,7 @@ export default function Guarantee() {
               <p className="mt-4 max-w-2xl text-white/70">
                 Photos, titre, tarifs, calendrier : on retravaille tout le paramétrage de votre
                 annonce jusqu'à la première réservation. C'est la méthode qu'on applique sur nos
-                propres biens depuis plus de 6 ans — et celle que Marwan enseigne aujourd'hui aux
+                propres biens depuis plus de 7 ans — et celle que Marwan enseigne aujourd'hui aux
                 entrepreneurs formés via{" "}
                 <a
                   href="https://www.rentimmoacademy.fr/super-bnb-academy/"
@@ -72,6 +72,21 @@ export default function Guarantee() {
                 , l'académie de formation Airbnb qu'il a fondée.
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="mb-10 flex items-start gap-4 rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
+          <div className="flex items-center gap-1 flex-shrink-0 mt-1">
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="text-[#C1272D]">★</span>
+            ))}
+          </div>
+          <div>
+            <p className="text-white/90 italic leading-relaxed">
+              "Un grand merci à toute l'équipe Daribnb pour ce séjour ! L'appartement était top et
+              conforme à nos attentes. 5 étoiles bien méritées."
+            </p>
+            <p className="mt-2 text-sm text-white/50">— Mona Safar, Bruxelles · avis Airbnb vérifié</p>
           </div>
         </div>
 

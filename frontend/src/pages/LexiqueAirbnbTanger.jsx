@@ -316,7 +316,7 @@ export default function LexiqueAirbnbTanger() {
       canonical={URL}
       h1="Lexique Airbnb Tanger & Maroc"
       kicker="Glossaire"
-      intro="50 termes essentiels pour comprendre la location courte durée Airbnb à Tanger, la réglementation marocaine 2025-2026, la fiscalité MRE, et les opérations conciergerie. Définitions sourcées par 6 ans d'expérience opérationnelle Daribnb."
+      intro="50 termes essentiels pour comprendre la location courte durée Airbnb à Tanger, la réglementation marocaine 2025-2026, la fiscalité MRE, et les opérations conciergerie. Définitions sourcées par plus de 7 ans d'expérience opérationnelle de son fondateur, coach et expert Airbnb."
       schema={schema}
     >
       {/* Search & filtres */}

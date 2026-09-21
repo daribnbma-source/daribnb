@@ -134,7 +134,7 @@ export default function ConciergerieAirbnbTanger() {
               Local, expert, transparent.
             </h2>
             <p className="mt-4 text-lg text-[#4B5563]">
-              On ne fait pas de la conciergerie générique. Daribnb est implanté à Tanger depuis plus de 6 ans, on connaît chaque quartier, chaque saison, chaque type de voyageur. Notre note 4,93/5 sur Airbnb (sur près de 1 200 commentaires) en témoigne.
+              On ne fait pas de la conciergerie générique. Daribnb est fondé et dirigé par un coach & expert Airbnb avec plus de 7 ans d'expérience terrain (France & Maroc), implanté à Tanger : on connaît chaque quartier, chaque saison, chaque type de voyageur. Notre note 4,93/5 sur Airbnb (sur près de 1 200 commentaires) en témoigne.
             </p>
           </div>
 

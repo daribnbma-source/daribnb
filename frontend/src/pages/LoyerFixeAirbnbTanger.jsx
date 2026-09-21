@@ -41,7 +41,7 @@ const FAQS = [
   },
   {
     q: "Pourquoi ce serait Daribnb qui prend le risque et pas moi ?",
-    a: "Parce qu'on a 6+ ans d'historique sur Tanger, on connaît les chiffres médians par quartier, on optimise mieux qu'un proprio individuel (équipe ménage, photos pro, multi-plateformes Airbnb/Booking/Vrbo). Statistiquement on fait +30 à +50% vs gestion en direct, ce qui couvre largement notre marge tout en garantissant votre revenu.",
+    a: "Parce qu'on s'appuie sur plus de 7 ans d'expertise Airbnb (France & Maroc), on connaît les chiffres médians par quartier, on optimise mieux qu'un proprio individuel (équipe ménage, photos pro, multi-plateformes Airbnb/Booking/Vrbo). Statistiquement on fait +30 à +50% vs gestion en direct, ce qui couvre largement notre marge tout en garantissant votre revenu.",
   },
   {
     q: "Quelle est la durée d'engagement ?",

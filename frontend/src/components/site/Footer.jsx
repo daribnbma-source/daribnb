@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Logo variant="light" />
             <p className="mt-4 text-white/80 max-w-sm leading-relaxed">
-              Conciergerie Airbnb & loyer fixe garanti à Tanger et partout au Maroc. Expert depuis plus de 6 ans, on s'occupe de votre bien comme si c'était le nôtre.
+              Conciergerie Airbnb & loyer fixe garanti à Tanger et partout au Maroc. Coach, formateur & expert depuis plus de 7 ans, on s'occupe de votre bien comme si c'était le nôtre.
             </p>
             <div className="mt-6 flex items-center gap-2">
               <span className="text-2xl">🇲🇦</span>

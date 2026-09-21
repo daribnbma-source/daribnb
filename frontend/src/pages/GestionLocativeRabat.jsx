@@ -211,7 +211,7 @@ export default function GestionLocativeRabat() {
               {
                 to: "/gestion-locative-tanger",
                 title: "Gestion locative Tanger",
-                desc: "Notre marché historique. Plus de 6 ans d'expérience, 4,93/5 sur près de 1 200 avis.",
+                desc: "Notre marché historique. Plus de 7 ans d'expérience, 4,93/5 sur près de 1 200 avis.",
               },
             ].map((c) => (
               <Link

@@ -2,7 +2,7 @@ import React from "react";
 import { Award, Users, MapPin, TrendingUp, Plane, GraduationCap, Home, Quote } from "lucide-react";
 
 const STATS = [
-  { icon: Award, v: "6+", l: "années d'expertise Airbnb" },
+  { icon: Award, v: "7+", l: "années d'expertise Airbnb" },
   { icon: Users, v: "+1 196", l: "évaluations Airbnb" },
   { icon: MapPin, v: "3", l: "villes prioritaires : Tanger, Rabat, Casa" },
   { icon: TrendingUp, v: "+40%", l: "de revenus en moyenne" },
@@ -16,7 +16,7 @@ const STORY_POINTS = [
   },
   {
     icon: GraduationCap,
-    title: "Coach, formateur & expert Airbnb",
+    title: "Coach, formateur & expert Airbnb (7+ ans)",
     text: "Je ne me contente pas de gérer : je forme, je conseille, j'optimise. Chaque bien mérite une stratégie.",
   },
   {
@@ -110,7 +110,7 @@ export default function WhyUs() {
               <div className="rounded-2xl overflow-hidden bg-white shadow-sm border border-[#E5E5E5]">
                 <img
                   src="/assets/airbnb-profile.png"
-                  alt="Profil Airbnb de Marwan — 1196 évaluations, 4,93 étoiles, 6 ans hôte"
+                  alt="Profil Airbnb de Marwan — 1196 évaluations, 4,93 étoiles, 7 ans hôte"
                   width="509"
                   height="556"
                   className="w-full h-auto block"
@@ -131,7 +131,7 @@ export default function WhyUs() {
             </p>
             <p className="mt-4 text-lg text-[#4B5563] leading-relaxed">
               Ingénieur industriel de formation, coach, formateur et expert Airbnb
-              depuis plus de 6 ans — <strong>+1 196 évaluations</strong> et une
+              depuis plus de 7 ans — <strong>+1 196 évaluations</strong> et une
               note moyenne de <strong>4,93/5</strong>. Et surtout :
               propriétaire moi-même. Je gère vos biens comme les miens.
             </p>
@@ -164,6 +164,29 @@ export default function WhyUs() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <p className="text-xs font-bold text-[#4B5563] uppercase tracking-wider mb-3">
+                Nos logements à Tanger
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { src: "/assets/logements/logement-1-salon.jpg", alt: "Salon moderne d'un appartement Daribnb à Tanger" },
+                  { src: "/assets/logements/logement-1-sejour.jpg", alt: "Séjour lumineux d'un appartement Daribnb à Tanger" },
+                  { src: "/assets/logements/logement-2-salon.jpg", alt: "Salon cosy d'un appartement Daribnb à Tanger" },
+                  { src: "/assets/logements/logement-2-chambre.jpg", alt: "Chambre d'un appartement Daribnb à Tanger" },
+                ].map((img) => (
+                  <div key={img.src} className="aspect-[4/3] rounded-xl overflow-hidden">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-4">

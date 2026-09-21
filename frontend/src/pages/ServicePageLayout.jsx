@@ -140,7 +140,7 @@ export default function ServicePageLayout({
                 ))}
               </div>
               <p className="text-sm text-[#4B5563]">
-                <span className="font-semibold text-[#1A1A1A]">4,93/5</span> sur Airbnb · Expert local 6+ ans
+                <span className="font-semibold text-[#1A1A1A]">4,93/5</span> sur Airbnb · Coach & expert Airbnb 7+ ans
               </p>
             </div>
           </div>

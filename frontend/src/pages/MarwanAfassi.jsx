@@ -45,7 +45,7 @@ const TIMELINE = [
 ];
 
 const STATS = [
-  { icon: Calendar, label: "Années d'expérience Airbnb", value: "6+" },
+  { icon: Calendar, label: "Années d'expérience Airbnb", value: "7+" },
   { icon: Star, label: "Note moyenne sur Airbnb", value: "4,93/5" },
   { icon: Users, label: "Commentaires clients vérifiés", value: "1 196+" },
   { icon: Globe, label: "Pays opérés", value: "France · Belgique · Maroc" },
@@ -61,9 +61,9 @@ export default function MarwanAfassi() {
     name: "Marwan Afassi",
     givenName: "Marwan",
     familyName: "Afassi",
-    jobTitle: "Fondateur de Daribnb",
+    jobTitle: "Fondateur de Daribnb, Coach & Formateur Airbnb",
     description:
-      "Fondateur de Daribnb, conciergerie Airbnb à Tanger. Expert Airbnb depuis plus de 6 ans en France, Belgique et Maroc. MRE de seconde génération, originaire de Troyes, racines dans le Nord du Maroc.",
+      "Fondateur de Daribnb, conciergerie Airbnb à Tanger. Coach, formateur et expert Airbnb depuis plus de 7 ans en France, Belgique et Maroc. MRE de seconde génération, originaire de Troyes, racines dans le Nord du Maroc.",
     image: `${SITE}/marwan-afassi.jpg`,
     url: URL,
     sameAs: [
@@ -87,6 +87,7 @@ export default function MarwanAfassi() {
       },
     ],
     knowsAbout: [
+      "Coaching et formation Airbnb",
       "Conciergerie Airbnb",
       "Gestion locative meublée courte durée",
       "Sous-location professionnelle",
@@ -104,12 +105,12 @@ export default function MarwanAfassi() {
 
   return (
     <ServicePageLayout
-      title="Marwan Afassi — Fondateur de Daribnb | Expert Airbnb Tanger"
-      description="Marwan Afassi, fondateur de Daribnb. 6+ ans d'expérience Airbnb en France, Belgique et Maroc. MRE et expert conciergerie à Tanger. Note moyenne 4,93/5 sur 1 196 commentaires."
+      title="Marwan Afassi — Fondateur de Daribnb | Coach & Formateur Airbnb"
+      description="Marwan Afassi, fondateur de Daribnb, coach & formateur Airbnb. 7+ ans d'expérience en France, Belgique et Maroc. MRE et expert conciergerie à Tanger. Note moyenne 4,93/5 sur 1 196 commentaires."
       canonical={URL}
       h1="Marwan Afassi"
-      kicker="Fondateur"
-      intro="Fondateur de Daribnb, expert Airbnb depuis plus de 6 ans, MRE de seconde génération qui a transformé son expérience opérationnelle terrain en service premium pour les propriétaires de Tanger."
+      kicker="Fondateur, coach & formateur"
+      intro="Fondateur de Daribnb, coach et formateur Airbnb depuis plus de 7 ans, MRE de seconde génération qui a transformé son expérience opérationnelle terrain en service premium pour les propriétaires de Tanger."
       schema={personSchema}
     >
       {/* Stats grid */}
@@ -175,8 +176,9 @@ export default function MarwanAfassi() {
               Aujourd'hui, on dépasse les <strong>1 196 commentaires Airbnb à 4,93/5</strong>
               {' '}— la meilleure note opérationnelle du marché tangerois. En parallèle, j'ai
               fondé <a href="https://rentimmo-academy.fr" target="_blank" rel="noreferrer" className="underline text-[#C1272D]">
-              Rentimmo Academy</a> pour transmettre ces 6 ans d'expérience à d'autres
-              entrepreneurs francophones (sous-location pro et conciergerie Airbnb).
+              Rentimmo Academy</a> pour transmettre mes 7+ ans d'expérience en tant que coach
+              et formateur à d'autres entrepreneurs francophones (sous-location pro et
+              conciergerie Airbnb).
             </p>
           </div>
         </div>
@@ -189,7 +191,7 @@ export default function MarwanAfassi() {
             Parcours
           </span>
           <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1A1A1A]">
-            6+ ans d'expérience Airbnb opérationnelle.
+            7+ ans d'expérience Airbnb opérationnelle.
           </h2>
 
           <div className="mt-12 space-y-10">

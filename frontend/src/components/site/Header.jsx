@@ -8,7 +8,13 @@ const SERVICES_MENU = [
   {
     href: "/conciergerie-airbnb-tanger",
     label: "Conciergerie Airbnb",
-    desc: "Gestion clé en main à Tanger, Casablanca, Rabat, Marrakech : annonce, voyageurs, ménage, check-in 24/7",
+    desc: "Gestion clé en main : annonce, voyageurs, ménage, check-in 24/7",
+    cities: [
+      { name: "Tanger", href: "/conciergerie-airbnb-tanger" },
+      { name: "Rabat", href: "/conciergerie-airbnb-rabat" },
+      { name: "Casablanca", href: "/conciergerie-airbnb-casablanca" },
+      { name: "Marrakech", href: "/conciergerie-airbnb-marrakech" },
+    ],
   },
   {
     href: "/loyer-fixe-airbnb-tanger",
@@ -92,19 +98,30 @@ export default function Header() {
             {servicesOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[420px] bg-white rounded-2xl shadow-2xl border border-black/5 p-3 grid grid-cols-1 gap-1">
                 {SERVICES_MENU.map((s) => (
-                  <Link
-                    key={s.href}
-                    to={s.href}
-                    onClick={() => setServicesOpen(false)}
-                    className="flex flex-col gap-1 p-3 rounded-xl hover:bg-[#FAF9F6] transition-colors group"
-                  >
-                    <span className="text-sm font-bold text-[#1A1A1A] group-hover:text-[#C1272D] transition-colors">
-                      {s.label}
-                    </span>
-                    <span className="text-xs text-[#4B5563] leading-snug">
-                      {s.desc}
-                    </span>
-                  </Link>
+                  <div key={s.href} className="p-3 rounded-xl hover:bg-[#FAF9F6] transition-colors group">
+                    <Link to={s.href} onClick={() => setServicesOpen(false)} className="flex flex-col gap-1">
+                      <span className="text-sm font-bold text-[#1A1A1A] group-hover:text-[#C1272D] transition-colors">
+                        {s.label}
+                      </span>
+                      <span className="text-xs text-[#4B5563] leading-snug">
+                        {s.desc}
+                      </span>
+                    </Link>
+                    {s.cities && (
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {s.cities.map((c) => (
+                          <Link
+                            key={c.href}
+                            to={c.href}
+                            onClick={() => setServicesOpen(false)}
+                            className="text-[11px] font-semibold text-[#4B5563] hover:text-[#C1272D] bg-white hover:bg-[#C1272D]/10 border border-black/5 rounded-full px-2.5 py-1 transition-colors"
+                          >
+                            {c.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             )}
@@ -160,14 +177,29 @@ export default function Header() {
           {mobileServicesOpen && (
             <div className="pl-4 py-2 space-y-1 border-b border-black/5">
               {SERVICES_MENU.map((s) => (
-                <Link
-                  key={s.href}
-                  to={s.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-2 text-sm text-[#1A1A1A] hover:text-[#C1272D]"
-                >
-                  {s.label}
-                </Link>
+                <div key={s.href}>
+                  <Link
+                    to={s.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-2 text-sm text-[#1A1A1A] hover:text-[#C1272D] font-medium"
+                  >
+                    {s.label}
+                  </Link>
+                  {s.cities && (
+                    <div className="pl-2 pb-2 flex flex-wrap gap-2">
+                      {s.cities.map((c) => (
+                        <Link
+                          key={c.href}
+                          to={c.href}
+                          onClick={() => setOpen(false)}
+                          className="text-xs text-[#4B5563] hover:text-[#C1272D] bg-[#FAF9F6] rounded-full px-2.5 py-1"
+                        >
+                          {c.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           )}

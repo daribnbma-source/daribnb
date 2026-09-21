@@ -179,7 +179,7 @@ export default function GestionLocativeMRETanger() {
           </h2>
           <div className="mt-6 space-y-4 text-lg text-[#4B5563] leading-relaxed">
             <p>
-              Daribnb a été fondé par Marwan — investisseur, propriétaire et expert en location courte durée depuis plus de 6 ans, entre la France et le Maroc. Il connaît le marché locatif marocain de l'intérieur, et les défis concrets des MRE qui veulent rentabiliser leur patrimoine au Maroc.
+              Daribnb a été fondé par Marwan — investisseur, propriétaire, coach & formateur, expert en location courte durée depuis plus de 7 ans, entre la France et le Maroc. Il connaît le marché locatif marocain de l'intérieur, et les défis concrets des MRE qui veulent rentabiliser leur patrimoine au Maroc.
             </p>
             <p>
               Les problèmes que vous rencontrez — trouver une équipe de confiance, sécuriser les revenus, gérer les imprévus, naviguer les démarches administratives locales — ce sont des problèmes qu'on a analysés et résolus pour des dizaines de propriétaires MRE. On sait ce qui coince, et on sait comment le régler.

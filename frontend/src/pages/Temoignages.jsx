@@ -7,8 +7,6 @@ const SITE = "https://www.daribnb.com";
 const URL = `${SITE}/temoignages`;
 
 // Avis publics Airbnb agrégés (note globale du compte hôte Daribnb).
-// Les avis individuels Airbnb ne sont PAS recopiés ici (propriété Airbnb / privacy voyageurs).
-// Sources affichables: avis Google Business Profile dès qu'ils seront récoltés (cf. roadmap).
 const AGGREGATED_AIRBNB = {
   ratingValue: 4.93,
   reviewCount: 1196,
@@ -17,16 +15,57 @@ const AGGREGATED_AIRBNB = {
     "Note moyenne du compte hôte Daribnb sur Airbnb, agrégée sur 1 196 commentaires de voyageurs ayant séjourné dans nos logements gérés à Tanger.",
 };
 
-// Avis Google Business Profile (à remplir au fur et à mesure).
-// Format : { authorName, rating, date, body, source: 'google' }
-// Pour ajouter, copier le widget Google Business "Voir l'avis" et coller authorName/body.
-const GOOGLE_REVIEWS = [
-  // {
-  //   authorName: "Prénom N.",
-  //   rating: 5,
-  //   date: "2026-05-15",
-  //   body: "Texte de l'avis Google",
-  // },
+// Vrais avis voyageurs (Airbnb + Google), fournis par Marwan depuis son compte hôte.
+// Format : { authorName, location, rating, date, body, source: 'Airbnb' | 'Google' }
+const CLIENT_REVIEWS = [
+  {
+    authorName: "Ines",
+    location: "Mulhouse, France",
+    rating: 5,
+    date: "2026-09-19",
+    body: "Un très bon séjour passé au sein du logement où vous y trouverez vraiment tout pour s'y sentir comme chez soi. A 15/20 min du centre ville, dans un quartier calme et sécurisé. Avec des instructions très complètes. Je recommande pour un séjour sur Tanger.",
+    source: "Airbnb",
+  },
+  {
+    authorName: "Mona Safar",
+    location: "Bruxelles, Belgique",
+    rating: 5,
+    date: "2026-07-10",
+    body: "Un grand merci à toute l'équipe Daribnb pour ce séjour ! Malgré une entrée dans les lieux un peu compliquée au départ, tout le reste s'est vraiment très bien passé. L'appartement était top et conforme à nos attentes. 5 étoiles bien méritées.",
+    source: "Airbnb",
+  },
+  {
+    authorName: "Amina Bouras",
+    location: "Tanger, Maroc",
+    rating: 5,
+    date: "2026-07-21",
+    body: "J'ai passé un excellent séjour dans cet appartement à Tanger. Le logement est propre, confortable et très bien équipé. L'emplacement est idéal.",
+    source: "Google",
+  },
+  {
+    authorName: "Hannah",
+    location: "Mashpee, États-Unis",
+    rating: 5,
+    date: "2026-08-15",
+    body: "Vraiment satisfait de ce choix, surtout avec la voiture : le stationnement était tellement facile !",
+    source: "Airbnb",
+  },
+  {
+    authorName: "Ines",
+    location: "Mulhouse, France",
+    rating: 5,
+    date: "2026-09-07",
+    body: "Très bon séjour passé au sein de ce logement. Nous l'avons trouvé à la dernière minute, nous sommes très satisfaits, hôte très réactif. Les places de parking sont un peu compliquées à trouver le soir mais pas de panique, il y a des places devant la résidence. Nous reviendrons avec plaisir.",
+    source: "Airbnb",
+  },
+  {
+    authorName: "Nassim",
+    location: "Tanger, Maroc",
+    rating: 5,
+    date: "2026-07-21",
+    body: "Great place, will recommend.",
+    source: "Google",
+  },
 ];
 
 export default function Temoignages() {
@@ -47,7 +86,7 @@ export default function Temoignages() {
   };
 
   // Review schemas pour les Google Reviews (quand ils existeront)
-  const reviewSchemas = GOOGLE_REVIEWS.map((r) => ({
+  const reviewSchemas = CLIENT_REVIEWS.map((r) => ({
     "@context": "https://schema.org",
     "@type": "Review",
     itemReviewed: {
@@ -108,7 +147,7 @@ export default function Temoignages() {
             </div>
 
             <div className="bg-[#FAF9F6] rounded-2xl p-8 text-center border border-black/5">
-              <p className="text-4xl font-bold text-[#1A1A1A]">6+</p>
+              <p className="text-4xl font-bold text-[#1A1A1A]">7+</p>
               <p className="mt-2 text-sm text-[#4B5563]">
                 Années d'expérience opérationnelle
               </p>
@@ -178,13 +217,13 @@ export default function Temoignages() {
         </div>
       </section>
 
-      {/* Google Reviews section (s'affiche dès qu'il y aura ≥ 1 review) */}
-      {GOOGLE_REVIEWS.length > 0 && (
+      {/* Avis clients récents (Airbnb + Google) */}
+      {CLIENT_REVIEWS.length > 0 && (
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-5xl mx-auto px-6 md:px-12">
             <div className="flex items-baseline justify-between border-b border-black/10 pb-4 mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A]">
-                Avis Google récents
+                Avis clients récents
               </h2>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Daribnb+Expert+Conciergerie+360+Tanger"
@@ -198,24 +237,35 @@ export default function Temoignages() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {GOOGLE_REVIEWS.map((r, i) => (
+              {CLIENT_REVIEWS.map((r, i) => (
                 <article
                   key={i}
                   className="bg-[#FAF9F6] rounded-2xl p-6 md:p-8 border border-black/5"
                 >
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(r.rating)].map((_, idx) => (
-                      <Star
-                        key={idx}
-                        size={16}
-                        className="fill-[#C1272D] text-[#C1272D]"
-                      />
-                    ))}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-1">
+                      {[...Array(r.rating)].map((_, idx) => (
+                        <Star
+                          key={idx}
+                          size={16}
+                          className="fill-[#C1272D] text-[#C1272D]"
+                        />
+                      ))}
+                    </div>
+                    <span
+                      className={`text-[10px] font-bold uppercase tracking-wider rounded-full px-2.5 py-1 ${
+                        r.source === "Airbnb"
+                          ? "bg-[#C1272D]/10 text-[#C1272D]"
+                          : "bg-[#006233]/10 text-[#006233]"
+                      }`}
+                    >
+                      {r.source}
+                    </span>
                   </div>
                   <p className="text-[#1A1A1A] leading-relaxed">{r.body}</p>
                   <div className="mt-4 pt-4 border-t border-black/5 flex items-center justify-between">
                     <span className="text-sm font-bold text-[#1A1A1A]">
-                      {r.authorName}
+                      {r.authorName} <span className="font-normal text-[#4B5563]">· {r.location}</span>
                     </span>
                     <span className="text-xs text-[#4B5563]">
                       {new Date(r.date).toLocaleDateString("fr-FR")}

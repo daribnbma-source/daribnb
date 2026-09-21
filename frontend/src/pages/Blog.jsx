@@ -46,7 +46,7 @@ export default function Blog() {
               Conseils, guides & analyses d'expert Airbnb au Maroc.
             </h1>
             <p className="mt-4 text-lg text-[#4B5563]">
-              6+ années d'expérience, 1 196 évaluations, et des propriétaires
+              7+ années d'expérience, 1 196 évaluations, et des propriétaires
               accompagnés à travers tout le royaume. On partage tout ici.
             </p>
           </div>

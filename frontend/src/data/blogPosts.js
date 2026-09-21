@@ -88,7 +88,7 @@ Vous souhaitez savoir combien votre appartement, riad ou villa peut rapporter ? 
     slug: "conciergerie-airbnb-casablanca-guide-2026",
     title: "Conciergerie Airbnb Casablanca : le guide complet 2026 pour propriétaires",
     excerpt:
-      "Combien rapporte un Airbnb à Casablanca en 2026 ? Quels quartiers privilégier, quelle commission, quels pièges éviter ? Le guide complet d'un expert local avec +6 ans d'expérience.",
+      "Combien rapporte un Airbnb à Casablanca en 2026 ? Quels quartiers privilégier, quelle commission, quels pièges éviter ? Le guide complet d'un expert local avec +7 ans d'expérience.",
     meta_description:
       "Conciergerie Airbnb Casablanca : tarifs, meilleurs quartiers (Maarif, Gauthier, Anfa), revenus estimés et conseils d'expert. Guide 2026 complet.",
     keywords:
@@ -143,7 +143,7 @@ Pour un propriétaire qui veut la tranquillité, le loyer fixe est redoutable. P
 
 ## Prêt à rentabiliser votre bien à Casablanca ?
 
-Daribnb est dirigée par Marwan, MRE rentré au Maroc, expert Airbnb depuis 6+ ans (+1 196 évaluations, 4,93/5). On couvre tout Casablanca avec un service 360° : photos pro, annonce optimisée, check-in 24/7, ménage hôtelier, reporting mensuel transparent.
+Daribnb est dirigée par Marwan, MRE rentré au Maroc, coach et expert Airbnb depuis 7+ ans (+1 196 évaluations, 4,93/5). On couvre tout Casablanca avec un service 360° : photos pro, annonce optimisée, check-in 24/7, ménage hôtelier, reporting mensuel transparent.
 
 Estimation gratuite et personnalisée de vos revenus en 24h. Contactez-nous.`,
   },
@@ -281,7 +281,7 @@ Tanger est **le bon endroit au bon moment**. Si vous possédez un bien là-bas, 
 
 "Combien je peux vraiment gagner avec mon bien en Airbnb au Maroc ?"
 
-Réponse honnête : **ça dépend**. D'une ville à l'autre, d'un quartier à l'autre, voire d'un étage à l'autre, les écarts sont énormes. Mais avec 6+ ans de données et +150 propriétaires accompagnés, on peut vous donner des fourchettes précises.
+Réponse honnête : **ça dépend**. D'une ville à l'autre, d'un quartier à l'autre, voire d'un étage à l'autre, les écarts sont énormes. Mais avec 7+ ans de données et +150 propriétaires accompagnés, on peut vous donner des fourchettes précises.
 
 ## Revenus nets moyens par ville (2026)
 
@@ -416,7 +416,7 @@ Daribnb vous propose en général **~70 % du revenu moyen estimé**, net, garant
 
 ## Envie qu'on tranche pour vous ?
 
-On estime votre bien gratuitement, on vous propose les deux formules chiffrées, et vous choisissez sereinement. 6+ années d'expertise, +150 propriétaires, aucune pression commerciale.`,
+On estime votre bien gratuitement, on vous propose les deux formules chiffrées, et vous choisissez sereinement. 7+ années d'expertise, +150 propriétaires, aucune pression commerciale.`,
   },
   {
     slug: "mre-airbnb-maroc-gestion-distance-2026",
@@ -511,7 +511,7 @@ La **conciergerie classique** (commission 20%) reste pertinente si :
 
 ## Daribnb, fondé par un MRE, pour les MRE
 
-Marwan, fondateur de Daribnb, est lui-même MRE. C'est en galérant à gérer son propre Airbnb à Tanger depuis l'étranger qu'il a fondé Daribnb il y a 6 ans. Aujourd'hui on accompagne plusieurs dizaines de propriétaires MRE en France, Belgique, Pays-Bas, Espagne, Allemagne et Italie.
+Marwan, fondateur de Daribnb, est lui-même MRE. C'est en galérant à gérer son propre Airbnb à Tanger depuis l'étranger qu'il a fondé Daribnb, fort de plus de 7 ans d'expérience Airbnb entre la France et le Maroc. Aujourd'hui on accompagne plusieurs dizaines de propriétaires MRE en France, Belgique, Pays-Bas, Espagne, Allemagne et Italie.
 
 Communication 100% en français, transparence totale sur les chiffres, équipe locale à Tanger qu'on a formée nous-mêmes. **4,93/5 sur 1 196 commentaires Airbnb** — les voyageurs notent la qualité, vous touchez le revenu.
 
@@ -1202,7 +1202,7 @@ Daribnb concentre son expertise sur **Tanger, Rabat et Casablanca** — trois ma
 
 Gérer une LCD soi-même demande du temps au quotidien : répondre aux voyageurs à toute heure, coordonner le ménage, ajuster les tarifs, suivre la conformité réglementaire. Une conciergerie professionnelle prend en charge l'ensemble de ces tâches, avec en général une optimisation de la tarification et de la visibilité de l'annonce qu'il est difficile d'égaler seul, sans expérience du marché.
 
-Daribnb gère des biens en LCD depuis plus de 6 ans, à Tanger, Rabat et Casablanca — ménage hôtelier, check-in 24/7, conformité (déclaration préfecture, taxe de séjour), et reporting mensuel transparent. Estimation gratuite de vos revenus potentiels sous 24h.
+Daribnb gère des biens en LCD à Tanger, Rabat et Casablanca, fondé par un expert Airbnb avec plus de 7 ans d'expérience — ménage hôtelier, check-in 24/7, conformité (déclaration préfecture, taxe de séjour), et reporting mensuel transparent. Estimation gratuite de vos revenus potentiels sous 24h.
 
 ---
 

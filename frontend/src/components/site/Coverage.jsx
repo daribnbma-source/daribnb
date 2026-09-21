@@ -36,7 +36,7 @@ export default function Coverage() {
             Daribnb, c'est Tanger, Rabat et Casablanca en priorité.
           </h2>
           <p className="mt-4 text-lg text-[#4B5563]">
-            Siège à Tanger, équipes sur place à Rabat et Casablanca, expertise terrain depuis plus de 6 ans. On accompagne également les propriétaires dans les principales villes du Maroc — contactez-nous pour discuter de votre projet.
+            Siège à Tanger, équipes sur place à Rabat et Casablanca, expertise terrain depuis plus de 7 ans. On accompagne également les propriétaires dans les principales villes du Maroc — contactez-nous pour discuter de votre projet.
           </p>
         </div>
 
