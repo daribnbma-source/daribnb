@@ -2,7 +2,7 @@ import React from "react";
 import { Check, Star, ArrowRight } from "lucide-react";
 import Simulator from "./Simulator";
 
-const HERO_IMG = "/assets/tanger-living-hero.webp";
+const HERO_IMG = "/assets/logements/logement-1-sejour.jpg";
 
 export default function Hero() {
   return (
