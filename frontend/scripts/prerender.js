@@ -33,6 +33,8 @@ const ROUTES_BASE = [
   "/gestion-locative-mre-tanger",
   "/optimiser-revenus-airbnb",
   "/loyer-fixe-airbnb-tanger",
+  "/loyer-fixe-airbnb-rabat",
+  "/loyer-fixe-airbnb-casablanca",
   "/multi-plateformes-airbnb-booking-vrbo",
   "/conciergerie-airbnb-marrakech",
   "/conciergerie-airbnb-casablanca",

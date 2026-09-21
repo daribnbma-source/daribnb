@@ -20,6 +20,11 @@ const SERVICES_MENU = [
     href: "/loyer-fixe-airbnb-tanger",
     label: "Loyer fixe garanti",
     desc: "Revenu mensuel fixe pour votre bien, partout au Maroc. Zéro risque, zéro stress",
+    cities: [
+      { name: "Tanger", href: "/loyer-fixe-airbnb-tanger" },
+      { name: "Rabat", href: "/loyer-fixe-airbnb-rabat" },
+      { name: "Casablanca", href: "/loyer-fixe-airbnb-casablanca" },
+    ],
   },
   {
     href: "/optimiser-revenus-airbnb",
