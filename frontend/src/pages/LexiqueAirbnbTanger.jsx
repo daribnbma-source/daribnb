@@ -31,7 +31,7 @@ const TERMS = [
   {
     cat: "Technique Airbnb",
     term: "Channel manager",
-    def: "Logiciel qui synchronise une annonce sur plusieurs plateformes (Airbnb, Booking, Vrbo, Expedia) en temps réel. Évite les doubles réservations. Daribnb utilise Smoobu et Hostaway.",
+    def: "Logiciel qui synchronise une annonce sur plusieurs plateformes (Airbnb, Booking, Expedia) en temps réel. Évite les doubles réservations. Daribnb utilise Smoobu et Hostaway.",
   },
   {
     cat: "Technique Airbnb",

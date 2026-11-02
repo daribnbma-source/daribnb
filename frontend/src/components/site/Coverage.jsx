@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 
-// Tanger, Rabat, Casablanca, Marrakech en priorité (focus SEO) + lien vers la page dédiée pour consolider le ranking
+// Marrakech, Tanger, Rabat, Casablanca en priorité (focus SEO) + lien vers la page dédiée pour consolider le ranking
 const CITIES = [
+  { name: "Marrakech", to: "/conciergerie-airbnb-marrakech", primary: true },
   { name: "Tanger", to: "/conciergerie-airbnb-tanger", primary: true },
   { name: "Rabat", to: "/conciergerie-airbnb-rabat", primary: true },
   { name: "Casablanca", to: "/conciergerie-airbnb-casablanca", primary: true },
-  { name: "Marrakech", to: "/conciergerie-airbnb-marrakech", primary: true },
   { name: "Agadir" },
   { name: "Fès" },
   { name: "Essaouira" },
@@ -33,7 +33,7 @@ export default function Coverage() {
             Expert local · Tanger, Rabat, Casablanca, Marrakech
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
-            Daribnb, c'est Tanger, Rabat, Casablanca et Marrakech en priorité.
+            Daribnb, c'est Marrakech, Tanger, Rabat et Casablanca en priorité.
           </h2>
           <p className="mt-4 text-lg text-[#4B5563]">
             Siège à Tanger, équipes sur place à Rabat, Casablanca et Marrakech, expertise terrain depuis plus de 7 ans. On accompagne également les propriétaires dans les principales villes du Maroc — contactez-nous pour discuter de votre projet.

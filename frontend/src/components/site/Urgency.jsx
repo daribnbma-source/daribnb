@@ -18,7 +18,7 @@ export default function Urgency() {
           <p className="max-w-xl text-sm text-white/65">
             Shooting photo, paramétrage annonce, calibrage tarifaire : chaque nouveau bien demande
             un vrai temps d'onboarding pour bien démarrer. Pour garder ce niveau de soin sur
-            Tanger, Rabat, Casablanca et Marrakech, on ne prend qu'un nombre restreint de biens en simultané.
+            Marrakech, Tanger, Rabat et Casablanca, on ne prend qu'un nombre restreint de biens en simultané.
           </p>
           <a
             href="#contact"

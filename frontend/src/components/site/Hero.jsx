@@ -11,12 +11,24 @@ import {
 } from "motion/react";
 import Simulator from "./Simulator";
 import { isPrerender } from "../../lib/isPrerender";
+import { FlagFR, FlagMA } from "../brand/Flags";
 
 const IMG_BACK = "/assets/logements/logement-1-sejour.jpg";
 const IMG_MID = "/assets/logements/logement-2-chambre.jpg";
-const CITIES = ["Tanger", "Rabat", "Casablanca", "Marrakech"];
-// Vrais versements Airbnb reçus par des propriétaires Daribnb (mêmes données que le simulateur).
-const PAYOUTS = [1029.18, 785.4, 1052.81, 660.79, 801.64];
+const CITIES = ["Marrakech", "Tanger", "Rabat", "Casablanca"];
+// Vrais versements reçus par des propriétaires Daribnb (mêmes données que le simulateur).
+// Booking : ajouter ici les montants réels (captures) ; ils s'intercalent avec Airbnb.
+const PLATFORMS = {
+  airbnb: { logo: "/logos/airbnb-belo.svg", label: "Airbnb · versement envoyé", bg: "bg-white" },
+  booking: { logo: "/logos/booking-icon.svg", label: "Booking.com · paiement reçu", bg: "bg-transparent" },
+};
+const AIRBNB_PAYOUTS = [1029.18, 785.4, 1052.81, 660.79, 801.64];
+const BOOKING_PAYOUTS = [];
+const PAYOUTS = AIRBNB_PAYOUTS.flatMap((amount, k) =>
+  k < BOOKING_PAYOUTS.length
+    ? [{ p: "airbnb", amount }, { p: "booking", amount: BOOKING_PAYOUTS[k] }]
+    : [{ p: "airbnb", amount }]
+);
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -56,19 +68,19 @@ function PayoutToast() {
     const t = setInterval(() => setI((x) => (x + 1) % PAYOUTS.length), 3200);
     return () => clearInterval(t);
   }, [reduce]);
-  const amount = PAYOUTS[i].toLocaleString("fr-FR", { minimumFractionDigits: 2 });
+  const { p, amount: value } = PAYOUTS[i];
+  const amount = value.toLocaleString("fr-FR", { minimumFractionDigits: 2 });
+  const pf = PLATFORMS[p];
   return (
     <div className="flex items-center gap-3 rounded-2xl border border-black/5 bg-white/95 p-3 pr-5 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] backdrop-blur">
-      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#FF5A5F]">
-        <svg viewBox="0 0 32 32" className="h-5 w-5 fill-white" aria-hidden="true">
-          <path d="M16 1c2 0 3.5 1.2 4.6 3.4l7.3 15.3c.4.9.6 1.7.6 2.6 0 3.7-2.8 6.7-6.4 6.7-2.2 0-4.3-1.2-6.1-3.3-1.8 2.1-3.9 3.3-6.1 3.3-3.6 0-6.4-3-6.4-6.7 0-.9.2-1.7.6-2.6L11.4 4.4C12.5 2.2 14 1 16 1zm0 17.2c-1.3 1.7-2 3.2-2 4.4 0 1.1.9 1.8 2 1.8s2-.7 2-1.8c0-1.2-.7-2.7-2-4.4z" />
-        </svg>
+      <span className={`flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl ${pf.bg} ring-1 ring-black/5`}>
+        <img src={pf.logo} alt={p === "airbnb" ? "Airbnb" : "Booking.com"} width="40" height="40" className={p === "airbnb" ? "h-7 w-7" : "h-10 w-10"} />
       </span>
       <div className="min-w-0">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-[#6B7280]">Airbnb · versement envoyé</p>
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-[#6B7280]">{pf.label}</p>
         <AnimatePresence mode="wait" initial={false}>
           <motion.p
-            key={amount}
+            key={p + amount}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
@@ -131,8 +143,11 @@ export default function Hero() {
               transition={{ duration: 0.6, ease }}
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#006233]/15 bg-white/80 px-4 py-2 text-sm font-semibold text-[#006233] backdrop-blur"
             >
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#006233]" />
-              Conciergerie Airbnb au Maroc · 7 ans de terrain
+              <span className="flex items-center gap-1">
+                <FlagFR className="h-3.5 w-5 rounded-[2px] ring-1 ring-black/10" />
+                <FlagMA className="h-3.5 w-5 rounded-[2px] ring-1 ring-black/10" />
+              </span>
+              Savoir-faire français, conciergerie au Maroc<span className="hidden sm:inline"> · 7 ans de terrain</span>
             </motion.div>
 
             <motion.h1
@@ -145,7 +160,7 @@ export default function Hero() {
               Votre Airbnb à <RotatingCity />
               <br />
               <span className="whitespace-nowrap">géré comme un pro.</span>
-              <span className="sr-only"> Conciergerie Airbnb à Tanger, Rabat, Casablanca et Marrakech.</span>
+              <span className="sr-only"> Conciergerie Airbnb à Marrakech, Tanger, Rabat et Casablanca.</span>
             </motion.h1>
 
             <motion.p
@@ -302,7 +317,7 @@ export default function Hero() {
                 >
                   <div className="flex items-center gap-2 rounded-full bg-[#1A1A1A] px-4 py-2 text-xs font-semibold text-white shadow-xl">
                     <span className="h-2 w-2 rounded-full bg-[#4ADE80]" />
-                    Airbnb · Booking · Vrbo
+                    Airbnb · Booking.com
                   </div>
                 </motion.div>
               </motion.div>

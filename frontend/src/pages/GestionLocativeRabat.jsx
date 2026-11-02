@@ -38,7 +38,7 @@ const STEPS = [
   {
     num: "02",
     title: "Mise en gestion",
-    desc: "Shoot photo pro, rédaction de l'annonce SEO Airbnb, mise en ligne sur Airbnb + Booking + Vrbo, calage du calendrier et du pricing dynamique.",
+    desc: "Shoot photo pro, rédaction de l'annonce SEO Airbnb, mise en ligne sur Airbnb + Booking, calage du calendrier et du pricing dynamique.",
   },
   {
     num: "03",
@@ -85,7 +85,7 @@ export default function GestionLocativeRabat() {
       canonical={URL}
       h1="Gestion locative à Rabat"
       kicker="Location courte durée · Rabat"
-      intro="Daribnb gère votre bien à Rabat en location meublée courte durée (Airbnb, Booking, Vrbo), avec une équipe locale sur place. On s'occupe de tout : annonces, voyageurs, ménage, maintenance. Vous récupérez votre revenu, sans la charge mentale."
+      intro="Daribnb gère votre bien à Rabat en location meublée courte durée (Airbnb et Booking), avec une équipe locale sur place. On s'occupe de tout : annonces, voyageurs, ménage, maintenance. Vous récupérez votre revenu, sans la charge mentale."
       schema={schema}
     >
       {/* 4 piliers */}

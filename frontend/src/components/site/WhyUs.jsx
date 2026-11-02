@@ -1,28 +1,34 @@
 import React from "react";
-import { Award, Users, MapPin, TrendingUp, Plane, GraduationCap, Home, Quote } from "lucide-react";
+import { FlagFR, FlagMA } from "../brand/Flags";
+import { Award, Users, MapPin, TrendingUp, Plane, GraduationCap, Home, Quote, Crown } from "lucide-react";
 
 const STATS = [
   { icon: Award, v: "7+", l: "années d'expertise Airbnb" },
   { icon: Users, v: "+1 196", l: "évaluations Airbnb" },
-  { icon: MapPin, v: "4", l: "villes : Tanger, Rabat, Casa, Marrakech" },
+  { icon: MapPin, v: "4", l: "villes : Marrakech, Tanger, Rabat, Casa" },
   { icon: TrendingUp, v: "+40%", l: "de revenus en moyenne" },
 ];
 
 const STORY_POINTS = [
   {
     icon: Plane,
-    title: "MRE de retour au Maroc",
-    text: "Après plusieurs années en France (étudié à Troyes), j'ai choisi de rentrer et de mettre mon expérience au service des propriétaires marocains.",
+    title: "MRE, marocain et fier de l'être",
+    text: "Marocain de cœur, Français de formation (ingénieur, études à Troyes). Je suis rentré pour apporter aux propriétaires marocains l'exigence et la méthode à la française.",
   },
   {
     icon: GraduationCap,
-    title: "Coach, formateur & expert Airbnb (7+ ans)",
-    text: "Je ne me contente pas de gérer : je forme, je conseille, j'optimise. Chaque bien mérite une stratégie.",
+    title: "7+ ans d'Airbnb, de nombreux biens gérés",
+    text: "Plus de 7 ans à faire tourner des logements, aujourd'hui de nombreux biens gérés sur le marché marocain. Je forme aussi d'autres hôtes avec Rentimmo Academy.",
   },
   {
     icon: Home,
     title: "Propriétaire moi-même",
     text: "Je gère mes propres biens en Airbnb. Je connais vos doutes, vos contraintes et ce qui fonctionne vraiment.",
+  },
+  {
+    icon: Crown,
+    title: "Pour les propriétaires exigeants",
+    text: "Daribnb n'est pas faite pour tout le monde : on travaille avec des propriétaires qui visent le top 1 % des loueurs et la meilleure rentabilité possible.",
   },
 ];
 
@@ -47,8 +53,9 @@ export default function WhyUs() {
               />
             </div>
             <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-1 shadow-lg">
-              <div className="w-8 h-8 rounded-full bg-[#006233] flex items-center justify-center text-white text-lg">
-                🇲🇦
+              <div className="flex items-center gap-1 rounded-full px-1.5 py-1">
+                <FlagFR className="h-4 w-6 rounded-[3px] ring-1 ring-black/10" />
+                <FlagMA className="h-4 w-6 rounded-[3px] ring-1 ring-black/10" />
               </div>
             </div>
           </div>
@@ -60,8 +67,17 @@ export default function WhyUs() {
               Enchanté, moi c'est <span className="text-[#C1272D]">Marwan</span>.
             </h2>
             <p className="mt-3 text-base md:text-lg text-[#4B5563]">
-              Fondateur de Daribnb — expert Airbnb & propriétaire.
+              Fondateur de Daribnb. MRE, marocain et fier de l'être, français aussi : 7+ ans d'Airbnb à la française.
             </p>
+            <div className="mt-5 inline-flex flex-wrap items-center gap-3 rounded-2xl border border-[#E5E5E5] bg-[#F7F6F2] px-4 py-3">
+              <span className="flex items-center gap-2 text-sm font-semibold text-[#1A1A1A]">
+                <FlagFR className="h-4 w-6 rounded-[3px] ring-1 ring-black/10" /> Savoir-faire français
+              </span>
+              <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#C1272D]" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              <span className="flex items-center gap-2 text-sm font-semibold text-[#1A1A1A]">
+                <FlagMA className="h-4 w-6 rounded-[3px] ring-1 ring-black/10" /> mis au service du Maroc
+              </span>
+            </div>
           </div>
         </div>
 
@@ -95,9 +111,7 @@ export default function WhyUs() {
             <div className="relative bg-[#F7F6F2] rounded-3xl p-6 shadow-sm border border-[#E5E5E5]">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <svg viewBox="0 0 32 32" className="w-5 h-5" fill="#C1272D">
-                    <path d="M16 1C7.7 1 1 7.7 1 16s6.7 15 15 15 15-6.7 15-15S24.3 1 16 1zm7.3 22.1c-.7 1-1.8 1.5-3 1.5-1.1 0-2.2-.4-3-1.2-.6-.6-1.1-1.3-1.4-2-.3.7-.8 1.4-1.4 2-.8.8-1.9 1.2-3 1.2s-2.2-.5-3-1.5c-1.2-1.6-1.3-3.7-.3-5.5 1-1.9 2.8-3.6 5.6-5.3.8-.5 1.4-.8 2-1.1.3-.1.5-.2.7-.3.5-.2 1.1-.2 1.6 0 .2.1.4.2.7.3.6.3 1.2.6 2 1.1 2.8 1.7 4.6 3.4 5.6 5.3 1 1.8.9 3.9-.3 5.5z"/>
-                  </svg>
+                  <img src="/logos/airbnb-belo.svg" alt="Airbnb" width="20" height="20" className="w-5 h-5" />
                   <span className="text-xs font-semibold text-[#4B5563] uppercase tracking-wider">
                     Profil Airbnb authentique
                   </span>

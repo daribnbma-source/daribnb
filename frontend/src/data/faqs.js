@@ -59,7 +59,7 @@ export const FAQS = [
   {
     cat: "conciergerie",
     q: "C'est quoi exactement une conciergerie Airbnb à Tanger ?",
-    a: "Une conciergerie Airbnb à Tanger prend en charge la gestion complète de votre bien en location courte durée : création et optimisation de l'annonce Airbnb / Booking / Vrbo, gestion des messages voyageurs 24/7, check-in et check-out, ménage entre chaque séjour, blanchisserie, maintenance, gestion des incidents et reporting mensuel. Vous touchez les revenus sans rien faire d'autre que valider les versements.",
+    a: "Une conciergerie Airbnb à Tanger prend en charge la gestion complète de votre bien en location courte durée : création et optimisation de l'annonce Airbnb / Booking, gestion des messages voyageurs 24/7, check-in et check-out, ménage entre chaque séjour, blanchisserie, maintenance, gestion des incidents et reporting mensuel. Vous touchez les revenus sans rien faire d'autre que valider les versements.",
   },
   {
     cat: "conciergerie",
@@ -83,8 +83,8 @@ export const FAQS = [
   },
   {
     cat: "conciergerie",
-    q: "Vous gérez Airbnb mais aussi Booking et Vrbo ?",
-    a: "Oui — on synchronise votre bien sur Airbnb, Booking.com et Vrbo via un channel manager pro. Cela évite les doubles réservations et maximise votre taux d'occupation. Globalement, sur nos biens à Tanger, Airbnb représente 65% des résas, Booking 30%, Vrbo 5%.",
+    q: "Vous gérez Airbnb mais aussi Booking ?",
+    a: "Oui — on synchronise votre bien sur Airbnb et Booking.com via un channel manager pro. Cela évite les doubles réservations et maximise votre taux d'occupation. Globalement, sur nos biens à Tanger, Airbnb représente environ deux tiers des réservations et Booking l'essentiel du reste.",
   },
   {
     cat: "conciergerie",
@@ -195,7 +195,7 @@ export const FAQS = [
   {
     cat: "annonce",
     q: "Vous gérez aussi mon annonce Booking.com en parallèle d'Airbnb ?",
-    a: "Oui. On synchronise Airbnb, Booking.com et Vrbo via channel manager (PriceLabs ou Hostaway selon le bien). Disponibilités et tarifs alignés en temps réel, pas de double résa, pricing dynamique par plateforme. Booking représente environ 30% de votre CA en plus à Tanger.",
+    a: "Oui. On synchronise Airbnb et Booking.com via channel manager (PriceLabs ou Hostaway selon le bien). Disponibilités et tarifs alignés en temps réel, pas de double résa, pricing dynamique par plateforme. Booking représente environ 30% de votre CA en plus à Tanger.",
   },
   {
     cat: "annonce",

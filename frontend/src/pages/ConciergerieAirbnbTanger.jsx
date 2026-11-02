@@ -16,7 +16,7 @@ const SERVICES = [
   {
     icon: Calendar,
     title: "Multi-plateformes",
-    desc: "Airbnb, Booking, Vrbo. Calendrier synchronisé, zéro doublon, communication voyageurs 7j/7 en français, anglais et arabe.",
+    desc: "Airbnb et Booking. Calendrier synchronisé, zéro doublon, communication voyageurs 7j/7 en français, anglais et arabe.",
   },
   {
     icon: Sparkles,

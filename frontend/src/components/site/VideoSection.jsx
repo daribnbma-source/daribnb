@@ -40,7 +40,7 @@ export default function VideoSection() {
     "@type": "VideoObject",
     name: "Daribnb : votre Airbnb au Maroc géré comme un pro",
     description:
-      "Présentation de Daribnb, conciergerie Airbnb à Tanger, Rabat, Casablanca et Marrakech : annonce et photos pro, prix dynamiques, ménage hôtelier, accueil 24/7, Airbnb + Booking + Vrbo. Trois formules : conciergerie, Super Daribnb, loyer fixe garanti. 4,93/5 sur 1 196 avis Airbnb.",
+      "Présentation de Daribnb, conciergerie Airbnb à Marrakech, Tanger, Rabat et Casablanca : annonce et photos pro, prix dynamiques, ménage hôtelier, accueil 24/7, Airbnb + Booking. Trois formules : conciergerie, Super Daribnb, loyer fixe garanti. 4,93/5 sur 1 196 avis Airbnb.",
     thumbnailUrl: `${SITE}/videos/intro-daribnb.webp`,
     contentUrl: `${SITE}/videos/intro-daribnb.mp4`,
     uploadDate: "2026-11-02",

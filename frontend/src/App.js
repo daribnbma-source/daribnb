@@ -69,7 +69,7 @@ function AppRouter() {
         <Route path="/loyer-fixe-airbnb-rabat" element={<LoyerFixeAirbnbRabat />} />
         <Route path="/loyer-fixe-airbnb-casablanca" element={<LoyerFixeAirbnbCasablanca />} />
         <Route path="/loyer-fixe-airbnb-marrakech" element={<LoyerFixeAirbnbMarrakech />} />
-        <Route path="/multi-plateformes-airbnb-booking-vrbo" element={<MultiPlateformesAirbnbBooking />} />
+        <Route path="/multi-plateformes-airbnb-booking" element={<MultiPlateformesAirbnbBooking />} />
         <Route path="/conciergerie-airbnb-marrakech" element={<ConciergerieAirbnbMarrakech />} />
         <Route path="/conciergerie-airbnb-casablanca" element={<ConciergerieAirbnbCasablanca />} />
         <Route path="/conciergerie-airbnb-rabat" element={<ConciergerieAirbnbRabat />} />

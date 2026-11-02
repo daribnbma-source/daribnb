@@ -250,7 +250,7 @@ export default function OptimiserRevenusAirbnb() {
       </section>
   
       <RelatedArticles slugs={[
-          { slug: "channel-manager-airbnb-booking-vrbo-maroc", title: "Channel Manager Airbnb au Maroc : connecter Airbnb, Booking, Vrbo en 2026" },
+          { slug: "channel-manager-airbnb-booking-maroc", title: "Channel Manager Airbnb au Maroc : connecter Airbnb et Booking en 2026" },
           { slug: "rentabilite-airbnb-maroc-2026", title: "Rentabilité Airbnb au Maroc : combien pouvez-vous vraiment gagner en 2026 ?" },
           { slug: "loi-airbnb-maroc-2025-proprietaires", title: "Loi Airbnb Maroc 2025 : ce que les propriétaires doivent savoir" }
         ]} />

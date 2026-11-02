@@ -36,7 +36,7 @@ const ROUTES_BASE = [
   "/loyer-fixe-airbnb-rabat",
   "/loyer-fixe-airbnb-casablanca",
   "/loyer-fixe-airbnb-marrakech",
-  "/multi-plateformes-airbnb-booking-vrbo",
+  "/multi-plateformes-airbnb-booking",
   "/conciergerie-airbnb-marrakech",
   "/conciergerie-airbnb-casablanca",
   "/conciergerie-airbnb-rabat",

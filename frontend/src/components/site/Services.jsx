@@ -7,7 +7,7 @@ import Reveal from "../motion/Reveal";
 const ITEMS = [
   { icon: Camera, title: "Annonce et photos pro", desc: "Shooting, titre vendeur, description en plusieurs langues, référencement Airbnb." },
   { icon: TrendingUp, title: "Prix ajustés chaque jour", desc: "Tarification dynamique selon la saison, les événements et la concurrence." },
-  { icon: Globe2, title: "Airbnb, Booking, Vrbo", desc: "Votre calendrier diffusé sur plusieurs plateformes, sans double réservation." },
+  { icon: Globe2, title: "Airbnb et Booking", desc: "Votre calendrier diffusé sur plusieurs plateformes, sans double réservation." },
   { icon: Headphones, title: "Voyageurs accueillis 24/7", desc: "Messages, check-in, remise des clés, assistance pendant le séjour." },
   { icon: Sparkles, title: "Ménage et linge hôtelier", desc: "Équipe formée aux standards hôteliers, draps et serviettes fournis." },
   { icon: Wrench, title: "Entretien suivi", desc: "Petites réparations et contrôles entre deux séjours." },

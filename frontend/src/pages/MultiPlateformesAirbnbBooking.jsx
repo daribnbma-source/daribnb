@@ -4,7 +4,7 @@ import { Check, ArrowRight, Globe, RefreshCcw, BarChart3, Zap } from "lucide-rea
 import ServicePageLayout from "./ServicePageLayout";
 
 const SITE = "https://www.daribnb.com";
-const URL = `${SITE}/multi-plateformes-airbnb-booking-vrbo`;
+const URL = `${SITE}/multi-plateformes-airbnb-booking`;
 
 const PLATFORMS = [
   {
@@ -26,15 +26,6 @@ const PLATFORMS = [
     ],
   },
   {
-    name: "Vrbo (Expedia)",
-    color: "#FFC72C",
-    bullets: [
-      "Cible familles et longs séjours, complément Airbnb",
-      "Premium Partner program",
-      "Fee structure adaptée au marché marocain",
-    ],
-  },
-  {
     name: "Direct Booking",
     color: "#006233",
     bullets: [
@@ -49,7 +40,7 @@ const PILLARS = [
   {
     icon: Globe,
     title: "+ de canaux = + de visibilité",
-    desc: "Un bien sur Airbnb seul perd 30 à 50% de son potentiel. Multi-plateformes : on capte les voyageurs qui ne réservent QUE sur Booking ou Vrbo.",
+    desc: "Un bien sur Airbnb seul perd 30 à 50% de son potentiel. Multi-plateformes : on capte les voyageurs qui ne réservent QUE sur Booking.",
   },
   {
     icon: RefreshCcw,
@@ -72,7 +63,7 @@ export default function MultiPlateformesAirbnbBooking() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Gestion multi-plateformes Airbnb, Booking, Vrbo",
+    name: "Gestion multi-plateformes Airbnb et Booking",
     serviceType: "Channel management location courte durée",
     provider: {
       "@type": "LocalBusiness",
@@ -87,18 +78,18 @@ export default function MultiPlateformesAirbnbBooking() {
       { "@type": "Country", name: "Maroc" },
     ],
     description:
-      "Listez votre bien sur Airbnb, Booking et Vrbo simultanément avec un calendrier synchronisé. Optimisation SEO par plateforme, pricing dynamique cross-canal.",
+      "Listez votre bien sur Airbnb et Booking simultanément avec un calendrier synchronisé. Optimisation SEO par plateforme, pricing dynamique cross-canal.",
     url: URL,
   };
 
   return (
     <ServicePageLayout
-      title="Gestion Airbnb + Booking + Vrbo | Daribnb"
-      description="Daribnb diffuse et synchronise votre bien sur Airbnb, Booking et Vrbo. Channel manager pro, pricing dynamique, +30% de revenus vs Airbnb seul."
+      title="Gestion Airbnb + Booking | Daribnb"
+      description="Daribnb diffuse et synchronise votre bien sur Airbnb et Booking. Channel manager pro, pricing dynamique, +30% de revenus vs Airbnb seul."
       canonical={URL}
-      h1="Multi-plateformes : Airbnb, Booking, Vrbo synchronisés"
+      h1="Multi-plateformes : Airbnb et Booking synchronisés"
       kicker="Channel management"
-      intro="Lister votre bien uniquement sur Airbnb, c'est se priver de 30 à 50% de voyageurs potentiels. Daribnb diffuse votre annonce sur Airbnb, Booking, Vrbo et en direct booking, avec un calendrier synchronisé en temps réel."
+      intro="Lister votre bien uniquement sur Airbnb, c'est se priver de 30 à 50% de voyageurs potentiels. Daribnb diffuse votre annonce sur Airbnb et Booking et en direct booking, avec un calendrier synchronisé en temps réel."
       schema={schema}
     >
       {/* 4 piliers */}
@@ -148,7 +139,7 @@ export default function MultiPlateformesAirbnbBooking() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {PLATFORMS.map((p) => (
               <div
                 key={p.name}
@@ -196,11 +187,6 @@ export default function MultiPlateformesAirbnbBooking() {
                 myth: "« Booking c'est pas adapté au Maroc »",
                 reality:
                   "Faux. Booking représente 30 à 40% des nuitées sur Tanger pour les voyageurs européens (FR, ES, BE). Beaucoup réservent UNIQUEMENT sur Booking par habitude. S'en priver c'est passer à côté.",
-              },
-              {
-                myth: "« Vrbo c'est pour les Américains, pas pour le Maroc »",
-                reality:
-                  "Vrai partiellement, mais Vrbo capte aussi les familles européennes qui cherchent des séjours plus longs (1-2 semaines). C'est un canal complémentaire intéressant pour les biens 3+ chambres.",
               },
               {
                 myth: "« Le multi-plateformes va créer des doublons et des annulations »",

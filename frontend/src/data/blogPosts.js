@@ -64,7 +64,7 @@ Pour les propriétaires qui agissent maintenant :
 Daribnb prend en charge l'intégralité de la gestion :
 
 - **Annonce optimisée** : shooting photo pro, copy SEO, tarification dynamique
-- **Multi-plateformes** : Airbnb, Booking, Vrbo — calendrier synchronisé
+- **Multi-plateformes** : Airbnb et Booking — calendrier synchronisé
 - **Accueil voyageurs** : check-in 24h/24, communication FR/EN/AR/ES
 - **Ménage hôtelier** : rotation après chaque séjour, draps et serviettes fournis
 - **Conformité** : déclarations préfecture, taxe de séjour, loi Airbnb 2025
@@ -464,7 +464,7 @@ Une conciergerie professionnelle locale est la solution la plus robuste pour les
 ### Setup initial (à distance)
 - Signature du mandat de gestion via DocuSign — tout en français
 - Audit du bien via photos et visite de notre équipe à Tanger
-- Optimisation : shoot photo pro, refonte de l'annonce, mise en ligne multi-plateformes (Airbnb + Booking + Vrbo)
+- Optimisation : shoot photo pro, refonte de l'annonce, mise en ligne multi-plateformes (Airbnb + Booking)
 - Récupération des clés lors de votre prochain passage au Maroc, OU envoi par DHL si urgent
 
 ### Au quotidien
@@ -549,7 +549,7 @@ Concrètement, depuis 2025, les obligations se sont durcies. Voici ce que vous d
 
 Toute location courte durée meublée à des fins touristiques doit faire l'objet d'une **déclaration auprès de la préfecture** où se situe le bien. Cela concerne :
 
-- Les locations Airbnb / Booking / Vrbo
+- Les locations Airbnb / Booking
 - Les locations directes via réseau personnel
 - Les sous-locations courte durée (avec autorisation du propriétaire principal)
 
@@ -620,14 +620,14 @@ C'est pour ça que de plus en plus de propriétaires (locaux et MRE) **délègue
 [Demander une estimation gratuite](/conciergerie-airbnb-tanger) — on audite votre bien, on vérifie votre conformité actuelle, on vous propose un plan pour mettre tout en règle en 2 semaines maxi.`,
   },
   {
-    slug: "channel-manager-airbnb-booking-vrbo-maroc",
-    title: "Channel Manager Airbnb au Maroc : connecter Airbnb, Booking, Vrbo en 2026",
+    slug: "channel-manager-airbnb-booking-maroc",
+    title: "Channel Manager Airbnb au Maroc : connecter Airbnb et Booking en 2026",
     excerpt:
       "Lister votre bien uniquement sur Airbnb, c'est se priver de 30 à 50% de revenus potentiels. Voici comment fonctionne un channel manager, et comment choisir le bon au Maroc en 2026.",
     meta_description:
-      "Channel Manager Airbnb Maroc 2026 : synchroniser Airbnb, Booking et Vrbo automatiquement. Comparatif des outils, gestion des doublons, pricing dynamique cross-platform.",
+      "Channel Manager Airbnb Maroc 2026 : synchroniser Airbnb et Booking automatiquement. Comparatif des outils, gestion des doublons, pricing dynamique cross-platform.",
     keywords:
-      "channel manager airbnb, synchroniser airbnb booking, channel manager maroc, multi-plateformes airbnb, gestion airbnb booking vrbo",
+      "channel manager airbnb, synchroniser airbnb booking, channel manager maroc, multi-plateformes airbnb, gestion airbnb booking",
     city: "Maroc",
     cover:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80",
@@ -638,22 +638,21 @@ C'est pour ça que de plus en plus de propriétaires (locaux et MRE) **délègue
 Si votre bien est uniquement sur Airbnb, vous captez environ **50 à 60% de la demande totale** sur la location courte durée. Le reste se répartit entre :
 
 - **Booking.com** : 25-35% (clientèle européenne — FR, ES, BE, NL — qui réserve uniquement sur Booking par habitude)
-- **Vrbo / Expedia** : 5-10% (familles américaines et européennes pour des séjours longs 7+ nuits)
 - **Réservations directes** : 5-10% (vos anciens voyageurs qui reviennent)
 
 Concrètement, en n'étant que sur Airbnb, vous laissez 30 à 50% du chiffre d'affaires possible sur la table. Le multi-plateformes c'est non-négociable si vous voulez maximiser un investissement locatif.
 
 ## Le problème : gérer plusieurs plateformes manuellement c'est l'enfer
 
-Si vous listez le même bien sur Airbnb + Booking + Vrbo sans outil, vous avez 3 calendriers à synchroniser à la main, 3 prix à ajuster, 3 conversations clients à gérer. Un seul oubli = double-réservation = annulation = pénalité Airbnb (-3 points sur le ranking) + voyageur furieux + review 1 étoile.
+Si vous listez le même bien sur Airbnb + Booking sans outil, vous avez 3 calendriers à synchroniser à la main, 3 prix à ajuster, 3 conversations clients à gérer. Un seul oubli = double-réservation = annulation = pénalité Airbnb (-3 points sur le ranking) + voyageur furieux + review 1 étoile.
 
 C'est précisément pour résoudre ça qu'existent les **channel managers** (gestionnaires de canaux).
 
 ## Qu'est-ce qu'un channel manager exactement ?
 
-Un channel manager est un outil qui se connecte à toutes les plateformes (Airbnb, Booking, Vrbo, Expedia, etc.) et qui synchronise en temps réel :
+Un channel manager est un outil qui se connecte à toutes les plateformes (Airbnb, Booking, Expedia, etc.) et qui synchronise en temps réel :
 
-- **Le calendrier** : une réservation sur Airbnb bloque automatiquement les dates sur Booking et Vrbo
+- **Le calendrier** : une réservation sur Airbnb bloque automatiquement les dates sur Booking
 - **Les tarifs** : vous changez le prix une fois, ça se propage partout
 - **Les disponibilités** : minimum stay, restrictions, fenêtres de réservation
 - **Les détails de l'annonce** : photos, description (selon les outils, certains font ça aussi)
@@ -663,7 +662,7 @@ La sync se fait en moins de 30 secondes en moyenne sur les outils pros. Plus de 
 ## Les 5 channel managers utilisables au Maroc en 2026
 
 ### 1. Hostaway
-Le plus complet, idéal pour les portefeuilles 5+ biens. Tarif : ~50 €/bien/mois. Interface en français OK. Compatible Airbnb, Booking, Vrbo, Expedia, Marriott, Tripadvisor. **Recommandé si vous gérez plusieurs biens.**
+Le plus complet, idéal pour les portefeuilles 5+ biens. Tarif : ~50 €/bien/mois. Interface en français OK. Compatible Airbnb, Booking, Expedia, Marriott, Tripadvisor. **Recommandé si vous gérez plusieurs biens.**
 
 ### 2. Lodgify
 Plus accessible (~30 €/mois pour 1 bien). Bon pour démarrer. Inclut un site web direct booking pour bypass les commissions plateformes. **Recommandé si vous voulez aussi un site web pro.**
@@ -694,7 +693,7 @@ Le calcul est simple :
 Souscrire à Smoobu ou Lodgify peut faire sens. Comptez 2-3 weekends pour le setup initial (création des annonces sur chaque plateforme, photos, descriptions, calage des règles), puis ~30 min/semaine d'entretien.
 
 ### Vous avez 3+ biens, ou vous habitez à l'étranger ?
-Déléguer à une conciergerie pro est presque toujours plus rentable. Daribnb intègre par exemple la gestion multi-plateformes (Airbnb + Booking + Vrbo) **sans surcoût** dans son service de [conciergerie classique](/conciergerie-airbnb-tanger). On gère le channel manager pour vous, on optimise les annonces sur chaque canal indépendamment.
+Déléguer à une conciergerie pro est presque toujours plus rentable. Daribnb intègre par exemple la gestion multi-plateformes (Airbnb + Booking) **sans surcoût** dans son service de [conciergerie classique](/conciergerie-airbnb-tanger). On gère le channel manager pour vous, on optimise les annonces sur chaque canal indépendamment.
 
 ## L'impact réel sur les revenus
 
@@ -702,13 +701,13 @@ Sur les biens qu'on gère à Tanger, voici les écarts moyens constatés :
 
 - **Airbnb seul** : 100 (référence)
 - **Airbnb + Booking** : +25-35% de revenus mensuels
-- **Airbnb + Booking + Vrbo + direct** : +35-50%
+- **Airbnb + Booking + direct** : +35-50%
 
 L'investissement dans un channel manager (entre 25 et 50€/mois) est donc largement rentabilisé dès la 2e nuit supplémentaire louée.
 
 ## Vous voulez qu'on s'occupe du multi-plateformes pour vous ?
 
-[Voir notre service multi-plateformes Airbnb + Booking + Vrbo](/multi-plateformes-airbnb-booking-vrbo) — on gère le channel manager, l'optimisation par canal, la synchro temps réel, le pricing dynamique cross-platform. Inclus dans la conciergerie sans frais additionnels.`,
+[Voir notre service multi-plateformes Airbnb + Booking](/multi-plateformes-airbnb-booking) — on gère le channel manager, l'optimisation par canal, la synchro temps réel, le pricing dynamique cross-platform. Inclus dans la conciergerie sans frais additionnels.`,
   },
   {
     slug: "mre-airbnb-tanger-erreurs-fiscales-2026",
@@ -1071,7 +1070,7 @@ Un bien fixé à prix constant laisse 25–40 % de revenus sur la table. Les mar
 Au-delà de 4,85/5 de note moyenne, l'algorithme Airbnb vous positionne en premier des résultats — effet multiplicateur direct sur le revenu.
 
 ### 3. La présence sur plusieurs plateformes
-Airbnb + Booking.com + VRBO = +15 à 30 % de taux d'occupation supplémentaire. Un channel manager synchronisé évite les doubles réservations.
+Airbnb + Booking.com = +15 à 30 % de taux d'occupation supplémentaire. Un channel manager synchronisé évite les doubles réservations.
 
 ---
 
@@ -1180,7 +1179,7 @@ Pour le détail complet des obligations et sanctions, voir notre article dédié
 2. **Équiper le logement** : mobilier, électroménager, wifi, sécurité incendie (détecteur de fumée, extincteur recommandé).
 3. **Déclarer le bien en préfecture** avant la mise en ligne.
 4. **Créer l'annonce** : photos professionnelles, titre et description optimisés, tarification cohérente avec le marché local.
-5. **Publier sur les plateformes** : Airbnb en priorité, puis Booking.com et Vrbo pour maximiser le taux d'occupation (voir notre guide [multi-plateformes](/multi-plateformes-airbnb-booking-vrbo)).
+5. **Publier sur les plateformes** : Airbnb en priorité, puis Booking.com pour maximiser le taux d'occupation (voir notre guide [multi-plateformes](/multi-plateformes-airbnb-booking)).
 6. **Gérer le quotidien** : messages voyageurs, check-in/check-out, ménage entre chaque séjour, collecte de la taxe de séjour.
 
 Si vous êtes **MRE** (Marocain Résident à l'Étranger) et que vous ne pouvez pas gérer ces étapes à distance, notre [guide gestion locative MRE](/gestion-locative-mre-tanger) détaille comment déléguer entièrement le processus.
@@ -1209,7 +1208,7 @@ Daribnb gère des biens en LCD à Tanger, Rabat et Casablanca, fondé par un exp
 ## FAQ — Location courte durée au Maroc
 
 **Faut-il une autorisation pour faire de la location courte durée au Maroc ?**
-Oui, une déclaration en préfecture est obligatoire avant la mise en ligne de l'annonce, quelle que soit la plateforme utilisée (Airbnb, Booking, Vrbo).
+Oui, une déclaration en préfecture est obligatoire avant la mise en ligne de l'annonce, quelle que soit la plateforme utilisée (Airbnb et Booking).
 
 **LCD ou LLD : laquelle est la plus rentable ?**
 La LCD génère généralement des revenus plus élevés qu'une location longue durée classique, mais demande une gestion active — d'où l'intérêt d'une conciergerie ou d'un loyer fixe garanti pour cumuler rendement et tranquillité.

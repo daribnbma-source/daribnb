@@ -1,4 +1,5 @@
 import React from "react";
+import { FlagFR, FlagMA } from "../brand/Flags";
 
 export default function Logo({ variant = "dark" }) {
   const text = variant === "dark" ? "text-[#C1272D]" : "text-white";
@@ -16,6 +17,10 @@ export default function Logo({ variant = "dark" }) {
         style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 800 }}
       >
         Daribnb
+      </span>
+      <span className="ml-0.5 flex items-center gap-1" aria-label="France et Maroc">
+        <FlagFR className="h-3.5 w-5 rounded-[2px] ring-1 ring-black/10" />
+        <FlagMA className="h-3.5 w-5 rounded-[2px] ring-1 ring-black/10" />
       </span>
     </div>
   );

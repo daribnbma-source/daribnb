@@ -1,4 +1,5 @@
 import React from "react";
+import { FlagFR, FlagMA } from "../brand/Flags";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import { Mail, Phone, MapPin } from "lucide-react";
@@ -14,11 +15,12 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Logo variant="light" />
             <p className="mt-4 text-white/80 max-w-sm leading-relaxed">
-              Conciergerie Airbnb & loyer fixe garanti à Tanger et partout au Maroc. Coach, formateur & expert depuis plus de 7 ans, on s'occupe de votre bien comme si c'était le nôtre.
+              Conciergerie Airbnb & loyer fixe garanti à Marrakech, Tanger, Rabat, Casablanca et partout au Maroc. Coach, formateur & expert depuis plus de 7 ans, on s'occupe de votre bien comme si c'était le nôtre.
             </p>
             <div className="mt-6 flex items-center gap-2">
-              <span className="text-2xl">🇲🇦</span>
-              <span className="text-sm text-white/80">Fièrement marocain</span>
+              <FlagFR className="h-4 w-6 rounded-[2px]" />
+              <FlagMA className="h-4 w-6 rounded-[2px]" />
+              <span className="text-sm text-white/80">Fièrement marocain, savoir-faire français</span>
             </div>
           </div>
 
@@ -42,7 +44,7 @@ export default function Footer() {
               <li><Link to="/gestion-locative-casablanca" className="hover:text-[#C1272D] transition-colors">Gestion locative Casablanca</Link></li>
               <li><Link to="/gestion-locative-rabat" className="hover:text-[#C1272D] transition-colors">Gestion locative Rabat</Link></li>
               <li><Link to="/optimiser-revenus-airbnb" className="hover:text-[#C1272D] transition-colors">Optimisation revenus</Link></li>
-              <li><Link to="/multi-plateformes-airbnb-booking-vrbo" className="hover:text-[#C1272D] transition-colors">Airbnb + Booking + Vrbo</Link></li>
+              <li><Link to="/multi-plateformes-airbnb-booking" className="hover:text-[#C1272D] transition-colors">Airbnb + Booking</Link></li>
               <li><Link to="/blog" className="hover:text-[#C1272D] transition-colors">Blog</Link></li>
               <li><Link to="/faq" className="hover:text-[#C1272D] transition-colors">FAQ</Link></li>
             </ul>
