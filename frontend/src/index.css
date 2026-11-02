@@ -143,3 +143,23 @@ html {
     background: #C1272D;
     color: white;
 }
+
+/* ===== Motion (refonte nov. 2026) ===== */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+.marquee-track { animation: marquee 32s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* Étoile à 8 branches (motif zellige) */
+.zellige-star {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath d='M28 6l6 10h12l-6 12 6 12H34l-6 10-6-10H10l6-12-6-12h12z' fill='none' stroke='%23006233' stroke-opacity='.09' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 56px 56px;
+}

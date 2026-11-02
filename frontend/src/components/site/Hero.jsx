@@ -1,128 +1,325 @@
-import React from "react";
-import { Check, Star, ArrowRight } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { Star, ArrowRight, Check } from "lucide-react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useSpring,
+  useReducedMotion,
+} from "motion/react";
 import Simulator from "./Simulator";
+import { isPrerender } from "../../lib/isPrerender";
 
-const HERO_IMG = "/assets/logements/logement-1-sejour.jpg";
+const IMG_BACK = "/assets/logements/logement-1-sejour.jpg";
+const IMG_MID = "/assets/logements/logement-2-chambre.jpg";
+const CITIES = ["Tanger", "Rabat", "Casablanca", "Marrakech"];
+// Vrais versements Airbnb reçus par des propriétaires Daribnb (mêmes données que le simulateur).
+const PAYOUTS = [1029.18, 785.4, 1052.81, 660.79, 801.64];
+
+const ease = [0.22, 1, 0.36, 1];
+
+function RotatingCity() {
+  const [i, setI] = useState(0);
+  const reduce = useReducedMotion();
+  useEffect(() => {
+    if (reduce || isPrerender()) return;
+    const t = setInterval(() => setI((x) => (x + 1) % CITIES.length), 2400);
+    return () => clearInterval(t);
+  }, [reduce]);
+  return (
+    <span className="relative inline-grid align-bottom">
+      {/* largeur réservée par le mot le plus long, pour que la ligne ne saute pas */}
+      <span className="invisible col-start-1 row-start-1">Casablanca</span>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={CITIES[i]}
+          className="col-start-1 row-start-1 text-[#C1272D]"
+          initial={{ y: "60%", opacity: 0, filter: "blur(6px)" }}
+          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+          exit={{ y: "-60%", opacity: 0, filter: "blur(6px)" }}
+          transition={{ duration: 0.55, ease }}
+        >
+          {CITIES[i]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
+
+function PayoutToast() {
+  const [i, setI] = useState(0);
+  const reduce = useReducedMotion();
+  useEffect(() => {
+    if (reduce || isPrerender()) return;
+    const t = setInterval(() => setI((x) => (x + 1) % PAYOUTS.length), 3200);
+    return () => clearInterval(t);
+  }, [reduce]);
+  const amount = PAYOUTS[i].toLocaleString("fr-FR", { minimumFractionDigits: 2 });
+  return (
+    <div className="flex items-center gap-3 rounded-2xl border border-black/5 bg-white/95 p-3 pr-5 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] backdrop-blur">
+      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#FF5A5F]">
+        <svg viewBox="0 0 32 32" className="h-5 w-5 fill-white" aria-hidden="true">
+          <path d="M16 1c2 0 3.5 1.2 4.6 3.4l7.3 15.3c.4.9.6 1.7.6 2.6 0 3.7-2.8 6.7-6.4 6.7-2.2 0-4.3-1.2-6.1-3.3-1.8 2.1-3.9 3.3-6.1 3.3-3.6 0-6.4-3-6.4-6.7 0-.9.2-1.7.6-2.6L11.4 4.4C12.5 2.2 14 1 16 1zm0 17.2c-1.3 1.7-2 3.2-2 4.4 0 1.1.9 1.8 2 1.8s2-.7 2-1.8c0-1.2-.7-2.7-2-4.4z" />
+        </svg>
+      </span>
+      <div className="min-w-0">
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-[#6B7280]">Airbnb · versement envoyé</p>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.p
+            key={amount}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.35 }}
+            className="font-heading text-lg font-bold tabular-nums text-[#1A1A1A]"
+          >
+            + {amount} €
+          </motion.p>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
+  const ref = useRef(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  // Plans à vitesses différentes : fond lent, photo du milieu plus rapide, cartes au premier plan encore plus.
+  const backY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 60]);
+  const backScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.08]);
+  const midY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -90]);
+  const frontY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -170]);
+
+  // Légère profondeur au pointeur (desktop)
+  const px = useMotionValue(0);
+  const py = useMotionValue(0);
+  const sx = useSpring(px, { stiffness: 60, damping: 18 });
+  const sy = useSpring(py, { stiffness: 60, damping: 18 });
+  const midX = useTransform(sx, (v) => v * -14);
+  const midYp = useTransform(sy, (v) => v * -10);
+  const frontX = useTransform(sx, (v) => v * -26);
+  const frontYp = useTransform(sy, (v) => v * -18);
+  const onMove = (e) => {
+    if (reduce) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    px.set((e.clientX - r.left) / r.width - 0.5);
+    py.set((e.clientY - r.top) / r.height - 0.5);
+  };
+
   return (
     <section
       id="hero"
+      ref={ref}
       data-testid="hero-section"
-      className="relative pt-32 pb-24 md:pt-40 md:pb-40 zellige-pattern overflow-hidden"
+      className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          {/* Left: Copy */}
-          <div className="lg:col-span-6 fade-up">
-            <div className="inline-flex items-center gap-2 bg-[#006233]/10 text-[#006233] rounded-full px-4 py-2 text-sm font-semibold mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#006233] animate-pulse" />
-              Coach & expert Airbnb 7+ ans · Tanger, Rabat, Casablanca, Marrakech
-            </div>
+      {/* Fond : crème + motif étoile zellige + halo rouge/vert */}
+      <div aria-hidden="true" className="absolute inset-0 zellige-star" />
+      <div aria-hidden="true" className="absolute -top-40 -right-40 h-[38rem] w-[38rem] rounded-full bg-[#C1272D]/10 blur-3xl" />
+      <div aria-hidden="true" className="absolute -bottom-52 -left-40 h-[34rem] w-[34rem] rounded-full bg-[#006233]/10 blur-3xl" />
 
-            <h1
-              data-testid="hero-title"
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1A1A1A] leading-[1.05]"
+      <div className="relative mx-auto max-w-7xl px-6 md:px-12">
+        <div className="grid items-center gap-14 lg:grid-cols-12">
+          {/* Texte */}
+          <div className="lg:col-span-6">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease }}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#006233]/15 bg-white/80 px-4 py-2 text-sm font-semibold text-[#006233] backdrop-blur"
             >
-              Votre Airbnb à Tanger, Rabat, Casablanca ou Marrakech,{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 text-[#C1272D]">géré comme un pro.</span>
-              </span>
-            </h1>
+              <span className="h-2 w-2 animate-pulse rounded-full bg-[#006233]" />
+              Conciergerie Airbnb au Maroc · 7 ans de terrain
+            </motion.div>
 
-            <p className="mt-6 text-lg md:text-xl text-[#4B5563] leading-relaxed max-w-xl">
-              Conciergerie Airbnb clé en main ou loyer fixe garanti à Tanger, Rabat, Casablanca et Marrakech.
-              On gère votre bien comme si c'était le nôtre — vous encaissez.
-            </p>
+            <motion.h1
+              data-testid="hero-title"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease }}
+              className="font-heading text-[2.35rem] font-bold leading-[1.04] tracking-tight text-[#1A1A1A] sm:text-6xl lg:text-[4.1rem] xl:text-[4.4rem]"
+            >
+              Votre Airbnb à <RotatingCity />
+              <br />
+              <span className="whitespace-nowrap">géré comme un pro.</span>
+              <span className="sr-only"> Conciergerie Airbnb à Tanger, Rabat, Casablanca et Marrakech.</span>
+            </motion.h1>
 
-            <ul className="mt-8 space-y-3">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25, ease }}
+              className="mt-6 max-w-xl text-lg leading-relaxed text-[#4B5563] md:text-xl"
+            >
+              Conciergerie clé en main ou loyer fixe garanti. On gère votre bien comme si c'était le
+              nôtre : annonce, prix, ménage, voyageurs. <strong className="text-[#1A1A1A]">Vous encaissez.</strong>
+            </motion.p>
+
+            <motion.ul
+              initial="h"
+              animate="s"
+              variants={{ s: { transition: { staggerChildren: 0.08, delayChildren: 0.4 } } }}
+              className="mt-7 grid gap-2.5 sm:grid-cols-2"
+            >
               {[
-                "Revenus optimisés & annonces boostées",
-                "Ménage pro, check-in 24/7, linge hôtelier",
-                "Option loyer fixe : revenu garanti chaque mois",
+                "Annonce et photos pro",
+                "Prix ajustés chaque jour",
+                "Ménage et linge hôtelier",
+                "Voyageurs accueillis 24/7",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[#1A1A1A]">
-                  <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#006233] flex items-center justify-center">
+                <motion.li
+                  key={item}
+                  variants={{ h: { opacity: 0, x: -10 }, s: { opacity: 1, x: 0 } }}
+                  className="flex items-center gap-2.5 text-[15px] text-[#1A1A1A]"
+                >
+                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#006233]">
                     <Check size={12} className="text-white" strokeWidth={3} />
                   </span>
-                  <span className="text-[15px]">{item}</span>
-                </li>
+                  {item}
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.6, ease }}
+              className="mt-9 flex flex-col gap-4 sm:flex-row"
+            >
               <a
                 href="#simulator"
                 data-testid="hero-cta-primary"
-                className="cta-pulse inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl group"
+                className="cta-pulse group inline-flex items-center justify-center gap-2 rounded-full bg-[#C1272D] px-8 py-4 font-semibold text-white transition-colors hover:bg-[#A01D22]"
               >
                 Estimer mes revenus
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20je%20souhaite%20en%20savoir%20plus"
                 target="_blank"
                 rel="noreferrer"
                 data-testid="hero-cta-whatsapp"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#f5f5f5] text-[#1A1A1A] border border-black/10 rounded-full px-8 py-4 font-semibold transition-all shadow-sm"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-8 py-4 font-semibold text-[#1A1A1A] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
-                <svg className="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 WhatsApp
               </a>
-            </div>
+            </motion.div>
 
-            <div className="mt-10 flex items-center gap-6">
-              <div className="flex items-center gap-1">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="mt-8 flex items-center gap-3"
+            >
+              <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={16} className="fill-[#C1272D] text-[#C1272D]" />
                 ))}
               </div>
               <p className="text-sm text-[#4B5563]">
-                <span className="font-semibold text-[#1A1A1A]">4.9/5</span> · +150 propriétaires satisfaits
+                <span className="font-semibold text-[#1A1A1A]">4,93/5</span> sur 1 196 avis voyageurs Airbnb
               </p>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right: Image + Simulator */}
-          <div className="lg:col-span-6 relative fade-up delay-200">
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src={HERO_IMG}
-                  alt="Salon d'un appartement à Tanger géré par Daribnb"
+          {/* Visuel en couches */}
+          <div className="relative lg:col-span-6" onPointerMove={onMove} onPointerLeave={() => { px.set(0); py.set(0); }}>
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px]">
+              {/* Plan arrière : grande photo */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.94, clipPath: "inset(12% 12% 12% 12% round 2rem)" }}
+                animate={{ opacity: 1, scale: 1, clipPath: "inset(0% 0% 0% 0% round 2rem)" }}
+                transition={{ duration: 1.1, ease }}
+                style={{ y: backY }}
+                className="absolute inset-0 overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(26,26,26,0.55)]"
+              >
+                <motion.img
+                  src={IMG_BACK}
+                  alt="Séjour lumineux d'un appartement à Tanger géré par Daribnb"
                   width="1536"
                   height="1024"
-                  className="w-full h-full object-cover"
                   loading="eager"
                   fetchpriority="high"
+                  style={{ scale: backScale }}
+                  className="h-full w-full object-cover"
                 />
-              </div>
-              {/* Floating badge */}
-              <div className="hidden md:flex absolute -top-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-black/5 items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#C1272D]/10 flex items-center justify-center">
-                  <span className="text-2xl">📍</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-[#1A1A1A] backdrop-blur">
+                  Logement géré à Tanger
                 </div>
-                <div>
-                  <p className="text-xs text-[#4B5563]">Expert local</p>
-                  <p className="font-bold text-[#1A1A1A]">Tanger · Rabat · Casa · Marrakech 🇲🇦</p>
-                </div>
-              </div>
-              <div className="hidden md:flex absolute -bottom-6 -right-6 bg-[#006233] text-white rounded-2xl p-4 shadow-xl items-center gap-3">
-                <div className="text-3xl font-black">+40%</div>
-                <div className="text-sm leading-tight">
-                  de revenus<br />en moyenne
-                </div>
-              </div>
+              </motion.div>
+
+              {/* Plan du milieu : seconde photo */}
+              <motion.div
+                initial={{ opacity: 0, x: -30, rotate: -6 }}
+                animate={{ opacity: 1, x: 0, rotate: -4 }}
+                transition={{ duration: 0.9, delay: 0.45, ease }}
+                style={{ y: midY }}
+                className="absolute -left-6 bottom-16 hidden w-[44%] sm:block md:-left-12"
+              >
+                <motion.div style={{ x: midX, y: midYp }} className="overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
+                  <img src={IMG_MID} alt="Chambre d'un logement Daribnb" loading="eager" className="aspect-[4/3] w-full object-cover" />
+                </motion.div>
+              </motion.div>
+
+              {/* Premier plan : cartes de preuve réelles */}
+              <motion.div style={{ y: frontY }} className="pointer-events-none absolute inset-0">
+                <motion.div
+                  style={{ x: frontX, y: frontYp }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.8, ease }}
+                  className="absolute -right-3 top-8 md:-right-10"
+                >
+                  <PayoutToast />
+                </motion.div>
+                <motion.div
+                  style={{ x: frontX, y: frontYp }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.05, ease }}
+                  className="absolute -bottom-5 right-4 md:-right-6"
+                >
+                  <div className="rounded-2xl bg-[#006233] px-5 py-4 text-white shadow-[0_20px_50px_-12px_rgba(0,98,51,0.6)]">
+                    <p className="font-heading text-3xl font-bold leading-none">
+                      4,93<span className="ml-1 text-lg text-white/80">★</span>
+                    </p>
+                    <p className="mt-1 text-xs text-white/80">1 196 avis Airbnb</p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  style={{ x: midX, y: midYp }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.25, ease }}
+                  className="absolute right-8 top-[42%] hidden md:block"
+                >
+                  <div className="flex items-center gap-2 rounded-full bg-[#1A1A1A] px-4 py-2 text-xs font-semibold text-white shadow-xl">
+                    <span className="h-2 w-2 rounded-full bg-[#4ADE80]" />
+                    Airbnb · Booking · Vrbo
+                  </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
 
-        {/* Simulator - overlapping */}
-        <div className="mt-16 lg:mt-24">
+        {/* Simulateur */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ duration: 0.8, ease }}
+          className="mt-20 lg:mt-28"
+        >
           <Simulator />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

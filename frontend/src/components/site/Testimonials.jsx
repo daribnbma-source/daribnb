@@ -1,88 +1,97 @@
 import React from "react";
-import { Star, Quote } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Star, Quote, ArrowRight } from "lucide-react";
+import Reveal from "../motion/Reveal";
+import Marquee from "../motion/Marquee";
+import CountUp from "../motion/CountUp";
+import { CLIENT_REVIEWS } from "../../data/reviews";
 
-const T = [
-  {
-    n: "Karim B.",
-    c: "Propriétaire à Marrakech",
-    q: "Daribnb a doublé mes revenus en 3 mois. L'équipe est au top et super réactive.",
-    r: 5,
-  },
-  {
-    n: "Leïla M.",
-    c: "Propriétaire à Casablanca",
-    q: "J'ai choisi le loyer fixe, je reçois mon virement chaque 5 du mois. Tranquillité totale.",
-    r: 5,
-  },
-  {
-    n: "Youssef A.",
-    c: "Propriétaire à Agadir",
-    q: "Photos pro, annonce parfaite, voyageurs de qualité. Je recommande les yeux fermés.",
-    r: 5,
-  },
-];
+// Avis voyageurs réels (Airbnb + Google). Doublons retirés pour le bandeau.
+const REVIEWS = CLIENT_REVIEWS.filter((r, i, a) => a.findIndex((x) => x.body === r.body) === i);
+
+function ReviewCard({ r }) {
+  return (
+    <figure className="w-[22rem] flex-shrink-0 rounded-3xl border border-black/5 bg-white p-6 shadow-sm">
+      <div className="flex items-center justify-between">
+        <div className="flex gap-0.5">
+          {[...Array(r.rating)].map((_, i) => (
+            <Star key={i} size={14} className="fill-[#C1272D] text-[#C1272D]" />
+          ))}
+        </div>
+        <span className="rounded-full bg-[#FAF9F6] px-2.5 py-1 text-[11px] font-semibold text-[#6B7280]">
+          Avis {r.source}
+        </span>
+      </div>
+      <blockquote className="mt-4 line-clamp-5 text-[15px] leading-relaxed text-[#1A1A1A]">« {r.body} »</blockquote>
+      <figcaption className="mt-5 flex items-center gap-3 border-t border-black/5 pt-4">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#006233] text-sm font-bold text-white">
+          {r.authorName.charAt(0)}
+        </span>
+        <span>
+          <span className="block text-sm font-bold text-[#1A1A1A]">{r.authorName}</span>
+          <span className="block text-xs text-[#6B7280]">{r.location}</span>
+        </span>
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function Testimonials() {
   return (
-    <section
-      data-testid="testimonials-section"
-      className="py-24 md:py-32 bg-[#FAF9F6]"
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="max-w-3xl mb-16">
-          <span className="text-sm font-bold text-[#006233] uppercase tracking-wider">
-            Témoignages
-          </span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
-            Ils nous font confiance.
-          </h2>
-          <div className="mt-4 flex items-center gap-2">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                size={20}
-                className="fill-[#C1272D] text-[#C1272D]"
-              />
-            ))}
-            <span className="ml-2 font-bold text-[#1A1A1A]">4.9/5</span>
-            <span className="text-[#4B5563]">· +150 propriétaires</span>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {T.map((t, i) => (
-            <div
-              key={t.n}
-              data-testid={`testimonial-card-${i + 1}`}
-              className="bg-white rounded-2xl p-8 border border-[#E5E5E5] hover:shadow-lg transition-all"
-            >
-              <Quote className="w-8 h-8 text-[#C1272D]/20 mb-4" />
-              <div className="flex gap-1 mb-4">
-                {[...Array(t.r)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={14}
-                    className="fill-[#C1272D] text-[#C1272D]"
-                  />
-                ))}
+    <section data-testid="testimonials-section" className="overflow-hidden bg-[#FAF9F6] py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mb-14 grid items-end gap-10 lg:grid-cols-12">
+          <Reveal className="lg:col-span-7">
+            <span className="text-sm font-bold uppercase tracking-wider text-[#006233]">Ce que disent les voyageurs</span>
+            <h2 className="mt-3 text-4xl font-bold text-[#1A1A1A] md:text-5xl">
+              Des voyageurs ravis, c'est un bien qui se remplit.
+            </h2>
+            <p className="mt-4 text-lg text-[#4B5563]">
+              Chaque avis 5 étoiles fait remonter votre annonce. Voici ce que les voyageurs écrivent après un séjour
+              dans un logement géré par Daribnb.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15} className="lg:col-span-5">
+            <div className="flex items-center gap-6 rounded-3xl bg-[#1A1A1A] p-7 text-white">
+              <div>
+                <p className="font-heading text-5xl font-bold">
+                  <CountUp to={4.93} decimals={2} />
+                </p>
+                <div className="mt-2 flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} className="fill-[#C1272D] text-[#C1272D]" />
+                  ))}
+                </div>
               </div>
-              <p className="text-[#1A1A1A] text-[15px] leading-relaxed mb-6">
-                "{t.q}"
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-[#E5E5E5]">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C1272D] to-[#006233] flex items-center justify-center text-white font-bold">
-                  {t.n.charAt(0)}
-                </div>
-                <div>
-                  <div className="font-bold text-[#1A1A1A] text-sm">
-                    {t.n}
-                  </div>
-                  <div className="text-xs text-[#4B5563]">{t.c}</div>
-                </div>
+              <div className="h-14 w-px bg-white/15" />
+              <div>
+                <p className="font-heading text-3xl font-bold">
+                  <CountUp to={1196} />
+                </p>
+                <p className="text-sm text-white/65">avis voyageurs sur Airbnb</p>
               </div>
             </div>
-          ))}
+          </Reveal>
         </div>
+      </div>
+
+      <div className="relative">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#FAF9F6] md:w-40" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#FAF9F6] md:w-40" />
+        <Marquee duration={45}>
+          {REVIEWS.map((r) => (
+            <ReviewCard key={r.authorName + r.date} r={r} />
+          ))}
+        </Marquee>
+      </div>
+
+      <div className="mx-auto mt-10 max-w-7xl px-6 md:px-12">
+        <Link
+          to="/temoignages"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#C1272D] hover:underline"
+        >
+          <Quote size={16} /> Voir tous les avis <ArrowRight size={16} />
+        </Link>
       </div>
     </section>
   );

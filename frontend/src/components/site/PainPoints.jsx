@@ -1,4 +1,5 @@
 import React from "react";
+import Reveal from "../motion/Reveal";
 import { AlertTriangle, Moon, ThermometerSnowflake, TrendingDown, Lock, Clock } from "lucide-react";
 
 const SELF_MANAGED = [
@@ -17,17 +18,17 @@ export default function PainPoints() {
   return (
     <section data-testid="painpoints-section" className="bg-[#FAF9F6] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="max-w-3xl mb-16">
+        <Reveal className="max-w-3xl mb-16">
           <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
             Deux situations, une même perte
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
             Que vous gériez seul ou que vous soyez en location classique, vous laissez de l'argent sur la table.
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-          <div className="rounded-3xl border border-[#E5E5E5] bg-white p-8 md:p-10">
+          <Reveal className="rounded-3xl border border-[#E5E5E5] bg-white p-8 md:p-10 transition-shadow hover:shadow-xl">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-6">
               Vous gérez votre Airbnb vous-même ?
             </h3>
@@ -41,9 +42,9 @@ export default function PainPoints() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
-          <div className="rounded-3xl border border-[#E5E5E5] bg-white p-8 md:p-10">
+          <Reveal delay={0.12} className="rounded-3xl border border-[#E5E5E5] bg-white p-8 md:p-10 transition-shadow hover:shadow-xl">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-6">
               Votre bien est en location longue durée classique ?
             </h3>
@@ -57,16 +58,16 @@ export default function PainPoints() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
 
-        <div className="mt-10 rounded-3xl bg-[#1A1A1A] p-8 text-center md:p-10">
+        <Reveal className="mt-10 rounded-3xl bg-[#1A1A1A] p-8 text-center md:p-10">
           <p className="text-lg text-white md:text-xl">
             Dans les deux cas, la conciergerie change la donne :{" "}
             <span className="font-bold">vous gardez la propriété, on s'occupe de tout</span>, et
             votre bien travaille enfin pour vous.
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

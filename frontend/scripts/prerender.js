@@ -114,6 +114,11 @@ function startServer() {
 
 async function renderRoute(browser, route) {
   const page = await browser.newPage();
+  // Signale le pré-rendu à l'app : les contenus qui tournent (villes, versements) restent sur
+  // leur premier état, sinon le HTML figé ne correspond plus au premier rendu React (#418).
+  await page.evaluateOnNewDocument(() => {
+    window.__PRERENDER__ = true;
+  });
   // Bloquer les requêtes externes lourdes (analytics, fonts) pour speed
   await page.setRequestInterception(true);
   page.on("request", (req) => {
@@ -198,6 +203,38 @@ async function renderRoute(browser, route) {
     document
       .querySelectorAll('link[rel="stylesheet"][href*="fonts.googleapis.com"]')
       .forEach((link) => link.setAttribute("media", "print"));
+    // 5. Séparateurs de texte : côté client, « {n}+ réponses » donne deux nœuds texte voisins,
+    //    que la sérialisation HTML fusionne en un seul. React attend alors deux nœuds à
+    //    l'hydratation et échoue (#418). On insère <!-- --> entre nœuds texte adjacents,
+    //    exactement comme le rendu serveur de React.
+    const root = document.getElementById("root");
+    if (root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      const pairs = [];
+      let n;
+      while ((n = walker.nextNode())) {
+        if (n.nextSibling && n.nextSibling.nodeType === Node.TEXT_NODE) pairs.push(n);
+      }
+      pairs.forEach((t) => t.parentNode.insertBefore(document.createComment(" "), t.nextSibling));
+    }
+
+    // 6. Frontière <Suspense> d'AppRouter : le rendu serveur de React l'entoure de <!--$--> … <!--/$-->.
+    //    Sans ces marqueurs, l'hydratation échoue sur toutes les pages (#418). Le contenu de la
+    //    frontière = tous les enfants de div.App sauf le Toaster (sonner), rendu à côté.
+    // 7. Selects Radix : le <select> natif caché ne reçoit ses <option> qu'après le montage.
+    //    Au premier rendu client il est vide, donc on le vide aussi dans le HTML figé.
+    if (root) {
+      root.querySelectorAll('select[aria-hidden="true"]').forEach((sel) => {
+        sel.replaceChildren();
+      });
+    }
+
+    const app = root && root.querySelector(":scope > div.App");
+    if (app && app.firstChild) {
+      const toaster = app.querySelector(':scope > section[aria-label^="Notifications"]');
+      app.insertBefore(document.createComment("$"), app.firstChild);
+      app.insertBefore(document.createComment("/$"), toaster || null);
+    }
   });
 
   const html = await page.evaluate(() => "<!doctype html>\n" + document.documentElement.outerHTML);

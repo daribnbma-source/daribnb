@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, MotionConfig } from "motion/react";
+import ProofBand from "../components/site/ProofBand";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, Star, Calendar } from "lucide-react";
@@ -21,8 +23,40 @@ const SITE = "https://www.daribnb.com";
  *  - intro (string|node) — paragraphe sous le H1
  *  - schema (object) — JSON-LD additionnel injecté dans le head
  *  - heroAccent (string) — couleur accent pour le breadcrumb
+ *  - image (string) — photo réelle affichée à droite du hero (desktop)
  *  - children — contenu principal (sections H2/contenu)
  */
+
+const ease = [0.22, 1, 0.36, 1];
+
+// Apparition des sections du contenu au scroll, sans état caché dans le HTML pré-rendu :
+// seules les sections encore hors écran au montage sont animées quand elles arrivent.
+function useSectionReveal(ref) {
+  useEffect(() => {
+    const root = ref.current;
+    if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const sections = Array.from(root.querySelectorAll(":scope > section, :scope > div > section"));
+    const pending = sections.filter((s) => s.getBoundingClientRect().top > window.innerHeight);
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          io.unobserve(e.target);
+          e.target.animate(
+            [
+              { opacity: 0, transform: "translateY(32px)" },
+              { opacity: 1, transform: "none" },
+            ],
+            { duration: 750, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
+          );
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px" }
+    );
+    pending.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  }, [ref]);
+}
 export default function ServicePageLayout({
   title,
   description,
@@ -32,8 +66,11 @@ export default function ServicePageLayout({
   intro,
   schema,
   children,
+  image = "/assets/logements/logement-1-salon.jpg",
   ogImage = `${SITE}/og-image.jpg`,
 }) {
+  const contentRef = useRef(null);
+  useSectionReveal(contentRef);
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
       <Helmet>
@@ -85,8 +122,18 @@ export default function ServicePageLayout({
 
       <main>
         {/* Hero */}
-        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 zellige-pattern overflow-hidden">
-          <div className="max-w-5xl mx-auto px-6 md:px-12">
+        <MotionConfig reducedMotion="user">
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+          <div aria-hidden="true" className="absolute inset-0 zellige-star" />
+          <div aria-hidden="true" className="absolute -top-40 -right-40 h-[34rem] w-[34rem] rounded-full bg-[#C1272D]/10 blur-3xl" />
+          <div aria-hidden="true" className="absolute -bottom-52 -left-40 h-[30rem] w-[30rem] rounded-full bg-[#006233]/10 blur-3xl" />
+          <div className="relative max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 items-center">
+          <motion.div
+            className="lg:col-span-7"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease }}
+          >
             {/* Breadcrumb */}
             <nav aria-label="Fil d'Ariane" className="mb-6">
               <ol className="flex items-center gap-2 text-sm text-[#4B5563]">
@@ -142,14 +189,41 @@ export default function ServicePageLayout({
                 ))}
               </div>
               <p className="text-sm text-[#4B5563]">
-                <span className="font-semibold text-[#1A1A1A]">4,93/5</span> sur Airbnb · Coach & expert Airbnb 7+ ans
+                <span className="font-semibold text-[#1A1A1A]">4,93/5</span> sur 1 196 avis Airbnb · 7 ans de terrain
               </p>
             </div>
+          </motion.div>
+
+          {/* Photo réelle en couches (desktop) */}
+          <div className="relative hidden lg:col-span-5 lg:block">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94, clipPath: "inset(10% 10% 10% 10% round 2rem)" }}
+              animate={{ opacity: 1, scale: 1, clipPath: "inset(0% 0% 0% 0% round 2rem)" }}
+              transition={{ duration: 1, ease }}
+              className="aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(26,26,26,0.55)]"
+            >
+              <img src={image} alt="Logement géré par Daribnb" loading="eager" className="h-full w-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6, ease }}
+              className="absolute -bottom-6 -left-6 rounded-2xl bg-[#006233] px-5 py-4 text-white shadow-[0_20px_50px_-12px_rgba(0,98,51,0.6)]"
+            >
+              <p className="font-heading text-3xl font-bold leading-none">
+                4,93<span className="ml-1 text-lg text-white/80">★</span>
+              </p>
+              <p className="mt-1 text-xs text-white/80">1 196 avis Airbnb</p>
+            </motion.div>
+          </div>
           </div>
         </section>
+        </MotionConfig>
+
+        <ProofBand />
 
         {/* Contenu spécifique à la page */}
-        {children}
+        <div ref={contentRef}>{children}</div>
 
         {/* Garantie 1ère réservation — rappel condensé avant le contact */}
         <section className="py-16 bg-[#1A1A1A]">

@@ -25,6 +25,12 @@ export function AuthProvider({ children }) {
       setLoading(false);
       return;
     }
+    // Le site public n'a pas besoin de la session admin : on évite un appel réseau
+    // (en 404 sans backend configuré) sur chaque page visiteur.
+    if (typeof window !== "undefined" && !window.location.pathname.startsWith("/admin")) {
+      setLoading(false);
+      return;
+    }
     checkAuth();
   }, [checkAuth]);
 

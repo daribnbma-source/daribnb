@@ -1,5 +1,7 @@
 import React from "react";
 import { Check, Zap, Shield, Rocket, Gift } from "lucide-react";
+import { motion } from "motion/react";
+import Reveal from "../motion/Reveal";
 
 const PLANS = [
   {
@@ -70,21 +72,21 @@ export default function Pricing() {
       className="py-24 md:py-32 bg-[#FAF9F6]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="max-w-3xl mb-16">
+        <Reveal className="max-w-3xl mb-16">
           <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
-            Tarifs transparents
+            Nos formules · tarifs transparents
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
-            Choisissez votre formule.
+            Trois formules. Une seule promesse : plus de revenus.
           </h2>
           <p className="mt-4 text-lg text-[#4B5563]">
             Pas de frais cachés. Pas d'engagement abusif. On aligne nos
             intérêts sur les vôtres.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {PLANS.map((p) => {
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 md:items-start">
+          {PLANS.map((p, idx) => {
             const isGreen = p.color === "green";
             const isDark = p.color === "dark";
             const baseCls = isGreen
@@ -93,11 +95,17 @@ export default function Pricing() {
               ? "bg-gradient-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] text-white"
               : "bg-white border border-[#E5E5E5] text-[#1A1A1A]";
             return (
-              <div
+              <motion.div
                 key={p.id}
+                id={p.id === "fixed" ? "loyer-fixe" : undefined}
                 data-testid={`pricing-${p.id}`}
-                className={`relative rounded-3xl p-8 md:p-10 transition-all hover:shadow-2xl overflow-hidden ${baseCls} ${
-                  p.highlight ? "md:scale-[1.03] md:-translate-y-2 shadow-xl" : ""
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: p.highlight ? -12 : 0 }}
+                whileHover={{ y: p.highlight ? -20 : -8 }}
+                viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                transition={{ type: "spring", stiffness: 120, damping: 18, delay: idx * 0.12 }}
+                className={`relative rounded-3xl p-8 md:p-10 transition-shadow hover:shadow-2xl overflow-hidden ${baseCls} ${
+                  p.highlight ? "shadow-xl ring-1 ring-[#C1272D]/40" : ""
                 }`}
               >
                 {isDark && (
@@ -220,7 +228,7 @@ export default function Pricing() {
                 >
                   {p.cta}
                 </a>
-              </div>
+              </motion.div>
             );
           })}
         </div>

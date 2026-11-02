@@ -4,7 +4,8 @@ import { BLOG_POSTS } from "../../data/blogPosts";
 import { Calendar, ArrowRight, MapPin } from "lucide-react";
 
 export default function BlogTeaser() {
-  const posts = BLOG_POSTS;
+  // Les 6 articles les plus récents, le reste est sur /blog.
+  const posts = [...BLOG_POSTS].sort((a, b) => b.published_at.localeCompare(a.published_at)).slice(0, 6);
 
   if (!posts.length) return null;
 
@@ -67,6 +68,14 @@ export default function BlogTeaser() {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-7 py-3.5 font-semibold text-[#1A1A1A] transition-all hover:-translate-y-0.5 hover:shadow-md"
+          >
+            Voir tous les articles <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>

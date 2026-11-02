@@ -10,6 +10,7 @@ import { Input } from "../ui/input";
 import { TrendingUp, Sparkles, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useSimulator } from "../../lib/SimulatorContext";
+import { isPrerender } from "../../lib/isPrerender";
 import { submitNetlifyForm } from "../../lib/netlifyForm";
 
 // Pricing matrix — MAD / night, mirror of backend logic
@@ -92,6 +93,7 @@ export default function Simulator() {
   const [leadSent, setLeadSent] = useState(false);
 
   useEffect(() => {
+    if (isPrerender()) return;
     const interval = setInterval(() => {
       setPayoutIndex((i) => (i + 1) % REAL_PAYOUTS.length);
     }, 3500);

@@ -1130,7 +1130,7 @@ Daribnb opère à [Tanger](/conciergerie-airbnb-tanger), [Casablanca](/concierge
       "location courte durée maroc, LCD maroc, airbnb maroc guide, comment louer en courte durée maroc, réglementation LCD maroc",
     city: "Maroc",
     cover:
-      "https://images.unsplash.com/photo-1548019865-9f5cff0ec5d1?auto=format&fit=crop&w=1600&q=80",
+      "/assets/tanger-living-hero.webp",
     published_at: "2026-09-16T09:00:00Z",
     read_time: 11,
     content: `## Réponse directe : qu'est-ce que la location courte durée (LCD) au Maroc ?

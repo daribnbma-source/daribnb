@@ -1,51 +1,71 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { PhoneCall, Home, LineChart, FileSignature, Rocket } from "lucide-react";
+import Reveal from "../motion/Reveal";
 
 const STEPS = [
-  { n: 1, t: "RDV téléphonique", d: "On discute de vos objectifs et besoins." },
-  { n: 2, t: "Visite du bien", d: "On se déplace pour évaluer votre logement." },
-  { n: 3, t: "Estimation détaillée", d: "Projection de revenus et formule adaptée." },
-  { n: 4, t: "Signature du contrat", d: "Conciergerie ou loyer fixe, à votre choix." },
-  { n: 5, t: "Mise en ligne", d: "Photos pro, annonce optimisée, premières résa." },
+  { n: 1, icon: PhoneCall, t: "Appel découverte", d: "On discute de vos objectifs, de votre bien et de votre ville." },
+  { n: 2, icon: Home, t: "Visite du bien", d: "On se déplace pour évaluer le logement et son potentiel." },
+  { n: 3, icon: LineChart, t: "Estimation détaillée", d: "Projection de revenus chiffrée et formule adaptée." },
+  { n: 4, icon: FileSignature, t: "Signature du contrat", d: "Conciergerie ou loyer fixe garanti, à votre choix." },
+  { n: 5, icon: Rocket, t: "Mise en ligne", d: "Photos pro, annonce optimisée, premières réservations." },
 ];
 
 export default function HowItWorks() {
-  return (
-    <section
-      data-testid="how-it-works-section"
-      className="py-24 md:py-32 bg-[#FAF9F6]"
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="max-w-3xl mb-16">
-          <span className="text-sm font-bold text-[#006233] uppercase tracking-wider">
-            Comment ça marche
-          </span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#1A1A1A]">
-            5 étapes. C'est tout.
-          </h2>
-          <p className="mt-4 text-lg text-[#4B5563]">
-            De la prise de contact à votre première réservation, on vous
-            accompagne à chaque étape.
-          </p>
-        </div>
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 75%", "end 55%"] });
+  const line = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-        <div className="grid md:grid-cols-5 gap-6 relative">
-          {STEPS.map((step, i) => (
-            <div
-              key={step.n}
-              data-testid={`step-${step.n}`}
-              className="relative bg-white rounded-2xl p-6 border border-[#E5E5E5] hover:border-[#C1272D]/30 hover:shadow-md transition-all"
+  return (
+    <section data-testid="how-it-works-section" className="overflow-x-clip bg-[#1A1A1A] py-24 text-white md:py-32">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="grid gap-14 lg:grid-cols-12">
+          <Reveal className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+            <span className="text-sm font-bold uppercase tracking-wider text-[#4ADE80]">Comment ça marche</span>
+            <h2 className="mt-3 text-4xl font-bold md:text-5xl">5 étapes. C'est tout.</h2>
+            <p className="mt-4 text-lg text-white/70">
+              De la prise de contact à votre première réservation, on vous accompagne à chaque étape.
+              Vous validez, on exécute.
+            </p>
+            <a
+              href="#contact"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#C1272D] px-7 py-3.5 font-semibold text-white transition-colors hover:bg-[#A01D22]"
             >
-              <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-[#C1272D] text-white flex items-center justify-center font-black text-lg shadow-md">
-                {step.n}
-              </div>
-              <div className="pt-4">
-                <h3 className="font-bold text-[#1A1A1A] text-lg mb-2">
-                  {step.t}
-                </h3>
-                <p className="text-sm text-[#4B5563]">{step.d}</p>
-              </div>
-            </div>
-          ))}
+              Démarrer par un appel
+            </a>
+          </Reveal>
+
+          <div ref={ref} className="relative lg:col-span-7">
+            {/* Rail + progression liée au scroll */}
+            <div aria-hidden="true" className="absolute left-[27px] top-2 bottom-2 w-px bg-white/10" />
+            <motion.div
+              aria-hidden="true"
+              style={{ height: line }}
+              className="absolute left-[27px] top-2 w-px bg-gradient-to-b from-[#C1272D] to-[#4ADE80]"
+            />
+            <ol className="space-y-6">
+              {STEPS.map((s, i) => (
+                <motion.li
+                  key={s.n}
+                  data-testid={`step-${s.n}`}
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+                  transition={{ duration: 0.6, delay: 0.05 * i, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative flex gap-6"
+                >
+                  <span className="relative z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-[#232323] text-[#C1272D]">
+                    <s.icon size={22} />
+                  </span>
+                  <div className="flex-1 rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:bg-white/[0.07]">
+                    <p className="text-xs font-bold uppercase tracking-wider text-white/40">Étape {s.n}</p>
+                    <h3 className="mt-1 text-xl font-bold">{s.t}</h3>
+                    <p className="mt-1.5 text-white/65">{s.d}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>
