@@ -281,7 +281,7 @@ Tanger est **le bon endroit au bon moment**. Si vous possédez un bien là-bas, 
 
 "Combien je peux vraiment gagner avec mon bien en Airbnb au Maroc ?"
 
-Réponse honnête : **ça dépend**. D'une ville à l'autre, d'un quartier à l'autre, voire d'un étage à l'autre, les écarts sont énormes. Mais avec 7+ ans de données et +150 propriétaires accompagnés, on peut vous donner des fourchettes précises.
+Réponse honnête : **ça dépend**. D'une ville à l'autre, d'un quartier à l'autre, voire d'un étage à l'autre, les écarts sont énormes. Mais avec 7+ ans de données et 1 196 avis voyageurs sur nos logements, on peut vous donner des fourchettes précises.
 
 ## Revenus nets moyens par ville (2026)
 
@@ -416,7 +416,7 @@ Daribnb vous propose en général **~70 % du revenu moyen estimé**, net, garant
 
 ## Envie qu'on tranche pour vous ?
 
-On estime votre bien gratuitement, on vous propose les deux formules chiffrées, et vous choisissez sereinement. 7+ années d'expertise, +150 propriétaires, aucune pression commerciale.`,
+On estime votre bien gratuitement, on vous propose les deux formules chiffrées, et vous choisissez sereinement. 7+ années d'expertise, 4,93/5 sur 1 196 avis Airbnb, aucune pression commerciale.`,
   },
   {
     slug: "mre-airbnb-maroc-gestion-distance-2026",

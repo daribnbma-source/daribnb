@@ -5,7 +5,7 @@ const STATS = [
   { icon: Award, v: "7+", l: "années d'expertise Airbnb" },
   { icon: Users, v: "+1 196", l: "évaluations Airbnb" },
   { icon: MapPin, v: "4", l: "villes : Tanger, Rabat, Casa, Marrakech" },
-  { icon: TrendingUp, v: "4,93/5", l: "note moyenne des voyageurs" },
+  { icon: TrendingUp, v: "+40%", l: "de revenus en moyenne" },
 ];
 
 const STORY_POINTS = [

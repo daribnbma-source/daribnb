@@ -5,6 +5,7 @@ import Marquee from "../motion/Marquee";
 const ITEMS = [
   "4,93/5 sur Airbnb",
   "1 196 avis voyageurs",
+  "+40 % de revenus en moyenne",
   "7 ans de terrain",
   "Tanger · Rabat · Casablanca · Marrakech",
   "Airbnb · Booking · Vrbo",
