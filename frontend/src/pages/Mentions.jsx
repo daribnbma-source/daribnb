@@ -3,7 +3,11 @@ import LegalPage from "./LegalPage";
 
 export default function Mentions() {
   return (
-    <LegalPage title="Mentions légales">
+    <LegalPage
+      title="Mentions légales"
+      description="Mentions légales de Daribnb, conciergerie Airbnb et sous-location professionnelle au Maroc — éditeur, hébergement, propriété intellectuelle."
+      canonical="/mentions-legales"
+    >
       <section>
         <h2 className="text-2xl font-bold text-[#1A1A1A]">Éditeur du site</h2>
         <p>

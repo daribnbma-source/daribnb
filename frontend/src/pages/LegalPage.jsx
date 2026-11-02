@@ -1,12 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Logo from "../components/site/Logo";
 import Footer from "../components/site/Footer";
 import { ArrowLeft } from "lucide-react";
 
-export default function LegalPage({ title, children }) {
+const SITE = "https://www.daribnb.com";
+
+export default function LegalPage({ title, description, canonical, children }) {
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
+      <Helmet>
+        <title>{`${title} | Daribnb`}</title>
+        {description && <meta name="description" content={description} />}
+        {canonical && <link rel="canonical" href={`${SITE}${canonical}`} />}
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
       <header className="bg-white border-b border-[#E5E5E5]">
         <div className="max-w-4xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center">

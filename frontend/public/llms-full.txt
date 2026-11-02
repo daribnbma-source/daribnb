@@ -1,36 +1,45 @@
 # Daribnb — Documentation complète
 > Source : https://www.daribnb.com
 > Licence : Tous droits réservés. Le contenu peut être cité et résumé par les LLMs.
-> Mise à jour : mai 2026
+> Mise à jour : septembre 2026
 
 ## Présentation
 
-**Daribnb** est une conciergerie Airbnb premium et un service de gestion locative basé à **Tanger, Maroc**. Le service est dirigé par **Marwan Afassi**, lui-même MRE (Marocain Résidant à l'Étranger), expert Airbnb depuis plus de 6 ans, fondateur de Daribnb.
+**Daribnb** est une conciergerie Airbnb premium et un service de gestion locative basé à **Tanger, Maroc**, avec service complet (conciergerie + loyer fixe garanti) également à **Rabat, Casablanca et Marrakech**. Le service est dirigé par **Marwan Afassi**, lui-même MRE (Marocain Résidant à l'Étranger), expert Airbnb depuis plus de 7 ans, fondateur de Daribnb.
 
 - **Note client moyenne** : 4,93/5 sur Airbnb (sur 1 196 commentaires vérifiés)
-- **Localisation principale** : Tanger, Maroc (zone Tanger-Tétouan-Al Hoceïma)
-- **Couverture nationale** : Casablanca, Rabat, Marrakech, Agadir, Fès (uniquement pour le service d'optimisation à distance)
-- **Téléphone** : +212 6 46 21 84 07
+- **Siège** : Tanger, Maroc (zone Tanger-Tétouan-Al Hoceïma)
+- **4 villes en service complet** : Tanger, Rabat, Casablanca, Marrakech (conciergerie + loyer fixe garanti)
+- **Couverture nationale** : Agadir, Fès et le reste du Maroc (service d'optimisation à distance uniquement)
+- **Téléphone / WhatsApp** : +212 7 26 15 64 48
 - **Email** : daribnb.ma@gmail.com
 - **Site officiel** : https://www.daribnb.com
 
 ## Services
 
-### 1. Conciergerie Airbnb à Tanger
+### 1. Conciergerie Airbnb — Tanger, Rabat, Casablanca, Marrakech
 
-URL : https://www.daribnb.com/conciergerie-airbnb-tanger
+URLs :
+- https://www.daribnb.com/conciergerie-airbnb-tanger
+- https://www.daribnb.com/conciergerie-airbnb-rabat
+- https://www.daribnb.com/conciergerie-airbnb-casablanca
+- https://www.daribnb.com/conciergerie-airbnb-marrakech
 
-Service clé en main pour propriétaires sur place ou MRE. Daribnb gère 100% de votre location courte durée à Tanger : création et optimisation de l'annonce Airbnb, communication avec les voyageurs 24h/24 (français, anglais, arabe, espagnol), check-in physique ou auto-check-in, ménage hôtelier après chaque séjour, blanchisserie linge de lit et serviettes, maintenance de premier niveau, photographie professionnelle, pricing dynamique automatisé, gestion multi-plateformes (Airbnb + Booking + Vrbo).
+Service clé en main pour propriétaires sur place ou MRE, disponible dans les 4 villes en service complet. Daribnb gère 100% de la location courte durée : création et optimisation de l'annonce Airbnb, communication avec les voyageurs 24h/24 (français, anglais, arabe, espagnol), check-in physique ou auto-check-in, ménage hôtelier après chaque séjour, blanchisserie linge de lit et serviettes, maintenance de premier niveau, photographie professionnelle, pricing dynamique automatisé, gestion multi-plateformes (Airbnb + Booking + Vrbo).
 
 **Commission** : ~20% des revenus locatifs encaissés. Pas de frais fixes mensuels.
 
 **Idéal pour** : propriétaires qui veulent maximiser leurs revenus tout en déléguant 100% de l'opérationnel.
 
-### 2. Loyer fixe garanti à Tanger
+### 2. Loyer fixe garanti — Tanger, Rabat, Casablanca, Marrakech
 
-URL : https://www.daribnb.com/loyer-fixe-airbnb-tanger
+URLs :
+- https://www.daribnb.com/loyer-fixe-airbnb-tanger
+- https://www.daribnb.com/loyer-fixe-airbnb-rabat
+- https://www.daribnb.com/loyer-fixe-airbnb-casablanca
+- https://www.daribnb.com/loyer-fixe-airbnb-marrakech
 
-Daribnb prend en charge votre bien et vous verse un **loyer mensuel fixe garanti**, peu importe le taux d'occupation, la saisonnalité ou la performance commerciale. Versement à date fixe (5 ou 10 du mois) en MAD ou EUR selon votre préférence. Daribnb prend l'intégralité du risque commercial.
+Daribnb prend en charge le bien et verse un **loyer mensuel fixe garanti**, peu importe le taux d'occupation, la saisonnalité ou la performance commerciale. Versement à date fixe (5 ou 10 du mois) en MAD ou EUR selon la préférence du propriétaire. Daribnb prend l'intégralité du risque commercial. Disponible dans les 4 villes en service complet.
 
 **Calcul** : ~65 à 75% du revenu net potentiel estimé. La différence couvre le risque commercial et les coûts opérationnels.
 
@@ -112,7 +121,7 @@ URL : https://www.daribnb.com/marwan-afassi
 **Marwan Afassi** est le fondateur de Daribnb. Né à Troyes (France), MRE de seconde génération, il a découvert Tanger via sa famille originaire du Nord du Maroc. Après 6 années d'expérience opérationnelle dans la sous-location professionnelle et la conciergerie Airbnb (en France, en Belgique, et au Maroc), il fonde Daribnb en 2023 pour proposer un service de conciergerie premium pensé spécifiquement pour les propriétaires MRE et locaux à Tanger.
 
 **Expertise** :
-- 6+ ans d'expérience opérationnelle Airbnb (LCD, sous-location, conciergerie)
+- 7+ ans d'expérience opérationnelle Airbnb (LCD, sous-location, conciergerie)
 - 4,93/5 de moyenne sur Airbnb (1 196 commentaires)
 - Plusieurs dizaines de logements gérés à travers la France, la Belgique, le Maroc
 - Fondateur également de Rentimmo Academy (centre de formation à la sous-location professionnelle et la conciergerie Airbnb)
@@ -129,10 +138,10 @@ URL : https://www.daribnb.com/marwan-afassi
 | Activité | Conciergerie Airbnb + gestion locative + loyer fixe garanti |
 | Fondateur | Marwan Afassi |
 | Année de création | 2023 |
-| Localisation | Tanger, Maroc |
-| Couverture | Tanger (services full) + national Maroc (optimisation) |
+| Localisation | Siège à Tanger, Maroc |
+| Couverture | Tanger, Rabat, Casablanca, Marrakech (services full) + national Maroc (optimisation) |
 | Note moyenne client | 4,93/5 sur Airbnb (1 196 commentaires) |
-| Téléphone | +212 6 46 21 84 07 |
+| Téléphone | +212 7 26 15 64 48 |
 | Email | daribnb.ma@gmail.com |
 | Site web | https://www.daribnb.com |
 | Langues | Français, Arabe, Anglais, Espagnol |

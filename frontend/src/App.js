@@ -26,6 +26,7 @@ const OptimiserRevenusAirbnb = lazy(() => import("./pages/OptimiserRevenusAirbnb
 const LoyerFixeAirbnbTanger = lazy(() => import("./pages/LoyerFixeAirbnbTanger"));
 const LoyerFixeAirbnbRabat = lazy(() => import("./pages/LoyerFixeAirbnbRabat"));
 const LoyerFixeAirbnbCasablanca = lazy(() => import("./pages/LoyerFixeAirbnbCasablanca"));
+const LoyerFixeAirbnbMarrakech = lazy(() => import("./pages/LoyerFixeAirbnbMarrakech"));
 const MultiPlateformesAirbnbBooking = lazy(() => import("./pages/MultiPlateformesAirbnbBooking"));
 const ConciergerieAirbnbMarrakech = lazy(() => import("./pages/ConciergerieAirbnbMarrakech"));
 const ConciergerieAirbnbCasablanca = lazy(() => import("./pages/ConciergerieAirbnbCasablanca"));
@@ -67,6 +68,7 @@ function AppRouter() {
         <Route path="/loyer-fixe-airbnb-tanger" element={<LoyerFixeAirbnbTanger />} />
         <Route path="/loyer-fixe-airbnb-rabat" element={<LoyerFixeAirbnbRabat />} />
         <Route path="/loyer-fixe-airbnb-casablanca" element={<LoyerFixeAirbnbCasablanca />} />
+        <Route path="/loyer-fixe-airbnb-marrakech" element={<LoyerFixeAirbnbMarrakech />} />
         <Route path="/multi-plateformes-airbnb-booking-vrbo" element={<MultiPlateformesAirbnbBooking />} />
         <Route path="/conciergerie-airbnb-marrakech" element={<ConciergerieAirbnbMarrakech />} />
         <Route path="/conciergerie-airbnb-casablanca" element={<ConciergerieAirbnbCasablanca />} />

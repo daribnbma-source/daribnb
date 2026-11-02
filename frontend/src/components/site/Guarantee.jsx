@@ -61,14 +61,7 @@ export default function Guarantee() {
                 annonce jusqu'à la première réservation. C'est la méthode qu'on applique sur nos
                 propres biens depuis plus de 7 ans — et celle que Marwan enseigne aujourd'hui aux
                 entrepreneurs formés via{" "}
-                <a
-                  href="https://www.rentimmoacademy.fr/super-bnb-academy/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-white underline decoration-white/30 hover:text-[#5FD87A]"
-                >
-                  Rentimmo Academy
-                </a>
+                <span className="font-semibold text-white">Rentimmo Academy</span>
                 , l'académie de formation Airbnb qu'il a fondée.
               </p>
             </div>

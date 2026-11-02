@@ -24,9 +24,9 @@ const PLANS = [
     tag: "Boost one-shot",
     icon: Rocket,
     title: "Super Daribnb",
-    price: "Sur mesure",
-    unit: "prestation unique",
-    desc: "L'audit + optimisation complète de votre annonce. Vous gérez, on transforme vos revenus.",
+    price: "Audit offert",
+    unit: "puis prestation sur mesure",
+    desc: "On audite votre annonce gratuitement, sans engagement. Vous validez ensuite la stratégie avant tout devis.",
     features: [
       "Photos professionnelles",
       "Refonte annonce & SEO",
@@ -35,6 +35,7 @@ const PLANS = [
       "Objectif CA fixé ensemble",
     ],
     bonuses: [
+      "Audit complet de votre annonce offert",
       "Diagnostic concurrence offert (Airbnb + Booking.com)",
       "1 session stratégie 1-to-1 avec Marwan, fondateur de Daribnb",
     ],

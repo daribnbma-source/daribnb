@@ -105,7 +105,7 @@ export default function MenageAirbnbTanger() {
   return (
     <ServicePageLayout
       title="Ménage Airbnb Tanger | Daribnb — Nettoyage location courte durée"
-      description="Service de ménage professionnel pour Airbnb à Tanger : nettoyage complet entre chaque voyageur, gestion du linge, contrôle qualité. Estimation gratuite en 24h."
+      description="Ménage professionnel Airbnb à Tanger : nettoyage entre chaque voyageur, gestion du linge, contrôle qualité. Estimation gratuite en 24h."
       canonical={URL}
       h1="Ménage Airbnb à Tanger"
       kicker="Nettoyage · Location courte durée"

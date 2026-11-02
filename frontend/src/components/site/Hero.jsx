@@ -17,21 +17,21 @@ export default function Hero() {
           <div className="lg:col-span-6 fade-up">
             <div className="inline-flex items-center gap-2 bg-[#006233]/10 text-[#006233] rounded-full px-4 py-2 text-sm font-semibold mb-6">
               <span className="w-2 h-2 rounded-full bg-[#006233] animate-pulse" />
-              Coach & expert Airbnb 7+ ans · Tanger, Rabat, Casablanca
+              Coach & expert Airbnb 7+ ans · Tanger, Rabat, Casablanca, Marrakech
             </div>
 
             <h1
               data-testid="hero-title"
               className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1A1A1A] leading-[1.05]"
             >
-              Votre Airbnb à Tanger, Rabat ou Casablanca,{" "}
+              Votre Airbnb à Tanger, Rabat, Casablanca ou Marrakech,{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-[#C1272D]">géré comme un pro.</span>
               </span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-[#4B5563] leading-relaxed max-w-xl">
-              Conciergerie Airbnb clé en main ou loyer fixe garanti à Tanger, Rabat et Casablanca.
+              Conciergerie Airbnb clé en main ou loyer fixe garanti à Tanger, Rabat, Casablanca et Marrakech.
               On gère votre bien comme si c'était le nôtre — vous encaissez.
             </p>
 
@@ -106,7 +106,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="text-xs text-[#4B5563]">Expert local</p>
-                  <p className="font-bold text-[#1A1A1A]">Tanger · Rabat · Casa 🇲🇦</p>
+                  <p className="font-bold text-[#1A1A1A]">Tanger · Rabat · Casa · Marrakech 🇲🇦</p>
                 </div>
               </div>
               <div className="hidden md:flex absolute -bottom-6 -right-6 bg-[#006233] text-white rounded-2xl p-4 shadow-xl items-center gap-3">

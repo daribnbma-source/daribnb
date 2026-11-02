@@ -4,7 +4,7 @@ import { Award, Users, MapPin, TrendingUp, Plane, GraduationCap, Home, Quote } f
 const STATS = [
   { icon: Award, v: "7+", l: "années d'expertise Airbnb" },
   { icon: Users, v: "+1 196", l: "évaluations Airbnb" },
-  { icon: MapPin, v: "3", l: "villes prioritaires : Tanger, Rabat, Casa" },
+  { icon: MapPin, v: "4", l: "villes : Tanger, Rabat, Casa, Marrakech" },
   { icon: TrendingUp, v: "+40%", l: "de revenus en moyenne" },
 ];
 
@@ -137,14 +137,7 @@ export default function WhyUs() {
             </p>
             <p className="mt-4 text-lg text-[#4B5563] leading-relaxed">
               Je transmets aussi cette expertise via{" "}
-              <a
-                href="https://www.rentimmoacademy.fr/super-bnb-academy/"
-                target="_blank"
-                rel="noreferrer"
-                className="font-semibold text-[#006233] hover:text-[#C1272D] transition-colors underline decoration-[#006233]/30"
-              >
-                Rentimmo Academy
-              </a>
+              <span className="font-semibold text-[#006233]">Rentimmo Academy</span>
               , l'académie de formation à la conciergerie et à la sous-location
               Airbnb que j'ai fondée en France et au Maroc.
             </p>

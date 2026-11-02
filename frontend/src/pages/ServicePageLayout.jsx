@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, Calendar } from "lucide-react";
 import Header from "../components/site/Header";
 import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
+import Contact from "../components/site/Contact";
+import ExitIntentPopup from "../components/site/ExitIntentPopup";
 
 const SITE = "https://www.daribnb.com";
 
@@ -149,43 +151,32 @@ export default function ServicePageLayout({
         {/* Contenu spécifique à la page */}
         {children}
 
-        {/* CTA final commun */}
-        <section id="contact" className="py-24 md:py-32 bg-[#1A1A1A] text-white">
-          <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Prêt à confier votre bien à Daribnb&nbsp;?
-            </h2>
-            <p className="mt-6 text-lg text-white/80">
-              Estimation gratuite, sans engagement, sous 24h. On revient vers vous avec une simulation chiffrée pour votre bien.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20je%20souhaite%20une%20estimation"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-8 py-4 font-semibold transition-all shadow-md hover:shadow-xl"
-              >
-                Demander mon estimation
-                <ArrowRight size={18} />
-              </a>
-              <a
-                href="https://wa.me/212726156448?text=Bonjour%20Daribnb%2C%20j'ai%20une%20question"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full px-8 py-4 font-semibold transition-all"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-                </svg>
-                Une question ? WhatsApp
-              </a>
+        {/* Garantie 1ère réservation — rappel condensé avant le contact */}
+        <section className="py-16 bg-[#1A1A1A]">
+          <div className="max-w-4xl mx-auto px-6 md:px-12">
+            <div className="flex flex-col gap-4 rounded-3xl border border-[#006233]/40 bg-gradient-to-br from-[#006233]/15 via-[#006233]/5 to-transparent p-8 md:flex-row md:items-center md:gap-8 md:p-10">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#006233]/20 text-[#006233] ring-1 ring-[#006233]/40">
+                <Calendar size={26} strokeWidth={2.2} />
+              </span>
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#006233]">
+                  La garantie 1ère réservation
+                </p>
+                <h3 className="mt-2 text-xl font-bold text-white md:text-2xl">
+                  Pas de 1ère réservation sous 30 jours&nbsp;? On reprend l'annonce à zéro avec vous, sans frais.
+                </h3>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* Formulaire de contact réel — capture le lead directement sur la page */}
+        <Contact />
       </main>
 
       <Footer />
       <WhatsAppFloat />
+      <ExitIntentPopup />
     </div>
   );
 }

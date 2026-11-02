@@ -10,6 +10,7 @@ import { Input } from "../ui/input";
 import { TrendingUp, Sparkles, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useSimulator } from "../../lib/SimulatorContext";
+import { submitNetlifyForm } from "../../lib/netlifyForm";
 
 // Pricing matrix — MAD / night, mirror of backend logic
 const CITY_MULTIPLIER = {
@@ -85,6 +86,10 @@ export default function Simulator() {
   const [result, setResult] = useState(null);
   const { setSimResult } = useSimulator();
   const [payoutIndex, setPayoutIndex] = useState(0);
+  const [leadEmail, setLeadEmail] = useState("");
+  const [leadPhone, setLeadPhone] = useState("");
+  const [leadSending, setLeadSending] = useState(false);
+  const [leadSent, setLeadSent] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -119,6 +124,35 @@ export default function Simulator() {
   };
 
   const fmt = (n) => new Intl.NumberFormat("fr-MA").format(n);
+
+  const sendLead = async (e) => {
+    e.preventDefault();
+    if (!leadEmail) {
+      toast.error("Merci d'indiquer ton email.");
+      return;
+    }
+    setLeadSending(true);
+    const cityLabel = CITIES.find((c) => c.v === city)?.l || city;
+    const typeLabel = TYPES.find((t) => t.v === type)?.l || type;
+    try {
+      await submitNetlifyForm("contact", {
+        name: "",
+        email: leadEmail,
+        phone: leadPhone,
+        city: cityLabel,
+        service: "Simulateur",
+        message: `Simulation : ${cityLabel}, ${typeLabel}, ${bedrooms} ch. Revenu estimé ${fmt(
+          result.monthly_min
+        )}–${fmt(result.monthly_max)} MAD/mois, loyer fixe ${fmt(result.fixed_rent)} MAD/mois.`,
+      });
+      setLeadSent(true);
+      toast.success("Merci ! On t'envoie ton estimation détaillée.");
+    } catch (err) {
+      toast.error("Erreur d'envoi, réessaie ou contacte-nous sur WhatsApp.");
+    } finally {
+      setLeadSending(false);
+    }
+  };
 
   return (
     <div id="simulator" className="relative" data-testid="simulator-card">
@@ -281,11 +315,46 @@ export default function Simulator() {
                 Tous les mois, même date. Locataire pro stable. Zéro gestion.
               </p>
             </div>
-            <div className="md:col-span-3 bg-[#FAF9F6] rounded-2xl p-5 text-sm text-[#4B5563] border border-[#E5E5E5] space-y-2">
+            <div className="md:col-span-3 bg-[#FAF9F6] rounded-2xl p-5 text-sm text-[#4B5563] border border-[#E5E5E5] space-y-4">
               <p>
                 💡 <span className="font-semibold text-[#1A1A1A]">Conciergerie</span> : tu encaisses les revenus Airbnb (variables), nous gérons à 20% de commission.{" "}
                 <span className="font-semibold text-[#1A1A1A]">Loyer fixe</span> : nous prenons le bien en sous-location pro et te versons un montant fixe chaque mois — c'est nous qui assumons la vacance et la gestion.
               </p>
+
+              {leadSent ? (
+                <p className="text-sm font-semibold text-[#006233]" data-testid="simulator-lead-success">
+                  ✅ Reçu ! On t'envoie ton estimation détaillée et on te recontacte rapidement.
+                </p>
+              ) : (
+                <form onSubmit={sendLead} className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    required
+                    value={leadEmail}
+                    onChange={(e) => setLeadEmail(e.target.value)}
+                    placeholder="Ton email"
+                    data-testid="simulator-lead-email"
+                    className="flex-1 h-11 rounded-xl border border-[#E5E5E5] bg-white px-4 text-sm"
+                  />
+                  <input
+                    type="tel"
+                    value={leadPhone}
+                    onChange={(e) => setLeadPhone(e.target.value)}
+                    placeholder="Téléphone (optionnel)"
+                    data-testid="simulator-lead-phone"
+                    className="flex-1 h-11 rounded-xl border border-[#E5E5E5] bg-white px-4 text-sm"
+                  />
+                  <button
+                    type="submit"
+                    disabled={leadSending}
+                    data-testid="simulator-lead-submit"
+                    className="h-11 whitespace-nowrap bg-[#C1272D] hover:bg-[#A01D22] disabled:opacity-60 text-white rounded-xl px-5 font-semibold text-sm transition-all"
+                  >
+                    {leadSending ? "Envoi..." : "Recevoir mon estimation"}
+                  </button>
+                </form>
+              )}
+
               <p className="text-xs">
                 Estimation indicative basée sur les données du marché marocain 2026.{" "}
                 <a

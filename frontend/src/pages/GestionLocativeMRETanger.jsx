@@ -97,7 +97,7 @@ export default function GestionLocativeMRETanger() {
 
   return (
     <ServicePageLayout
-      title="Gestion locative Tanger pour MRE | Daribnb — Votre bien géré à distance"
+      title="Gestion locative Tanger pour MRE | Daribnb"
       description="Vous êtes MRE et possédez un bien à Tanger ? Daribnb gère tout à distance. Fondé par un MRE, on comprend vos contraintes. Estimation gratuite en 24h."
       canonical={URL}
       h1="Gestion locative à Tanger pour propriétaires MRE"

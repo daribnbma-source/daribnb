@@ -93,7 +93,7 @@ export default function MultiPlateformesAirbnbBooking() {
 
   return (
     <ServicePageLayout
-      title="Gestion Airbnb + Booking + Vrbo | Daribnb — Multi-plateformes synchronisé"
+      title="Gestion Airbnb + Booking + Vrbo | Daribnb"
       description="Daribnb diffuse et synchronise votre bien sur Airbnb, Booking et Vrbo. Channel manager pro, pricing dynamique, +30% de revenus vs Airbnb seul."
       canonical={URL}
       h1="Multi-plateformes : Airbnb, Booking, Vrbo synchronisés"

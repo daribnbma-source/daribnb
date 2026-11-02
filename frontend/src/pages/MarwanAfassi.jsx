@@ -71,7 +71,7 @@ export default function MarwanAfassi() {
       "https://www.youtube.com/@daribnbtanger",
       "https://www.instagram.com/rentimmo_academy",
       "https://www.youtube.com/@rentimmoacademy",
-      "https://rentimmo-academy.fr",
+      "https://www.rentimmoacademy.fr",
     ],
     worksFor: [
       {
@@ -83,7 +83,7 @@ export default function MarwanAfassi() {
       {
         "@type": "EducationalOrganization",
         name: "Rentimmo Academy",
-        url: "https://rentimmo-academy.fr",
+        url: "https://www.rentimmoacademy.fr",
       },
     ],
     knowsAbout: [
@@ -105,8 +105,8 @@ export default function MarwanAfassi() {
 
   return (
     <ServicePageLayout
-      title="Marwan Afassi — Fondateur de Daribnb | Coach & Formateur Airbnb"
-      description="Marwan Afassi, fondateur de Daribnb, coach & formateur Airbnb. 7+ ans d'expérience en France, Belgique et Maroc. MRE et expert conciergerie à Tanger. Note moyenne 4,93/5 sur 1 196 commentaires."
+      title="Marwan Afassi — Fondateur Daribnb | Coach Airbnb"
+      description="Marwan Afassi, fondateur de Daribnb, coach & formateur Airbnb depuis 7+ ans. Expert conciergerie à Tanger, note moyenne 4,93/5 sur 1 196 avis."
       canonical={URL}
       h1="Marwan Afassi"
       kicker="Fondateur, coach & formateur"
@@ -175,7 +175,7 @@ export default function MarwanAfassi() {
             <p>
               Aujourd'hui, on dépasse les <strong>1 196 commentaires Airbnb à 4,93/5</strong>
               {' '}— la meilleure note opérationnelle du marché tangerois. En parallèle, j'ai
-              fondé <a href="https://rentimmo-academy.fr" target="_blank" rel="noreferrer" className="underline text-[#C1272D]">
+              fondé <a href="https://www.rentimmoacademy.fr" target="_blank" rel="noreferrer" className="underline text-[#C1272D]">
               Rentimmo Academy</a> pour transmettre mes 7+ ans d'expérience en tant que coach
               et formateur à d'autres entrepreneurs francophones (sous-location pro et
               conciergerie Airbnb).

@@ -216,7 +216,7 @@ const TERMS = [
   {
     cat: "Industrie LCD",
     term: "Conciergerie Airbnb",
-    def: "Service de gestion 100% déléguée d'un bien Airbnb. Inclut généralement : annonce, communication voyageurs, check-in, ménage, linge, maintenance. Modèle économique : commission 15-25% des revenus.",
+    def: "Service de gestion 100% déléguée d'un bien Airbnb. Inclut généralement : annonce, communication voyageurs, check-in, ménage, linge, maintenance. Modèle économique : commission 15-25% des revenus selon les prestataires (chez Daribnb : 20%).",
   },
   {
     cat: "Industrie LCD",
@@ -312,7 +312,7 @@ export default function LexiqueAirbnbTanger() {
   return (
     <ServicePageLayout
       title="Lexique Airbnb Tanger & Maroc | 50 termes — Daribnb"
-      description="Glossaire complet : termes techniques Airbnb, réglementation Maroc, fiscalité MRE, marché Tanger. 50+ définitions claires par Daribnb, conciergerie experte de Tanger."
+      description="Glossaire Airbnb : termes techniques, réglementation Maroc, fiscalité MRE, marché Tanger. 50+ définitions claires par Daribnb, conciergerie experte."
       canonical={URL}
       h1="Lexique Airbnb Tanger & Maroc"
       kicker="Glossaire"

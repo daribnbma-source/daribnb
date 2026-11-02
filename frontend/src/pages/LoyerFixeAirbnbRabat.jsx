@@ -102,7 +102,7 @@ export default function LoyerFixeAirbnbRabat() {
 
   return (
     <ServicePageLayout
-      title="Loyer fixe garanti Airbnb à Rabat | Daribnb — Revenu mensuel sans risque"
+      title="Loyer fixe garanti Airbnb à Rabat | Daribnb"
       description="Daribnb vous verse un loyer fixe garanti chaque mois pour votre bien à Rabat. On gère tout, vous touchez un revenu prévisible. Estimation gratuite en 24h."
       canonical={URL}
       h1="Loyer fixe garanti pour votre bien à Rabat"
@@ -266,6 +266,11 @@ export default function LoyerFixeAirbnbRabat() {
                 to: "/loyer-fixe-airbnb-casablanca",
                 title: "Loyer fixe Casablanca",
                 desc: "Le même service, disponible aussi à Casablanca.",
+              },
+              {
+                to: "/loyer-fixe-airbnb-marrakech",
+                title: "Loyer fixe Marrakech",
+                desc: "Le même service, disponible aussi à Marrakech.",
               },
             ].map((c) => (
               <Link

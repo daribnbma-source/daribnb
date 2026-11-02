@@ -102,8 +102,8 @@ export default function LoyerFixeAirbnbCasablanca() {
 
   return (
     <ServicePageLayout
-      title="Loyer fixe garanti Airbnb à Casablanca | Daribnb — Revenu mensuel sans risque"
-      description="Daribnb vous verse un loyer fixe garanti chaque mois pour votre bien à Casablanca. On gère tout, vous touchez un revenu prévisible. Estimation gratuite en 24h."
+      title="Loyer fixe garanti Airbnb à Casablanca | Daribnb"
+      description="Daribnb vous verse un loyer fixe garanti chaque mois pour votre bien à Casablanca. On gère tout, revenu prévisible. Estimation gratuite en 24h."
       canonical={URL}
       h1="Loyer fixe garanti pour votre bien à Casablanca"
       kicker="Revenu garanti · Casablanca"
@@ -266,6 +266,11 @@ export default function LoyerFixeAirbnbCasablanca() {
                 to: "/loyer-fixe-airbnb-rabat",
                 title: "Loyer fixe Rabat",
                 desc: "Le même service, disponible aussi à Rabat.",
+              },
+              {
+                to: "/loyer-fixe-airbnb-marrakech",
+                title: "Loyer fixe Marrakech",
+                desc: "Le même service, disponible aussi à Marrakech.",
               },
             ].map((c) => (
               <Link

@@ -103,7 +103,7 @@ export default function LoyerFixeAirbnbTanger() {
 
   return (
     <ServicePageLayout
-      title="Loyer fixe garanti Airbnb à Tanger | Daribnb — Revenu mensuel sans risque"
+      title="Loyer fixe garanti Airbnb à Tanger | Daribnb"
       description="Daribnb vous verse un loyer fixe garanti chaque mois pour votre bien à Tanger. On gère tout, vous touchez un revenu prévisible. Estimation gratuite en 24h."
       canonical={URL}
       h1="Loyer fixe garanti pour votre bien à Tanger"

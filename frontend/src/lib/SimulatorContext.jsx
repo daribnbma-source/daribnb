@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 
 // Partage le résultat du Simulateur (Hero) avec le formulaire Contact,
 // pour pré-remplir ville + estimation et éviter de faire re-saisir le visiteur.
-const SimulatorContext = createContext(null);
+const SimulatorContext = createContext({ simResult: null, setSimResult: () => {} });
 
 export function SimulatorProvider({ children }) {
   const [simResult, setSimResult] = useState(null);

@@ -38,6 +38,7 @@ export default function Footer() {
               <li><Link to="/loyer-fixe-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Loyer fixe garanti</Link></li>
               <li><Link to="/gestion-locative-mre-tanger" className="hover:text-[#C1272D] transition-colors">Spécial MRE</Link></li>
               <li><Link to="/menage-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Ménage Airbnb</Link></li>
+              <li><Link to="/gestion-locative-tanger" className="hover:text-[#C1272D] transition-colors">Gestion locative Tanger</Link></li>
               <li><Link to="/gestion-locative-casablanca" className="hover:text-[#C1272D] transition-colors">Gestion locative Casablanca</Link></li>
               <li><Link to="/gestion-locative-rabat" className="hover:text-[#C1272D] transition-colors">Gestion locative Rabat</Link></li>
               <li><Link to="/optimiser-revenus-airbnb" className="hover:text-[#C1272D] transition-colors">Optimisation revenus</Link></li>

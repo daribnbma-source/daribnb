@@ -3,7 +3,11 @@ import LegalPage from "./LegalPage";
 
 export default function Privacy() {
   return (
-    <LegalPage title="Politique de confidentialité">
+    <LegalPage
+      title="Politique de confidentialité"
+      description="Politique de confidentialité Daribnb : données collectées, finalités, droits RGPD. Conciergerie Airbnb et gestion locative au Maroc."
+      canonical="/confidentialite"
+    >
       <p>
         Chez Daribnb, la protection de vos données personnelles est une priorité.
         Cette politique explique quelles données nous collectons, pourquoi, et

@@ -24,6 +24,7 @@ const SERVICES_MENU = [
       { name: "Tanger", href: "/loyer-fixe-airbnb-tanger" },
       { name: "Rabat", href: "/loyer-fixe-airbnb-rabat" },
       { name: "Casablanca", href: "/loyer-fixe-airbnb-casablanca" },
+      { name: "Marrakech", href: "/loyer-fixe-airbnb-marrakech" },
     ],
   },
   {

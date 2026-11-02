@@ -3,7 +3,11 @@ import LegalPage from "./LegalPage";
 
 export default function CGV() {
   return (
-    <LegalPage title="Conditions générales de service">
+    <LegalPage
+      title="Conditions générales de service"
+      description="Conditions générales de service Daribnb : conciergerie Airbnb, loyer fixe garanti, modalités contractuelles au Maroc."
+      canonical="/cgv"
+    >
       <p className="text-[#4B5563]">
         Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
       </p>
