@@ -159,7 +159,7 @@ export default function ConciergerieAirbnbTanger() {
       </section>
 
       {/* Services inclus */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl mb-12">
             <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
@@ -212,7 +212,7 @@ export default function ConciergerieAirbnbTanger() {
             {RESULTS.map((r) => (
               <div
                 key={r.label}
-                className="bg-[#FAF9F6] rounded-2xl p-6 text-center"
+                className="bg-[#F7F6F2] rounded-2xl p-6 text-center"
               >
                 <div className="text-4xl md:text-5xl font-black text-[#C1272D]">
                   {r.metric}
@@ -247,7 +247,7 @@ export default function ConciergerieAirbnbTanger() {
       </section>
 
       {/* Liens internes */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8">
             Conciergerie Airbnb dans d'autres villes

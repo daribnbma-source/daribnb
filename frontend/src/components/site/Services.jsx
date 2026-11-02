@@ -54,7 +54,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -8% 0px" }}
               transition={{ duration: 0.6, delay: (i % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="group rounded-3xl border border-[#E5E5E5] bg-[#FAF9F6] p-6 transition-colors hover:border-[#C1272D]/30 hover:bg-white"
+              className="group rounded-3xl border border-[#E5E5E5] bg-[#F7F6F2] p-6 transition-colors hover:border-[#C1272D]/30 hover:bg-white"
             >
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#C1272D]/10 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
                 <s.icon className="h-5 w-5 text-[#C1272D]" />

@@ -317,7 +317,7 @@ export default function Simulator() {
                 Tous les mois, même date. Locataire pro stable. Zéro gestion.
               </p>
             </div>
-            <div className="md:col-span-3 bg-[#FAF9F6] rounded-2xl p-5 text-sm text-[#4B5563] border border-[#E5E5E5] space-y-4">
+            <div className="md:col-span-3 bg-[#F7F6F2] rounded-2xl p-5 text-sm text-[#4B5563] border border-[#E5E5E5] space-y-4">
               <p>
                 💡 <span className="font-semibold text-[#1A1A1A]">Conciergerie</span> : tu encaisses les revenus Airbnb (variables), nous gérons à 20% de commission.{" "}
                 <span className="font-semibold text-[#1A1A1A]">Loyer fixe</span> : nous prenons le bien en sous-location pro et te versons un montant fixe chaque mois — c'est nous qui assumons la vacance et la gestion.

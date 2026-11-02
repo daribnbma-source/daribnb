@@ -79,7 +79,7 @@ export default function AdminContacts() {
                     {c.city && <span>📍 {c.city}</span>}
                   </div>
                   {c.message && (
-                    <p className="text-sm text-[#1A1A1A] bg-[#FAF9F6] rounded-lg p-3 mt-2">
+                    <p className="text-sm text-[#1A1A1A] bg-[#F7F6F2] rounded-lg p-3 mt-2">
                       {c.message}
                     </p>
                   )}

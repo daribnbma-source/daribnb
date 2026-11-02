@@ -117,7 +117,7 @@ export default function Hero() {
       className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28"
     >
       {/* Fond : crème + motif étoile zellige + halo rouge/vert */}
-      <div aria-hidden="true" className="absolute inset-0 zellige-star" />
+      <div aria-hidden="true" className="absolute inset-0 grid-light" />
       <div aria-hidden="true" className="absolute -top-40 -right-40 h-[38rem] w-[38rem] rounded-full bg-[#C1272D]/10 blur-3xl" />
       <div aria-hidden="true" className="absolute -bottom-52 -left-40 h-[34rem] w-[34rem] rounded-full bg-[#006233]/10 blur-3xl" />
 
@@ -140,7 +140,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease }}
-              className="font-heading text-[2.35rem] font-bold leading-[1.04] tracking-tight text-[#1A1A1A] sm:text-6xl lg:text-[4.1rem] xl:text-[4.4rem]"
+              className="font-heading text-[2.1rem] font-bold leading-[1.06] tracking-tight text-[#1A1A1A] sm:text-[3.4rem] lg:text-[3.5rem] xl:text-[3.9rem]"
             >
               Votre Airbnb à <RotatingCity />
               <br />

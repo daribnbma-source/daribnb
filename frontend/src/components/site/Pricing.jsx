@@ -69,7 +69,7 @@ export default function Pricing() {
     <section
       id="tarifs"
       data-testid="pricing-section"
-      className="py-24 md:py-32 bg-[#FAF9F6]"
+      className="grid-light py-24 md:py-32 bg-[#F7F6F2]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <Reveal className="max-w-3xl mb-16">

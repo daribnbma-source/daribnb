@@ -45,7 +45,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen bg-[#F7F6F2]">
       <Helmet>
         <title>
           FAQ — Conciergerie Airbnb Tanger, ménage, gestion locative | Daribnb
@@ -116,7 +116,7 @@ export default function FAQPage() {
                   <li key={c.id}>
                     <a
                       href={`#${c.id}`}
-                      className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl hover:bg-[#FAF9F6] transition-colors group"
+                      className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl hover:bg-[#F7F6F2] transition-colors group"
                     >
                       <span className="flex items-center gap-3">
                         <span className="text-xl">{c.icon}</span>

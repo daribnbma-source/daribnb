@@ -120,7 +120,7 @@ export default function MarwanAfassi() {
             {STATS.map((stat, i) => (
               <div
                 key={i}
-                className="bg-[#FAF9F6] rounded-2xl p-6 border border-black/5"
+                className="bg-[#F7F6F2] rounded-2xl p-6 border border-black/5"
               >
                 <stat.icon size={24} className="text-[#C1272D] mb-3" />
                 <p className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
@@ -134,7 +134,7 @@ export default function MarwanAfassi() {
       </section>
 
       {/* Bio */}
-      <section className="py-16 md:py-24 bg-[#FAF9F6]">
+      <section className="py-16 md:py-24 bg-[#F7F6F2]">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
           <span className="inline-block text-sm font-bold text-[#C1272D] uppercase tracking-wider">
             Qui suis-je
@@ -217,7 +217,7 @@ export default function MarwanAfassi() {
       </section>
 
       {/* Expertise badges */}
-      <section className="py-16 md:py-24 bg-[#FAF9F6]">
+      <section className="py-16 md:py-24 bg-[#F7F6F2]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <span className="inline-block text-sm font-bold text-[#C1272D] uppercase tracking-wider">
             Domaines d'expertise

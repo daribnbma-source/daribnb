@@ -71,7 +71,7 @@ export default function Temoignages() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#FAF9F6] rounded-2xl p-8 text-center border border-black/5">
+            <div className="bg-[#F7F6F2] rounded-2xl p-8 text-center border border-black/5">
               <div className="flex items-center justify-center gap-1 mb-3">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -87,7 +87,7 @@ export default function Temoignages() {
               <p className="mt-2 text-sm text-[#4B5563]">Note moyenne Airbnb</p>
             </div>
 
-            <div className="bg-[#FAF9F6] rounded-2xl p-8 text-center border border-black/5">
+            <div className="bg-[#F7F6F2] rounded-2xl p-8 text-center border border-black/5">
               <p className="text-4xl font-bold text-[#1A1A1A]">
                 {AGGREGATED_AIRBNB.reviewCount.toLocaleString("fr-FR")}
               </p>
@@ -96,7 +96,7 @@ export default function Temoignages() {
               </p>
             </div>
 
-            <div className="bg-[#FAF9F6] rounded-2xl p-8 text-center border border-black/5">
+            <div className="bg-[#F7F6F2] rounded-2xl p-8 text-center border border-black/5">
               <p className="text-4xl font-bold text-[#1A1A1A]">7+</p>
               <p className="mt-2 text-sm text-[#4B5563]">
                 Années d'expérience opérationnelle
@@ -113,7 +113,7 @@ export default function Temoignages() {
       </section>
 
       {/* Highlights — ce qu'on entend le plus souvent */}
-      <section className="py-16 md:py-24 bg-[#FAF9F6]">
+      <section className="py-16 md:py-24 bg-[#F7F6F2]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <span className="inline-block text-sm font-bold text-[#C1272D] uppercase tracking-wider">
             Ce qui revient
@@ -190,7 +190,7 @@ export default function Temoignages() {
               {CLIENT_REVIEWS.map((r, i) => (
                 <article
                   key={i}
-                  className="bg-[#FAF9F6] rounded-2xl p-6 md:p-8 border border-black/5"
+                  className="bg-[#F7F6F2] rounded-2xl p-6 md:p-8 border border-black/5"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1">

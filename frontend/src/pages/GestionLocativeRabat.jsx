@@ -109,7 +109,7 @@ export default function GestionLocativeRabat() {
               return (
                 <div
                   key={p.title}
-                  className="bg-[#FAF9F6] rounded-2xl p-8 border border-black/5"
+                  className="bg-[#F7F6F2] rounded-2xl p-8 border border-black/5"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#006233]/10 flex items-center justify-center mb-4">
                     <Icon size={24} className="text-[#006233]" />
@@ -124,7 +124,7 @@ export default function GestionLocativeRabat() {
       </section>
 
       {/* Process en 4 étapes */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl mb-12">
             <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
@@ -180,7 +180,7 @@ export default function GestionLocativeRabat() {
             ].map((q) => (
               <div
                 key={q.name}
-                className="bg-[#FAF9F6] rounded-xl p-5 border border-black/5"
+                className="bg-[#F7F6F2] rounded-xl p-5 border border-black/5"
               >
                 <h3 className="font-bold text-[#1A1A1A]">{q.name}</h3>
                 <p className="mt-1 text-sm text-[#4B5563]">{q.note}</p>
@@ -191,7 +191,7 @@ export default function GestionLocativeRabat() {
       </section>
 
       {/* Liens internes */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8">
             Sur le même sujet

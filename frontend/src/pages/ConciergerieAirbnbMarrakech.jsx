@@ -156,7 +156,7 @@ export default function ConciergerieAirbnbMarrakech() {
       </section>
 
       {/* Services inclus */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl mb-12">
             <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
@@ -207,7 +207,7 @@ export default function ConciergerieAirbnbMarrakech() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {RESULTS.map((r) => (
-              <div key={r.label} className="bg-[#FAF9F6] rounded-2xl p-6 text-center">
+              <div key={r.label} className="bg-[#F7F6F2] rounded-2xl p-6 text-center">
                 <div className="text-4xl md:text-5xl font-black text-[#C1272D]">{r.metric}</div>
                 <p className="mt-2 text-sm text-[#4B5563] leading-tight">{r.label}</p>
               </div>
@@ -217,7 +217,7 @@ export default function ConciergerieAirbnbMarrakech() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-10">
             Questions fréquentes — Conciergerie Airbnb Marrakech
@@ -260,7 +260,7 @@ export default function ConciergerieAirbnbMarrakech() {
               <Link
                 key={c.to}
                 to={c.to}
-                className="block bg-[#FAF9F6] rounded-2xl p-6 shadow-sm border border-black/5 hover:shadow-md hover:border-[#C1272D]/30 transition-all group"
+                className="block bg-[#F7F6F2] rounded-2xl p-6 shadow-sm border border-black/5 hover:shadow-md hover:border-[#C1272D]/30 transition-all group"
               >
                 <h3 className="text-lg font-bold text-[#1A1A1A] group-hover:text-[#C1272D] transition-colors">
                   {c.title}

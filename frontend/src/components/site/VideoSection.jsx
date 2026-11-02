@@ -49,7 +49,7 @@ export default function VideoSection() {
   };
 
   return (
-    <section id="video" className="bg-[#FAF9F6] pb-8 pt-24 md:pt-28">
+    <section id="video" className="grid-light bg-[#F7F6F2] pb-8 pt-24 md:pt-28">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <Reveal className="mx-auto mb-10 max-w-2xl text-center">

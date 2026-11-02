@@ -12,6 +12,7 @@ import Pricing from "../components/site/Pricing";
 import Guarantee from "../components/site/Guarantee";
 import FAQ from "../components/site/FAQ";
 import Contact from "../components/site/Contact";
+import ToolsBand from "../components/site/ToolsBand";
 import ProofBand from "../components/site/ProofBand";
 import VideoSection from "../components/site/VideoSection";
 import Footer from "../components/site/Footer";
@@ -25,14 +26,15 @@ export default function Landing() {
   return (
     <SimulatorProvider>
       <MotionConfig reducedMotion="user">
-      <div data-testid="landing-page" className="min-h-screen bg-[#FAF9F6]">
+      <div data-testid="landing-page" className="min-h-screen bg-[#F7F6F2]">
         <Header />
         <main>
           <Hero />
-          <ProofBand />
+          <ToolsBand />
           <VideoSection />
           <PainPoints />
           <Pricing />
+          <ProofBand />
           <Services />
           <HowItWorks />
           <WhyUs />

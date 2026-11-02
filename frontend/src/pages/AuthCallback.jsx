@@ -41,7 +41,7 @@ export default function AuthCallback() {
   }, [navigate, setUser]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#FAF9F6]">
+    <div className="min-h-screen flex items-center justify-center bg-[#F7F6F2]">
       <div className="text-center">
         <Loader2 className="w-10 h-10 animate-spin text-[#C1272D] mx-auto mb-4" />
         <p className="text-[#4B5563]">Connexion en cours…</p>

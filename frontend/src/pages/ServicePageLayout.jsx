@@ -72,7 +72,7 @@ export default function ServicePageLayout({
   const contentRef = useRef(null);
   useSectionReveal(contentRef);
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen bg-[#F7F6F2]">
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -124,7 +124,7 @@ export default function ServicePageLayout({
         {/* Hero */}
         <MotionConfig reducedMotion="user">
         <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-          <div aria-hidden="true" className="absolute inset-0 zellige-star" />
+          <div aria-hidden="true" className="absolute inset-0 grid-light" />
           <div aria-hidden="true" className="absolute -top-40 -right-40 h-[34rem] w-[34rem] rounded-full bg-[#C1272D]/10 blur-3xl" />
           <div aria-hidden="true" className="absolute -bottom-52 -left-40 h-[30rem] w-[30rem] rounded-full bg-[#006233]/10 blur-3xl" />
           <div className="relative max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 items-center">

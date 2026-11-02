@@ -20,7 +20,7 @@ export default function Blog() {
     });
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen bg-[#F7F6F2]">
       <Helmet>
         <title>Blog Daribnb — Conseils conciergerie Airbnb & loyer fixe au Maroc</title>
         <meta

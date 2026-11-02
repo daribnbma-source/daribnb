@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function RelatedArticles({ slugs }) {
   return (
-    <section className="bg-[#FAF9F6] py-16 border-t border-black/5">
+    <section className="bg-[#F7F6F2] py-16 border-t border-black/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#1A1A1A]/40 mb-6">
           Articles liés

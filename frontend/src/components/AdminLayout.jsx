@@ -18,7 +18,7 @@ export default function AdminLayout({ children }) {
     to === "/admin" ? location.pathname === "/admin" : location.pathname.startsWith(to);
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] flex">
+    <div className="min-h-screen bg-[#F7F6F2] flex">
       {/* Sidebar */}
       <aside className="hidden md:flex w-64 bg-white border-r border-[#E5E5E5] flex-col">
         <div className="p-6 border-b border-[#E5E5E5]">
@@ -37,7 +37,7 @@ export default function AdminLayout({ children }) {
               className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                 isActive(n.to)
                   ? "bg-[#C1272D] text-white"
-                  : "text-[#1A1A1A] hover:bg-[#FAF9F6]"
+                  : "text-[#1A1A1A] hover:bg-[#F7F6F2]"
               }`}
             >
               <n.icon size={16} />

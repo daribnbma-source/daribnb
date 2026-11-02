@@ -16,7 +16,7 @@ const CLASSIC_RENTAL = [
 
 export default function PainPoints() {
   return (
-    <section data-testid="painpoints-section" className="bg-[#FAF9F6] py-24 md:py-32">
+    <section data-testid="painpoints-section" className="grid-light bg-[#F7F6F2] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <Reveal className="max-w-3xl mb-16">
           <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">

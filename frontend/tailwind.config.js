@@ -8,7 +8,7 @@ module.exports = {
   theme: {
   	extend: {
   		fontFamily: {
-  			heading: ['Outfit', 'system-ui', 'sans-serif']
+  			heading: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

@@ -332,7 +332,7 @@ export default function LexiqueAirbnbTanger() {
               placeholder="Rechercher un terme (ex: ADR, MRE, autorisation préfecture...)"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-[#FAF9F6] border border-black/10 rounded-full text-[#1A1A1A] placeholder-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:border-transparent"
+              className="w-full pl-12 pr-4 py-4 bg-[#F7F6F2] border border-black/10 rounded-full text-[#1A1A1A] placeholder-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:border-transparent"
               aria-label="Rechercher un terme"
             />
           </div>
@@ -344,7 +344,7 @@ export default function LexiqueAirbnbTanger() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 !activeCat
                   ? "bg-[#1A1A1A] text-white"
-                  : "bg-white text-[#1A1A1A] border border-black/10 hover:bg-[#FAF9F6]"
+                  : "bg-white text-[#1A1A1A] border border-black/10 hover:bg-[#F7F6F2]"
               }`}
             >
               Toutes ({TERMS.length})
@@ -359,7 +359,7 @@ export default function LexiqueAirbnbTanger() {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     active
                       ? "bg-[#1A1A1A] text-white"
-                      : "bg-white text-[#1A1A1A] border border-black/10 hover:bg-[#FAF9F6]"
+                      : "bg-white text-[#1A1A1A] border border-black/10 hover:bg-[#F7F6F2]"
                   }`}
                 >
                   {cat.id} ({count})
@@ -371,7 +371,7 @@ export default function LexiqueAirbnbTanger() {
       </section>
 
       {/* Liste des termes */}
-      <section className="py-16 md:py-20 bg-[#FAF9F6]">
+      <section className="py-16 md:py-20 bg-[#F7F6F2]">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           {filtered.length === 0 ? (
             <p className="text-center text-[#4B5563] py-12">
@@ -430,7 +430,7 @@ export default function LexiqueAirbnbTanger() {
             </Link>
             <Link
               to="/blog"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#FAF9F6] text-[#1A1A1A] border border-black/10 rounded-full px-8 py-4 font-semibold transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F7F6F2] text-[#1A1A1A] border border-black/10 rounded-full px-8 py-4 font-semibold transition-all"
             >
               Lire les guides détaillés
             </Link>

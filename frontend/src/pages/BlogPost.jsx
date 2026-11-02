@@ -46,7 +46,7 @@ export default function BlogPost() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#FAF9F6]">
+      <div className="min-h-screen flex items-center justify-center bg-[#F7F6F2]">
         <Loader2 className="w-8 h-8 animate-spin text-[#C1272D]" />
       </div>
     );
@@ -75,7 +75,7 @@ export default function BlogPost() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen bg-[#F7F6F2]">
       <Helmet>
         <title>{`${post.title} | Daribnb`}</title>
         <meta name="description" content={post.meta_description} />
@@ -164,7 +164,7 @@ export default function BlogPost() {
                   </div>
                 ),
                 th: ({ node, ...props }) => (
-                  <th className="border border-[#E5E5E5] bg-[#FAF9F6] px-4 py-3 text-left font-bold text-[#1A1A1A]" {...props} />
+                  <th className="border border-[#E5E5E5] bg-[#F7F6F2] px-4 py-3 text-left font-bold text-[#1A1A1A]" {...props} />
                 ),
                 td: ({ node, ...props }) => (
                   <td className="border border-[#E5E5E5] px-4 py-3 text-[#1A1A1A]" {...props} />

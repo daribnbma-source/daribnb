@@ -13,7 +13,7 @@ export default function Logo({ variant = "dark" }) {
       />
       <span
         className={`font-black text-2xl md:text-3xl tracking-tight ${text}`}
-        style={{ fontFamily: "Outfit" }}
+        style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 800 }}
       >
         Daribnb
       </span>

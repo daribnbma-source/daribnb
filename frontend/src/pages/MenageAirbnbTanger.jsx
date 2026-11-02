@@ -133,7 +133,7 @@ export default function MenageAirbnbTanger() {
               return (
                 <div
                   key={p.title}
-                  className="bg-[#FAF9F6] rounded-2xl p-8 border border-black/5"
+                  className="bg-[#F7F6F2] rounded-2xl p-8 border border-black/5"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#006233]/10 flex items-center justify-center mb-4">
                     <Icon size={24} className="text-[#006233]" />
@@ -148,7 +148,7 @@ export default function MenageAirbnbTanger() {
       </section>
 
       {/* Ce qui est inclus */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl mb-10">
             <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
@@ -185,7 +185,7 @@ export default function MenageAirbnbTanger() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-[#FAF9F6] rounded-2xl p-8 border border-black/5">
+            <div className="bg-[#F7F6F2] rounded-2xl p-8 border border-black/5">
               <h3 className="text-xl font-bold text-[#1A1A1A]">Ménage seul</h3>
               <p className="mt-2 text-[#4B5563] leading-relaxed">
                 Vous gérez déjà votre annonce et vos voyageurs, vous avez juste besoin d'une équipe de ménage fiable et coordonnée avec votre calendrier de réservations.
@@ -208,7 +208,7 @@ export default function MenageAirbnbTanger() {
       </section>
 
       {/* Liens internes */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8">
             Sur le même sujet

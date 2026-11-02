@@ -50,7 +50,7 @@ function AppRouter() {
   return (
     <>
       <ScrollToTop />
-      <Suspense fallback={<div className="min-h-screen bg-[#FAF9F6]" />}>
+      <Suspense fallback={<div className="min-h-screen bg-[#F7F6F2]" />}>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/mentions-legales" element={<Mentions />} />

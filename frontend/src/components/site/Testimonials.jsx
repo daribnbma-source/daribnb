@@ -18,7 +18,7 @@ function ReviewCard({ r }) {
             <Star key={i} size={14} className="fill-[#C1272D] text-[#C1272D]" />
           ))}
         </div>
-        <span className="rounded-full bg-[#FAF9F6] px-2.5 py-1 text-[11px] font-semibold text-[#6B7280]">
+        <span className="rounded-full bg-[#F7F6F2] px-2.5 py-1 text-[11px] font-semibold text-[#6B7280]">
           Avis {r.source}
         </span>
       </div>
@@ -38,7 +38,7 @@ function ReviewCard({ r }) {
 
 export default function Testimonials() {
   return (
-    <section data-testid="testimonials-section" className="overflow-hidden bg-[#FAF9F6] py-24 md:py-32">
+    <section data-testid="testimonials-section" className="grid-light overflow-hidden bg-[#F7F6F2] py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-14 grid items-end gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
@@ -76,8 +76,8 @@ export default function Testimonials() {
       </div>
 
       <div className="relative">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#FAF9F6] md:w-40" />
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#FAF9F6] md:w-40" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#F7F6F2] md:w-40" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#F7F6F2] md:w-40" />
         <Marquee duration={45}>
           {REVIEWS.map((r) => (
             <ReviewCard key={r.authorName + r.date} r={r} />

@@ -9,7 +9,7 @@ const SITE = "https://www.daribnb.com";
 
 export default function LegalPage({ title, description, canonical, children }) {
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen bg-[#F7F6F2]">
       <Helmet>
         <title>{`${title} | Daribnb`}</title>
         {description && <meta name="description" content={description} />}

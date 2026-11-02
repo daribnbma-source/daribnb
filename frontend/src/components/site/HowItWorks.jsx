@@ -17,7 +17,7 @@ export default function HowItWorks() {
   const line = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section data-testid="how-it-works-section" className="overflow-x-clip bg-[#1A1A1A] py-24 text-white md:py-32">
+    <section data-testid="how-it-works-section" className="grid-dark overflow-x-clip bg-[#1A1A1A] py-24 text-white md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">

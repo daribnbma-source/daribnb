@@ -17,7 +17,7 @@ export default function BlogTeaser() {
     });
 
   return (
-    <section id="blog" data-testid="blog-teaser" className="py-24 md:py-32 bg-[#FAF9F6]">
+    <section id="blog" data-testid="blog-teaser" className="py-24 md:py-32 bg-[#F7F6F2]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-2xl mb-12">
           <span className="text-sm font-bold text-[#006233] uppercase tracking-wider">

@@ -92,7 +92,7 @@ export default function WhyUs() {
               </div>
             </div>
 
-            <div className="relative bg-[#FAF9F6] rounded-3xl p-6 shadow-sm border border-[#E5E5E5]">
+            <div className="relative bg-[#F7F6F2] rounded-3xl p-6 shadow-sm border border-[#E5E5E5]">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <svg viewBox="0 0 32 32" className="w-5 h-5" fill="#C1272D">
@@ -146,7 +146,7 @@ export default function WhyUs() {
               {STORY_POINTS.map((p) => (
                 <div
                   key={p.title}
-                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#FAF9F6] border border-[#E5E5E5] hover:border-[#C1272D]/30 transition-all"
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#F7F6F2] border border-[#E5E5E5] hover:border-[#C1272D]/30 transition-all"
                 >
                   <div className="w-11 h-11 rounded-xl bg-[#006233]/10 flex items-center justify-center flex-shrink-0">
                     <p.icon className="w-5 h-5 text-[#006233]" />

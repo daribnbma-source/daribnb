@@ -4,16 +4,17 @@
 
 body {
     margin: 0;
-    font-family: 'Manrope', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #FAF9F6;
+    background: #F7F6F2;
     color: #1A1A1A;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', system-ui, sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
 }
 
 @layer base {
@@ -52,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Zellige-inspired subtle pattern */
 .zellige-pattern {
-    background-color: #FAF9F6;
+    background-color: #F7F6F2;
     background-image:
         radial-gradient(circle at 1px 1px, rgba(0, 98, 51, 0.08) 1px, transparent 0);
     background-size: 24px 24px;
@@ -131,7 +132,7 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #FAF9F6; }
+::-webkit-scrollbar-track { background: #F7F6F2; }
 ::-webkit-scrollbar-thumb {
     background: #d4d4d4;
     border-radius: 10px;
@@ -163,3 +164,20 @@ html {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath d='M28 6l6 10h12l-6 12 6 12H34l-6 10-6-10H10l6-12-6-12h12z' fill='none' stroke='%23006233' stroke-opacity='.09' stroke-width='1'/%3E%3C/svg%3E");
   background-size: 56px 56px;
 }
+
+/* Quadrillage de fond (même trame que Rentimmo Academy) */
+.grid-light {
+  background-image:
+    linear-gradient(rgba(26, 26, 26, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 26, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+.grid-dark {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+/* Titres en 800 comme Rentimmo Academy (les classes font-bold héritées ne doivent pas l'alléger) */
+h1, h2 { font-weight: 800 !important; }

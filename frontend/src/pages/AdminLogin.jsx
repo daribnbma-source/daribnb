@@ -15,7 +15,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] flex flex-col items-center justify-center px-6">
+    <div className="min-h-screen bg-[#F7F6F2] flex flex-col items-center justify-center px-6">
       <Link
         to="/"
         className="absolute top-6 left-6 inline-flex items-center gap-2 text-sm font-semibold text-[#4B5563] hover:text-[#C1272D]"

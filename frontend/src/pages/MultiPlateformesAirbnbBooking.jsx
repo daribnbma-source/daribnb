@@ -122,7 +122,7 @@ export default function MultiPlateformesAirbnbBooking() {
               return (
                 <div
                   key={p.title}
-                  className="bg-[#FAF9F6] rounded-2xl p-8 border border-black/5"
+                  className="bg-[#F7F6F2] rounded-2xl p-8 border border-black/5"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#C1272D]/10 flex items-center justify-center mb-4">
                     <Icon size={24} className="text-[#C1272D]" />
@@ -137,7 +137,7 @@ export default function MultiPlateformesAirbnbBooking() {
       </section>
 
       {/* Plateformes en détail */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl mb-12">
             <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
@@ -215,7 +215,7 @@ export default function MultiPlateformesAirbnbBooking() {
             ].map((item) => (
               <div
                 key={item.myth}
-                className="bg-[#FAF9F6] rounded-2xl p-6 border border-black/5"
+                className="bg-[#F7F6F2] rounded-2xl p-6 border border-black/5"
               >
                 <p className="text-lg font-bold text-[#C1272D] mb-2">
                   {item.myth}
@@ -230,7 +230,7 @@ export default function MultiPlateformesAirbnbBooking() {
       </section>
 
       {/* Liens internes */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6]">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8">
             Aller plus loin

@@ -104,7 +104,7 @@ export default function Header() {
             {servicesOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[420px] bg-white rounded-2xl shadow-2xl border border-black/5 p-3 grid grid-cols-1 gap-1">
                 {SERVICES_MENU.map((s) => (
-                  <div key={s.href} className="p-3 rounded-xl hover:bg-[#FAF9F6] transition-colors group">
+                  <div key={s.href} className="p-3 rounded-xl hover:bg-[#F7F6F2] transition-colors group">
                     <Link to={s.href} onClick={() => setServicesOpen(false)} className="flex flex-col gap-1">
                       <span className="text-sm font-bold text-[#1A1A1A] group-hover:text-[#C1272D] transition-colors">
                         {s.label}
@@ -198,7 +198,7 @@ export default function Header() {
                           key={c.href}
                           to={c.href}
                           onClick={() => setOpen(false)}
-                          className="text-xs text-[#4B5563] hover:text-[#C1272D] bg-[#FAF9F6] rounded-full px-2.5 py-1"
+                          className="text-xs text-[#4B5563] hover:text-[#C1272D] bg-[#F7F6F2] rounded-full px-2.5 py-1"
                         >
                           {c.name}
                         </Link>

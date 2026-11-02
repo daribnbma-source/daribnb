@@ -71,7 +71,7 @@ export default function Contact() {
     <section
       id="contact"
       data-testid="contact-section"
-      className="py-24 md:py-32 bg-[#FAF9F6]"
+      className="py-24 md:py-32 bg-[#F7F6F2]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-5 gap-12 items-start">
         <div className="lg:col-span-2">
