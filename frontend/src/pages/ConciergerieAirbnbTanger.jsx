@@ -42,7 +42,7 @@ const SERVICES = [
 
 const RESULTS = [
   { metric: "+40%", label: "de revenus moyens vs gestion en direct" },
-  { metric: "85%", label: "taux d'occupation médian sur nos biens Tanger" },
+  { metric: "80 400 MAD", label: "revenu annuel moyen d'une annonce Airbnb à Tanger (marché, AirROI 2026)" },
   { metric: "4,93/5", label: "moyenne reviews voyageurs Airbnb" },
   { metric: "<2h", label: "temps de réponse moyen aux voyageurs" },
 ];
@@ -188,11 +188,10 @@ export default function ConciergerieAirbnbTanger() {
               Résultats sur le terrain
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1A1A1A]">
-              Ce qu'on obtient pour les biens qu'on gère à Tanger.
+              Les chiffres clés de l'Airbnb à Tanger.
             </h2>
             <p className="mt-4 text-lg text-[#4B5563]">
-              Chiffres médians constatés sur notre portefeuille tangérois (appartements F2 à F4 majoritairement, résidences Le Hassani, Le Alia, Malabata).
-            </p>
+              +40 % : moyenne constatée sur les biens confiés à Daribnb. Revenu de marché : moyenne de toutes les annonces Airbnb de Tanger, source <a href="https://airroi.com/airbnb-data/morocco/tangier-tetouan-al-hoceima/tangier" target="_blank" rel="noopener" className="underline">AirROI</a> (oct. 2025 – sept. 2026).</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

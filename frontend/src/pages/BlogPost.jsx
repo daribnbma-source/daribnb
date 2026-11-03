@@ -18,6 +18,50 @@ import { sized } from "../lib/img";
 
 const SITE = "https://www.daribnb.com";
 
+// Nettoie le Markdown inline pour le JSON-LD (liens, gras, italique, code).
+const stripMd = (txt) =>
+  txt
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/[*_`]+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+// Extrait les questions/réponses de la section « FAQ » (H2 contenant « FAQ »,
+// questions en `### `) pour générer un schéma FAQPage.
+function extractFaq(md) {
+  if (!md) return [];
+  const items = [];
+  let inFaq = false;
+  let cur = null;
+  const flush = () => {
+    if (cur && cur.a.length) items.push({ q: stripMd(cur.q), a: stripMd(cur.a.join(" ")) });
+    cur = null;
+  };
+  for (const line of md.split("\n")) {
+    const h2 = line.match(/^##\s+(.+)$/);
+    if (h2) {
+      flush();
+      inFaq = /\bFAQ\b|questions fréquentes/i.test(h2[1]);
+      continue;
+    }
+    if (!inFaq) continue;
+    if (/^---\s*$/.test(line) || /^#\s/.test(line)) {
+      flush();
+      inFaq = false;
+      continue;
+    }
+    const h3 = line.match(/^###\s+(.+)$/);
+    if (h3) {
+      flush();
+      cur = { q: h3[1].trim(), a: [] };
+      continue;
+    }
+    if (cur && line.trim() && !/^>/.test(line.trim())) cur.a.push(line.trim());
+  }
+  flush();
+  return items;
+}
+
 export default function BlogPost() {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -62,11 +106,27 @@ export default function BlogPost() {
     description: post.meta_description,
     image: post.cover && post.cover.startsWith("/") ? `${SITE}${post.cover}` : post.cover,
     datePublished: post.published_at,
+    dateModified: post.updated_at || post.published_at,
     author: { "@type": "Person", "@id": `${SITE}/marwan-afassi#person`, name: "Marwan Afassi", url: `${SITE}/marwan-afassi` },
     publisher: { "@id": `${SITE}/#business` },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: post.keywords,
   };
+
+  const faq = extractFaq(post.content);
+  const faqSchema =
+    faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": `${url}#faq`,
+          mainEntity: faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }
+      : null;
 
   return (
     <div className="min-h-screen bg-[#F7F6F2]">
@@ -81,9 +141,11 @@ export default function BlogPost() {
         <meta property="og:url" content={url} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.published_at} />
+        {post.updated_at && <meta property="article:modified_time" content={post.updated_at} />}
         <meta property="article:section" content={post.city} />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
       </Helmet>
 
       <Header />
@@ -114,6 +176,11 @@ export default function BlogPost() {
                 <span className="inline-flex items-center gap-1">
                   <Calendar size={12} /> {fmtDate(post.published_at)}
                 </span>
+                {post.updated_at && (
+                  <span className="inline-flex items-center gap-1">
+                    Mis à jour le {fmtDate(post.updated_at)}
+                  </span>
+                )}
                 <span className="inline-flex items-center gap-1">
                   <Clock size={12} /> {post.read_time} min de lecture
                 </span>

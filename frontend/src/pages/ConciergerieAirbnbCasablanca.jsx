@@ -42,7 +42,7 @@ const SERVICES = [
 
 const RESULTS = [
   { metric: "+40%", label: "de revenus en moyenne" },
-  { metric: "70%", label: "taux d'occupation médian toute l'année" },
+  { metric: "57 400 MAD", label: "revenu annuel moyen d'une annonce Airbnb à Casablanca (marché, AirROI 2026)" },
   { metric: "4,93/5", label: "moyenne reviews voyageurs Airbnb" },
   { metric: "<2h", label: "temps de réponse moyen aux voyageurs" },
 ];
@@ -185,11 +185,10 @@ export default function ConciergerieAirbnbCasablanca() {
               Résultats sur le terrain
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1A1A1A]">
-              Ce qu'on obtient pour les biens qu'on gère à Casablanca.
+              Les chiffres clés de l'Airbnb à Casablanca.
             </h2>
             <p className="mt-4 text-lg text-[#4B5563]">
-              Chiffres constatés sur notre portefeuille casablancais (appartements T2 à T4, quartiers Maarif et Gauthier majoritairement).
-            </p>
+              +40 % : moyenne constatée sur les biens confiés à Daribnb. Revenu de marché : moyenne de toutes les annonces Airbnb de Casablanca, source <a href="https://airroi.com/airbnb-data/morocco/casablanca-settat/casablanca" target="_blank" rel="noopener" className="underline">AirROI</a> (oct. 2025 – sept. 2026).</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

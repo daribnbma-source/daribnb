@@ -43,7 +43,7 @@ const SERVICES = [
 
 const RESULTS = [
   { metric: "+40%", label: "de revenus en moyenne" },
-  { metric: "80%", label: "taux d'occupation médian haute saison" },
+  { metric: "150 700 MAD", label: "revenu annuel moyen d'une annonce Airbnb à Marrakech (marché, AirROI 2026)" },
   { metric: "4,93/5", label: "moyenne reviews voyageurs Airbnb" },
   { metric: "<2h", label: "temps de réponse moyen aux voyageurs" },
 ];
@@ -186,11 +186,10 @@ export default function ConciergerieAirbnbMarrakech() {
               Résultats sur le terrain
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1A1A1A]">
-              Ce qu'on obtient pour les biens qu'on gère à Marrakech.
+              Les chiffres clés de l'Airbnb à Marrakech.
             </h2>
             <p className="mt-4 text-lg text-[#4B5563]">
-              Chiffres constatés sur notre portefeuille marrakchi (appartements, riads et villas, tous quartiers confondus).
-            </p>
+              +40 % : moyenne constatée sur les biens confiés à Daribnb. Revenu de marché : moyenne de toutes les annonces Airbnb de Marrakech, source <a href="https://www.airroi.com/airbnb-data/morocco/marrakech-safi/marrakesh" target="_blank" rel="noopener" className="underline">AirROI</a> (oct. 2025 – sept. 2026).</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
