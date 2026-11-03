@@ -44,14 +44,7 @@ export default function MenageAirbnbTanger() {
     "@type": "Service",
     name: "Ménage Airbnb Tanger — Nettoyage location courte durée",
     serviceType: "Service de ménage et entretien pour locations courte durée",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: [
       { "@type": "City", name: "Tanger" },
       { "@type": "City", name: "Casablanca" },

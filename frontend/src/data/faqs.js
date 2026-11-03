@@ -27,7 +27,7 @@ export const FAQS = [
   {
     cat: "general",
     q: "Où intervenez-vous au Maroc ?",
-    a: "Notre cœur d'activité est Tanger, où nous gérons quotidiennement des appartements et des villas. On accompagne également des biens dans le nord du Maroc (Tétouan, Asilah, M'diq) et ponctuellement à Casablanca, Rabat, Marrakech via notre service Super Daribnb (audit, optimisation, photos pro) qui se réalise à distance ou avec déplacement.",
+    a: "Daribnb assure un service complet à Marrakech, Tanger, Casablanca et Rabat (appartements, riads et villas). On accompagne aussi des biens ailleurs au Maroc, notamment dans le nord (Tétouan, Asilah, M'diq), et partout via Super Daribnb (audit, optimisation, photos pro), à distance ou avec déplacement.",
   },
   {
     cat: "general",

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BLOG_POSTS } from "../../data/blogPosts";
 import { Calendar, ArrowRight, MapPin } from "lucide-react";
+import { sized } from "../../lib/img";
 
 export default function BlogTeaser() {
   // Les 6 articles les plus récents, le reste est sur /blog.
@@ -41,7 +42,7 @@ export default function BlogTeaser() {
             >
               <div className="aspect-[16/10] overflow-hidden">
                 <img
-                  src={p.cover}
+                  src={sized(p.cover, 720)}
                   alt={p.title}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

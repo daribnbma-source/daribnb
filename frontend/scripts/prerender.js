@@ -38,6 +38,8 @@ const ROUTES_BASE = [
   "/loyer-fixe-airbnb-marrakech",
   "/multi-plateformes-airbnb-booking",
   "/conciergerie-airbnb-marrakech",
+  "/gestion-locative-marrakech",
+  "/conciergerie-riad-marrakech",
   "/conciergerie-airbnb-casablanca",
   "/conciergerie-airbnb-rabat",
   "/marwan-afassi",
@@ -48,6 +50,7 @@ const ROUTES_BASE = [
   "/mentions-legales",
   "/confidentialite",
   "/cgv",
+  "/404",
 ];
 
 // Charger les slugs blog depuis le fichier source pour pré-rendre chaque article.
@@ -237,6 +240,10 @@ async function renderRoute(browser, route) {
     }
   });
 
+  // Scripts injectés au runtime par le stub PostHog : le stub les recharge après "load", ne pas les figer dans le HTML.
+  await page.evaluate(() => {
+    document.querySelectorAll('script[src*="posthog"]').forEach((el) => el.remove());
+  });
   const html = await page.evaluate(() => "<!doctype html>\n" + document.documentElement.outerHTML);
 
   // Cleanup : retirer le <noscript> JavaScript-required car on a maintenant du HTML rendu,

@@ -51,14 +51,7 @@ export default function OptimiserRevenusAirbnb() {
     "@type": "Service",
     name: "Optimisation des revenus Airbnb au Maroc",
     serviceType: "Audit et optimisation locative Airbnb",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "Country", name: "Maroc" },
     description:
       "Audit, pricing dynamique, optimisation d'annonce : Daribnb booste vos revenus Airbnb partout au Maroc. Service 100% dématérialisé. Toutes villes.",
@@ -86,7 +79,7 @@ export default function OptimiserRevenusAirbnb() {
               4 leviers d'optimisation, à distance.
             </h2>
             <p className="mt-4 text-lg text-[#4B5563]">
-              Vous gardez la gestion en direct, on vous donne les armes pour faire +30 à +50% sur vos revenus mensuels. Sans signer de mandat de gestion.
+              Vous gardez la gestion en direct, on vous donne les armes pour aller chercher jusqu'à +40 % de revenus en moyenne. Sans signer de mandat de gestion.
             </p>
           </div>
 

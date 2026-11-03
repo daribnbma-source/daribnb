@@ -179,10 +179,10 @@ export default function WhyUs() {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { src: "/assets/logements/logement-1-salon.jpg", alt: "Salon moderne d'un appartement Daribnb à Tanger" },
-                  { src: "/assets/logements/logement-1-sejour.jpg", alt: "Séjour lumineux d'un appartement Daribnb à Tanger" },
-                  { src: "/assets/logements/logement-2-salon.jpg", alt: "Salon cosy d'un appartement Daribnb à Tanger" },
-                  { src: "/assets/logements/logement-2-chambre.jpg", alt: "Chambre d'un appartement Daribnb à Tanger" },
+                  { src: "/assets/logements/logement-1-salon.webp", alt: "Salon moderne d'un appartement Daribnb à Tanger" },
+                  { src: "/assets/logements/logement-1-sejour.webp", alt: "Séjour lumineux d'un appartement Daribnb à Tanger" },
+                  { src: "/assets/logements/logement-2-salon.webp", alt: "Salon cosy d'un appartement Daribnb à Tanger" },
+                  { src: "/assets/logements/logement-2-chambre.webp", alt: "Chambre d'un appartement Daribnb à Tanger" },
                 ].map((img) => (
                   <div key={img.src} className="aspect-[4/3] rounded-xl overflow-hidden">
                     <img

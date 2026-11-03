@@ -4,48 +4,72 @@ import { Input } from "../ui/input";
 import { submitNetlifyForm } from "../../lib/netlifyForm";
 import { toast } from "sonner";
 
-const STORAGE_KEY = "daribnb_exit_popup_shown";
+import { hasConverted } from "../../lib/tracking";
 
+const STORAGE_KEY = "daribnb_exit_popup_dismissed";
+const SNOOZE_MS = 14 * 24 * 3600 * 1000;
+
+const snoozed = () => {
+  try {
+    const t = Number(localStorage.getItem(STORAGE_KEY) || 0);
+    return Date.now() - t < SNOOZE_MS;
+  } catch {
+    return false;
+  }
+};
+
+// Ordinateur : seulement quand la souris quitte la page par le haut, après une vraie lecture.
+// Mobile : petit bandeau en bas après 60 % de défilement, jamais d'écran plein.
+// Jamais chez quelqu'un qui a déjà envoyé une demande ou cliqué sur WhatsApp / téléphone.
 export default function ExitIntentPopup() {
   const [open, setOpen] = useState(false);
+  const [mobile, setMobile] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
-  useEffect(() => {
-    if (sessionStorage.getItem(STORAGE_KEY)) return;
+  const close = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    } catch {}
+    setOpen(false);
+  };
 
+  useEffect(() => {
+    if (snoozed() || hasConverted()) return;
+    const isMobile = !window.matchMedia("(pointer: fine)").matches || window.innerWidth < 1024;
+    setMobile(isMobile);
+    const start = Date.now();
     let triggered = false;
+    const depth = () =>
+      (window.scrollY + window.innerHeight) / Math.max(document.documentElement.scrollHeight, 1);
     const trigger = () => {
-      if (triggered) return;
+      if (triggered || hasConverted()) return;
       triggered = true;
-      sessionStorage.setItem(STORAGE_KEY, "1");
       setOpen(true);
     };
 
-    // Desktop: mouse leaves top of viewport
     const onMouseLeave = (e) => {
-      if (e.clientY <= 0) trigger();
+      if (e.clientY <= 0 && Date.now() - start > 20000 && depth() > 0.3) trigger();
     };
-
-    // Mobile fallback: trigger after 25s or on fast scroll up
-    const timer = setTimeout(trigger, 25000);
-    let lastY = window.scrollY;
     const onScroll = () => {
-      const y = window.scrollY;
-      if (lastY - y > 80 && y < 400) trigger();
-      lastY = y;
+      if (Date.now() - start > 20000 && depth() > 0.6) trigger();
     };
 
-    document.addEventListener("mouseleave", onMouseLeave);
-    window.addEventListener("scroll", onScroll, { passive: true });
-
+    if (isMobile) window.addEventListener("scroll", onScroll, { passive: true });
+    else document.addEventListener("mouseleave", onMouseLeave);
     return () => {
-      clearTimeout(timer);
       document.removeEventListener("mouseleave", onMouseLeave);
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => e.key === "Escape" && close();
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -75,37 +99,43 @@ export default function ExitIntentPopup() {
   return (
     <div
       data-testid="exit-intent-popup"
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm fade-up"
-      onClick={() => setOpen(false)}
+      className={
+        mobile
+          ? "fixed inset-x-0 bottom-0 z-[100] p-3 fade-up"
+          : "fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm fade-up"
+      }
+      onClick={mobile ? undefined : close}
     >
       <div
+        role="dialog"
+        aria-modal={mobile ? "false" : "true"}
+        aria-labelledby="exit-popup-title"
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full max-h-[92vh] overflow-y-auto"
+        className={`relative mx-auto w-full max-w-lg overflow-y-auto rounded-3xl bg-white shadow-2xl ${mobile ? "max-h-[45vh]" : "max-h-[92vh]"}`}
       >
         {/* Header banner — sticky so the close X stays accessible while scrolling */}
-        <div className="sticky top-0 z-10 bg-gradient-to-br from-[#C1272D] to-[#A01D22] text-white px-8 pt-8 pb-8">
+        <div className={`sticky top-0 z-10 bg-gradient-to-br from-[#C1272D] to-[#A01D22] text-white ${mobile ? "px-5 pt-5 pb-4" : "px-8 pt-8 pb-8"}`}>
           <button
-            onClick={() => setOpen(false)}
+            onClick={close}
             data-testid="exit-popup-close"
             aria-label="Fermer"
             className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
           >
             <X size={18} />
           </button>
-          <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-3">
+          <div className={`inline-flex items-center gap-2 bg-white/15 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider ${mobile ? "mb-2" : "mb-3"}`}>
             <Gift size={13} />
-            Places d'onboarding limitées ce mois-ci
+            Audit gratuit
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold leading-tight">
-            Avant de partir…
+          <h3 id="exit-popup-title" className={`${mobile ? "text-xl" : "text-2xl md:text-3xl"} font-bold leading-tight`}>
+            Combien votre bien pourrait-il rapporter ?
           </h3>
-          <p className="mt-2 text-white/90 text-sm">
-            Recevez votre <span className="font-bold">audit Airbnb offert</span>{" "}
-            + estimation personnalisée de vos revenus, pendant qu'il reste des créneaux d'onboarding ce mois-ci.
+          <p className={`mt-2 text-white/90 text-sm ${mobile ? "hidden" : ""}`}>
+            Recevez votre <span className="font-bold">audit Airbnb offert</span> et une estimation personnalisée de vos revenus, sans engagement.
           </p>
         </div>
 
-        <div className="px-6 md:px-8 py-6">
+        <div className={mobile ? "px-5 py-4" : "px-6 md:px-8 py-6"}>
           {sent ? (
               <div className="text-center py-4" data-testid="exit-popup-success">
                 <CheckCircle2 className="w-14 h-14 text-[#006233] mx-auto mb-3" />
@@ -116,7 +146,7 @@ export default function ExitIntentPopup() {
                   On vous rappelle sous 24h avec votre audit & estimation.
                 </p>
                 <button
-                  onClick={() => setOpen(false)}
+                  onClick={close}
                   className="mt-5 bg-[#C1272D] hover:bg-[#A01D22] text-white rounded-full px-6 py-2.5 font-semibold text-sm"
                 >
                   Fermer
@@ -124,7 +154,7 @@ export default function ExitIntentPopup() {
               </div>
             ) : (
               <>
-                <div className="flex items-start gap-3 mb-5">
+                <div className={`${mobile ? "hidden" : "flex"} items-start gap-3 mb-5`}>
                   <div className="w-10 h-10 rounded-full bg-[#C1272D]/10 flex items-center justify-center flex-shrink-0">
                     <Sparkles className="w-5 h-5 text-[#C1272D]" />
                   </div>
@@ -141,6 +171,9 @@ export default function ExitIntentPopup() {
                 <form onSubmit={submit} className="space-y-3">
                   <Input
                     data-testid="exit-popup-name"
+                    aria-label="Votre prénom"
+                    autoComplete="given-name"
+                    autoFocus={!mobile}
                     placeholder="Votre prénom"
                     value={form.name}
                     onChange={(e) =>
@@ -151,7 +184,11 @@ export default function ExitIntentPopup() {
                   />
                   <Input
                     data-testid="exit-popup-phone"
-                    placeholder="Téléphone (+212 ...)"
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    aria-label="Téléphone ou WhatsApp"
+                    placeholder="Téléphone / WhatsApp"
                     value={form.phone}
                     onChange={(e) =>
                       setForm((p) => ({ ...p, phone: e.target.value }))
@@ -159,16 +196,18 @@ export default function ExitIntentPopup() {
                     className="h-11 rounded-xl border-[#E5E5E5]"
                     required
                   />
-                  <Input
+                  {!mobile && <Input
                     data-testid="exit-popup-email"
                     type="email"
-                    placeholder="Email (optionnel)"
+                    autoComplete="email"
+                    aria-label="Email (facultatif)"
+                    placeholder="Email (facultatif)"
                     value={form.email}
                     onChange={(e) =>
                       setForm((p) => ({ ...p, email: e.target.value }))
                     }
                     className="h-11 rounded-xl border-[#E5E5E5]"
-                  />
+                  />}
                   <button
                     type="submit"
                     disabled={loading}

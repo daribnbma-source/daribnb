@@ -83,7 +83,7 @@ export default function FAQPage() {
             Questions fréquentes
           </span>
           <h1 className="mt-3 text-4xl md:text-6xl font-bold text-[#1A1A1A] leading-tight">
-            Tout ce que vous devez savoir
+            Tout ce que vous devez savoir{" "}
             <br />
             sur Daribnb à Tanger.
           </h1>

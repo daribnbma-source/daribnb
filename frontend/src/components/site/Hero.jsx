@@ -13,8 +13,8 @@ import Simulator from "./Simulator";
 import { isPrerender } from "../../lib/isPrerender";
 import { FlagFR, FlagMA } from "../brand/Flags";
 
-const IMG_BACK = "/assets/logements/logement-1-sejour.jpg";
-const IMG_MID = "/assets/logements/logement-2-chambre.jpg";
+const IMG_BACK = "/assets/logements/logement-1-sejour.webp";
+const IMG_MID = "/assets/logements/logement-2-chambre.webp";
 const CITIES = ["Marrakech", "Tanger", "Rabat", "Casablanca"];
 // Vrais versements reçus par des propriétaires Daribnb (mêmes données que le simulateur).
 // Booking : ajouter ici les montants réels (captures) ; ils s'intercalent avec Airbnb.
@@ -43,7 +43,11 @@ function RotatingCity() {
   return (
     <span className="relative inline-grid align-bottom">
       {/* largeur réservée par le mot le plus long, pour que la ligne ne saute pas */}
-      <span className="invisible col-start-1 row-start-1">Casablanca</span>
+      <span
+        aria-hidden="true"
+        data-w="Casablanca"
+        className="invisible col-start-1 row-start-1 before:content-[attr(data-w)]"
+      />
       <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={CITIES[i]}
@@ -152,12 +156,13 @@ export default function Hero() {
 
             <motion.h1
               data-testid="hero-title"
-              initial={{ opacity: 0, y: 24 }}
+              // Visible dès le premier rendu (élément LCP) : seule la position est animée.
+              initial={{ y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease }}
               className="font-heading text-[2.1rem] font-bold leading-[1.06] tracking-tight text-[#1A1A1A] sm:text-[3.4rem] lg:text-[3.5rem] xl:text-[3.9rem]"
             >
-              Votre Airbnb à <RotatingCity />
+              Votre Airbnb à <RotatingCity />{" "}
               <br />
               <span className="whitespace-nowrap">géré comme un pro.</span>
               <span className="sr-only"> Conciergerie Airbnb à Marrakech, Tanger, Rabat et Casablanca.</span>

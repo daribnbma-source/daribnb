@@ -66,14 +66,7 @@ export default function GestionLocativeMRETanger() {
     "@type": "Service",
     name: "Gestion locative Tanger pour MRE — Marocains résidant à l'étranger",
     serviceType: "Gestion locative Tanger pour investisseurs MRE",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Tanger" },
     audience: {
       "@type": "Audience",

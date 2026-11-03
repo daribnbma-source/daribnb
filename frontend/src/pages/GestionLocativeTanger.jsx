@@ -58,14 +58,7 @@ export default function GestionLocativeTanger() {
     "@type": "Service",
     name: "Gestion locative Tanger — Location courte durée Airbnb",
     serviceType: "Gestion locative meublée courte durée",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Tanger" },
     description:
       "Service complet de gestion locative pour appartements et maisons à Tanger. Location courte durée Airbnb, transparence et revenus optimisés.",

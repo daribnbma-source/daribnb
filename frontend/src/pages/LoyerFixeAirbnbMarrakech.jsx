@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Check, ArrowRight, Shield, CalendarCheck, Wallet, AlertTriangle } from "lucide-react";
+import { Check, Shield, CalendarCheck, Euro, Home, AlertTriangle } from "lucide-react";
 import ServicePageLayout from "./ServicePageLayout";
 import RelatedArticles from "../components/site/RelatedArticles";
+import MarrakechCluster from "../components/site/MarrakechCluster";
 
 const SITE = "https://www.daribnb.com";
 const URL = `${SITE}/loyer-fixe-airbnb-marrakech`;
@@ -10,50 +10,50 @@ const URL = `${SITE}/loyer-fixe-airbnb-marrakech`;
 const PILLARS = [
   {
     icon: Shield,
-    title: "Revenu garanti chaque mois",
-    desc: "Vous touchez le même montant tous les mois, peu importe le taux d'occupation. Haute ou basse saison touristique : aucun impact pour vous.",
+    title: "L'été marrakchi n'est plus votre problème",
+    desc: "À Marrakech, l'essentiel des réservations se concentre d'octobre à mai. Avec le loyer fixe, juillet et août vous rapportent autant que février : c'est nous qui absorbons les mois creux.",
   },
   {
     icon: CalendarCheck,
-    title: "Virement ponctuel",
-    desc: "Versement bancaire à date fixe (le 5 ou le 10 de chaque mois selon convenance). En MAD ou en EUR pour les MRE.",
+    title: "Un virement à date fixe",
+    desc: "Le même montant chaque mois, à la date prévue au contrat. Vous pouvez caler dessus une mensualité de crédit, des charges de copropriété ou un budget familial.",
   },
   {
-    icon: Wallet,
-    title: "Aucun frais ni surprise",
-    desc: "Le montant est fixé au contrat. Pas de commission variable, pas de retenue cachée. Daribnb prend le risque commercial à votre place.",
+    icon: Euro,
+    title: "Pensé pour les MRE",
+    desc: "Versement en MAD ou en EUR, échanges en français, aucun déplacement nécessaire. Le fondateur de Daribnb est lui-même MRE et propriétaire : il connaît la gestion d'un bien à distance.",
   },
   {
-    icon: AlertTriangle,
-    title: "Entretien & maintenance inclus",
-    desc: "On s'occupe de la maintenance courante, du linge, du ménage, des consommables. Vous récupérez votre bien en bon état à la fin du contrat.",
+    icon: Home,
+    title: "Riad, appartement ou villa",
+    desc: "Le montant tient compte du type de bien : un riad en Médina, un appartement à Guéliz et une villa à la Palmeraie n'ont ni la même saisonnalité ni les mêmes coûts d'entretien. Ménage, linge et maintenance courante sont à notre charge.",
   },
 ];
 
 const FAQS = [
   {
-    q: "Comment est calculé mon loyer fixe garanti à Marrakech ?",
-    a: "On audite votre bien (localisation, taille, équipement, photos), on regarde le marché local sur 12 mois (saisonnalité touristique forte, taux d'occupation moyen, ADR), et on vous propose un loyer fixe représentant environ 65 à 75% du revenu net potentiel. La différence couvre notre risque commercial et nos coûts opérationnels.",
+    q: "Comment est fixé le montant du loyer garanti à Marrakech ?",
+    a: "Nous estimons le revenu que votre bien peut générer sur 12 mois, en tenant compte de la forte saisonnalité marrakchie (haute saison d'octobre à mai, été plus calme), du quartier et du type de bien. Le loyer fixe correspond généralement à environ 65 à 75 % de ce revenu net estimé. L'écart rémunère le risque que nous prenons sur les mois creux et nos frais de gestion.",
   },
   {
-    q: "Quelle est la différence avec la conciergerie classique à Marrakech ?",
-    a: "Conciergerie : on prend une commission sur les revenus encaissés, donc votre revenu varie selon la saison touristique. Loyer fixe : on vous verse un montant fixe identique chaque mois, peu importe le résultat. Idéal si vous avez besoin de prévisibilité (crédit, autofinancement, MRE).",
+    q: "Pourquoi choisir le loyer fixe plutôt que la conciergerie à Marrakech ?",
+    a: "Parce que Marrakech est un marché très saisonnier. En conciergerie, vos revenus suivent le calendrier touristique : des mois d'hiver très bons, un été plus faible. En loyer fixe, vous touchez le même montant toute l'année. Si vous voulez le potentiel maximum et acceptez la variation, la conciergerie dès 20 % de commission est plus adaptée.",
   },
   {
-    q: "Pourquoi ce serait Daribnb qui prend le risque et pas moi ?",
-    a: "Parce qu'on s'appuie sur plus de 7 ans d'expertise Airbnb (France & Maroc) et une connaissance fine des quartiers marrakchis (Guéliz, Hivernage, Médina, Palmeraie). On optimise mieux qu'un proprio individuel, ce qui couvre largement notre marge tout en garantissant votre revenu.",
+    q: "Je suis MRE, quels sont les avantages du loyer fixe pour moi ?",
+    a: "Vous n'avez pas à suivre les réservations depuis l'étranger ni à vous inquiéter d'un mois faible. Vous recevez un virement fixe en MAD ou en EUR, un seul interlocuteur francophone, et votre bien est entretenu en votre absence. C'est la formule la plus simple quand on vit en France, en Belgique ou ailleurs en Europe.",
   },
   {
-    q: "Quelle est la durée d'engagement ?",
-    a: "Contrat type : 12, 24 ou 36 mois. Plus c'est long, plus on peut être généreux sur le montant fixe. Préavis raisonnable de part et d'autre.",
+    q: "Un riad est-il éligible au loyer fixe ?",
+    a: "Oui, s'il est en bon état et bien situé. Un riad a des prix à la nuit plus élevés qu'un appartement, mais aussi plus d'entretien (patio, bassin, tadelakt, humidité). Le montant proposé intègre ces coûts. Après visite, nous vous disons honnêtement si le loyer fixe ou la conciergerie est le plus intéressant pour votre riad.",
   },
   {
-    q: "Et si je veux récupérer mon bien pour des vacances ?",
-    a: "Pendant le contrat de loyer fixe, le bien est en gestion totale. Pour des courts séjours perso, on peut bloquer des dates ponctuelles à condition de prévenir suffisamment à l'avance (4-6 semaines minimum) — mais c'est plus contraignant qu'en conciergerie classique.",
+    q: "Puis-je profiter de mon bien pendant mes vacances au Maroc ?",
+    a: "Le bien est géré par Daribnb pendant toute la durée du contrat. Des dates personnelles peuvent être prévues dès la signature, par exemple quelques semaines l'été pour les familles MRE, et le montant du loyer en tient compte. Plus elles sont fixées tôt, plus c'est simple.",
   },
   {
-    q: "Tous les biens sont-ils éligibles au loyer fixe à Marrakech ?",
-    a: "Non. Le bien doit avoir un potentiel locatif suffisant (emplacement, état, équipement). Après audit, on vous dit honnêtement si le loyer fixe est viable ou si la conciergerie classique est plus adaptée à votre cas.",
+    q: "Quelle est la durée du contrat de loyer fixe ?",
+    a: "Le contrat est conclu pour 12, 24 ou 36 mois, avec un préavis raisonnable de part et d'autre. Un engagement plus long permet de lisser davantage la saisonnalité et donc de proposer un montant plus favorable.",
   },
 ];
 
@@ -63,23 +63,10 @@ export default function LoyerFixeAirbnbMarrakech() {
     "@type": "Service",
     name: "Loyer fixe garanti Airbnb Marrakech",
     serviceType: "Location meublée touristique avec loyer garanti",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Marrakech",
-        addressRegion: "Marrakech-Safi",
-        addressCountry: "MA",
-      },
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Marrakech" },
     description:
-      "Daribnb verse un loyer fixe garanti chaque mois pour votre bien Airbnb à Marrakech. Revenu prévisible, zéro risque, gestion intégrale incluse.",
+      "Daribnb verse un loyer fixe garanti chaque mois pour votre riad, appartement ou villa à Marrakech, quelle que soit la saison. Formule adaptée aux MRE, gestion intégrale incluse.",
     url: URL,
     offers: {
       "@type": "Offer",
@@ -102,12 +89,12 @@ export default function LoyerFixeAirbnbMarrakech() {
 
   return (
     <ServicePageLayout
-      title="Loyer fixe garanti Airbnb à Marrakech | Daribnb"
-      description="Daribnb vous verse un loyer fixe garanti chaque mois pour votre bien à Marrakech. On gère tout, revenu prévisible. Estimation gratuite en 24h."
+      title="Loyer fixe garanti Airbnb à Marrakech | Riad, appartement — Daribnb"
+      description="Loyer fixe garanti à Marrakech : le même virement chaque mois, haute ou basse saison. Riad, appartement ou villa, formule idéale pour les MRE. Devis gratuit."
       canonical={URL}
       h1="Loyer fixe garanti pour votre bien à Marrakech"
       kicker="Revenu garanti · Marrakech"
-      intro="Vous voulez un revenu mensuel stable sur votre bien à Marrakech, sans la variabilité du Airbnb classique ? Daribnb vous verse un loyer fixe garanti chaque mois. Nous prenons le risque commercial — vous touchez un revenu prévisible, peu importe la saison."
+      intro="Le loyer fixe garanti à Marrakech est une formule où Daribnb vous verse chaque mois un montant fixé au contrat, que votre riad, appartement ou villa soit réservé ou non. Nous louons le bien en courte durée sur Airbnb et Booking et prenons à notre charge la saisonnalité marrakchie."
       schema={[schema, faqSchema]}
     >
       {/* 4 piliers du loyer fixe */}
@@ -115,13 +102,13 @@ export default function LoyerFixeAirbnbMarrakech() {
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl mb-12">
             <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
-              Pourquoi le loyer fixe ?
+              Pourquoi le loyer fixe à Marrakech ?
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1A1A1A]">
-              Un revenu stable, sans aucune charge mentale.
+              Un marché saisonnier, un revenu qui ne l'est pas.
             </h2>
             <p className="mt-4 text-lg text-[#4B5563]">
-              Si vous avez un crédit à rembourser, ou si vous êtes MRE et avez besoin de visibilité, le loyer fixe est probablement la formule la plus rassurante.
+              Marrakech fait le plein de l'automne au printemps et ralentit quand la chaleur arrive. Le loyer fixe transforme cette courbe en une ligne droite sur votre relevé bancaire.
             </p>
           </div>
 
@@ -150,13 +137,13 @@ export default function LoyerFixeAirbnbMarrakech() {
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl mb-12">
             <span className="text-sm font-bold text-[#C1272D] uppercase tracking-wider">
-              Choisir entre conciergerie et loyer fixe
+              Loyer fixe ou commission
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1A1A1A]">
-              Lequel des deux pour vous ?
+              Votre bien, votre saisonnalité, votre choix.
             </h2>
             <p className="mt-4 text-lg text-[#4B5563]">
-              Pas de mauvaise réponse — chacune a son cas d'usage. Voici comment trancher.
+              À Marrakech, l'écart entre un bon mois de février et un mois d'août peut être important. Tout dépend de ce que vous préférez : lisser ou maximiser.
             </p>
           </div>
 
@@ -164,30 +151,30 @@ export default function LoyerFixeAirbnbMarrakech() {
             <div className="bg-white rounded-2xl p-8 border-2 border-[#006233]/30">
               <h3 className="text-xl font-bold text-[#006233] mb-4">Loyer fixe garanti</h3>
               <ul className="space-y-3 text-[#1A1A1A]">
-                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Revenu mensuel identique toute l'année</li>
-                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Aucun stress sur le taux d'occupation</li>
-                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Idéal MRE, crédit en cours, autofinancement</li>
-                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Daribnb prend le risque commercial</li>
-                <li className="flex items-start gap-2"><AlertTriangle size={16} className="text-[#C1272D] mt-1 flex-shrink-0" />Plafond : ~70% du potentiel max</li>
-                <li className="flex items-start gap-2"><AlertTriangle size={16} className="text-[#C1272D] mt-1 flex-shrink-0" />Engagement 12-36 mois</li>
+                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Même montant en haute saison et en été</li>
+                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Virement en MAD ou en EUR, idéal à distance</li>
+                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Entretien du riad, de la villa ou de l'appartement inclus</li>
+                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Daribnb porte le risque des mois creux</li>
+                <li className="flex items-start gap-2"><AlertTriangle size={16} className="text-[#C1272D] mt-1 flex-shrink-0" />Vous renoncez aux meilleurs mois d'hiver</li>
+                <li className="flex items-start gap-2"><AlertTriangle size={16} className="text-[#C1272D] mt-1 flex-shrink-0" />Contrat de 12 à 36 mois</li>
               </ul>
             </div>
             <div className="bg-white rounded-2xl p-8 border-2 border-[#C1272D]/30">
-              <h3 className="text-xl font-bold text-[#C1272D] mb-4">Conciergerie (commission)</h3>
+              <h3 className="text-xl font-bold text-[#C1272D] mb-4">Conciergerie (dès 20 %)</h3>
               <ul className="space-y-3 text-[#1A1A1A]">
-                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Vous touchez le maximum potentiel</li>
-                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Pas d'engagement long, plus flexible</li>
-                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Vous bloquez les dates pour vous quand vous voulez</li>
-                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Reporting mensuel transparent</li>
-                <li className="flex items-start gap-2"><AlertTriangle size={16} className="text-[#C1272D] mt-1 flex-shrink-0" />Revenus variables selon saison</li>
-                <li className="flex items-start gap-2"><AlertTriangle size={16} className="text-[#C1272D] mt-1 flex-shrink-0" />Vous portez le risque commercial</li>
+                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Vous captez tout le potentiel d'octobre à mai</li>
+                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Vous bloquez vos dates de vacances librement</li>
+                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Pas d'engagement long</li>
+                <li className="flex items-start gap-2"><Check size={16} className="text-[#006233] mt-1 flex-shrink-0" />Reporting mensuel détaillé</li>
+                <li className="flex items-start gap-2"><AlertTriangle size={16} className="text-[#C1272D] mt-1 flex-shrink-0" />Revenus plus faibles l'été</li>
+                <li className="flex items-start gap-2"><AlertTriangle size={16} className="text-[#C1272D] mt-1 flex-shrink-0" />Le risque commercial reste le vôtre</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-10 p-6 bg-[#1A1A1A] text-white rounded-2xl">
             <p className="text-lg">
-              <strong className="text-[#C1272D]">En résumé :</strong> loyer fixe = vous voulez de la prévisibilité ; conciergerie = vous voulez maximiser le potentiel. Daribnb propose les deux à Marrakech, on vous conseille selon votre situation après audit du bien.
+              <strong className="text-[#C1272D]">Riad ou appartement ?</strong> Un riad en Médina vit davantage au rythme de la haute saison, un appartement à Guéliz est plus régulier. Plus votre bien est saisonnier, plus le loyer fixe a de sens. Nous comparons les deux formules pour votre bien après visite.
             </p>
           </div>
         </div>
@@ -196,16 +183,19 @@ export default function LoyerFixeAirbnbMarrakech() {
       {/* Pour qui */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8">
-            Le loyer fixe est fait pour vous si…
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">
+            Le loyer fixe à Marrakech, expliqué pour les MRE
           </h2>
+          <p className="text-lg text-[#4B5563] mb-8">
+            Vous avez acheté à Marrakech, vous vivez en Europe, et vous ne voulez ni laisser le bien vide ni gérer des voyageurs à 2 000 km. Le loyer fixe est fait pour vous si…
+          </p>
           <ul className="space-y-3">
             {[
-              "Vous avez un crédit immobilier en cours et avez besoin de revenus stables pour le rembourser",
-              "Vous êtes MRE et préférez ne pas vous occuper de la variabilité saisonnière",
-              "Vous avez un autre revenu principal et vous cherchez juste un complément régulier",
-              "Vous ne voulez pas vous soucier du taux d'occupation, des reviews, des annulations",
-              "Vous voulez une vraie tranquillité d'esprit, sans rentrer dans le détail du business courte durée",
+              "Vous remboursez un crédit au Maroc ou en France et voulez un revenu qui tombe chaque mois, même en août",
+              "Vous ne voulez pas surveiller les réservations, les avis et les annulations depuis l'étranger",
+              "Vous souhaitez être payé en EUR ou en MAD, avec un seul interlocuteur francophone",
+              "Vous voulez que le riad ou l'appartement soit aéré, nettoyé et entretenu toute l'année, pas seulement quand vous venez",
+              "Vous préférez savoir à l'avance combien le bien vous rapportera sur 12 mois",
             ].map((item) => (
               <li
                 key={item}
@@ -218,6 +208,9 @@ export default function LoyerFixeAirbnbMarrakech() {
               </li>
             ))}
           </ul>
+          <p className="mt-8 text-[#4B5563]">
+            Marwan Afassi, fondateur de Daribnb, est MRE et propriétaire. Il loue en courte durée depuis plus de 7 ans en France, dans plusieurs villes, et forme chaque mois des propriétaires et des exploitants de conciergeries avec Rentimmo Academy. Son profil hôte Airbnb affiche 4,93/5 sur 1 196 avis.
+          </p>
         </div>
       </section>
 
@@ -244,47 +237,8 @@ export default function LoyerFixeAirbnbMarrakech() {
         </div>
       </section>
 
-      {/* Liens internes */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-6 md:px-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8">
-            Vous hésitez encore ?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                to: "/conciergerie-airbnb-marrakech",
-                title: "Conciergerie Marrakech",
-                desc: "L'alternative : commission sur revenus, vous gardez le potentiel max.",
-              },
-              {
-                to: "/loyer-fixe-airbnb-tanger",
-                title: "Loyer fixe Tanger",
-                desc: "Le même service, disponible aussi sur notre marché historique.",
-              },
-              {
-                to: "/loyer-fixe-airbnb-casablanca",
-                title: "Loyer fixe Casablanca",
-                desc: "Le même service, disponible aussi à Casablanca.",
-              },
-            ].map((c) => (
-              <Link
-                key={c.to}
-                to={c.to}
-                className="block bg-[#F7F6F2] rounded-2xl p-6 border border-black/5 hover:shadow-md hover:border-[#C1272D]/30 transition-all group"
-              >
-                <h3 className="text-lg font-bold text-[#1A1A1A] group-hover:text-[#C1272D] transition-colors">
-                  {c.title}
-                </h3>
-                <p className="mt-2 text-sm text-[#4B5563]">{c.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#C1272D]">
-                  En savoir plus <ArrowRight size={14} />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Liens internes Marrakech */}
+      <MarrakechCluster current="/loyer-fixe-airbnb-marrakech" title="Vous hésitez encore ? À Marrakech aussi" />
 
       <RelatedArticles slugs={[
           { slug: "loyer-fixe-vs-conciergerie-airbnb-maroc", title: "Loyer fixe vs conciergerie Airbnb au Maroc : le match 2026" },

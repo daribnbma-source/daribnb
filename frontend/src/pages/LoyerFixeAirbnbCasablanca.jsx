@@ -63,20 +63,7 @@ export default function LoyerFixeAirbnbCasablanca() {
     "@type": "Service",
     name: "Loyer fixe garanti Airbnb Casablanca",
     serviceType: "Location meublée touristique avec loyer garanti",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Casablanca",
-        addressRegion: "Casablanca-Settat",
-        addressCountry: "MA",
-      },
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Casablanca" },
     description:
       "Daribnb verse un loyer fixe garanti chaque mois pour votre bien Airbnb à Casablanca. Revenu prévisible, zéro risque, gestion intégrale incluse.",

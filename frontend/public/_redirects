@@ -38,11 +38,12 @@ https://daribnb.netlify.app/*  https://www.daribnb.com/:splat  301!
 /wp-admin/                  /                           301
 /wp-login.php               /                           301
 
-# SPA fallback (DOIT rester en dernier — capture tout le reste)
-/*    /index.html   200
-
 # Vrbo retiré de l'offre (nov. 2026)
 /multi-plateformes-airbnb-booking-vrbo          /multi-plateformes-airbnb-booking          301
 /multi-plateformes-airbnb-booking-vrbo/         /multi-plateformes-airbnb-booking          301
 /blog/channel-manager-airbnb-booking-vrbo-maroc  /blog/channel-manager-airbnb-booking-maroc  301
 /blog/channel-manager-airbnb-booking-vrbo-maroc/ /blog/channel-manager-airbnb-booking-maroc  301
+
+# SPA fallback limité à l'admin (non prérendu). Toute autre URL inconnue reçoit build/404.html avec un vrai statut 404.
+/admin    /   200
+/admin/*  /   200

@@ -1,0 +1,10 @@
+name = "daribnb"
+pages_build_output_dir = "build"
+compatibility_date = "2026-10-01"
+
+[[kv_namespaces]]
+binding = "LEADS"
+id = "d2f47a90ed0848919295bc552d6f0b54"
+
+# [vars]
+# LEADS_WEBHOOK = "https://script.google.com/macros/s/…/exec?k=…"  (Apps Script du Google Sheet « Leads Daribnb »)

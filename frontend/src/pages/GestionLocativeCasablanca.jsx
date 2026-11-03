@@ -58,20 +58,7 @@ export default function GestionLocativeCasablanca() {
     "@type": "Service",
     name: "Gestion locative Casablanca — Location courte durée Airbnb",
     serviceType: "Gestion locative meublée courte durée",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Casablanca",
-        addressRegion: "Casablanca-Settat",
-        addressCountry: "MA",
-      },
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Casablanca" },
     description:
       "Service complet de gestion locative pour appartements et maisons à Casablanca. Location courte durée Airbnb, équipe locale, transparence et revenus optimisés.",

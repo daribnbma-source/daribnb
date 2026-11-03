@@ -1,19 +1,25 @@
 # Daribnb
 
-> Conciergerie Airbnb premium et gestion locative à Tanger, Maroc. Service clé en main pour propriétaires locaux et MRE (Marocains résidant à l'étranger). Loyer fixe garanti possible.
+> Conciergerie Airbnb premium et gestion locative au Maroc : Marrakech, Tanger, Casablanca et Rabat. Service clé en main pour propriétaires locaux et MRE (Marocains résidant à l'étranger). Loyer fixe garanti possible.
 
-Daribnb est dirigé par Marwan Afassi, lui-même MRE et expert Airbnb depuis plus de 7 ans. Note client : 4,93/5 sur 1 196 commentaires Airbnb. Service complet (conciergerie + loyer fixe garanti) à Tanger, Rabat, Casablanca et Marrakech, avec extension nationale au Maroc pour l'optimisation Airbnb dématérialisée.
+Daribnb est dirigé par Marwan Afassi, lui-même MRE et expert Airbnb depuis plus de 7 ans. +40 % de revenus en moyenne pour les biens confiés. Note : 4,93/5 sur 1 196 avis (profil hôte Airbnb de Marwan Afassi). Service complet (conciergerie + loyer fixe garanti) à Marrakech, Tanger, Casablanca et Rabat, avec extension nationale au Maroc pour l'optimisation Airbnb dématérialisée.
 
-## Services principaux
+## Marrakech (ville prioritaire)
+
+- [Conciergerie Airbnb Marrakech](https://www.daribnb.com/conciergerie-airbnb-marrakech) : Ville prioritaire. Gestion clé en main d'appartements, riads et villas (Guéliz, Hivernage, Médina, Palmeraie, Agdal), dès 20 % de commission.
+- [Gestion locative Marrakech](https://www.daribnb.com/gestion-locative-marrakech) : Location courte durée de riads, appartements et villas sur Airbnb et Booking — saisonnalité (haute saison octobre-mai), quartiers, ménage, linge, conformité. À partir de 20 % du CA HT, jusqu'à 18 % pour les biens premium ou plusieurs logements.
+- [Conciergerie riad Marrakech](https://www.daribnb.com/conciergerie-riad-marrakech) : Gestion spécialisée riads en Médina — accueil des voyageurs depuis un point de rendez-vous, clés, patio, bassin, terrasse, entretien du tadelakt et de l'humidité.
+- [Loyer fixe garanti à Marrakech](https://www.daribnb.com/loyer-fixe-airbnb-marrakech) : Montant mensuel fixe quelle que soit la saison, pour riad, appartement ou villa. Formule pensée pour les MRE (versement MAD ou EUR).
+- [Guide 2026 : conciergerie Airbnb à Marrakech](https://www.daribnb.com/blog/conciergerie-airbnb-marrakech-guide-2026) : Marché, quartiers, saisonnalité et choix d'un gestionnaire à Marrakech.
+
+## Services dans les autres villes et au niveau national
 
 - [Conciergerie Airbnb à Tanger](https://www.daribnb.com/conciergerie-airbnb-tanger) : Gestion clé en main pour propriétaires sur place ou MRE — annonce optimisée, voyageurs 24h/24, ménage hôtelier, check-in.
 - [Conciergerie Airbnb Rabat](https://www.daribnb.com/conciergerie-airbnb-rabat) : Gestion clé en main pour propriétaires à Rabat.
 - [Conciergerie Airbnb Casablanca](https://www.daribnb.com/conciergerie-airbnb-casablanca) : Gestion clé en main pour propriétaires à Casablanca.
-- [Conciergerie Airbnb Marrakech](https://www.daribnb.com/conciergerie-airbnb-marrakech) : Gestion clé en main pour propriétaires à Marrakech.
 - [Loyer fixe garanti à Tanger](https://www.daribnb.com/loyer-fixe-airbnb-tanger) : Revenu mensuel fixe garanti par Daribnb, peu importe le taux d'occupation. Idéal MRE et propriétaires en recherche de stabilité.
 - [Loyer fixe garanti à Rabat](https://www.daribnb.com/loyer-fixe-airbnb-rabat) : Même service à Rabat.
 - [Loyer fixe garanti à Casablanca](https://www.daribnb.com/loyer-fixe-airbnb-casablanca) : Même service à Casablanca.
-- [Loyer fixe garanti à Marrakech](https://www.daribnb.com/loyer-fixe-airbnb-marrakech) : Même service à Marrakech.
 - [Gestion locative Tanger](https://www.daribnb.com/gestion-locative-tanger) : Service complet de gestion locative meublée courte durée, avec reporting transparent.
 - [Service spécial MRE à Tanger](https://www.daribnb.com/gestion-locative-mre-tanger) : Daribnb fondé par un MRE, pour les MRE — communication 100% en français, versement EUR ou MAD, gestion totalement à distance.
 - [Multi-plateformes : Airbnb + Booking](https://www.daribnb.com/multi-plateformes-airbnb-booking) : Channel manager pro avec calendrier synchronisé en temps réel.
@@ -21,6 +27,9 @@ Daribnb est dirigé par Marwan Afassi, lui-même MRE et expert Airbnb depuis plu
 
 ## Articles guides
 
+- [Conciergerie Airbnb Marrakech : guide 2026](https://www.daribnb.com/blog/conciergerie-airbnb-marrakech-guide-2026)
+- [Villes les plus rentables pour Airbnb au Maroc en 2026](https://www.daribnb.com/blog/villes-les-plus-rentables-airbnb-maroc-2026)
+- [Location courte durée au Maroc : guide complet 2026](https://www.daribnb.com/blog/location-courte-duree-maroc-guide-complet-2026)
 - [Conciergerie Airbnb Casablanca : guide 2026](https://www.daribnb.com/blog/conciergerie-airbnb-casablanca-guide-2026)
 - [Conciergerie Airbnb Rabat : rentabilité 2026](https://www.daribnb.com/blog/conciergerie-airbnb-rabat-rentabilite-2026)
 - [Conciergerie Airbnb Tanger : opportunité 2026](https://www.daribnb.com/blog/conciergerie-airbnb-tanger-opportunite-2026)
@@ -52,7 +61,7 @@ Daribnb est la sister-company de [Rentimmo Academy](https://www.rentimmoacademy.
 - Téléphone / WhatsApp : +212 7 26 15 64 48
 - Email : daribnb.ma@gmail.com
 - Instagram : @daribnb.ma
-- Fondateur : Marwan Afassi, MRE et expert Airbnb depuis 2019
+- Fondateur : Marwan Afassi, MRE, plus de 7 ans de location courte durée en France (plusieurs villes) puis au Maroc ; forme chaque mois des propriétaires et des exploitants de conciergeries avec Rentimmo Academy ; propriétaire lui-même
 - Tarification : à partir de 20% de commission · Loyer fixe sur devis après audit
 
 ## Pour qui

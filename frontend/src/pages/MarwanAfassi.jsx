@@ -63,12 +63,11 @@ export default function MarwanAfassi() {
     familyName: "Afassi",
     jobTitle: "Fondateur de Daribnb, Coach & Formateur Airbnb",
     description:
-      "Fondateur de Daribnb, conciergerie Airbnb à Tanger. Coach, formateur et expert Airbnb depuis plus de 7 ans en France, Belgique et Maroc. MRE de seconde génération, originaire de Troyes, racines dans le Nord du Maroc.",
-    image: `${SITE}/marwan-afassi.jpg`,
+      "Fondateur de Daribnb, conciergerie Airbnb à Marrakech, Tanger, Casablanca et Rabat. Coach, formateur et expert Airbnb depuis plus de 7 ans en France, Belgique et Maroc. MRE de seconde génération, originaire de Troyes, racines dans le Nord du Maroc.",
+    image: `${SITE}/assets/marwan-portrait.webp`,
     url: URL,
     sameAs: [
       "https://www.instagram.com/daribnb.ma",
-      "https://www.youtube.com/@daribnbtanger",
       "https://www.instagram.com/rentimmo_academy",
       "https://www.youtube.com/@rentimmoacademy",
       "https://www.rentimmoacademy.fr",
@@ -170,11 +169,11 @@ export default function MarwanAfassi() {
             <p>
               <strong>Daribnb naît en 2023</strong> de ce constat : créer ce que j'aurais
               aimé trouver pour gérer mon propre bien. Service premium, fondé par un MRE
-              pour les MRE, avec workflow opérationnel rodé sur 6 ans en Europe.
+              pour les MRE, avec workflow opérationnel rodé sur plusieurs années en Europe.
             </p>
             <p>
               Aujourd'hui, on dépasse les <strong>1 196 commentaires Airbnb à 4,93/5</strong>
-              {' '}— la meilleure note opérationnelle du marché tangerois. En parallèle, j'ai
+              {' '}— la note de mon profil hôte Airbnb. En parallèle, j'ai
               fondé <a href="https://www.rentimmoacademy.fr" target="_blank" rel="noreferrer" className="underline text-[#C1272D]">
               Rentimmo Academy</a> pour transmettre mes 7+ ans d'expérience en tant que coach
               et formateur à d'autres entrepreneurs francophones (sous-location pro et

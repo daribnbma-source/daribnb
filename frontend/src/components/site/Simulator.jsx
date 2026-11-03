@@ -129,8 +129,8 @@ export default function Simulator() {
 
   const sendLead = async (e) => {
     e.preventDefault();
-    if (!leadEmail) {
-      toast.error("Merci d'indiquer ton email.");
+    if (!leadEmail && !leadPhone) {
+      toast.error("Merci d'indiquer votre email ou votre téléphone.");
       return;
     }
     setLeadSending(true);
@@ -148,9 +148,9 @@ export default function Simulator() {
         )}–${fmt(result.monthly_max)} MAD/mois, loyer fixe ${fmt(result.fixed_rent)} MAD/mois.`,
       });
       setLeadSent(true);
-      toast.success("Merci ! On t'envoie ton estimation détaillée.");
+      toast.success("Merci ! On vous envoie votre estimation détaillée.");
     } catch (err) {
-      toast.error("Erreur d'envoi, réessaie ou contacte-nous sur WhatsApp.");
+      toast.error("Erreur d'envoi. Réessayez ou écrivez-nous sur WhatsApp.");
     } finally {
       setLeadSending(false);
     }
@@ -317,22 +317,32 @@ export default function Simulator() {
             </div>
             <div className="md:col-span-3 bg-[#F7F6F2] rounded-2xl p-5 text-sm text-[#4B5563] border border-[#E5E5E5] space-y-4">
               <p>
-                💡 <span className="font-semibold text-[#1A1A1A]">Conciergerie</span> : tu encaisses les revenus Airbnb (variables), nous gérons à 20% de commission.{" "}
-                <span className="font-semibold text-[#1A1A1A]">Loyer fixe</span> : nous prenons le bien en sous-location pro et te versons un montant fixe chaque mois — c'est nous qui assumons la vacance et la gestion.
+                💡 <span className="font-semibold text-[#1A1A1A]">Conciergerie</span> : vous encaissez les revenus Airbnb (variables), nous gérons à 20 % de commission.{" "}
+                <span className="font-semibold text-[#1A1A1A]">Loyer fixe</span> : nous prenons le bien en sous-location pro et vous versons un montant fixe chaque mois — c'est nous qui assumons la vacance et la gestion.
               </p>
 
               {leadSent ? (
                 <p className="text-sm font-semibold text-[#006233]" data-testid="simulator-lead-success">
-                  ✅ Reçu ! On t'envoie ton estimation détaillée et on te recontacte rapidement.
+                  ✅ Reçu ! On vous envoie votre estimation détaillée et on vous recontacte rapidement.{" "}
+                  <a
+                    href={`https://wa.me/212726156448?text=${encodeURIComponent(
+                      `Bonjour Daribnb, je viens de faire la simulation sur le site (${CITIES.find((c) => c.v === city)?.l || city}, ${bedrooms} ch.). Pouvez-vous m'envoyer mon estimation détaillée ?`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    Continuer sur WhatsApp
+                  </a>
                 </p>
               ) : (
                 <form onSubmit={sendLead} className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
-                    required
+                    autoComplete="email"
                     value={leadEmail}
                     onChange={(e) => setLeadEmail(e.target.value)}
-                    placeholder="Ton email"
+                    placeholder="Votre email"
                     data-testid="simulator-lead-email"
                     className="flex-1 h-11 rounded-xl border border-[#E5E5E5] bg-white px-4 text-sm"
                   />
@@ -340,7 +350,7 @@ export default function Simulator() {
                     type="tel"
                     value={leadPhone}
                     onChange={(e) => setLeadPhone(e.target.value)}
-                    placeholder="Téléphone (optionnel)"
+                    placeholder="ou votre WhatsApp"
                     data-testid="simulator-lead-phone"
                     className="flex-1 h-11 rounded-xl border border-[#E5E5E5] bg-white px-4 text-sm"
                   />

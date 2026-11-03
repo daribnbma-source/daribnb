@@ -70,7 +70,7 @@ const FAQS = [
   },
   {
     q: "Quelle est la différence entre loyer fixe et conciergerie Airbnb à Tanger ?",
-    a: "Avec le loyer fixe, vous recevez un montant garanti chaque mois. Avec la conciergerie, vos revenus sont généralement 30 à 50 % supérieurs mais variables. Daribnb propose les deux formules.",
+    a: "Avec le loyer fixe, vous recevez un montant garanti chaque mois. Avec la conciergerie, vos revenus sont en moyenne 40 % supérieurs, mais variables. Daribnb propose les deux formules.",
   },
 ];
 
@@ -90,20 +90,7 @@ export default function ConciergerieAirbnbTanger() {
     "@type": "Service",
     name: "Conciergerie Airbnb Tanger",
     serviceType: "Conciergerie locative courte durée",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Tanger",
-        addressRegion: "Tanger-Tétouan-Al Hoceïma",
-        addressCountry: "MA",
-      },
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Tanger" },
     description:
       "Service de conciergerie Airbnb clé en main à Tanger : annonces optimisées, gestion voyageurs, ménage hôtelier, check-in 24h/24.",

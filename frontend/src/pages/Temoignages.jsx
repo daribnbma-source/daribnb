@@ -19,43 +19,8 @@ const AGGREGATED_AIRBNB = {
 
 
 export default function Temoignages() {
-  // AggregateRating schema (basé sur Airbnb agrégé — vérifiable publiquement)
-  const aggregateRatingSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${SITE}/#business`,
-    name: "Daribnb",
-    url: SITE,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: AGGREGATED_AIRBNB.ratingValue,
-      reviewCount: AGGREGATED_AIRBNB.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
-  };
-
-  // Review schemas pour les Google Reviews (quand ils existeront)
-  const reviewSchemas = CLIENT_REVIEWS.map((r) => ({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-    },
-    author: { "@type": "Person", name: r.authorName },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: r.rating,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    reviewBody: r.body,
-    datePublished: r.date,
-  }));
-
-  const schemas = [aggregateRatingSchema, ...reviewSchemas];
+  // La note agrégée est déclarée une seule fois, sur #business (index.html). Les avis voyageurs ne sont pas balisés comme avis sur la conciergerie.
+  const schemas = [];
 
   return (
     <ServicePageLayout

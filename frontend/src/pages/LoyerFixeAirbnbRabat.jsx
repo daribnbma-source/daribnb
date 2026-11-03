@@ -63,20 +63,7 @@ export default function LoyerFixeAirbnbRabat() {
     "@type": "Service",
     name: "Loyer fixe garanti Airbnb Rabat",
     serviceType: "Location meublée touristique avec loyer garanti",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Rabat",
-        addressRegion: "Rabat-Salé-Kénitra",
-        addressCountry: "MA",
-      },
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Rabat" },
     description:
       "Daribnb verse un loyer fixe garanti chaque mois pour votre bien Airbnb à Rabat. Revenu prévisible, zéro risque, gestion intégrale incluse.",

@@ -26,6 +26,7 @@ export default function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [lastLead, setLastLead] = useState(null);
   const { simResult } = useSimulator();
   const prefilledRef = useRef(false);
 
@@ -50,13 +51,14 @@ export default function Contact() {
 
   const submit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.phone) {
-      toast.error("Merci de remplir votre nom, email et téléphone.");
+    if (!form.name || !form.phone) {
+      toast.error("Merci d'indiquer votre nom et votre téléphone.");
       return;
     }
     setLoading(true);
     try {
       await submitNetlifyForm("contact", form);
+      setLastLead(form);
       setSent(true);
       toast.success("Message reçu ! On vous rappelle sous 24h.");
       setForm({ name: "", email: "", phone: "", city: "", service: "", message: "" });
@@ -152,8 +154,19 @@ export default function Contact() {
                 Message reçu !
               </h3>
               <p className="text-[#4B5563] mb-6">
-                On vous rappelle sous 24h. À très vite !
+                On vous rappelle sous 24h. Pour aller plus vite, écrivez-nous directement :
               </p>
+              <a
+                href={`https://wa.me/212726156448?text=${encodeURIComponent(
+                  `Bonjour Daribnb, je viens de faire une demande sur le site${lastLead?.name ? ` (${lastLead.name})` : ""}${lastLead?.city ? ` pour un bien à ${lastLead.city}` : ""}. Pouvez-vous m'envoyer mon estimation ?`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-semibold text-white hover:bg-[#1EBE5A]"
+              >
+                Continuer sur WhatsApp
+              </a>
+              <br />
               <button
                 onClick={() => setSent(false)}
                 className="text-[#C1272D] font-semibold hover:underline"
@@ -176,6 +189,7 @@ export default function Contact() {
                     data-testid="contact-name-input"
                     value={form.name}
                     onChange={update("name")}
+                    autoComplete="name"
                     placeholder="Votre nom"
                     className="h-12 rounded-xl border-[#E5E5E5]"
                     required
@@ -183,10 +197,13 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-[#1A1A1A] mb-2 block">
-                    Téléphone *
+                    Téléphone / WhatsApp *
                   </label>
                   <Input
                     data-testid="contact-phone-input"
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
                     value={form.phone}
                     onChange={update("phone")}
                     placeholder="+212 6 00 00 00 00"
@@ -198,16 +215,16 @@ export default function Contact() {
 
               <div>
                 <label className="text-sm font-semibold text-[#1A1A1A] mb-2 block">
-                  Email *
+                  Email <span className="font-normal text-[#6B7280]">(facultatif)</span>
                 </label>
                 <Input
                   data-testid="contact-email-input"
                   type="email"
+                  autoComplete="email"
                   value={form.email}
                   onChange={update("email")}
                   placeholder="vous@email.com"
                   className="h-12 rounded-xl border-[#E5E5E5]"
-                  required
                 />
               </div>
 

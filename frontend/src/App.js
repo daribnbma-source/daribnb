@@ -5,8 +5,12 @@ import { HelmetProvider } from "react-helmet-async";
 import Landing from "./pages/Landing";
 import AuthCallback from "./pages/AuthCallback";
 import ProtectedRoute from "./components/ProtectedRoute";
+import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import { AuthProvider } from "./lib/auth";
+import { installClickTracking } from "./lib/tracking";
+
+if (typeof window !== "undefined") installClickTracking();
 import { Toaster } from "sonner";
 
 // Code-splitting par route : seule la home (Landing) est dans le bundle initial.
@@ -29,6 +33,8 @@ const LoyerFixeAirbnbCasablanca = lazy(() => import("./pages/LoyerFixeAirbnbCasa
 const LoyerFixeAirbnbMarrakech = lazy(() => import("./pages/LoyerFixeAirbnbMarrakech"));
 const MultiPlateformesAirbnbBooking = lazy(() => import("./pages/MultiPlateformesAirbnbBooking"));
 const ConciergerieAirbnbMarrakech = lazy(() => import("./pages/ConciergerieAirbnbMarrakech"));
+const GestionLocativeMarrakech = lazy(() => import("./pages/GestionLocativeMarrakech"));
+const ConciergerieRiadMarrakech = lazy(() => import("./pages/ConciergerieRiadMarrakech"));
 const ConciergerieAirbnbCasablanca = lazy(() => import("./pages/ConciergerieAirbnbCasablanca"));
 const ConciergerieAirbnbRabat = lazy(() => import("./pages/ConciergerieAirbnbRabat"));
 const MarwanAfassi = lazy(() => import("./pages/MarwanAfassi"));
@@ -71,6 +77,8 @@ function AppRouter() {
         <Route path="/loyer-fixe-airbnb-marrakech" element={<LoyerFixeAirbnbMarrakech />} />
         <Route path="/multi-plateformes-airbnb-booking" element={<MultiPlateformesAirbnbBooking />} />
         <Route path="/conciergerie-airbnb-marrakech" element={<ConciergerieAirbnbMarrakech />} />
+        <Route path="/gestion-locative-marrakech" element={<GestionLocativeMarrakech />} />
+        <Route path="/conciergerie-riad-marrakech" element={<ConciergerieRiadMarrakech />} />
         <Route path="/conciergerie-airbnb-casablanca" element={<ConciergerieAirbnbCasablanca />} />
         <Route path="/conciergerie-airbnb-rabat" element={<ConciergerieAirbnbRabat />} />
         <Route path="/marwan-afassi" element={<MarwanAfassi />} />
@@ -83,6 +91,7 @@ function AppRouter() {
         <Route path="/admin/blog/new" element={<ProtectedRoute><AdminBlogEditor /></ProtectedRoute>} />
         <Route path="/admin/blog/:slug/edit" element={<ProtectedRoute><AdminBlogEditor /></ProtectedRoute>} />
         <Route path="/admin/contacts" element={<ProtectedRoute><AdminContacts /></ProtectedRoute>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       </Suspense>
     </>

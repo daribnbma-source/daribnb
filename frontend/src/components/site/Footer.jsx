@@ -27,9 +27,12 @@ export default function Footer() {
           <div>
             <p className="font-bold mb-4 text-white">Nos villes</p>
             <ul className="space-y-3 text-sm text-white/80">
+              <li><Link to="/conciergerie-airbnb-marrakech" className="hover:text-[#C1272D] transition-colors">Conciergerie Marrakech</Link></li>
+              <li><Link to="/loyer-fixe-airbnb-marrakech" className="hover:text-[#C1272D] transition-colors">Loyer fixe Marrakech</Link></li>
+              <li><Link to="/gestion-locative-marrakech" className="hover:text-[#C1272D] transition-colors">Gestion locative Marrakech</Link></li>
+              <li><Link to="/conciergerie-riad-marrakech" className="hover:text-[#C1272D] transition-colors">Conciergerie riad Marrakech</Link></li>
               <li><Link to="/conciergerie-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Tanger</Link></li>
               <li><Link to="/conciergerie-airbnb-casablanca" className="hover:text-[#C1272D] transition-colors">Casablanca</Link></li>
-              <li><Link to="/conciergerie-airbnb-marrakech" className="hover:text-[#C1272D] transition-colors">Marrakech</Link></li>
               <li><Link to="/conciergerie-airbnb-rabat" className="hover:text-[#C1272D] transition-colors">Rabat</Link></li>
             </ul>
           </div>
@@ -37,7 +40,7 @@ export default function Footer() {
           <div>
             <p className="font-bold mb-4 text-white">Services Maroc</p>
             <ul className="space-y-3 text-sm text-white/80">
-              <li><Link to="/loyer-fixe-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Loyer fixe garanti</Link></li>
+              <li><Link to="/loyer-fixe-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Loyer fixe Tanger</Link></li>
               <li><Link to="/gestion-locative-mre-tanger" className="hover:text-[#C1272D] transition-colors">Spécial MRE</Link></li>
               <li><Link to="/menage-airbnb-tanger" className="hover:text-[#C1272D] transition-colors">Ménage Airbnb</Link></li>
               <li><Link to="/gestion-locative-tanger" className="hover:text-[#C1272D] transition-colors">Gestion locative Tanger</Link></li>

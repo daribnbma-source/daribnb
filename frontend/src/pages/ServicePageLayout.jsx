@@ -66,7 +66,7 @@ export default function ServicePageLayout({
   intro,
   schema,
   children,
-  image = "/assets/logements/logement-1-salon.jpg",
+  image = "/assets/logements/logement-1-salon.webp",
   ogImage = `${SITE}/og-image.jpg`,
 }) {
   const contentRef = useRef(null);
@@ -130,8 +130,8 @@ export default function ServicePageLayout({
           <div className="relative max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 items-center">
           <motion.div
             className="lg:col-span-7"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 24 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.8, ease }}
           >
             {/* Breadcrumb */}

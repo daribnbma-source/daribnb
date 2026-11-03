@@ -14,6 +14,7 @@ import {
   Loader2,
   ArrowRight,
 } from "lucide-react";
+import { sized } from "../lib/img";
 
 const SITE = "https://www.daribnb.com";
 
@@ -59,17 +60,10 @@ export default function BlogPost() {
     "@type": "Article",
     headline: post.title,
     description: post.meta_description,
-    image: post.cover,
+    image: post.cover && post.cover.startsWith("/") ? `${SITE}${post.cover}` : post.cover,
     datePublished: post.published_at,
-    author: { "@type": "Person", name: "Marwan — Daribnb" },
-    publisher: {
-      "@type": "Organization",
-      name: "Daribnb",
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE}/assets/logo.png`,
-      },
-    },
+    author: { "@type": "Person", "@id": `${SITE}/marwan-afassi#person`, name: "Marwan Afassi", url: `${SITE}/marwan-afassi` },
+    publisher: { "@id": `${SITE}/#business` },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: post.keywords,
   };
@@ -83,7 +77,7 @@ export default function BlogPost() {
         <link rel="canonical" href={url} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.meta_description} />
-        <meta property="og:image" content={post.cover} />
+        <meta property="og:image" content={post.cover && post.cover.startsWith("/") ? `${SITE}${post.cover}` : post.cover} />
         <meta property="og:url" content={url} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.published_at} />
@@ -99,7 +93,7 @@ export default function BlogPost() {
         <div className="relative">
           <div className="aspect-[21/9] md:aspect-[21/8] overflow-hidden">
             <img
-              src={post.cover}
+              src={sized(post.cover, 1400)}
               alt={post.title}
               className="w-full h-full object-cover"
             />
@@ -218,7 +212,7 @@ export default function BlogPost() {
                   className="group bg-white rounded-2xl overflow-hidden border border-[#E5E5E5] hover:shadow-lg transition-all"
                 >
                   <div className="aspect-[16/9] overflow-hidden">
-                    <img src={r.cover} alt={r.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                    <img src={sized(r.cover, 600)} alt={r.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                   </div>
                   <div className="p-5">
                     <div className="text-xs text-[#4B5563] mb-2">{r.city}</div>

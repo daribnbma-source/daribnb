@@ -65,14 +65,7 @@ export default function MultiPlateformesAirbnbBooking() {
     "@type": "Service",
     name: "Gestion multi-plateformes Airbnb et Booking",
     serviceType: "Channel management location courte durée",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: [
       { "@type": "City", name: "Tanger" },
       { "@type": "Country", name: "Maroc" },

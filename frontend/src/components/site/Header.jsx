@@ -3,17 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 
-// Les 3 vrais services Daribnb (multi-villes : Tanger, Casablanca, Rabat, Marrakech)
+// Les 3 vrais services Daribnb (multi-villes : Marrakech en priorité, Tanger, Casablanca, Rabat)
 const SERVICES_MENU = [
   {
     href: "/conciergerie-airbnb-tanger",
     label: "Conciergerie Airbnb",
     desc: "Gestion clé en main : annonce, voyageurs, ménage, check-in 24/7",
     cities: [
+      { name: "Marrakech", href: "/conciergerie-airbnb-marrakech" },
       { name: "Tanger", href: "/conciergerie-airbnb-tanger" },
       { name: "Rabat", href: "/conciergerie-airbnb-rabat" },
       { name: "Casablanca", href: "/conciergerie-airbnb-casablanca" },
-      { name: "Marrakech", href: "/conciergerie-airbnb-marrakech" },
     ],
   },
   {
@@ -21,10 +21,10 @@ const SERVICES_MENU = [
     label: "Loyer fixe garanti",
     desc: "Revenu mensuel fixe pour votre bien, partout au Maroc. Zéro risque, zéro stress",
     cities: [
+      { name: "Marrakech", href: "/loyer-fixe-airbnb-marrakech" },
       { name: "Tanger", href: "/loyer-fixe-airbnb-tanger" },
       { name: "Rabat", href: "/loyer-fixe-airbnb-rabat" },
       { name: "Casablanca", href: "/loyer-fixe-airbnb-casablanca" },
-      { name: "Marrakech", href: "/loyer-fixe-airbnb-marrakech" },
     ],
   },
   {

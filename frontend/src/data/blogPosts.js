@@ -120,7 +120,7 @@ Proche gare Casa Port, aéroport par le train. Parfait pour courts séjours busi
 
 ## Combien rapporte réellement un Airbnb à Casablanca ?
 
-Voici des fourchettes réalistes basées sur nos 150+ biens gérés :
+Voici des fourchettes réalistes, basées sur nos données de marché et les biens que nous gérons :
 
 - **Studio bien situé** : 7 000 – 11 000 MAD/mois net
 - **Appartement 2 chambres (Gauthier/Maarif)** : 12 000 – 18 000 MAD/mois
@@ -1110,7 +1110,7 @@ Avril pour Marrakech (50,3 % d'occupation). Août pour Casablanca et Tanger (for
 
 ## Déléguer à un professionnel : la différence concrète
 
-Un bien géré par une conciergerie professionnelle génère en moyenne **30 à 50 % de revenus supplémentaires** par rapport à une gestion en solo, grâce à la tarification dynamique quotidienne, aux photos professionnelles, au ménage hôtelier et à la présence multi-plateformes.
+Chez Daribnb, un bien confié génère en moyenne **+40 % de revenus** par rapport à une gestion en solo, grâce à la tarification dynamique quotidienne, aux photos professionnelles, au ménage hôtelier et à la présence multi-plateformes.
 
 Daribnb opère à [Tanger](/conciergerie-airbnb-tanger), [Casablanca](/conciergerie-airbnb-casablanca) et [Rabat](/conciergerie-airbnb-rabat). Estimation gratuite en 24h.
 
@@ -1190,7 +1190,8 @@ Si vous êtes **MRE** (Marocain Résident à l'Étranger) et que vous ne pouvez 
 
 Le choix de la ville dépend de votre objectif : rendement brut maximal, marché moins concurrentiel, ou proximité géographique pour un suivi personnel. Nous détaillons les revenus par ville dans notre classement complet : [Les villes les plus rentables pour Airbnb au Maroc en 2026](/blog/villes-les-plus-rentables-airbnb-maroc-2026).
 
-Daribnb concentre son expertise sur **Tanger, Rabat et Casablanca** — trois marchés que nous connaissons en profondeur, avec une équipe locale dans chacune de ces villes :
+Daribnb concentre son expertise sur **Marrakech, Tanger, Casablanca et Rabat**, quatre marchés que nous connaissons en profondeur :
+- [Conciergerie Airbnb Marrakech](/conciergerie-airbnb-marrakech)
 - [Conciergerie Airbnb Tanger](/conciergerie-airbnb-tanger)
 - [Conciergerie Airbnb Rabat](/conciergerie-airbnb-rabat)
 - [Conciergerie Airbnb Casablanca](/conciergerie-airbnb-casablanca)
@@ -1201,7 +1202,7 @@ Daribnb concentre son expertise sur **Tanger, Rabat et Casablanca** — trois ma
 
 Gérer une LCD soi-même demande du temps au quotidien : répondre aux voyageurs à toute heure, coordonner le ménage, ajuster les tarifs, suivre la conformité réglementaire. Une conciergerie professionnelle prend en charge l'ensemble de ces tâches, avec en général une optimisation de la tarification et de la visibilité de l'annonce qu'il est difficile d'égaler seul, sans expérience du marché.
 
-Daribnb gère des biens en LCD à Tanger, Rabat et Casablanca, fondé par un expert Airbnb avec plus de 7 ans d'expérience — ménage hôtelier, check-in 24/7, conformité (déclaration préfecture, taxe de séjour), et reporting mensuel transparent. Estimation gratuite de vos revenus potentiels sous 24h.
+Daribnb gère des biens en LCD à Marrakech, Tanger, Casablanca et Rabat, fondé par un expert Airbnb avec plus de 7 ans d'expérience — ménage hôtelier, check-in 24/7, conformité (déclaration préfecture, taxe de séjour), et reporting mensuel transparent. Estimation gratuite de vos revenus potentiels sous 24h.
 
 ---
 

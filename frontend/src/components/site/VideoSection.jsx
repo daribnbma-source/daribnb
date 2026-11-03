@@ -12,6 +12,9 @@ export default function VideoSection() {
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
+    // React ne remet pas l'attribut muted à l'hydratation du HTML pré-rendu : on le force.
+    v.muted = true;
+    v.defaultMuted = true;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const io = new IntersectionObserver(
       ([e]) => {
@@ -27,9 +30,10 @@ export default function VideoSection() {
   const toggleSound = () => {
     const v = ref.current;
     if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
-    if (!v.muted) {
+    const next = !muted;
+    v.muted = next;
+    setMuted(next);
+    if (!next) {
       if (v.currentTime > 1) v.currentTime = 0;
       v.play().catch(() => {});
     }

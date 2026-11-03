@@ -41,7 +41,7 @@ const FAQS = [
   },
   {
     q: "Pourquoi ce serait Daribnb qui prend le risque et pas moi ?",
-    a: "Parce qu'on s'appuie sur plus de 7 ans d'expertise Airbnb (France & Maroc), on connaît les chiffres médians par quartier, on optimise mieux qu'un proprio individuel (équipe ménage, photos pro, multi-plateformes Airbnb/Booking). Statistiquement on fait +30 à +50% vs gestion en direct, ce qui couvre largement notre marge tout en garantissant votre revenu.",
+    a: "Parce qu'on s'appuie sur plus de 7 ans d'expertise Airbnb (France & Maroc), on connaît les chiffres médians par quartier, on optimise mieux qu'un proprio individuel (équipe ménage, photos pro, multi-plateformes Airbnb/Booking). En moyenne, on fait +40 % de revenus vs gestion en direct, ce qui couvre largement notre marge tout en garantissant votre revenu.",
   },
   {
     q: "Quelle est la durée d'engagement ?",
@@ -63,20 +63,7 @@ export default function LoyerFixeAirbnbTanger() {
     "@type": "Service",
     name: "Loyer fixe garanti Airbnb Tanger",
     serviceType: "Location meublée touristique avec loyer garanti",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Tanger",
-        addressRegion: "Tanger-Tétouan-Al Hoceïma",
-        addressCountry: "MA",
-      },
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Tanger" },
     description:
       "Daribnb verse un loyer fixe garanti chaque mois pour votre bien Airbnb à Tanger. Revenu prévisible, zéro risque, gestion intégrale incluse.",

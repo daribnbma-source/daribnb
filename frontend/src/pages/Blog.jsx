@@ -6,6 +6,7 @@ import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
 import { BLOG_POSTS } from "../data/blogPosts";
 import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react";
+import { sized } from "../lib/img";
 
 const SITE = "https://www.daribnb.com";
 
@@ -66,7 +67,7 @@ export default function Blog() {
                 >
                   <div className="aspect-[16/10] overflow-hidden bg-[#F5F5F5]">
                     <img
-                      src={p.cover}
+                      src={sized(p.cover, 720)}
                       alt={p.title}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

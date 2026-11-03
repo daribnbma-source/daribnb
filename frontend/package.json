@@ -60,7 +60,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build && node scripts/prerender.js",
+    "build": "GENERATE_SOURCEMAP=false craco build && node scripts/prerender.js",
     "build:cra": "craco build",
     "prerender": "node scripts/prerender.js",
     "test": "craco test"

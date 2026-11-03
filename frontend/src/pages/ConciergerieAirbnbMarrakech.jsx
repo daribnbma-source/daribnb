@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Camera, Calendar, Sparkles, Headphones, ShieldCheck, BadgeDollarSign, ArrowRight, Check } from "lucide-react";
 import ServicePageLayout from "./ServicePageLayout";
 import RelatedArticles from "../components/site/RelatedArticles";
+import MarrakechCluster from "../components/site/MarrakechCluster";
 
 const SITE = "https://www.daribnb.com";
 const URL = `${SITE}/conciergerie-airbnb-marrakech`;
@@ -41,7 +42,7 @@ const SERVICES = [
 ];
 
 const RESULTS = [
-  { metric: "+45%", label: "de revenus moyens vs gestion en direct" },
+  { metric: "+40%", label: "de revenus en moyenne" },
   { metric: "80%", label: "taux d'occupation médian haute saison" },
   { metric: "4,93/5", label: "moyenne reviews voyageurs Airbnb" },
   { metric: "<2h", label: "temps de réponse moyen aux voyageurs" },
@@ -50,7 +51,7 @@ const RESULTS = [
 const FAQ = [
   {
     q: "Quelle commission prend Daribnb pour la gestion Airbnb à Marrakech ?",
-    a: "Notre commission couvre l'intégralité de la gestion : annonce, voyageurs, ménage, check-in et reporting. Contactez-nous pour obtenir un devis personnalisé selon le type de bien (appartement, riad, villa) et le quartier.",
+    a: "À partir de 20 % du chiffre d'affaires HT, et jusqu'à 18 % pour les biens premium ou plusieurs logements. Cette commission couvre toute la gestion : annonce, voyageurs, ménage, check-in et reporting. Sans frais d'entrée ni frais d'arrêt. Le loyer fixe garanti est aussi possible à Marrakech.",
   },
   {
     q: "Combien rapporte un riad ou appartement à Marrakech sur Airbnb ?",
@@ -66,7 +67,7 @@ const FAQ = [
   },
   {
     q: "Quels quartiers de Marrakech sont les plus rentables sur Airbnb ?",
-    a: "La Médina (riads) et Guéliz affichent les meilleurs rendements. Hivernage et Palmeraie sont plus portés villas/luxe avec des prix à la nuit plus élevés. L'Hivernage présente un excellent rapport taux d'occupation / prix nuit pour les appartements standard.",
+    a: "La Médina (riads) et Guéliz affichent les meilleurs rendements. L'Hivernage combine appartements haut de gamme et bon taux d'occupation. La Palmeraie est surtout un marché de villas, avec des prix à la nuit plus élevés et une clientèle familles et groupes. Agdal attire les séjours plus longs.",
   },
   {
     q: "Daribnb gère-t-il uniquement les appartements ou aussi les riads et villas ?",
@@ -80,20 +81,7 @@ export default function ConciergerieAirbnbMarrakech() {
     "@type": "Service",
     name: "Conciergerie Airbnb Marrakech",
     serviceType: "Conciergerie locative courte durée",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Marrakech",
-        addressRegion: "Marrakech-Safi",
-        addressCountry: "MA",
-      },
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Marrakech" },
     description:
       "Service de conciergerie Airbnb clé en main à Marrakech : annonces optimisées, gestion voyageurs, ménage hôtelier, check-in 24h/24. Riads, appartements et villas.",
@@ -233,8 +221,11 @@ export default function ConciergerieAirbnbMarrakech() {
         </div>
       </section>
 
+      {/* Maillage Marrakech */}
+      <MarrakechCluster current="/conciergerie-airbnb-marrakech" />
+
       {/* Liens internes */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-28 bg-[#F7F6F2]">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8">
             Nos services dans d'autres villes

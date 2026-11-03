@@ -41,7 +41,7 @@ const SERVICES = [
 ];
 
 const RESULTS = [
-  { metric: "+35%", label: "de revenus moyens vs gestion en direct" },
+  { metric: "+40%", label: "de revenus en moyenne" },
   { metric: "65%", label: "taux d'occupation médian toute l'année" },
   { metric: "4,93/5", label: "moyenne reviews voyageurs Airbnb" },
   { metric: "<2h", label: "temps de réponse moyen aux voyageurs" },
@@ -80,20 +80,7 @@ export default function ConciergerieAirbnbRabat() {
     "@type": "Service",
     name: "Conciergerie Airbnb Rabat",
     serviceType: "Conciergerie locative courte durée",
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
-      name: "Daribnb",
-      url: SITE,
-      telephone: "+212726156448",
-      email: "daribnb.ma@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Rabat",
-        addressRegion: "Rabat-Salé-Kénitra",
-        addressCountry: "MA",
-      },
-    },
+    provider: { "@id": `${SITE}/#business` },
     areaServed: { "@type": "City", name: "Rabat" },
     description:
       "Service de conciergerie Airbnb clé en main à Rabat : annonces optimisées, gestion voyageurs, ménage hôtelier, check-in 24h/24.",

@@ -1,21 +1,17 @@
-// Submit a form to Netlify Forms (no backend, lands in dashboard + email).
-// The form name must match a static <form name="..." netlify> in index.html.
-
-const encode = (data) =>
-  Object.entries(data)
-    .filter(([, v]) => v !== undefined && v !== null)
-    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
-    .join("&");
+// Envoi des formulaires vers la Pages Function /api/lead (functions/api/lead.js).
+// Nom conservé pour ne pas toucher aux appels existants.
+import { markConverted, track } from "./tracking";
 
 export async function submitNetlifyForm(formName, fields) {
-  const body = encode({ "form-name": formName, ...fields });
-  const res = await fetch("/", {
+  const res = await fetch("/api/lead", {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ "form-name": formName, page: window.location.pathname, ...fields }),
   });
   if (!res.ok) {
-    throw new Error(`Netlify form submit failed (${res.status})`);
+    throw new Error(`Lead submit failed (${res.status})`);
   }
+  markConverted();
+  track("generate_lead", { form_name: formName });
   return true;
 }

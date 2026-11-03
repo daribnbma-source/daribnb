@@ -30,7 +30,7 @@ export default function Services() {
           {/* Case photo */}
           <Reveal className="relative overflow-hidden rounded-3xl sm:col-span-2 lg:row-span-2 min-h-[18rem]">
             <img
-              src="/assets/logements/logement-2-salon.jpg"
+              src="/assets/logements/logement-2-salon.webp"
               alt="Salon d'un logement géré par Daribnb, prêt pour les voyageurs"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
