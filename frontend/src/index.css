@@ -148,8 +148,9 @@ html {
 /* ===== Motion (refonte nov. 2026) ===== */
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
 .marquee-track { animation: marquee 32s linear infinite; }
+/* Mouvement réduit : le bandeau continue, mais 3 fois plus lentement (défilement doux, sans à-coups). */
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
+  .marquee-track { animation-duration: 90s !important; }
 }
 .grain::after {
   content: "";

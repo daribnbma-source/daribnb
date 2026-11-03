@@ -80,7 +80,15 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-24 flex items-center justify-between">
-        <Link to="/" data-testid="nav-logo" className="flex items-center">
+        <Link
+          to="/"
+          data-testid="nav-logo"
+          aria-label="Daribnb, retour à l'accueil"
+          onClick={() => {
+            if (window.location.pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="flex items-center"
+        >
           <Logo />
         </Link>
 

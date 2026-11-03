@@ -36,10 +36,11 @@ function RotatingCity() {
   const [i, setI] = useState(0);
   const reduce = useReducedMotion();
   useEffect(() => {
-    if (reduce || isPrerender()) return;
+    // Les villes changent même en mouvement réduit (simple fondu, sans glissement ni flou).
+    if (isPrerender()) return;
     const t = setInterval(() => setI((x) => (x + 1) % CITIES.length), 2400);
     return () => clearInterval(t);
-  }, [reduce]);
+  }, []);
   return (
     <span className="relative inline-grid align-bottom">
       {/* largeur réservée par le mot le plus long, pour que la ligne ne saute pas */}
@@ -52,9 +53,9 @@ function RotatingCity() {
         <motion.span
           key={CITIES[i]}
           className="col-start-1 row-start-1 text-[#C1272D]"
-          initial={{ y: "60%", opacity: 0, filter: "blur(6px)" }}
-          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          exit={{ y: "-60%", opacity: 0, filter: "blur(6px)" }}
+          initial={reduce ? { opacity: 0 } : { y: "60%", opacity: 0, filter: "blur(6px)" }}
+          animate={reduce ? { opacity: 1 } : { y: 0, opacity: 1, filter: "blur(0px)" }}
+          exit={reduce ? { opacity: 0 } : { y: "-60%", opacity: 0, filter: "blur(6px)" }}
           transition={{ duration: 0.55, ease }}
         >
           {CITIES[i]}
@@ -160,7 +161,7 @@ export default function Hero() {
               initial={{ y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease }}
-              className="font-heading text-[2.1rem] font-bold leading-[1.06] tracking-tight text-[#1A1A1A] sm:text-[3.4rem] lg:text-[3.5rem] xl:text-[3.9rem]"
+              className="font-heading text-[2.1rem] font-bold leading-[1.06] tracking-tight text-[#1A1A1A] sm:text-[3.4rem] lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.9rem]"
             >
               Votre Airbnb à <RotatingCity />{" "}
               <br />

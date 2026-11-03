@@ -1,6 +1,6 @@
 import React from "react";
 
-// Bandeau qui défile de droite à gauche en boucle (CSS pur, pause au survol, arrêt si mouvement réduit).
+// Bandeau qui défile de droite à gauche en boucle (CSS pur, pause au survol, ralenti si mouvement réduit).
 export default function Marquee({ children, duration = 32, className = "" }) {
   return (
     <div className={`group relative flex overflow-hidden ${className}`}>
