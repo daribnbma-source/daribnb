@@ -197,8 +197,8 @@ export default function ServicePageLayout({
           {/* Photo réelle en couches (desktop) */}
           <div className="relative hidden lg:col-span-5 lg:block">
             <motion.div
-              initial={{ opacity: 0, scale: 0.94, clipPath: "inset(10% 10% 10% 10% round 2rem)" }}
-              animate={{ opacity: 1, scale: 1, clipPath: "inset(0% 0% 0% 0% round 2rem)" }}
+              initial={{ scale: 0.97, clipPath: "inset(4% 4% 4% 4% round 2rem)" }}
+              animate={{ scale: 1, clipPath: "inset(0% 0% 0% 0% round 2rem)" }}
               transition={{ duration: 1, ease }}
               className="aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(26,26,26,0.55)]"
             >

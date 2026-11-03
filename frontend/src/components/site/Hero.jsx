@@ -169,8 +169,8 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.25, ease }}
               className="mt-6 max-w-xl text-lg leading-relaxed text-[#4B5563] md:text-xl"
             >
@@ -253,8 +253,8 @@ export default function Hero() {
             <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px]">
               {/* Plan arrière : grande photo */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.94, clipPath: "inset(12% 12% 12% 12% round 2rem)" }}
-                animate={{ opacity: 1, scale: 1, clipPath: "inset(0% 0% 0% 0% round 2rem)" }}
+                initial={{ scale: 0.97, clipPath: "inset(4% 4% 4% 4% round 2rem)" }}
+                animate={{ scale: 1, clipPath: "inset(0% 0% 0% 0% round 2rem)" }}
                 transition={{ duration: 1.1, ease }}
                 style={{ y: backY }}
                 className="absolute inset-0 overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(26,26,26,0.55)]"
