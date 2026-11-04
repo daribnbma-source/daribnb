@@ -6,5 +6,6 @@ compatibility_date = "2026-10-01"
 binding = "LEADS"
 id = "d2f47a90ed0848919295bc552d6f0b54"
 
-# [vars]
-# LEADS_WEBHOOK = "https://script.google.com/macros/s/…/exec?k=…"  (Apps Script du Google Sheet « Leads Daribnb »)
+[vars]
+# Apps Script « Leads Daribnb (site) » (compte marwan.afassi) : ajoute le lead au Google Sheet « Leads Daribnb » et envoie l'alerte à daribnb.ma@gmail.com.
+LEADS_WEBHOOK = "https://script.google.com/macros/s/AKfycbxIh_-I4TpzLqeENMuq7vvM4Q6SIEklOu1GSpoDzro5XSdaxbcUvAAcVA-wMoBoREvh/exec?k=8X-cj8fMxl8Zto4KYbUS_A3E"
