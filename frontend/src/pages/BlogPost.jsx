@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { sized } from "../lib/img";
+import QuestionBanner from "../components/site/QuestionBanner";
 
 const SITE = "https://www.daribnb.com";
 
@@ -287,6 +288,7 @@ export default function BlogPost() {
         )}
       </article>
 
+      <QuestionBanner />
       <Footer />
       <WhatsAppFloat />
     </div>

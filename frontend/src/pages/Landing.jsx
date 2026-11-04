@@ -19,6 +19,7 @@ import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
 import ExitIntentPopup from "../components/site/LazyExitIntentPopup";
 import BlogTeaser from "../components/site/BlogTeaser";
+import QuestionBanner from "../components/site/QuestionBanner";
 import { SimulatorProvider } from "../lib/SimulatorContext";
 import HydrationBoundary from "../components/HydrationBoundary";
 
@@ -69,6 +70,9 @@ export default function Landing() {
           </HydrationBoundary>
           <HydrationBoundary>
             <FAQ />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <QuestionBanner />
           </HydrationBoundary>
           <HydrationBoundary>
             <Contact />

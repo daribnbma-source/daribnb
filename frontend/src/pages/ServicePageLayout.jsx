@@ -8,6 +8,7 @@ import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
 import Contact from "../components/site/Contact";
 import ExitIntentPopup from "../components/site/LazyExitIntentPopup";
+import QuestionBanner from "../components/site/QuestionBanner";
 
 const SITE = "https://www.daribnb.com";
 
@@ -237,6 +238,7 @@ export default function ServicePageLayout({
         <Contact />
       </main>
 
+      <QuestionBanner />
       <Footer />
       <WhatsAppFloat />
       <ExitIntentPopup />

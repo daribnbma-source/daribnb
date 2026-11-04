@@ -12,6 +12,7 @@ import {
 } from "../components/ui/accordion";
 import { ChevronRight } from "lucide-react";
 import { FAQ_CATEGORIES, FAQS, FAQS_BY_CATEGORY } from "../data/faqs";
+import QuestionBanner from "../components/site/QuestionBanner";
 
 export default function FAQPage() {
   // FAQPage JSON-LD complet (toutes les Q/R) — gros boost rich results Google
@@ -198,6 +199,7 @@ export default function FAQPage() {
         </section>
       </main>
 
+      <QuestionBanner />
       <Footer />
       <WhatsAppFloat />
     </div>
