@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import ReactMarkdown from "react-markdown";
@@ -11,7 +11,6 @@ import {
   Clock,
   MapPin,
   ArrowLeft,
-  Loader2,
   ArrowRight,
 } from "lucide-react";
 import { sized } from "../lib/img";
@@ -65,22 +64,18 @@ function extractFaq(md) {
 export default function BlogPost() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const [post, setPost] = useState(null);
-  const [related, setRelated] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // Article lu de façon synchrone : le premier rendu client est identique au HTML pré-rendu
+  // (l'ancien état « chargement » au premier rendu provoquait une erreur d'hydratation #418).
+  const post = useMemo(() => getPostBySlug(slug), [slug]);
+  const related = useMemo(() => BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3), [slug]);
 
   useEffect(() => {
-    setLoading(true);
-    const found = getPostBySlug(slug);
-    if (!found) {
+    if (!post) {
       navigate("/", { replace: true });
       return;
     }
-    setPost(found);
-    setRelated(BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3));
-    setLoading(false);
     window.scrollTo(0, 0);
-  }, [slug, navigate]);
+  }, [post, navigate]);
 
   const fmtDate = (iso) =>
     new Date(iso).toLocaleDateString("fr-FR", {
@@ -89,13 +84,6 @@ export default function BlogPost() {
       year: "numeric",
     });
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F7F6F2]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#C1272D]" />
-      </div>
-    );
-  }
   if (!post) return null;
 
   const url = `${SITE}/blog/${post.slug}`;
@@ -157,6 +145,7 @@ export default function BlogPost() {
             <img
               src={sized(post.cover, 1400)}
               alt={post.title}
+              fetchpriority="high"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />

@@ -2,13 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
-import { HOME_FAQS, FAQS } from "../../data/faqs";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { ChevronDown } from "lucide-react";
+import { HOME_FAQS, FAQS_COUNT } from "../../data/faqsHome";
 
 export default function FAQ() {
   // FAQPage JSON-LD pour rich results Google (les Q/A peuvent s'afficher directement dans la SERP)
@@ -42,23 +38,28 @@ export default function FAQ() {
           </h2>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-3">
+        {/* Radix Accordion en direct (sans le wrapper shadcn ni tailwind-merge) : classes finales
+            identiques à celles que produisait cn(). */}
+        <AccordionPrimitive.Root type="single" collapsible className="space-y-3">
           {HOME_FAQS.map((f, i) => (
-            <AccordionItem
+            <AccordionPrimitive.Item
               key={i}
               value={`item-${i}`}
               data-testid={`faq-item-${i + 1}`}
               className="bg-[#F7F6F2] border border-[#E5E5E5] rounded-2xl px-6 hover:border-[#C1272D]/40 transition-all"
             >
-              <AccordionTrigger className="text-left font-bold text-[#1A1A1A] hover:no-underline py-6">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-[#4B5563] pb-6 leading-relaxed">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
+              <AccordionPrimitive.Header className="flex">
+                <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-sm transition-all [&[data-state=open]>svg]:rotate-180 text-left font-bold text-[#1A1A1A] hover:no-underline py-6">
+                  {f.q}
+                  <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+                </AccordionPrimitive.Trigger>
+              </AccordionPrimitive.Header>
+              <AccordionPrimitive.Content className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                <div className="pt-0 text-[#4B5563] pb-6 leading-relaxed">{f.a}</div>
+              </AccordionPrimitive.Content>
+            </AccordionPrimitive.Item>
           ))}
-        </Accordion>
+        </AccordionPrimitive.Root>
 
         {/* Lien vers la FAQ complète (35+ questions catégorisées) */}
         <div className="mt-10 text-center">
@@ -66,7 +67,7 @@ export default function FAQ() {
             to="/faq"
             className="inline-flex items-center gap-2 text-[#C1272D] hover:text-[#A01D22] font-semibold transition-colors group"
           >
-            Voir les {FAQS.length}+ questions sur conciergerie, ménage, gestion, MRE
+            Voir les {FAQS_COUNT}+ questions sur conciergerie, ménage, gestion, MRE
             <ArrowRight
               size={18}
               className="group-hover:translate-x-1 transition-transform"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdminLayout from "../components/AdminLayout";
 import { api } from "../lib/api";
 import { Mail, Phone, Trash2, ExternalLink } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "@/lib/toast";
 
 export default function AdminContacts() {
   const [items, setItems] = useState([]);

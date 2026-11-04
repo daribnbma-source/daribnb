@@ -1,6 +1,5 @@
 import React from "react";
 import { Camera, CalendarRange, Sparkles, Headphones, TrendingUp, Globe2, FileBarChart, Wrench } from "lucide-react";
-import { motion } from "motion/react";
 import Reveal from "../motion/Reveal";
 
 // Ce qui est inclus dans la conciergerie : grille « bento », la première case porte la photo réelle.
@@ -47,21 +46,21 @@ export default function Services() {
           </Reveal>
 
           {ITEMS.map((s, i) => (
-            <motion.div
+            <Reveal
               key={s.title}
               data-testid={`feature-${i}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-              transition={{ duration: 0.6, delay: (i % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="group rounded-3xl border border-[#E5E5E5] bg-[#F7F6F2] p-6 transition-colors hover:border-[#C1272D]/30 hover:bg-white"
+              y={30}
+              delay={(i % 4) * 0.08}
+              margin="0px 0px -8% 0px"
+              style={{ "--rdur": "0.6s" }}
+              className="group rounded-3xl border border-[#E5E5E5] bg-[#F7F6F2] p-6 hover:border-[#C1272D]/30 hover:bg-white"
             >
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#C1272D]/10 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
                 <s.icon className="h-5 w-5 text-[#C1272D]" />
               </div>
               <h3 className="font-bold text-[#1A1A1A]">{s.title}</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-[#4B5563]">{s.desc}</p>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
       </div>

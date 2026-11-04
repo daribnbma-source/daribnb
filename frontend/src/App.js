@@ -3,15 +3,18 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Landing from "./pages/Landing";
-import AuthCallback from "./pages/AuthCallback";
-import ProtectedRoute from "./components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
-import { AuthProvider } from "./lib/auth";
+import LazyToaster from "./components/LazyToaster";
 import { installClickTracking } from "./lib/tracking";
 
 if (typeof window !== "undefined") installClickTracking();
-import { Toaster } from "sonner";
+
+// Espace admin sorti du bundle public : session (AuthProvider), axios et garde de route
+// ne sont chargés que sur /admin/* ou au retour OAuth (#session_id=…).
+const AuthProvider = lazy(() => import("./lib/auth").then((m) => ({ default: m.AuthProvider })));
+const AuthCallback = lazy(() => import("./pages/AuthCallback"));
+const ProtectedRoute = lazy(() => import("./components/ProtectedRoute"));
 
 // Code-splitting par route : seule la home (Landing) est dans le bundle initial.
 // Chaque autre page est chargée à la demande — réduit le JS inutilisé sur chaque vue.
@@ -51,12 +54,15 @@ function AppRouter() {
   const location = useLocation();
   // Detect OAuth callback via URL fragment — must run synchronously BEFORE other routes
   if (location.hash?.includes("session_id=")) {
-    return <AuthCallback />;
-  }
-  return (
-    <>
-      <ScrollToTop />
+    return (
       <Suspense fallback={<div className="min-h-screen bg-[#F7F6F2]" />}>
+        <AuthProvider>
+          <AuthCallback />
+        </AuthProvider>
+      </Suspense>
+    );
+  }
+  const routes = (
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/mentions-legales" element={<Mentions />} />
@@ -93,6 +99,12 @@ function AppRouter() {
         <Route path="/admin/contacts" element={<ProtectedRoute><AdminContacts /></ProtectedRoute>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+  );
+  return (
+    <>
+      <ScrollToTop />
+      <Suspense fallback={<div className="min-h-screen bg-[#F7F6F2]" />}>
+        {location.pathname.startsWith("/admin") ? <AuthProvider>{routes}</AuthProvider> : routes}
       </Suspense>
     </>
   );
@@ -101,14 +113,12 @@ function AppRouter() {
 function App() {
   return (
     <HelmetProvider>
-      <AuthProvider>
-        <div className="App">
-          <BrowserRouter>
-            <AppRouter />
-          </BrowserRouter>
-          <Toaster position="top-right" richColors />
-        </div>
-      </AuthProvider>
+      <div className="App">
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
+        <LazyToaster position="top-right" richColors />
+      </div>
     </HelmetProvider>
   );
 }

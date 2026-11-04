@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
+import NativeSelect from "./NativeSelect";
+import { Input, Textarea } from "./fields";
 import { submitNetlifyForm } from "../../lib/netlifyForm";
 import { Mail, Loader2, Send, CheckCircle2 } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "@/lib/toast";
 import { useSimulator } from "../../lib/SimulatorContext";
+
+const SERVICES = [
+  { v: "conciergerie", l: "Conciergerie Airbnb" },
+  { v: "super_daribnb", l: "Super Daribnb (optimisation)" },
+  { v: "loyer_fixe", l: "Loyer fixe garanti" },
+  { v: "les_deux", l: "Je ne sais pas, conseillez-moi" },
+];
 
 const fmt = (n) => new Intl.NumberFormat("fr-MA").format(n);
 
@@ -245,24 +245,14 @@ export default function Contact() {
                   <label className="text-sm font-semibold text-[#1A1A1A] mb-2 block">
                     Service souhaité
                   </label>
-                  <Select
+                  <NativeSelect
                     value={form.service}
                     onValueChange={(v) => setForm((p) => ({ ...p, service: v }))}
-                  >
-                    <SelectTrigger
-                      data-testid="contact-service-select"
-                      aria-label="Choisir le service"
-                      className="h-12 rounded-xl border-[#E5E5E5]"
-                    >
-                      <SelectValue placeholder="Choisir..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="conciergerie">Conciergerie Airbnb</SelectItem>
-                      <SelectItem value="super_daribnb">Super Daribnb (optimisation)</SelectItem>
-                      <SelectItem value="loyer_fixe">Loyer fixe garanti</SelectItem>
-                      <SelectItem value="les_deux">Je ne sais pas, conseillez-moi</SelectItem>
-                    </SelectContent>
-                  </Select>
+                    options={SERVICES}
+                    data-testid="contact-service-select"
+                    aria-label="Choisir le service"
+                    className="h-12 rounded-xl border-[#E5E5E5] bg-transparent"
+                  />
                 </div>
               </div>
 

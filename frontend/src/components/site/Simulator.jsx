@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { Input } from "../ui/input";
+import NativeSelect from "./NativeSelect";
+import { Input } from "./fields";
 import { TrendingUp, Sparkles, Loader2 } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "@/lib/toast";
 import { useSimulator } from "../../lib/SimulatorContext";
 import { isPrerender } from "../../lib/isPrerender";
 import { submitNetlifyForm } from "../../lib/netlifyForm";
@@ -209,44 +203,28 @@ export default function Simulator() {
             <label className="text-sm font-semibold text-[#1A1A1A] mb-2 block">
               Ville
             </label>
-            <Select value={city} onValueChange={setCity}>
-              <SelectTrigger
-                data-testid="simulator-city-select"
-                aria-label="Choisir la ville"
-                className="h-12 rounded-xl border-[#E5E5E5] bg-white"
-              >
-                <SelectValue placeholder="Choisir..." />
-              </SelectTrigger>
-              <SelectContent>
-                {CITIES.map((c) => (
-                  <SelectItem key={c.v} value={c.v}>
-                    {c.l}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <NativeSelect
+              value={city}
+              onValueChange={setCity}
+              options={CITIES}
+              data-testid="simulator-city-select"
+              aria-label="Choisir la ville"
+              className="h-12 rounded-xl border-[#E5E5E5] bg-white"
+            />
           </div>
 
           <div>
             <label className="text-sm font-semibold text-[#1A1A1A] mb-2 block">
               Type de bien
             </label>
-            <Select value={type} onValueChange={setType}>
-              <SelectTrigger
-                data-testid="simulator-type-select"
-                aria-label="Choisir le type de bien"
-                className="h-12 rounded-xl border-[#E5E5E5] bg-white"
-              >
-                <SelectValue placeholder="Choisir..." />
-              </SelectTrigger>
-              <SelectContent>
-                {TYPES.map((t) => (
-                  <SelectItem key={t.v} value={t.v}>
-                    {t.l}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <NativeSelect
+              value={type}
+              onValueChange={setType}
+              options={TYPES}
+              data-testid="simulator-type-select"
+              aria-label="Choisir le type de bien"
+              className="h-12 rounded-xl border-[#E5E5E5] bg-white"
+            />
           </div>
 
           <div>

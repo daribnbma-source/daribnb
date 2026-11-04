@@ -4,14 +4,14 @@ import { Helmet } from "react-helmet-async";
 import Header from "../components/site/Header";
 import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
-import { BLOG_POSTS } from "../data/blogPosts";
+import { BLOG_META } from "../data/blogMeta";
 import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react";
 import { sized } from "../lib/img";
 
 const SITE = "https://www.daribnb.com";
 
 export default function Blog() {
-  const posts = BLOG_POSTS;
+  const posts = BLOG_META;
 
   const fmtDate = (iso) =>
     new Date(iso).toLocaleDateString("fr-FR", {

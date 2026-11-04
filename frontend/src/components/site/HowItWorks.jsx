@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import React, { useEffect, useRef } from "react";
 import { PhoneCall, Home, LineChart, FileSignature, Rocket } from "lucide-react";
 import Reveal from "../motion/Reveal";
 
@@ -13,8 +12,35 @@ const STEPS = [
 
 export default function HowItWorks() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 75%", "end 55%"] });
-  const line = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const lineRef = useRef(null);
+
+  // Progression du rail liée au scroll : 0 quand le haut de la liste passe à 75 % de l'écran,
+  // 1 quand son bas passe à 55 %. Actif aussi en mouvement réduit (suit le doigt, pas d'animation autonome).
+  useEffect(() => {
+    const el = ref.current;
+    const line = lineRef.current;
+    if (!el || !line) return;
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const p = Math.min(1, Math.max(0, (0.75 * vh - r.top) / (r.height + 0.2 * vh)));
+      line.style.transform = `scaleY(${p})`;
+    };
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    update();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   return (
     <section data-testid="how-it-works-section" className="grid-dark overflow-x-clip bg-[#1A1A1A] py-24 text-white md:py-32">
@@ -38,20 +64,22 @@ export default function HowItWorks() {
           <div ref={ref} className="relative lg:col-span-7">
             {/* Rail + progression liée au scroll */}
             <div aria-hidden="true" className="absolute left-[27px] top-2 bottom-2 w-px bg-white/10" />
-            <motion.div
+            <div
+              ref={lineRef}
               aria-hidden="true"
-              style={{ height: line }}
-              className="absolute left-[27px] top-2 w-px bg-gradient-to-b from-[#C1272D] to-[#4ADE80]"
+              className="absolute left-[27px] top-2 bottom-2 w-px origin-top scale-y-0 bg-gradient-to-b from-[#C1272D] to-[#4ADE80]"
             />
             <ol className="space-y-6">
               {STEPS.map((s, i) => (
-                <motion.li
+                <Reveal
+                  as="li"
                   key={s.n}
                   data-testid={`step-${s.n}`}
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "0px 0px -15% 0px" }}
-                  transition={{ duration: 0.6, delay: 0.05 * i, ease: [0.22, 1, 0.36, 1] }}
+                  x={40}
+                  y={0}
+                  delay={0.05 * i}
+                  margin="0px 0px -15% 0px"
+                  style={{ "--rdur": "0.6s" }}
                   className="relative flex gap-6"
                 >
                   <span className="relative z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-[#232323] text-[#C1272D]">
@@ -62,7 +90,7 @@ export default function HowItWorks() {
                     <h3 className="mt-1 text-xl font-bold">{s.t}</h3>
                     <p className="mt-1.5 text-white/65">{s.d}</p>
                   </div>
-                </motion.li>
+                </Reveal>
               ))}
             </ol>
           </div>

@@ -17,40 +17,69 @@ import ProofBand from "../components/site/ProofBand";
 import VideoSection from "../components/site/VideoSection";
 import Footer from "../components/site/Footer";
 import WhatsAppFloat from "../components/site/WhatsAppFloat";
-import ExitIntentPopup from "../components/site/ExitIntentPopup";
+import ExitIntentPopup from "../components/site/LazyExitIntentPopup";
 import BlogTeaser from "../components/site/BlogTeaser";
-import { MotionConfig } from "motion/react";
 import { SimulatorProvider } from "../lib/SimulatorContext";
+import HydrationBoundary from "../components/HydrationBoundary";
 
 export default function Landing() {
   return (
     <SimulatorProvider>
-      <MotionConfig reducedMotion="user">
       <div data-testid="landing-page" className="min-h-screen bg-[#F7F6F2]">
         <Header />
         <main>
           <Hero />
           <ToolsBand />
-          <VideoSection />
-          <PainPoints />
-          <Pricing />
-          <ProofBand />
-          <Services />
-          <HowItWorks />
-          <WhyUs />
-          <Testimonials />
-          <Coverage />
-          <Guarantee />
-          <Urgency />
-          <BlogTeaser />
-          <FAQ />
-          <Contact />
+          {/* Sections sous la ligne de flottaison : une frontière d'hydratation chacune (tâches courtes). */}
+          <HydrationBoundary>
+            <VideoSection />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <PainPoints />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <Pricing />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <ProofBand />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <Services />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <HowItWorks />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <WhyUs />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <Testimonials />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <Coverage />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <Guarantee />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <Urgency />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <BlogTeaser />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <FAQ />
+          </HydrationBoundary>
+          <HydrationBoundary>
+            <Contact />
+          </HydrationBoundary>
         </main>
-        <Footer />
+        <HydrationBoundary>
+          <Footer />
+        </HydrationBoundary>
         <WhatsAppFloat />
         <ExitIntentPopup />
       </div>
-      </MotionConfig>
     </SimulatorProvider>
   );
 }

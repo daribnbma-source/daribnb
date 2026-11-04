@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Star, ArrowRight, Check } from "lucide-react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-  useMotionValue,
-  useSpring,
-  useReducedMotion,
-} from "motion/react";
 import Simulator from "./Simulator";
+import Reveal from "../motion/Reveal";
 import { isPrerender } from "../../lib/isPrerender";
 import { FlagFR, FlagMA } from "../brand/Flags";
 
@@ -30,17 +22,28 @@ const PAYOUTS = AIRBNB_PAYOUTS.flatMap((amount, k) =>
     : [{ p: "airbnb", amount }]
 );
 
-const ease = [0.22, 1, 0.36, 1];
+// Rotation d'un texte : sortie (swap-out) puis entrée (swap-in) de la valeur suivante, en CSS.
+// Premier rendu sans classe d'animation : identique au HTML pré-rendu (pas d'écart d'hydratation).
+function useSwap(count, every, outMs) {
+  const [state, setState] = useState({ i: 0, phase: "" });
+  useEffect(() => {
+    if (isPrerender() || count < 2) return;
+    let swapT;
+    const t = setInterval(() => {
+      setState((s) => ({ ...s, phase: "swap-out" }));
+      swapT = setTimeout(() => setState((s) => ({ i: (s.i + 1) % count, phase: "swap-in" })), outMs);
+    }, every);
+    return () => {
+      clearInterval(t);
+      clearTimeout(swapT);
+    };
+  }, [count, every, outMs]);
+  return state;
+}
 
 function RotatingCity() {
-  const [i, setI] = useState(0);
-  const reduce = useReducedMotion();
-  useEffect(() => {
-    // Les villes changent même en mouvement réduit (simple fondu, sans glissement ni flou).
-    if (isPrerender()) return;
-    const t = setInterval(() => setI((x) => (x + 1) % CITIES.length), 2400);
-    return () => clearInterval(t);
-  }, []);
+  // Les villes changent même en mouvement réduit (simple fondu, sans glissement ni flou).
+  const { i, phase } = useSwap(CITIES.length, 2400, 550);
   return (
     <span className="relative inline-grid align-bottom">
       {/* largeur réservée par le mot le plus long, pour que la ligne ne saute pas */}
@@ -49,30 +52,14 @@ function RotatingCity() {
         data-w="Casablanca"
         className="invisible col-start-1 row-start-1 before:content-[attr(data-w)]"
       />
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.span
-          key={CITIES[i]}
-          className="col-start-1 row-start-1 text-[#C1272D]"
-          initial={reduce ? { opacity: 0 } : { y: "60%", opacity: 0, filter: "blur(6px)" }}
-          animate={reduce ? { opacity: 1 } : { y: 0, opacity: 1, filter: "blur(0px)" }}
-          exit={reduce ? { opacity: 0 } : { y: "-60%", opacity: 0, filter: "blur(6px)" }}
-          transition={{ duration: 0.55, ease }}
-        >
-          {CITIES[i]}
-        </motion.span>
-      </AnimatePresence>
+      <span className={`col-start-1 row-start-1 text-[#C1272D] ${phase}`}>{CITIES[i]}</span>
     </span>
   );
 }
 
 function PayoutToast() {
-  const [i, setI] = useState(0);
-  const reduce = useReducedMotion();
-  useEffect(() => {
-    if (reduce || isPrerender()) return;
-    const t = setInterval(() => setI((x) => (x + 1) % PAYOUTS.length), 3200);
-    return () => clearInterval(t);
-  }, [reduce]);
+  // Mouvement réduit : les versements défilent aussi, en fondu seul.
+  const { i, phase } = useSwap(PAYOUTS.length, 3200, 350);
   const { p, amount: value } = PAYOUTS[i];
   const amount = value.toLocaleString("fr-FR", { minimumFractionDigits: 2 });
   const pf = PLATFORMS[p];
@@ -83,18 +70,12 @@ function PayoutToast() {
       </span>
       <div className="min-w-0">
         <p className="text-[11px] font-semibold uppercase tracking-wider text-[#6B7280]">{pf.label}</p>
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.p
-            key={p + amount}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.35 }}
-            className="font-heading text-lg font-bold tabular-nums text-[#1A1A1A]"
-          >
-            + {amount} €
-          </motion.p>
-        </AnimatePresence>
+        <p
+          className={`font-heading text-lg font-bold tabular-nums text-[#1A1A1A] ${phase}`}
+          style={{ "--sy": "8px", "--sb": "0px", "--sd": "0.35s" }}
+        >
+          + {amount} €
+        </p>
       </div>
     </div>
   );
@@ -102,29 +83,73 @@ function PayoutToast() {
 
 export default function Hero() {
   const ref = useRef(null);
-  const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  // Plans à vitesses différentes : fond lent, photo du milieu plus rapide, cartes au premier plan encore plus.
-  const backY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 60]);
-  const backScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.08]);
-  const midY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -90]);
-  const frontY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -170]);
+  const visualRef = useRef(null);
 
-  // Légère profondeur au pointeur (desktop)
-  const px = useMotionValue(0);
-  const py = useMotionValue(0);
-  const sx = useSpring(px, { stiffness: 60, damping: 18 });
-  const sy = useSpring(py, { stiffness: 60, damping: 18 });
-  const midX = useTransform(sx, (v) => v * -14);
-  const midYp = useTransform(sy, (v) => v * -10);
-  const frontX = useTransform(sx, (v) => v * -26);
-  const frontYp = useTransform(sy, (v) => v * -18);
-  const onMove = (e) => {
-    if (reduce) return;
-    const r = e.currentTarget.getBoundingClientRect();
-    px.set((e.clientX - r.left) / r.width - 0.5);
-    py.set((e.clientY - r.top) / r.height - 0.5);
-  };
+  // Parallaxe au scroll (plans à vitesses différentes) + légère profondeur au pointeur (desktop).
+  // Tout passe par des variables CSS posées sur le conteneur du visuel : aucun rendu React.
+  useEffect(() => {
+    const section = ref.current;
+    const visual = visualRef.current;
+    if (!section || !visual || isPrerender()) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const st = visual.style;
+    let raf = 0;
+    let scrollQueued = false;
+    const target = { x: 0, y: 0 };
+    const cur = { x: 0, y: 0 };
+
+    const applyScroll = () => {
+      scrollQueued = false;
+      const r = section.getBoundingClientRect();
+      if (r.bottom < 0) return;
+      const p = Math.min(1, Math.max(0, -r.top / r.height));
+      st.setProperty("--p-back", `${p * 60}px`);
+      st.setProperty("--p-scale", String(1 + p * 0.08));
+      st.setProperty("--p-mid", `${p * -90}px`);
+      st.setProperty("--p-front", `${p * -170}px`);
+    };
+    const onScroll = () => {
+      if (scrollQueued) return;
+      scrollQueued = true;
+      requestAnimationFrame(applyScroll);
+    };
+    // Ressort amorti simplifié : on rapproche la valeur courante de la cible à chaque image.
+    const stepPointer = () => {
+      cur.x += (target.x - cur.x) * 0.08;
+      cur.y += (target.y - cur.y) * 0.08;
+      st.setProperty("--ptr-mx", `${cur.x * -14}px`);
+      st.setProperty("--ptr-my", `${cur.y * -10}px`);
+      st.setProperty("--ptr-fx", `${cur.x * -26}px`);
+      st.setProperty("--ptr-fy", `${cur.y * -18}px`);
+      raf = Math.abs(target.x - cur.x) + Math.abs(target.y - cur.y) > 0.001 ? requestAnimationFrame(stepPointer) : 0;
+    };
+    const kick = () => {
+      if (!raf) raf = requestAnimationFrame(stepPointer);
+    };
+    const onMove = (e) => {
+      if (e.pointerType === "touch") return;
+      const r = visual.getBoundingClientRect();
+      target.x = (e.clientX - r.left) / r.width - 0.5;
+      target.y = (e.clientY - r.top) / r.height - 0.5;
+      kick();
+    };
+    const onLeave = () => {
+      target.x = 0;
+      target.y = 0;
+      kick();
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    visual.addEventListener("pointermove", onMove);
+    visual.addEventListener("pointerleave", onLeave);
+    applyScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      visual.removeEventListener("pointermove", onMove);
+      visual.removeEventListener("pointerleave", onLeave);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
     <section
@@ -142,47 +167,38 @@ export default function Hero() {
         <div className="grid items-center gap-14 lg:grid-cols-12">
           {/* Texte */}
           <div className="lg:col-span-6">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#006233]/15 bg-white/80 px-4 py-2 text-sm font-semibold text-[#006233] backdrop-blur"
+            <div
+              style={{ animationDuration: "0.6s" }}
+              className="h-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#006233]/15 bg-white/80 px-4 py-2 text-sm font-semibold text-[#006233] backdrop-blur"
             >
               <span className="flex items-center gap-1">
                 <FlagFR className="h-3.5 w-5 rounded-[2px] ring-1 ring-black/10" />
                 <FlagMA className="h-3.5 w-5 rounded-[2px] ring-1 ring-black/10" />
               </span>
               Savoir-faire français, conciergerie au Maroc<span className="hidden sm:inline"> · 7 ans de terrain</span>
-            </motion.div>
+            </div>
 
-            <motion.h1
+            <h1
               data-testid="hero-title"
               // Visible dès le premier rendu (élément LCP) : seule la position est animée.
-              initial={{ y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease }}
-              className="font-heading text-[2.1rem] font-bold leading-[1.06] tracking-tight text-[#1A1A1A] sm:text-[3.4rem] lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.9rem]"
+              style={{ animationDelay: "0.1s" }}
+              className="h-slide font-heading text-[2.1rem] font-bold leading-[1.06] tracking-tight text-[#1A1A1A] sm:text-[3.4rem] lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.9rem]"
             >
               Votre Airbnb à <RotatingCity />{" "}
               <br />
               <span className="whitespace-nowrap">géré comme un pro.</span>
               <span className="sr-only"> Conciergerie Airbnb à Marrakech, Tanger, Rabat et Casablanca.</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25, ease }}
-              className="mt-6 max-w-xl text-lg leading-relaxed text-[#4B5563] md:text-xl"
+            <p
+              style={{ "--hy": "20px", animationDelay: "0.25s" }}
+              className="h-slide mt-6 max-w-xl text-lg leading-relaxed text-[#4B5563] md:text-xl"
             >
               Conciergerie clé en main ou loyer fixe garanti. On gère votre bien comme si c'était le
               nôtre : annonce, prix, ménage, voyageurs. <strong className="text-[#1A1A1A]">Vous encaissez.</strong>
-            </motion.p>
+            </p>
 
-            <motion.ul
-              initial="h"
-              animate="s"
-              variants={{ s: { transition: { staggerChildren: 0.08, delayChildren: 0.4 } } }}
+            <ul
               className="mt-7 grid gap-2.5 sm:grid-cols-2"
             >
               {[
@@ -190,25 +206,23 @@ export default function Hero() {
                 "Prix ajustés chaque jour",
                 "Ménage et linge hôtelier",
                 "Voyageurs accueillis 24/7",
-              ].map((item) => (
-                <motion.li
+              ].map((item, k) => (
+                <li
                   key={item}
-                  variants={{ h: { opacity: 0, x: -10 }, s: { opacity: 1, x: 0 } }}
-                  className="flex items-center gap-2.5 text-[15px] text-[#1A1A1A]"
+                  style={{ animationDelay: `${0.4 + k * 0.08}s` }}
+                  className="h-left flex items-center gap-2.5 text-[15px] text-[#1A1A1A]"
                 >
                   <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#006233]">
                     <Check size={12} className="text-white" strokeWidth={3} />
                   </span>
                   {item}
-                </motion.li>
+                </li>
               ))}
-            </motion.ul>
+            </ul>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.6, ease }}
-              className="mt-9 flex flex-col gap-4 sm:flex-row"
+            <div
+              style={{ animationDelay: "0.6s" }}
+              className="h-up mt-9 flex flex-col gap-4 sm:flex-row"
             >
               <a
                 href="#simulator"
@@ -230,13 +244,11 @@ export default function Hero() {
                 </svg>
                 WhatsApp
               </a>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-8 flex items-center gap-3"
+            <div
+              style={{ animationDelay: "0.8s" }}
+              className="h-fade mt-8 flex items-center gap-3"
             >
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
@@ -246,101 +258,70 @@ export default function Hero() {
               <p className="text-sm text-[#4B5563]">
                 <span className="font-semibold text-[#1A1A1A]">4,93/5</span> sur 1 196 avis voyageurs Airbnb
               </p>
-            </motion.div>
+            </div>
           </div>
 
           {/* Visuel en couches */}
-          <div className="relative lg:col-span-6" onPointerMove={onMove} onPointerLeave={() => { px.set(0); py.set(0); }}>
+          <div ref={visualRef} className="relative lg:col-span-6">
             <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px]">
               {/* Plan arrière : grande photo */}
-              <motion.div
-                initial={{ scale: 0.97, clipPath: "inset(4% 4% 4% 4% round 2rem)" }}
-                animate={{ scale: 1, clipPath: "inset(0% 0% 0% 0% round 2rem)" }}
-                transition={{ duration: 1.1, ease }}
-                style={{ y: backY }}
-                className="absolute inset-0 overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(26,26,26,0.55)]"
-              >
-                <motion.img
-                  src={IMG_BACK}
-                  alt="Séjour lumineux d'un appartement à Tanger géré par Daribnb"
-                  width="1536"
-                  height="1024"
-                  loading="eager"
-                  fetchpriority="high"
-                  style={{ scale: backScale }}
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-[#1A1A1A] backdrop-blur">
-                  Logement géré à Tanger
+              <div className="par-back absolute inset-0">
+                <div className="h-clip absolute inset-0 overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(26,26,26,0.55)]">
+                  <img
+                    src={IMG_BACK}
+                    alt="Séjour lumineux d'un appartement à Tanger géré par Daribnb"
+                    width="1536"
+                    height="1024"
+                    loading="eager"
+                    fetchpriority="high"
+                    className="par-back-img h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                  <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-[#1A1A1A] backdrop-blur">
+                    Logement géré à Tanger
+                  </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Plan du milieu : seconde photo */}
-              <motion.div
-                initial={{ opacity: 0, x: -30, rotate: -6 }}
-                animate={{ opacity: 1, x: 0, rotate: -4 }}
-                transition={{ duration: 0.9, delay: 0.45, ease }}
-                style={{ y: midY }}
-                className="absolute -left-6 bottom-16 hidden w-[44%] sm:block md:-left-12"
-              >
-                <motion.div style={{ x: midX, y: midYp }} className="overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
-                  <img src={IMG_MID} alt="Chambre d'un logement Daribnb" loading="eager" className="aspect-[4/3] w-full object-cover" />
-                </motion.div>
-              </motion.div>
+              <div className="par-mid absolute -left-6 bottom-16 hidden w-[44%] sm:block md:-left-12">
+                <div className="h-mid" style={{ animationDelay: "0.45s" }}>
+                  <div className="ptr-mid overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
+                    <img src={IMG_MID} alt="Chambre d'un logement Daribnb" width="1200" height="900" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                  </div>
+                </div>
+              </div>
 
               {/* Premier plan : cartes de preuve réelles */}
-              <motion.div style={{ y: frontY }} className="pointer-events-none absolute inset-0">
-                <motion.div
-                  style={{ x: frontX, y: frontYp }}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.8, ease }}
-                  className="absolute -right-3 top-8 md:-right-10"
-                >
-                  <PayoutToast />
-                </motion.div>
-                <motion.div
-                  style={{ x: frontX, y: frontYp }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.05, ease }}
-                  className="absolute -bottom-5 right-4 md:-right-6"
-                >
-                  <div className="rounded-2xl bg-[#006233] px-5 py-4 text-white shadow-[0_20px_50px_-12px_rgba(0,98,51,0.6)]">
+              <div className="par-front pointer-events-none absolute inset-0">
+                <div className="ptr-front absolute -right-3 top-8 md:-right-10">
+                  <div className="h-up" style={{ "--hy": "-20px", animationDelay: "0.8s" }}>
+                    <PayoutToast />
+                  </div>
+                </div>
+                <div className="ptr-front absolute -bottom-5 right-4 md:-right-6">
+                  <div style={{ animationDelay: "1.05s" }} className="h-pop rounded-2xl bg-[#006233] px-5 py-4 text-white shadow-[0_20px_50px_-12px_rgba(0,98,51,0.6)]">
                     <p className="font-heading text-3xl font-bold leading-none">
                       4,93<span className="ml-1 text-lg text-white/80">★</span>
                     </p>
                     <p className="mt-1 text-xs text-white/80">1 196 avis Airbnb</p>
                   </div>
-                </motion.div>
-                <motion.div
-                  style={{ x: midX, y: midYp }}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.25, ease }}
-                  className="absolute right-8 top-[42%] hidden md:block"
-                >
-                  <div className="flex items-center gap-2 rounded-full bg-[#1A1A1A] px-4 py-2 text-xs font-semibold text-white shadow-xl">
+                </div>
+                <div className="ptr-mid absolute right-8 top-[42%] hidden md:block">
+                  <div style={{ "--hy": "10px", animationDelay: "1.25s", animationDuration: "0.6s" }} className="h-up flex items-center gap-2 rounded-full bg-[#1A1A1A] px-4 py-2 text-xs font-semibold text-white shadow-xl">
                     <span className="h-2 w-2 rounded-full bg-[#4ADE80]" />
                     Airbnb · Booking.com
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Simulateur */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-          transition={{ duration: 0.8, ease }}
-          className="mt-20 lg:mt-28"
-        >
+        <Reveal y={40} margin="0px 0px -10% 0px" style={{ "--rdur": "0.8s" }} className="mt-20 lg:mt-28">
           <Simulator />
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

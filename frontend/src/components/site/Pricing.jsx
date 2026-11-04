@@ -1,6 +1,5 @@
 import React from "react";
 import { Check, Zap, Shield, Rocket, Gift } from "lucide-react";
-import { motion } from "motion/react";
 import Reveal from "../motion/Reveal";
 
 const PLANS = [
@@ -95,16 +94,14 @@ export default function Pricing() {
               ? "bg-gradient-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] text-white"
               : "bg-white border border-[#E5E5E5] text-[#1A1A1A]";
             return (
-              <motion.div
+              <Reveal
                 key={p.id}
                 id={p.id === "fixed" ? "loyer-fixe" : undefined}
                 data-testid={`pricing-${p.id}`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: p.highlight ? -12 : 0 }}
-                whileHover={{ y: p.highlight ? -20 : -8 }}
-                viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-                transition={{ type: "spring", stiffness: 120, damping: 18, delay: idx * 0.12 }}
-                className={`relative rounded-3xl p-8 md:p-10 transition-shadow hover:shadow-2xl overflow-hidden ${baseCls} ${
+                y={50}
+                delay={idx * 0.12}
+                margin="0px 0px -10% 0px"
+                className={`price-card ${p.highlight ? "price-card--hl" : ""} relative rounded-3xl p-8 md:p-10 hover:shadow-2xl overflow-hidden ${baseCls} ${
                   p.highlight ? "shadow-xl ring-1 ring-[#C1272D]/40" : ""
                 }`}
               >
@@ -228,7 +225,7 @@ export default function Pricing() {
                 >
                   {p.cta}
                 </a>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>

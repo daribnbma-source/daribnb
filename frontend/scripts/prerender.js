@@ -232,6 +232,15 @@ async function renderRoute(browser, route) {
       });
     }
 
+    // 8. Frontières d'hydratation internes (src/components/HydrationBoundary.jsx) : chaque
+    //    <div data-hb> est le contenu d'une <Suspense> ; on l'entoure des mêmes marqueurs.
+    if (root) {
+      root.querySelectorAll("[data-hb]").forEach((el) => {
+        el.parentNode.insertBefore(document.createComment("$"), el);
+        el.parentNode.insertBefore(document.createComment("/$"), el.nextSibling);
+      });
+    }
+
     const app = root && root.querySelector(":scope > div.App");
     if (app && app.firstChild) {
       const toaster = app.querySelector(':scope > section[aria-label^="Notifications"]');

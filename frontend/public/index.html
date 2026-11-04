@@ -135,14 +135,16 @@
         }
         </script>
 
-        <!-- Google Analytics 4 -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BG7Y9QH27"></script>
+        <!-- Google Analytics 4 : file d'attente dataLayer/gtag posée tout de suite (page_view et
+             events generate_lead / click_whatsapp / click_call sont mis en attente), script gtag.js
+             chargé plus tard par le chargeur différé en bas de page. -->
         <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-0BG7Y9QH27');
         </script>
+        <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -177,8 +179,13 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
         <script>
-        // PostHog différé après le premier rendu pour ne pas bloquer le LCP / le thread principal
-        window.addEventListener("load", function () {
+        // Scripts tiers (GA4 + PostHog) différés : chargés à la première interaction (scroll, tap,
+        // clavier, souris) ou, à défaut, 3 s après que la page est au repos. Rien pendant le pré-rendu.
+        (function () {
+          if (window.__PRERENDER__) return;
+          var done = false;
+          var EVENTS = ["scroll", "pointerdown", "touchstart", "keydown", "mousemove", "wheel"];
+          function initPosthog() {
         !(function (t, e) {
                 var o, n, p, r;
                 e.__SV ||
@@ -243,12 +250,27 @@
             posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", {
                 api_host: "https://us.i.posthog.com",
                 person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well,
-                session_recording: {
-                    recordCrossOriginIframes: true,
-                    capturePerformance: false,
-                },
+                // Session replay et surveys coupés : ~115 Ko de JS en moins (recorder.js, surveys.js).
+                disable_session_recording: true,
+                disable_surveys: true,
             });
-        });
+          }
+          function load() {
+            if (done) return;
+            done = true;
+            EVENTS.forEach(function (e) { window.removeEventListener(e, load, true); });
+            var s = document.createElement("script");
+            s.async = true;
+            s.src = "https://www.googletagmanager.com/gtag/js?id=G-0BG7Y9QH27";
+            document.head.appendChild(s);
+            initPosthog();
+          }
+          EVENTS.forEach(function (e) { window.addEventListener(e, load, { capture: true, passive: true, once: true }); });
+          window.addEventListener("load", function () {
+            var idle = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1); };
+            idle(function () { setTimeout(load, 3000); });
+          });
+        })();
         </script>
     </body>
 </html>

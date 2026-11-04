@@ -49,6 +49,7 @@ export default function WhyUs() {
                 alt="Marwan, fondateur de Daribnb"
                 width="480"
                 height="581"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -98,6 +99,7 @@ export default function WhyUs() {
                     alt="Marwan"
                     width="480"
                     height="581"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

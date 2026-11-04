@@ -59,11 +59,12 @@
     "zod": "^3.24.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "GENERATE_SOURCEMAP=false craco build && node scripts/prerender.js",
-    "build:cra": "craco build",
+    "start": "node scripts/gen-data-meta.js && craco start",
+    "build": "node scripts/gen-data-meta.js && GENERATE_SOURCEMAP=false craco build && node scripts/prerender.js",
+    "build:cra": "node scripts/gen-data-meta.js && craco build",
     "prerender": "node scripts/prerender.js",
-    "test": "craco test"
+    "test": "craco test",
+    "data-meta": "node scripts/gen-data-meta.js"
   },
   "browserslist": {
     "production": [

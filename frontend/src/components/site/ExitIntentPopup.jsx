@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { X, Gift, Sparkles, Loader2, CheckCircle2 } from "lucide-react";
-import { Input } from "../ui/input";
+import { Input } from "./fields";
 import { submitNetlifyForm } from "../../lib/netlifyForm";
-import { toast } from "sonner";
+import { toast } from "@/lib/toast";
 
 import { hasConverted } from "../../lib/tracking";
 

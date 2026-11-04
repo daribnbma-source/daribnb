@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AdminLayout from "../components/AdminLayout";
 import { api } from "../lib/api";
 import { FileText, PlusCircle, Edit3, Trash2, ExternalLink } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "@/lib/toast";
 
 export default function AdminBlog() {
   const [posts, setPosts] = useState([]);

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BLOG_POSTS } from "../../data/blogPosts";
+import { BLOG_META } from "../../data/blogMeta";
 import { Calendar, ArrowRight, MapPin } from "lucide-react";
 import { sized } from "../../lib/img";
 
 export default function BlogTeaser() {
   // Les 6 articles les plus récents, le reste est sur /blog.
-  const posts = [...BLOG_POSTS].sort((a, b) => b.published_at.localeCompare(a.published_at)).slice(0, 6);
+  const posts = [...BLOG_META].sort((a, b) => b.published_at.localeCompare(a.published_at)).slice(0, 6);
 
   if (!posts.length) return null;
 
