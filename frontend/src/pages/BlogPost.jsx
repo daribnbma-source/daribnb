@@ -144,7 +144,11 @@ export default function BlogPost() {
           <div className="aspect-[21/9] md:aspect-[21/8] overflow-hidden">
             <img
               src={sized(post.cover, 1400)}
+              srcSet={/^https:/.test(post.cover || "") ? `${sized(post.cover, 640)} 640w, ${sized(post.cover, 1000)} 1000w, ${sized(post.cover, 1400)} 1400w` : undefined}
+              sizes="100vw"
               alt={post.title}
+              width="1400"
+              height="600"
               fetchpriority="high"
               className="w-full h-full object-cover"
             />
