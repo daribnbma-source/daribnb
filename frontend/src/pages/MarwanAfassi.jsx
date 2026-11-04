@@ -67,7 +67,7 @@ export default function MarwanAfassi() {
     image: `${SITE}/assets/marwan-portrait.webp`,
     url: URL,
     sameAs: [
-      "https://www.instagram.com/daribnb.ma",
+      "https://www.instagram.com/daribnb_",
       "https://www.instagram.com/rentimmo_academy",
       "https://www.youtube.com/@rentimmoacademy",
       "https://www.rentimmoacademy.fr",

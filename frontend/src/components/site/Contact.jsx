@@ -123,7 +123,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://instagram.com/daribnb.ma"
+              href="https://instagram.com/daribnb_"
               target="_blank"
               rel="noreferrer"
               data-testid="contact-instagram-link"
@@ -136,7 +136,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="text-xs opacity-90">Suivez-nous</div>
-                <div className="font-bold">@daribnb.ma</div>
+                <div className="font-bold">@daribnb_</div>
               </div>
             </a>
 
